@@ -31,7 +31,7 @@
 
 
 - (void)click {
-    NSLog(@"click");
+    NSLog(@"click123");
     fooFunction();
 }
 
