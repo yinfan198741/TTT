@@ -17,6 +17,9 @@
 		A7B49F6C21188F0F0081D199 /* envTest.c in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6B21188F0F0081D199 /* envTest.c */; };
 		A7B49F6F211898130081D199 /* SwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6E211898130081D199 /* SwiftTest.swift */; };
 		A7B49F7B211B31BD0081D199 /* Test.c in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F7A211B31BD0081D199 /* Test.c */; };
+		A7B49F82211B359B0081D199 /* DebugConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7B49F7F211B359B0081D199 /* DebugConfig.xcconfig */; };
+		A7B49F83211B359B0081D199 /* Common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7B49F80211B359B0081D199 /* Common.xcconfig */; };
+		A7B49F84211B359B0081D199 /* ReleaseConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7B49F81211B359B0081D199 /* ReleaseConfig.xcconfig */; };
 		A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA6E1E9B2BBA00ED8D03 /* main.m */; };
 		A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA711E9B2BBA00ED8D03 /* AppDelegate.m */; };
 		A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA741E9B2BBA00ED8D03 /* ViewController.m */; };
@@ -94,6 +97,9 @@
 		A7B49F6E211898130081D199 /* SwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTest.swift; sourceTree = "<group>"; };
 		A7B49F79211B31B90081D199 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		A7B49F7A211B31BD0081D199 /* Test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Test.c; sourceTree = "<group>"; };
+		A7B49F7F211B359B0081D199 /* DebugConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
+		A7B49F80211B359B0081D199 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		A7B49F81211B359B0081D199 /* ReleaseConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseConfig.xcconfig; sourceTree = "<group>"; };
 		A7D8FA6A1E9B2BBA00ED8D03 /* TT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8FA6E1E9B2BBA00ED8D03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7D8FA701E9B2BBA00ED8D03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -194,6 +200,9 @@
 		A7D8FA611E9B2BBA00ED8D03 = {
 			isa = PBXGroup;
 			children = (
+				A7B49F80211B359B0081D199 /* Common.xcconfig */,
+				A7B49F7F211B359B0081D199 /* DebugConfig.xcconfig */,
+				A7B49F81211B359B0081D199 /* ReleaseConfig.xcconfig */,
 				A7B49F6E211898130081D199 /* SwiftTest.swift */,
 				A7D8FA6C1E9B2BBA00ED8D03 /* TT */,
 				A7D8FA861E9B2BBA00ED8D03 /* TTTests */,
@@ -447,8 +456,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B49F83211B359B0081D199 /* Common.xcconfig in Resources */,
+				A7B49F82211B359B0081D199 /* DebugConfig.xcconfig in Resources */,
 				A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */,
 				A7D8FA7A1E9B2BBA00ED8D03 /* Assets.xcassets in Resources */,
+				A7B49F84211B359B0081D199 /* ReleaseConfig.xcconfig in Resources */,
 				A7D8FA781E9B2BBA00ED8D03 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
