@@ -14,6 +14,8 @@
 
 @end
 
+ UILabel* _la;
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -32,13 +34,21 @@
     [button2 setTitle:@"env" forState:UIControlStateNormal];
     [button2 addTarget:self action:@selector(click2) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
+    
+    _la = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 100, 100)];
+    _la.text = @"lalala";
+    _la.backgroundColor = [UIColor yellowColor];
+    _la.textColor = [UIColor blueColor];
+    [self.view addSubview:_la];
+    
 }
 
 
 
 - (void)click {
     NSLog(@"click123");
-    fooFunction();
+    int va = fooFunction();
+    _la.text = [NSString stringWithFormat:@"%d",va];
 }
 
 

@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 
-void fooFunction();
+int fooFunction();
 
 int addFunction(int a, int b);
 

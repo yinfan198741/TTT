@@ -9,7 +9,7 @@
 #include "Test.h"
 
 
-void fooFunction() {
+int fooFunction() {
     int a = 0xA;
     int b = 0xB;
     int c = 0xC;
@@ -17,6 +17,7 @@ void fooFunction() {
     int e = 0xE;
     int add = addFunction(1, 2);
     printf("add = %i\n", add);
+    return add;
 }
 
 
