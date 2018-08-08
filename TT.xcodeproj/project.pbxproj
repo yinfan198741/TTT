@@ -16,6 +16,7 @@
 		A7B49F6921188EBC0081D199 /* getEnvHook.c in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6721188EBC0081D199 /* getEnvHook.c */; };
 		A7B49F6C21188F0F0081D199 /* envTest.c in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6B21188F0F0081D199 /* envTest.c */; };
 		A7B49F6F211898130081D199 /* SwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6E211898130081D199 /* SwiftTest.swift */; };
+		A7B49F7B211B31BD0081D199 /* Test.c in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F7A211B31BD0081D199 /* Test.c */; };
 		A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA6E1E9B2BBA00ED8D03 /* main.m */; };
 		A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA711E9B2BBA00ED8D03 /* AppDelegate.m */; };
 		A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA741E9B2BBA00ED8D03 /* ViewController.m */; };
@@ -91,6 +92,8 @@
 		A7B49F6B21188F0F0081D199 /* envTest.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = envTest.c; sourceTree = "<group>"; };
 		A7B49F6D211898130081D199 /* TT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TT-Bridging-Header.h"; sourceTree = "<group>"; };
 		A7B49F6E211898130081D199 /* SwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTest.swift; sourceTree = "<group>"; };
+		A7B49F79211B31B90081D199 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		A7B49F7A211B31BD0081D199 /* Test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Test.c; sourceTree = "<group>"; };
 		A7D8FA6A1E9B2BBA00ED8D03 /* TT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8FA6E1E9B2BBA00ED8D03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7D8FA701E9B2BBA00ED8D03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -170,6 +173,24 @@
 			path = HookCTests;
 			sourceTree = "<group>";
 		};
+		A7B49F7D211B31E50081D199 /* functionCall */ = {
+			isa = PBXGroup;
+			children = (
+				A7B49F7A211B31BD0081D199 /* Test.c */,
+				A7B49F79211B31B90081D199 /* Test.h */,
+			);
+			path = functionCall;
+			sourceTree = "<group>";
+		};
+		A7B49F7E211B32100081D199 /* env */ = {
+			isa = PBXGroup;
+			children = (
+				A7B49F6A21188F0F0081D199 /* envTest.h */,
+				A7B49F6B21188F0F0081D199 /* envTest.c */,
+			);
+			path = env;
+			sourceTree = "<group>";
+		};
 		A7D8FA611E9B2BBA00ED8D03 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +220,8 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				A7B49F7E211B32100081D199 /* env */,
+				A7B49F7D211B31E50081D199 /* functionCall */,
 				A7D8FA701E9B2BBA00ED8D03 /* AppDelegate.h */,
 				A7D8FA711E9B2BBA00ED8D03 /* AppDelegate.m */,
 				A7D8FA731E9B2BBA00ED8D03 /* ViewController.h */,
@@ -208,8 +231,6 @@
 				A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */,
 				A7D8FA7E1E9B2BBA00ED8D03 /* Info.plist */,
 				A7D8FA6D1E9B2BBA00ED8D03 /* Supporting Files */,
-				A7B49F6A21188F0F0081D199 /* envTest.h */,
-				A7B49F6B21188F0F0081D199 /* envTest.c */,
 			);
 			path = TT;
 			sourceTree = "<group>";
@@ -470,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */,
+				A7B49F7B211B31BD0081D199 /* Test.c in Sources */,
 				A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */,
 				A7B49F6F211898130081D199 /* SwiftTest.swift in Sources */,
 				A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */,

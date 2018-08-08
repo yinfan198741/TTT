@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "envTest.h"
 #import "stdlib.h"
+#import "Test.h"
 @interface ViewController ()
 
 @end
@@ -18,19 +19,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIView* _v  = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 100, 100)];
-    _v.backgroundColor = [UIColor redColor];
     
-    [self.view addSubview:_v];
+    UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    button.backgroundColor = UIColor.blueColor;
+    [button setTitle:@"fun Call" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     
-    getEvnTest();
     
-    char* env = getenv("HOME");
-    printf("env = %s",env);
-    
-    // Do any additional setup after loading the view, typically from a nib.
+    UIButton* button2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 100, 100, 100)];
+    button2.backgroundColor = UIColor.blackColor;
+    [button2 setTitle:@"env" forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(click2) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button2];
 }
 
+
+
+- (void)click {
+    NSLog(@"click123");
+    fooFunction();
+}
+
+
+- (void)click2 {
+    NSLog(@"click2");
+    getEvnTest();
+    char* env = getenv("HOME");
+    printf("env = %s",env);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
