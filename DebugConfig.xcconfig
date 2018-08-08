@@ -1,0 +1,12 @@
+//
+//  DebugConfig.xcconfig
+//  TT
+//
+//  Created by 尹凡 on 7/22/18.
+//  Copyright © 2018 fanyin. All rights reserved.
+//
+#include "Common.xcconfig"
+VALID_ARCHS = arm64
+
+
+
