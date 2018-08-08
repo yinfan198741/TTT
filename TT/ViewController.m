@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#include "Test.h"
-
+#import "envTest.h"
+#import "stdlib.h"
 @interface ViewController ()
 
 @end
@@ -17,33 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UIView* _v  = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 100, 100)];
     _v.backgroundColor = [UIColor redColor];
     
     [self.view addSubview:_v];
     
-    UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    button.backgroundColor = UIColor.yellowColor;
-    [button setTitle:@"Test" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    getEvnTest();
+    
+    char* env = getenv("HOME");
+    printf("env = %s",env);
+    
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
-
-- (void)click {
-    NSLog(@"click123");
-    fooFunction();
-}
-
-
-
-
-- (void)addNumber:(int)number {
-    int a  = 1;
-    int b = number;
-    int c = a + b;
-    NSLog(@"%d",c);
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
