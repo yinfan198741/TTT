@@ -28,6 +28,8 @@
 		A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */; };
 		A7D8FA881E9B2BBA00ED8D03 /* TTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA871E9B2BBA00ED8D03 /* TTTests.m */; };
 		A7D8FA931E9B2BBB00ED8D03 /* TTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */; };
+		B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */; };
+		B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DF2121CA1B00325501 /* PushViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,10 @@
 		A7D8FA8E1E9B2BBA00ED8D03 /* TTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTUITests.m; sourceTree = "<group>"; };
 		A7D8FA941E9B2BBB00ED8D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5FB72DA2121C73200325501 /* UIViewController+Consistent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Consistent.h"; sourceTree = "<group>"; };
+		B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Consistent.m"; sourceTree = "<group>"; };
+		B5FB72DE2121CA1B00325501 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
+		B5FB72DF2121CA1B00325501 /* PushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +235,8 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				B5FB72DD2121CA0400325501 /* PushVC */,
+				B5FB72D62121C6C700325501 /* safeVCpush */,
 				A7B49F7E211B32100081D199 /* env */,
 				A7B49F7D211B31E50081D199 /* functionCall */,
 				A7D8FA701E9B2BBA00ED8D03 /* AppDelegate.h */,
@@ -268,6 +276,24 @@
 				A7D8FA941E9B2BBB00ED8D03 /* Info.plist */,
 			);
 			path = TTUITests;
+			sourceTree = "<group>";
+		};
+		B5FB72D62121C6C700325501 /* safeVCpush */ = {
+			isa = PBXGroup;
+			children = (
+				B5FB72DA2121C73200325501 /* UIViewController+Consistent.h */,
+				B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */,
+			);
+			path = safeVCpush;
+			sourceTree = "<group>";
+		};
+		B5FB72DD2121CA0400325501 /* PushVC */ = {
+			isa = PBXGroup;
+			children = (
+				B5FB72DE2121CA1B00325501 /* PushViewController.h */,
+				B5FB72DF2121CA1B00325501 /* PushViewController.m */,
+			);
+			path = PushVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,9 +530,11 @@
 			files = (
 				A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */,
 				A7B49F7B211B31BD0081D199 /* Test.c in Sources */,
+				B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */,
 				A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */,
 				A7B49F6F211898130081D199 /* SwiftTest.swift in Sources */,
 				A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */,
+				B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */,
 				A7B49F6C21188F0F0081D199 /* envTest.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
