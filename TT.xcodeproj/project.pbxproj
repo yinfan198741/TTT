@@ -30,6 +30,7 @@
 		A7D8FA931E9B2BBB00ED8D03 /* TTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */; };
 		B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */; };
 		B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DF2121CA1B00325501 /* PushViewController.m */; };
+		B5FB72E32122842B00325501 /* TabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72E22122842B00325501 /* TabItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,8 @@
 		B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Consistent.m"; sourceTree = "<group>"; };
 		B5FB72DE2121CA1B00325501 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
 		B5FB72DF2121CA1B00325501 /* PushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
+		B5FB72E12122842A00325501 /* TabItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabItem.h; sourceTree = "<group>"; };
+		B5FB72E22122842B00325501 /* TabItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +251,8 @@
 				A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */,
 				A7D8FA7E1E9B2BBA00ED8D03 /* Info.plist */,
 				A7D8FA6D1E9B2BBA00ED8D03 /* Supporting Files */,
+				B5FB72E12122842A00325501 /* TabItem.h */,
+				B5FB72E22122842B00325501 /* TabItem.m */,
 			);
 			path = TT;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 				A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */,
 				A7B49F6F211898130081D199 /* SwiftTest.swift in Sources */,
 				A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */,
+				B5FB72E32122842B00325501 /* TabItem.m in Sources */,
 				B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */,
 				A7B49F6C21188F0F0081D199 /* envTest.c in Sources */,
 			);
