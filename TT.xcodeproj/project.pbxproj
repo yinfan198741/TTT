@@ -28,6 +28,10 @@
 		A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */; };
 		A7D8FA881E9B2BBA00ED8D03 /* TTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA871E9B2BBA00ED8D03 /* TTTests.m */; };
 		A7D8FA931E9B2BBB00ED8D03 /* TTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */; };
+		B5C8D566214A14F2007BF736 /* swiftObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D565214A14F2007BF736 /* swiftObserver.swift */; };
+		B5C8D569214A3645007BF736 /* swiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D568214A3645007BF736 /* swiftVC.swift */; };
+		B5C8D575214F5C54007BF736 /* SwiftMapFlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D574214F5C54007BF736 /* SwiftMapFlatMap.swift */; };
+		B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D576214FE553007BF736 /* SwiftDelegate.swift */; };
 		B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */; };
 		B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DF2121CA1B00325501 /* PushViewController.m */; };
 		B5FB72E32122842B00325501 /* TabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72E22122842B00325501 /* TabItem.m */; };
@@ -119,6 +123,10 @@
 		A7D8FA8E1E9B2BBA00ED8D03 /* TTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTUITests.m; sourceTree = "<group>"; };
 		A7D8FA941E9B2BBB00ED8D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5C8D565214A14F2007BF736 /* swiftObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftObserver.swift; sourceTree = "<group>"; };
+		B5C8D568214A3645007BF736 /* swiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftVC.swift; sourceTree = "<group>"; };
+		B5C8D574214F5C54007BF736 /* SwiftMapFlatMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMapFlatMap.swift; sourceTree = "<group>"; };
+		B5C8D576214FE553007BF736 /* SwiftDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDelegate.swift; sourceTree = "<group>"; };
 		B5FB72DA2121C73200325501 /* UIViewController+Consistent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Consistent.h"; sourceTree = "<group>"; };
 		B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Consistent.m"; sourceTree = "<group>"; };
 		B5FB72DE2121CA1B00325501 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
@@ -212,7 +220,6 @@
 				A7B49F80211B359B0081D199 /* Common.xcconfig */,
 				A7B49F7F211B359B0081D199 /* DebugConfig.xcconfig */,
 				A7B49F81211B359B0081D199 /* ReleaseConfig.xcconfig */,
-				A7B49F6E211898130081D199 /* SwiftTest.swift */,
 				A7D8FA6C1E9B2BBA00ED8D03 /* TT */,
 				A7D8FA861E9B2BBA00ED8D03 /* TTTests */,
 				A7D8FA911E9B2BBA00ED8D03 /* TTUITests */,
@@ -238,6 +245,7 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				B5C8D567214A14FD007BF736 /* swiftTest */,
 				B5FB72DD2121CA0400325501 /* PushVC */,
 				B5FB72D62121C6C700325501 /* safeVCpush */,
 				A7B49F7E211B32100081D199 /* env */,
@@ -281,6 +289,18 @@
 				A7D8FA941E9B2BBB00ED8D03 /* Info.plist */,
 			);
 			path = TTUITests;
+			sourceTree = "<group>";
+		};
+		B5C8D567214A14FD007BF736 /* swiftTest */ = {
+			isa = PBXGroup;
+			children = (
+				A7B49F6E211898130081D199 /* SwiftTest.swift */,
+				B5C8D565214A14F2007BF736 /* swiftObserver.swift */,
+				B5C8D568214A3645007BF736 /* swiftVC.swift */,
+				B5C8D574214F5C54007BF736 /* SwiftMapFlatMap.swift */,
+				B5C8D576214FE553007BF736 /* SwiftDelegate.swift */,
+			);
+			path = swiftTest;
 			sourceTree = "<group>";
 		};
 		B5FB72D62121C6C700325501 /* safeVCpush */ = {
@@ -533,13 +553,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C8D569214A3645007BF736 /* swiftVC.swift in Sources */,
 				A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */,
 				A7B49F7B211B31BD0081D199 /* Test.c in Sources */,
+				B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */,
 				B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */,
 				A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */,
 				A7B49F6F211898130081D199 /* SwiftTest.swift in Sources */,
 				A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */,
 				B5FB72E32122842B00325501 /* TabItem.m in Sources */,
+				B5C8D575214F5C54007BF736 /* SwiftMapFlatMap.swift in Sources */,
+				B5C8D566214A14F2007BF736 /* swiftObserver.swift in Sources */,
 				B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */,
 				A7B49F6C21188F0F0081D199 /* envTest.c in Sources */,
 			);

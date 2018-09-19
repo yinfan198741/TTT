@@ -12,7 +12,7 @@
 #import "Test.h"
 #import "PushViewController.h"
 #import "TabItem.h"
-
+#import "TT-Swift.h"
 
 
 @interface ViewController ()
@@ -76,6 +76,12 @@
         [self alertVC];
     }];
     [self.source addObject:alertVC];
+    
+    
+    TabItem* swiftCall = [TabItem CreateItem:@"swiftCall" action:^{
+        [self swiftCall];
+    }];
+    [self.source addObject:swiftCall];
     
 }
 
@@ -201,6 +207,11 @@
     [self presentViewController:uac animated:YES completion:nil];
 }
 
+-(void)swiftCall {
+//    ObejctCall();
+    [ocCall ObejctCall: self];
+//    swiftVC* vc = [swiftVC ]
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
