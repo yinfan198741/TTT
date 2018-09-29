@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "SignalHandler.h"
+#import "UncaughtExceptionHandler.h"
 
 @interface AppDelegate ()
 
@@ -15,9 +17,16 @@
 
 @implementation AppDelegate
 
+- (void)setupCrash {
+  InstallSignalHandler();
+  InstallUncaughtExceptionHandler();
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+  
+  [self setupCrash];
+  
     ViewController* vc = [[ViewController alloc] init];
     UINavigationController* root = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

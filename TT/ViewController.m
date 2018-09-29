@@ -13,7 +13,7 @@
 #import "PushViewController.h"
 #import "TabItem.h"
 #import "TT-Swift.h"
-
+#import "CrashViewController.h"
 
 @interface ViewController ()
 
@@ -82,6 +82,12 @@
         [self swiftCall];
     }];
     [self.source addObject:swiftCall];
+  
+  
+  TabItem* crashVC = [TabItem CreateItem:@"crashVC" action:^{
+    [self crashVC];
+  }];
+  [self.source addObject:crashVC];
     
 }
 
@@ -203,7 +209,6 @@
     }];
     
     [uac addAction:ac];
-    
     [self presentViewController:uac animated:YES completion:nil];
 }
 
@@ -211,6 +216,14 @@
 //    ObejctCall();
     [ocCall ObejctCall: self];
 //    swiftVC* vc = [swiftVC ]
+}
+
+
+- (void)crashVC {
+  NSLog(@"crashVC");
+  CrashViewController* pvc = [[CrashViewController alloc] init];
+  [self.navigationController pushViewController:pvc animated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {
