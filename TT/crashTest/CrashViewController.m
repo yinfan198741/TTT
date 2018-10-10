@@ -47,8 +47,7 @@ typedef struct Test
   pTest->a = 5;
 }
 
--(void)buttonOCException:(UIButton *)sender
-{
+-(void)buttonOCException:(UIButton *)sender {
   //2.ios崩溃
   NSArray *array= @[@"tom",@"xxx",@"ooo"];
   [array objectAtIndex:5];

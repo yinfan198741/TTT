@@ -8,7 +8,6 @@
 
 #include "Test.h"
 
-
 int fooFunction() {
     int a = 0xA;
     int b = 0xB;
@@ -20,9 +19,6 @@ int fooFunction() {
     return add;
 }
 
-
-
-
 int addFunction(int a, int b)
 {
     int c = a + b;
@@ -32,6 +28,5 @@ int addFunction(int a, int b)
     int g = 7;
     int h = 8;
     int i = 9;
-    
     return c + d + e + f + g + h + i;
 }

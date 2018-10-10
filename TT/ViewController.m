@@ -14,6 +14,7 @@
 #import "TabItem.h"
 #import "TT-Swift.h"
 #import "CrashViewController.h"
+#import "CallTest.h"
 
 @interface ViewController ()
 
@@ -88,56 +89,24 @@
     [self crashVC];
   }];
   [self.source addObject:crashVC];
+  
+  TabItem* callARMC = [TabItem CreateItem:@"callARMC" action:^{
+    [self callARMC];
+  }];
+  [self.source addObject:callARMC];
+  
+  TabItem* callARMOC = [TabItem CreateItem:@"callARMOC" action:^{
+    [self callARMOC];
+  }];
+  [self.source addObject:callARMOC];
+  
     
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     self.view.backgroundColor = UIColor.whiteColor;
-    
-//    int tabBarHeight = 66;
-//
-//    UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, tabBarHeight, 100, 100)];
-//    button.backgroundColor = UIColor.blueColor;
-//    [button setTitle:@"fun Call" forState:UIControlStateNormal];
-//    [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
-//
-//
-//    UIButton* button2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 100 + tabBarHeight, 100, 100)];
-//    button2.backgroundColor = UIColor.blackColor;
-//    [button2 setTitle:@"env" forState:UIControlStateNormal];
-//    [button2 addTarget:self action:@selector(click2) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button2];
-//
-//    _la = [[UILabel alloc] initWithFrame:CGRectMake(0, 200 + tabBarHeight,
-//                                                    100, 100)];
-//    _la.text = @"lalala";
-//    _la.backgroundColor = [UIColor yellowColor];
-//    _la.textColor = [UIColor blueColor];
-//    [self.view addSubview:_la];
-//
-//
-//    UIButton* button3 = [[UIButton alloc]
-//                         initWithFrame:CGRectMake(0, 300 + tabBarHeight,
-//                                                  100,100)];
-//    button3.backgroundColor = UIColor.blackColor;
-//    [button3 setTitle:@"push" forState:UIControlStateNormal];
-//    [button3 addTarget:self action:@selector(click3) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button3];
-//
-//
-//    UIButton* button4 = [[UIButton alloc]
-//                         initWithFrame:CGRectMake(0, 400 + tabBarHeight,
-//                                                  100,100)];
-//    button4.backgroundColor = UIColor.purpleColor;
-//    [button4 setTitle:@"alert" forState:UIControlStateNormal];
-//    [button4 addTarget:self action:@selector(click4) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button4];
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -146,8 +115,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    TabItem* item = (TabItem*)self.source[indexPath.row];
-    item.itemActicon();
+  TabItem* item = (TabItem*)self.source[indexPath.row];
+  item.itemActicon();
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
@@ -225,6 +195,24 @@
   [self.navigationController pushViewController:pvc animated:YES];
 
 }
+
+- (void)callARMC {
+  NSLog(@"callARMC");
+  int res = fooFunction();
+  NSLog(@"info = %d",res);
+}
+
+
+- (void)callARMOC {
+  NSLog(@"callARM");
+  CallTest* test = [[CallTest alloc] init];
+  int age = [test getAge:1];
+  NSString* name = [test getName:@"YINFAN"];
+  NSString* info = [test getInfo:name age:age];
+  NSLog(@"info = %@",info);
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

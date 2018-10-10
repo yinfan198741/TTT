@@ -28,6 +28,11 @@
 		A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */; };
 		A7D8FA881E9B2BBA00ED8D03 /* TTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA871E9B2BBA00ED8D03 /* TTTests.m */; };
 		A7D8FA931E9B2BBB00ED8D03 /* TTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */; };
+		B5670EF3215F11C90014807D /* ExceptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EED215F11C90014807D /* ExceptionModel.m */; };
+		B5670EF4215F11C90014807D /* SignalHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EEE215F11C90014807D /* SignalHandler.m */; };
+		B5670EF5215F11C90014807D /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EF1215F11C90014807D /* UncaughtExceptionHandler.m */; };
+		B5670EF8215F12480014807D /* CrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EF7215F12480014807D /* CrashViewController.m */; };
+		B5670EFB215F21F10014807D /* CallTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EFA215F21F10014807D /* CallTest.m */; };
 		B5C8D566214A14F2007BF736 /* swiftObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D565214A14F2007BF736 /* swiftObserver.swift */; };
 		B5C8D569214A3645007BF736 /* swiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D568214A3645007BF736 /* swiftVC.swift */; };
 		B5C8D575214F5C54007BF736 /* SwiftMapFlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D574214F5C54007BF736 /* SwiftMapFlatMap.swift */; };
@@ -123,6 +128,16 @@
 		A7D8FA8E1E9B2BBA00ED8D03 /* TTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTUITests.m; sourceTree = "<group>"; };
 		A7D8FA941E9B2BBB00ED8D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5670EED215F11C90014807D /* ExceptionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionModel.m; sourceTree = "<group>"; };
+		B5670EEE215F11C90014807D /* SignalHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalHandler.m; sourceTree = "<group>"; };
+		B5670EEF215F11C90014807D /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		B5670EF0215F11C90014807D /* SignalHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalHandler.h; sourceTree = "<group>"; };
+		B5670EF1215F11C90014807D /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		B5670EF2215F11C90014807D /* ExceptionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionModel.h; sourceTree = "<group>"; };
+		B5670EF6215F12480014807D /* CrashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrashViewController.h; sourceTree = "<group>"; };
+		B5670EF7215F12480014807D /* CrashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashViewController.m; sourceTree = "<group>"; };
+		B5670EF9215F21F10014807D /* CallTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallTest.h; sourceTree = "<group>"; };
+		B5670EFA215F21F10014807D /* CallTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallTest.m; sourceTree = "<group>"; };
 		B5C8D565214A14F2007BF736 /* swiftObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftObserver.swift; sourceTree = "<group>"; };
 		B5C8D568214A3645007BF736 /* swiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftVC.swift; sourceTree = "<group>"; };
 		B5C8D574214F5C54007BF736 /* SwiftMapFlatMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMapFlatMap.swift; sourceTree = "<group>"; };
@@ -201,6 +216,8 @@
 			children = (
 				A7B49F7A211B31BD0081D199 /* Test.c */,
 				A7B49F79211B31B90081D199 /* Test.h */,
+				B5670EF9215F21F10014807D /* CallTest.h */,
+				B5670EFA215F21F10014807D /* CallTest.m */,
 			);
 			path = functionCall;
 			sourceTree = "<group>";
@@ -245,6 +262,7 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				B5670EEC215F0F270014807D /* crashTest */,
 				B5C8D567214A14FD007BF736 /* swiftTest */,
 				B5FB72DD2121CA0400325501 /* PushVC */,
 				B5FB72D62121C6C700325501 /* safeVCpush */,
@@ -289,6 +307,21 @@
 				A7D8FA941E9B2BBB00ED8D03 /* Info.plist */,
 			);
 			path = TTUITests;
+			sourceTree = "<group>";
+		};
+		B5670EEC215F0F270014807D /* crashTest */ = {
+			isa = PBXGroup;
+			children = (
+				B5670EF2215F11C90014807D /* ExceptionModel.h */,
+				B5670EED215F11C90014807D /* ExceptionModel.m */,
+				B5670EF0215F11C90014807D /* SignalHandler.h */,
+				B5670EEE215F11C90014807D /* SignalHandler.m */,
+				B5670EEF215F11C90014807D /* UncaughtExceptionHandler.h */,
+				B5670EF1215F11C90014807D /* UncaughtExceptionHandler.m */,
+				B5670EF6215F12480014807D /* CrashViewController.h */,
+				B5670EF7215F12480014807D /* CrashViewController.m */,
+			);
+			path = crashTest;
 			sourceTree = "<group>";
 		};
 		B5C8D567214A14FD007BF736 /* swiftTest */ = {
@@ -553,17 +586,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5670EF8215F12480014807D /* CrashViewController.m in Sources */,
 				B5C8D569214A3645007BF736 /* swiftVC.swift in Sources */,
+				B5670EF5215F11C90014807D /* UncaughtExceptionHandler.m in Sources */,
 				A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */,
 				A7B49F7B211B31BD0081D199 /* Test.c in Sources */,
 				B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */,
 				B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */,
+				B5670EFB215F21F10014807D /* CallTest.m in Sources */,
 				A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */,
 				A7B49F6F211898130081D199 /* SwiftTest.swift in Sources */,
 				A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */,
 				B5FB72E32122842B00325501 /* TabItem.m in Sources */,
+				B5670EF4215F11C90014807D /* SignalHandler.m in Sources */,
 				B5C8D575214F5C54007BF736 /* SwiftMapFlatMap.swift in Sources */,
 				B5C8D566214A14F2007BF736 /* swiftObserver.swift in Sources */,
+				B5670EF3215F11C90014807D /* ExceptionModel.m in Sources */,
 				B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */,
 				A7B49F6C21188F0F0081D199 /* envTest.c in Sources */,
 			);
@@ -819,11 +857,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -861,11 +900,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
