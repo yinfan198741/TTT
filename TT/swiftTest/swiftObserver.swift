@@ -68,18 +68,16 @@ extension AudioPlayer {
 
 
 public class ocCall: NSObject {
-    static func ObejctCall(_ vc: UIViewController) {
+    public  func ObejctCall(_ vc: UIViewController) {
         print("ObejctCall")
-        let svc = swiftVC.init()
-        vc.present(svc, animated: false)
-        
-        let player = AudioPlayer()
-        
-        player.observerStart(player) { (_ , _) in
-            let log = svc.aaaa()
-            print(log)
-        }
-    
+        let svc = MyTabviewVC.init()
+        vc.navigationController?.pushViewController(svc, animated: true)
+      
+//        let player = AudioPlayer()
+//        player.observerStart(player) { (_ , _) in
+//            let log = svc.aaaa()
+//            print(log)
+//        }
     }
 }
 

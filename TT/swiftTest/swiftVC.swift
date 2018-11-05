@@ -12,8 +12,8 @@ import UIKit
 
 extension UIViewController {
     func addTabDiss()  {
-        let sigtap = UITapGestureRecognizer(target: self, action:#selector(sigTap))
-        self.view.addGestureRecognizer(sigtap)
+//        let sigtap = UITapGestureRecognizer(target: self, action:#selector(sigTap))
+//        self.view.addGestureRecognizer(sigtap)
     }
     
     func sigTap()  {
@@ -37,7 +37,7 @@ internal class swiftVC: UIViewController {
         bt.backgroundColor = .blue
         bt.setTitle("观察者", for: .normal)
         bt.setTitleColor(.red, for: .normal)
-        bt.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
+//        bt.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
         bt.frame = CGRect(x: 10, y: 200, width: 100, height: 100)
         self.view.addSubview(bt)
         

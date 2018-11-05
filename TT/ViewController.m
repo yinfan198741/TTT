@@ -184,8 +184,16 @@
 
 -(void)swiftCall {
 //    ObejctCall();
-    [ocCall ObejctCall: self];
+//    [ocCall ObejctCall: self];
+//  [ocCall ObejctCall:self];
 //    swiftVC* vc = [swiftVC ]
+  MyTabviewVC* vc = [[MyTabviewVC alloc] init];
+  [self.navigationController pushViewController:vc animated:YES];
+  
+//  [ocCall ObejctCall:self];
+//  ocCall* call = [[ocCall alloc] init];
+//  [call o]
+
 }
 
 

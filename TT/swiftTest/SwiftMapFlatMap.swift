@@ -60,7 +60,6 @@ struct Person {
     func createPerson(json:[String:AnyObject]?) -> Person? {
         return json.flatMap { Person(json: $0) }
     }
-    
 }
 
 
