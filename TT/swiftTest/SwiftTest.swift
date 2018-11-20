@@ -22,6 +22,7 @@ internal class  MyTabviewVC: UITableViewController {
     source.append(("Map_array", self.arrayMapTest))
     source.append(("arrayFilterTest", self.arrayFilterTest))
     source.append(("Reduce", self.arrayReduce))
+    source.append(("protoloverride", self.protoloverride))
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,6 +89,16 @@ internal class  MyTabviewVC: UITableViewController {
   }
   
 
+  func protoloverride() {
+    let aa = ClassAA(aa: 19)
+    let bb = ClassBB(aa: "100")
+    print(aa);
+    print("\(type(of: bb.a as Int))\(bb.a as Int)");
+    print("\(type(of: bb.a as String))\(bb.a as String)");
+     print(bb.a);
+//    print("\(type(of: bb.a))\(bb.a)");
+//    print("\(type(of: bb.a as! Double))\(bb.a as! Double)");
+  }
   
   func arrayReduce() {
     let array: [String?] = ["AA", nil, "BB", "CC"];
@@ -290,4 +301,74 @@ func changeC() {
 //    }
 //}
 
+
+
+protocol TestA {
+  var a: Int { get }
+}
+
+protocol TestB : TestA {
+//   var a: Int { get }
+   var a: String { get }
+
+}
+
+extension TestB {
+  var a: Int {
+    return Int(self.a) ?? -1
+  }
+}
+
+class ClassAA: TestA {
+  let a: Int
+  init(aa: Int) {
+    self.a = aa
+  }
+}
+
+class ClassBB: TestB {
+  
+  init(aa: String) {
+    
+    self._a = aa;
+  }
+  var _a: String
+  
+  var a: String {
+    get{
+      return _a
+    }
+    set {
+      _a = newValue
+    }
+  }
+//  var tg:[TestG: where A == Int]?
+//  var tg:[TesgGG]
+}
+
+
+protocol TestGT {
+
+}
+protocol NTestG {
+  var aType:Int { get }
+}
+
+protocol TestG {
+  associatedtype A
+}
+
+protocol TesgGG : TestG where A == Int{
+  
+}
+
+struct TestGGS : TestG {
+  typealias A = Int
+}
+
+
+struct PersonTest {
+  let first: String
+//  var last: Observable<String>
+}
 
