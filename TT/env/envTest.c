@@ -10,6 +10,4 @@
 
 void getEvnTest(){
     printf("getEvn =  %d",100);
-    
-    
 }

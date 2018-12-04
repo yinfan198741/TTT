@@ -16,6 +16,10 @@
 #import "CrashViewController.h"
 #import "CallTest.h"
 #import "ThreadViewController.h"
+#import "LLDBViewController.h"
+#import "AnimationViewController.h"
+#import "HashViewController.h"
+#import "dyLibHello.h"
 
 @interface ViewController ()
 
@@ -106,6 +110,31 @@ UILabel* _la;
     [self threadTest];
   }];
   [self.source addObject:threadTest];
+  
+  TabItem* lldbTest = [TabItem CreateItem:@"lldbTest" action:^{
+    [self lldbTest];
+  }];
+  [self.source addObject:lldbTest];
+  
+  
+  TabItem* AnimationTest = [TabItem CreateItem:@"AnimationTest" action:^{
+    [self AnimationTest];
+  }];
+  [self.source addObject:AnimationTest];
+  
+  
+  TabItem* Base64Sha1Md5 = [TabItem CreateItem:@"Base64Sha1Md5" action:^{
+    [self Base64Sha1Md5];
+  }];
+  [self.source addObject:Base64Sha1Md5];
+  
+  
+  TabItem* dylibCall = [TabItem CreateItem:@"dylibCall" action:^{
+    [self dylibCall];
+  }];
+  [self.source addObject:dylibCall];
+  
+  
   
 }
 
@@ -231,6 +260,31 @@ UILabel* _la;
   NSLog(@"threadTest");
   ThreadViewController* threadVC = [[ThreadViewController alloc] init];
   [self.navigationController pushViewController:threadVC animated:true];
+}
+
+- (void)lldbTest {
+  NSLog(@"lldbTest");
+  LLDBViewController* lldb = [[LLDBViewController alloc] init];
+  [self.navigationController pushViewController:lldb animated:true];
+}
+
+
+- (void)AnimationTest {
+  NSLog(@"AnimationTest");
+  AnimationViewController* animation = [[AnimationViewController alloc] init];
+  [self.navigationController pushViewController:animation animated:true];
+}
+
+- (void)Base64Sha1Md5 {
+  NSLog(@"Base64Sha1Md5");
+  HashViewController* hash = [[HashViewController alloc] init];
+  [self.navigationController pushViewController:hash animated:true];
+}
+
+-(void)dylibCall {
+  NSLog(@"dylibCall");
+  char* name = getDylibName();
+  NSLog(@"name = %s",name);
 }
 
 

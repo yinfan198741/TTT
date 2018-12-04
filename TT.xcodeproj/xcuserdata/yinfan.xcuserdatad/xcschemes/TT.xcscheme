@@ -58,6 +58,26 @@
                ReferencedContainer = "container:TT.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B55B3FCB21B1349D005CADF3"
+               BuildableName = "HookCTests.xctest"
+               BlueprintName = "HookCTests"
+               ReferencedContainer = "container:TT.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B55B404321B61964005CADF3"
+               BuildableName = "dyLibTestTests.xctest"
+               BlueprintName = "dyLibTestTests"
+               ReferencedContainer = "container:TT.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
