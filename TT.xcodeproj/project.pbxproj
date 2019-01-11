@@ -49,6 +49,9 @@
 		B5670EF5215F11C90014807D /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EF1215F11C90014807D /* UncaughtExceptionHandler.m */; };
 		B5670EF8215F12480014807D /* CrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EF7215F12480014807D /* CrashViewController.m */; };
 		B5670EFB215F21F10014807D /* CallTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EFA215F21F10014807D /* CallTest.m */; };
+		B56FBC6621E44721003694E1 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6521E44721003694E1 /* Service.m */; };
+		B56FBC6921E44757003694E1 /* RACTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6821E44757003694E1 /* RACTester.m */; };
+		B56FBC6C21E47E90003694E1 /* Swear.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6B21E47E90003694E1 /* Swear.m */; };
 		B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963721A3E4FA0064A81D /* LLDBViewController.m */; };
 		B59D963C21A4F9720064A81D /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963B21A4F9720064A81D /* AnimationViewController.m */; };
 		B5A9FBF8217758870083D5E0 /* SwiftInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9FBF7217758870083D5E0 /* SwiftInit.swift */; };
@@ -212,6 +215,12 @@
 		B5670EF7215F12480014807D /* CrashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashViewController.m; sourceTree = "<group>"; };
 		B5670EF9215F21F10014807D /* CallTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallTest.h; sourceTree = "<group>"; };
 		B5670EFA215F21F10014807D /* CallTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallTest.m; sourceTree = "<group>"; };
+		B56FBC6421E44721003694E1 /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		B56FBC6521E44721003694E1 /* Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		B56FBC6721E44757003694E1 /* RACTester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTester.h; sourceTree = "<group>"; };
+		B56FBC6821E44757003694E1 /* RACTester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTester.m; sourceTree = "<group>"; };
+		B56FBC6A21E47E90003694E1 /* Swear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swear.h; sourceTree = "<group>"; };
+		B56FBC6B21E47E90003694E1 /* Swear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Swear.m; sourceTree = "<group>"; };
 		B59D963621A3E4FA0064A81D /* LLDBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLDBViewController.h; sourceTree = "<group>"; };
 		B59D963721A3E4FA0064A81D /* LLDBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLDBViewController.m; sourceTree = "<group>"; };
 		B59D963A21A4F9720064A81D /* AnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
@@ -394,6 +403,7 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				B56FBC6121E44697003694E1 /* RACTest */,
 				B55B405D21B61BCB005CADF3 /* dyldCall */,
 				B55B3FBA21B0DA7E005CADF3 /* Resource */,
 				B53F202221AFE731006A8D3F /* Hash */,
@@ -532,6 +542,19 @@
 				B5670EF7215F12480014807D /* CrashViewController.m */,
 			);
 			path = crashTest;
+			sourceTree = "<group>";
+		};
+		B56FBC6121E44697003694E1 /* RACTest */ = {
+			isa = PBXGroup;
+			children = (
+				B56FBC6421E44721003694E1 /* Service.h */,
+				B56FBC6521E44721003694E1 /* Service.m */,
+				B56FBC6721E44757003694E1 /* RACTester.h */,
+				B56FBC6821E44757003694E1 /* RACTester.m */,
+				B56FBC6A21E47E90003694E1 /* Swear.h */,
+				B56FBC6B21E47E90003694E1 /* Swear.m */,
+			);
+			path = RACTest;
 			sourceTree = "<group>";
 		};
 		B59D963521A3E4C20064A81D /* LLDBTest */ = {
@@ -1027,6 +1050,7 @@
 				B53F202121AFE726006A8D3F /* HashViewController.m in Sources */,
 				B5C8D569214A3645007BF736 /* swiftVC.swift in Sources */,
 				B5670EF5215F11C90014807D /* UncaughtExceptionHandler.m in Sources */,
+				B56FBC6621E44721003694E1 /* Service.m in Sources */,
 				A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */,
 				A7B49F7B211B31BD0081D199 /* Test.c in Sources */,
 				B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */,
@@ -1037,11 +1061,13 @@
 				A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */,
 				B50B22F7218FECCB006CFC28 /* ThreadViewController.m in Sources */,
 				B5FB72E32122842B00325501 /* TabItem.m in Sources */,
+				B56FBC6C21E47E90003694E1 /* Swear.m in Sources */,
 				B5670EF4215F11C90014807D /* SignalHandler.m in Sources */,
 				B5C8D575214F5C54007BF736 /* SwiftMapFlatMap.swift in Sources */,
 				B5C8D566214A14F2007BF736 /* swiftObserver.swift in Sources */,
 				B5670EF3215F11C90014807D /* ExceptionModel.m in Sources */,
 				B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */,
+				B56FBC6921E44757003694E1 /* RACTester.m in Sources */,
 				B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */,
 				A7B49F6C21188F0F0081D199 /* envTest.c in Sources */,
 				B59D963C21A4F9720064A81D /* AnimationViewController.m in Sources */,

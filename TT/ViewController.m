@@ -20,6 +20,7 @@
 #import "AnimationViewController.h"
 #import "HashViewController.h"
 #import "dyLibHello.h"
+#import "RACTester.h"
 
 @interface ViewController ()
 
@@ -134,6 +135,10 @@ UILabel* _la;
   }];
   [self.source addObject:dylibCall];
   
+  TabItem* RacCall = [TabItem CreateItem:@"RacCall" action:^{
+    [self RacCall];
+  }];
+  [self.source addObject:RacCall];
   
   
 }
@@ -287,6 +292,13 @@ UILabel* _la;
   NSLog(@"name = %s",name);
 }
 
+-(void)RacCall {
+  NSLog(@"RacCall");
+//  #import "RACTester.h"
+  RACTester * tester = [[RACTester alloc] init];
+  [tester Test];
+//  NSLog(@"RacCall = %s",name);
+}
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
