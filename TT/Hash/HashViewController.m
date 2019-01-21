@@ -8,7 +8,7 @@
 
 #import "HashViewController.h"
 #import <CommonCrypto/CommonDigest.h>
-#import "GTMBase64.h"
+//#import "GTMBase64.h"
 @interface HashViewController ()
 
 @end
@@ -46,14 +46,14 @@
   CC_SHA1(data.bytes, data.length, digest);
   
   NSData * base64 = [[NSData alloc]initWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
-  base64 = [GTMBase64 encodeData:base64];
-  NSString * output1 = [[NSString alloc] initWithData:base64 encoding:NSUTF8StringEncoding];
+//  base64 = [GTMBase64 encodeData:base64];
+//  NSString * output1 = [[NSString alloc] initWithData:base64 encoding:NSUTF8StringEncoding];
   
 //  NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
 //  for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
 //  [output appendFormat:@"%02x", digest[i]];
-  
-  return output1;
+  return @"";
+//  return output1;
 }
 + (NSString*)sha1
 {

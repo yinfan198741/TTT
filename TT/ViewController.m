@@ -21,6 +21,9 @@
 #import "HashViewController.h"
 #import "dyLibHello.h"
 #import "RACTester.h"
+#import "ACCPersonalInfoViewController.h"
+#import "SAKUser.h"
+#import "SAKEnvironment.h"
 
 @interface ViewController ()
 
@@ -140,6 +143,11 @@ UILabel* _la;
   }];
   [self.source addObject:RacCall];
   
+  
+  TabItem* imageHeader = [TabItem CreateItem:@"imageHeader" action:^{
+    [self imageHeader];
+  }];
+  [self.source addObject:imageHeader];
   
 }
 
@@ -298,6 +306,17 @@ UILabel* _la;
   RACTester * tester = [[RACTester alloc] init];
   [tester Test];
 //  NSLog(@"RacCall = %s",name);
+}
+
+
+-(void)imageHeader {
+  NSLog(@"imageHeader");
+  SAKUser * u = [[SAKUser alloc] init];
+  u.userName = @"yinfan";
+  
+  [[SAKEnvironment environment] setUser:u];
+  ACCPersonalInfoViewController * vc = [[ACCPersonalInfoViewController alloc] init];
+  [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
