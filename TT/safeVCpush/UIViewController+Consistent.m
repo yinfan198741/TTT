@@ -51,7 +51,7 @@
 }
 
 - (void)safePushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    self.delegate = self;
+//    self.delegate = self;
     //-- If we are already pushing a view controller, we dont push another one.
     if (self.isViewTransitionInProgress == NO) {
         //-- This is not a recursion, due to method swizzling the call below calls the original  method.

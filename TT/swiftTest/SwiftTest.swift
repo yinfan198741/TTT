@@ -14,7 +14,7 @@ typealias action = () -> Void
 
 
 
-internal class  MyTabviewVC: UITableViewController {
+internal class  MyTabviewVC: UITableViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
   
   private var source:[(String , action)] = []
   
@@ -25,6 +25,7 @@ internal class  MyTabviewVC: UITableViewController {
     source.append(("arrayFilterTest", self.arrayFilterTest))
     source.append(("Reduce", self.arrayReduce))
     source.append(("protoloverride", self.protoloverride))
+    source.append(("imageChooser", self.imageChooser))
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,6 +102,37 @@ internal class  MyTabviewVC: UITableViewController {
 //    print("\(type(of: bb.a))\(bb.a)");
 //    print("\(type(of: bb.a as! Double))\(bb.a as! Double)");
   }
+  
+  func imageChooser() {
+//    let chooser = ImagePickerHelper()
+//    chooser.chooseImage(rootVc: self);
+    
+//    let imgController = UIImagePickerController()
+//    imgController.sourceType = .camera
+//    imgController.allowsEditing = false
+//
+//    imgController.delegate = self
+//    self.present(imgController,
+//                   animated: true,
+//                   completion: nil)
+    
+    let vc = ImageViewVC()
+    self.present(vc, animated: true)
+  }
+  
+   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+    picker.delegate = nil
+    picker.dismiss(animated: false)
+    if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+//      selectedImage = image
+    }
+  }
+  
+   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    picker.delegate = nil
+    picker.dismiss(animated: false)
+  }
+  
   
   func arrayReduce() {
     let array: [String?] = ["AA", nil, "BB", "CC"];

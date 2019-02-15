@@ -10,6 +10,8 @@
 
 @interface PushViewController ()
 
+@property (nonatomic, copy) NSArray* source;
+
 @end
 
 @implementation PushViewController
@@ -18,9 +20,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.redColor;
+  self.source = @[@"AAAAAAAAAAAAAAAAAAA",
+                  @"AAAAAAAAAAAAAAAAAAA",
+                  @"AAAAAAAAAAAAAAAAAAA",
+                  @"AAAAAAAAAAAAAAAAAAA",
+                  @"AAAAAAAAAAAAAAAAAAA",
+                  @"AAAAAAAAAAAAAAAAAAA",
+                  @"AAAAAAAAAAAAAAAAAAA",
+                  @"AAAAAAAAAAAAAAAAAAA",
+                  @"AAAAAAAAAAAAAAAAAAA"];
+    self.view.backgroundColor = UIColor.whiteColor;
     UIGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
     [self.view addGestureRecognizer:tap];
+//  navigationController.view.backgroundColor = UIColor.clearColor()
+//  navigationController.navigationBar.backgroundColor = UIColor.clearColor()
+
+//  self.navigationController.navigationBar.backgroundColor = UIColor.clearColor;
+//  self.navigationController.view.backgroundColor = UIColor.clearColor;
+  self.navigationController.navigationBar.translucent = YES;
+//  self.navigationController.navigationBar.
     // Do any additional setup after loading the view.
 }
 
@@ -40,10 +58,13 @@
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]
                                   initWithTitle: @"left"
                                   style: UIBarButtonItemStylePlain
-                                  target:nil
-                                  action:nil];
+                                  target:self
+                                  action:@selector(tap)];
     
     self.navigationItem.leftBarButtonItem = leftItem;
+  
+ 
+  
 }
 
 - (void)tap {
@@ -56,6 +77,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return self.source.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  UITableViewCell* cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+  cell.textLabel.text = self.source[indexPath.row];
+  cell.textLabel.textColor = UIColor.redColor;
+  return cell;
+}
+
 
 /*
 #pragma mark - Navigation

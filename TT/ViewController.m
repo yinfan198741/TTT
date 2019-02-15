@@ -21,9 +21,10 @@
 #import "HashViewController.h"
 #import "dyLibHello.h"
 #import "RACTester.h"
-#import "ACCPersonalInfoViewController.h"
-#import "SAKUser.h"
-#import "SAKEnvironment.h"
+#import "ImageHeaderViewController.h"
+#import "AppearanceViewController.h"
+#import "NSObject+PPrint.h"
+
 
 @interface ViewController ()
 
@@ -149,13 +150,34 @@ UILabel* _la;
   }];
   [self.source addObject:imageHeader];
   
+  TabItem* imageHeaderSwift = [TabItem CreateItem:@"imageHeaderSwift" action:^{
+    [self imageHeaderSwift];
+  }];
+  [self.source addObject:imageHeaderSwift];
+  
+  
+  TabItem* AppearanceViewController = [TabItem CreateItem:@"AppearanceViewController" action:^{
+    [self AppearanceViewController];
+  }];
+  [self.source addObject:AppearanceViewController];
+
+  
 }
 
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.view.backgroundColor = UIColor.whiteColor;
+  self.title = @"Test";
+//  [UINavigationItemButtonView getpriority(<#int#>, <#id_t#>)]
+  
+//  [NSObject getProperties:[UINavigationItemButtonView Class]];
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+  [super viewWillAppear:animated];
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return [self.source count];
@@ -296,8 +318,8 @@ UILabel* _la;
 
 -(void)dylibCall {
   NSLog(@"dylibCall");
-  char* name = getDylibName();
-  NSLog(@"name = %s",name);
+//  char* name = getDylibName();
+//  NSLog(@"name = %s",name);
 }
 
 -(void)RacCall {
@@ -311,13 +333,27 @@ UILabel* _la;
 
 -(void)imageHeader {
   NSLog(@"imageHeader");
-  SAKUser * u = [[SAKUser alloc] init];
-  u.userName = @"yinfan";
-  
-  [[SAKEnvironment environment] setUser:u];
-  ACCPersonalInfoViewController * vc = [[ACCPersonalInfoViewController alloc] init];
-  [self presentViewController:vc animated:YES completion:nil];
+
+  ImageHeaderViewController * vc = [[ImageHeaderViewController alloc] init];
+  UINavigationController* uicon = [[UINavigationController alloc] initWithRootViewController:vc];
+  [self presentViewController:uicon animated:YES completion:nil];
 }
+
+-(void)imageHeaderSwift {
+//  ImageViewVC* vc = ImageViewVC
+//  ImageViewVC * vc = [[ImageViewVC alloc] init];
+//  UINavigationController* uicon = [[UINavigationController alloc] initWithRootViewController:vc];
+//  [self presentViewController:uicon animated:YES completion:nil];
+}
+
+-(void)AppearanceViewController {
+  
+  NSLog(@"AppearanceViewController");
+  AppearanceViewController * vc = [[AppearanceViewController alloc] init];
+  [self presentViewController:vc animated:YES completion:nil];
+  
+}
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
