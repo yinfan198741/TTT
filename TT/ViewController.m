@@ -24,6 +24,7 @@
 #import "ImageHeaderViewController.h"
 #import "AppearanceViewController.h"
 #import "NSObject+PPrint.h"
+#import "AViewController.h"
 
 
 @interface ViewController ()
@@ -53,6 +54,11 @@ UILabel* _la;
   ////        [self click];
   //        NSLog(@"ttttt");
   //    }];
+  
+  TabItem* navigationTest = [TabItem CreateItem:@"navigationTest" action:^{
+    [self navigationTest];
+  }];
+  [self.source addObject:navigationTest];
   
   TabItem* call = [TabItem CreateItem:@"call" action:^{
     [self click];
@@ -199,6 +205,17 @@ UILabel* _la;
   }
   cell.textLabel.textColor = UIColor.blackColor;
   return cell;
+}
+
+- (void)navigationTest {
+  NSLog(@"navigationTest");
+//  int va = fooFunction();
+//  _la.text = [NSString stringWithFormat:@"%d",va];
+//  AViewController* ac = [[AViewController alloc] init];
+//  UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:ac];
+
+  [self presentViewController:[AViewController createNavigationControler]
+                     animated:true completion:nil];
 }
 
 - (void)click {
