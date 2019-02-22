@@ -22,13 +22,13 @@
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar
         shouldPopItem:(UINavigationItem *)item {
   NSLog(@"SubBackNaviViewController shouldPopItem");
-  NSLog(@"%s",__func__);
-  
+  NSLog(@"%s top = %@",__func__,self.topViewController);
+
   if ([self.topViewController isKindOfClass:[CViewController class]]) {
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
       UIAlertController* alert = [BViewController alertTestView];
       [self presentViewController:alert animated:YES completion:nil];
-      
+
       UIAlertAction* action1 = [UIAlertAction
                                 actionWithTitle:@"OK"
                                 style:UIAlertActionStyleDefault

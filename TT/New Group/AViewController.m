@@ -24,7 +24,7 @@
  
   self.title = @"AV";
   self.view.backgroundColor = UIColor.redColor;
-//  self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+  self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
   self.navigationController.navigationBar.backIndicatorImage = [UIImage imageNamed:@"inventory_selected"];
   self.navigationController.navigationBar.backIndicatorTransitionMaskImage = [UIImage imageNamed:@"inventory_selected"];
 
@@ -48,8 +48,8 @@
   self.barDelegate = [[NavigationBarDelegate alloc] init];
   self.navigationDelegate = [[NavigationDelegate alloc] init];
   self.navigationController.delegate = self.navigationDelegate;
-//  self.navigationController.navigationBar.delegate = self.barDelegate;
-//  self.navigationController.delegate =
+  self.navigationController.navigationBar.delegate = self.barDelegate;
+
     // Do any additional setup after loading the view.
 }
 
@@ -67,6 +67,8 @@
 + (UINavigationController*) createNavigationControler {
   AViewController* ac = [[AViewController alloc] init];
   UINavigationController* navi = [[SubBackNaviViewController alloc] initWithRootViewController:ac];
+  
+//  UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:ac];
 //  navi.navigationBar.delegate = [[NavigationBarDelegate alloc] init];
   return navi;
 }

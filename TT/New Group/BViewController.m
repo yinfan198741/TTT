@@ -32,8 +32,8 @@
   [super viewWillDisappear:animated];
   
   if (self.isMovingFromParentViewController) {
-//    UIAlertController* controler = [BViewController alertTestView];
-//    [self.navigationController presentViewController:controler animated:YES completion:nil];
+    UIAlertController* controler = [BViewController alertTestView];
+    [self.navigationController presentViewController:controler animated:YES completion:nil];
     NSLog(@"isMovingFromParentViewController");
     NSLog(@"hook back");
   }

@@ -9,8 +9,8 @@
 #import "CViewController.h"
 #import "BViewController.h"
 
-@interface CViewController () <UIGestureRecognizerDelegate>
-
+@interface CViewController ()<UIGestureRecognizerDelegate>
+@property(nonatomic, weak)id<UIGestureRecognizerDelegate> _pg;
 @end
 
 @implementation CViewController
@@ -25,7 +25,8 @@
   [button setBackgroundColor:UIColor.redColor];
   [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:button];
-
+  
+  self._pg = self.navigationController.interactivePopGestureRecognizer.delegate;
   self.navigationController.interactivePopGestureRecognizer.delegate = self;
 }
 
@@ -51,6 +52,13 @@
                             }];
   [alert addAction:action1];
   [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)dealloc {
+  if (self._pg != nil) {
+    NSLog(@"dealloc = %@ gester = %@",self, self._pg);
+    self.navigationController.interactivePopGestureRecognizer.delegate = self._pg ;
+  }
 }
 
 @end
