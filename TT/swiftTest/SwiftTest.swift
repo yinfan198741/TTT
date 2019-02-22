@@ -116,8 +116,8 @@ internal class  MyTabviewVC: UITableViewController ,UIImagePickerControllerDeleg
 //                   animated: true,
 //                   completion: nil)
     
-    let vc = ImageViewVC()
-    self.present(vc, animated: true)
+//    let vc = ImageViewVC()
+//    self.present(vc, animated: true)
   }
   
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
