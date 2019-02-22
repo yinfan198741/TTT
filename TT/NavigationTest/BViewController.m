@@ -32,23 +32,36 @@
   [super viewWillDisappear:animated];
   
   if (self.isMovingFromParentViewController) {
-    
-
-    
-    UIAlertController* controler = [UIAlertController
-                                    alertControllerWithTitle:@"Test"
-                                    message:@"message"
-                                    preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* action = [UIAlertAction actionWithTitle:@"calcel" style:UIPreviewActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-      [controler dismissViewControllerAnimated:true completion:nil];
-    }];
-    
-    [controler addAction:action];
-    [self.navigationController presentViewController:controler animated:YES completion:nil];
+//    UIAlertController* controler = [BViewController alertTestView];
+//    [self.navigationController presentViewController:controler animated:YES completion:nil];
     NSLog(@"isMovingFromParentViewController");
     NSLog(@"hook back");
   }
+}
+
++ (UIAlertController*)alertTestView {
+  UIAlertController* controler = [UIAlertController
+                                  alertControllerWithTitle:@"Test"
+                                  message:@"message"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+  
+//  UIAlertAction* action = [UIAlertAction
+//                           actionWithTitle:@"calcel"
+//                           style:UIPreviewActionStyleDestructive
+//                           handler:^(UIAlertAction * _Nonnull action)
+//  {
+//    [controler dismissViewControllerAnimated:true completion:nil];
+//  }];
+  
+  UIAlertAction* action2 = [UIAlertAction
+                            actionWithTitle:@"Cancel"
+                            style:UIAlertActionStyleDestructive
+                            handler:^(UIAlertAction * _Nonnull action)
+                            {
+                              
+                            }];
+  [controler addAction:action2];
+  return controler;
 }
 
 

@@ -7,8 +7,9 @@
 //
 
 #import "CViewController.h"
+#import "BViewController.h"
 
-@interface CViewController ()
+@interface CViewController () <UIGestureRecognizerDelegate>
 
 @end
 
@@ -25,11 +26,31 @@
   [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:button];
 
+  self.navigationController.interactivePopGestureRecognizer.delegate = self;
 }
 
 - (void)click {
   NSLog(@"click");
   [self.navigationController popViewControllerAnimated:true];
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+  [self showPop];
+  return NO;
+}
+
+
+- (void)showPop {
+  UIAlertController* alert = [BViewController alertTestView];
+  UIAlertAction* action1 = [UIAlertAction
+                            actionWithTitle:@"OK"
+                            style:UIAlertActionStyleDefault
+                            handler:^(UIAlertAction * _Nonnull action)
+                            {
+                              [self.navigationController popViewControllerAnimated:YES];
+                            }];
+  [alert addAction:action1];
+  [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

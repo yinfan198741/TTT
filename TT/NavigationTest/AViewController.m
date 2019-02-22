@@ -24,6 +24,10 @@
  
   self.title = @"AViewController";
   self.view.backgroundColor = UIColor.redColor;
+  self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+  self.navigationController.navigationBar.backIndicatorImage = [UIImage imageNamed:@"inventory_selected"];
+  self.navigationController.navigationBar.backIndicatorTransitionMaskImage = [UIImage imageNamed:@"inventory_selected"];
+
   UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
   button.layer.borderColor = UIColor.blackColor.CGColor;
   button.layer.borderWidth = 2;
