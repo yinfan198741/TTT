@@ -22,9 +22,9 @@
     [super viewDidLoad];
   
  
-  self.title = @"AViewController";
+  self.title = @"AV";
   self.view.backgroundColor = UIColor.redColor;
-  self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+//  self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
   self.navigationController.navigationBar.backIndicatorImage = [UIImage imageNamed:@"inventory_selected"];
   self.navigationController.navigationBar.backIndicatorTransitionMaskImage = [UIImage imageNamed:@"inventory_selected"];
 
