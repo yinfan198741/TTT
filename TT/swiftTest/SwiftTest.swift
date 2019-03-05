@@ -6,6 +6,57 @@
 //  Copyright © 2018 fanyin. All rights reserved.
 //
 
+
+
+//public func flatMap<S : SequenceType>(
+//  transform: (${GElement}) throws -> S
+//  ) rethrows -> [S.${GElement}] {
+//    var result: [S.${GElement}] = []
+//    for element in self {
+//      result.appendContentsOf(try transform(element))
+//    }
+//    return result
+//}
+//
+//数组flatMap
+//public func flatMap<T>(
+//  @noescape transform: (${GElement}) throws -> T?
+//  ) rethrows -> [T] {
+//  var result: [T] = []
+//  for element in self {
+//                        过滤Nil
+//    if let newElement = try transform(element) {
+//      result.append(newElement)
+//    }
+//  }
+//  return result
+//}
+
+/// If `self == nil`, returns `nil`.
+/// Otherwise, returns `f(self!)`.
+//public func map<U>(@noescape f: (Wrapped) throws -> U)
+//  rethrows -> U? {
+//    switch self {
+//    case .Some(let y):
+//      return .Some(try f(y))
+//    case .None:
+//      return .None
+//    }
+//}
+//
+///// Returns `nil` if `self` is `nil`,
+///// `f(self!)` otherwise.
+//@warn_unused_result
+//public func flatMap<U>(@noescape f: (Wrapped) throws -> U?)
+//  rethrows -> U? {
+//    switch self {
+//    case .Some(let y):
+//      return try f(y)
+//    case .None:
+//      return .None
+//    }
+//}
+
 import Foundation
 import UIKit
 
@@ -19,13 +70,14 @@ internal class  MyTabviewVC: UITableViewController ,UIImagePickerControllerDeleg
   private var source:[(String , action)] = []
   
   override func viewDidLoad() {
-    source.append(("Optional", self.Optional))
+    source.append(("Optional", self.OptionalTest))
     source.append(("Init", self.initTest))
     source.append(("Map_array", self.arrayMapTest))
     source.append(("arrayFilterTest", self.arrayFilterTest))
     source.append(("Reduce", self.arrayReduce))
     source.append(("protoloverride", self.protoloverride))
     source.append(("imageChooser", self.imageChooser))
+    source.append(("sequence", self.sequenceTest))
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,8 +95,85 @@ internal class  MyTabviewVC: UITableViewController ,UIImagePickerControllerDeleg
     
   }
   
-  func Optional() {
-    print("Optional")
+  
+  func returnOptionTest() -> Int? {
+      return nil
+  }
+  
+  func returnOptionTestFive() -> Int? {
+    return 5
+  }
+  
+  func returnOptionTestFiveOp() -> Int? {
+    let fiveOp:Int? = 5
+    return fiveOp
+  }
+  
+  func returnOptionTestFiveOpOp() -> Int?? {
+    let fiveOp:Int? = 5
+    let opp = Optional(fiveOp)
+    return opp
+  }
+  
+  func OptionalTest() {
+    print("OptionalTest")
+    
+  let nilOption = returnOptionTest()
+    
+  print(nilOption)
+    print(nilOption == Optional.none)
+    
+    let nilOption5 = returnOptionTestFive()
+    print(nilOption5)
+    
+    let nilOption5op = returnOptionTestFiveOp()
+    print(nilOption5op)
+    
+    let nilOption5opop = returnOptionTestFiveOpOp()
+    print(nilOption5opop)
+    
+         let possibleNumber: Int? = Int("42")
+         let possibleSquare = possibleNumber.map { $0 * $0 }
+         print(possibleSquare)
+         // Prints "Optional(1764)"
+    
+         let noNumber: Int? = nil
+         let noSquare = noNumber.map { $0 * $0 }
+         print(noSquare)
+//    print(nil)
+// https://blog.csdn.net/weixin_34221276/article/details/87617346
+    
+  
+    
+    let num1: Int? = nil
+     let bnum = num1.map { $0 * 2 }
+    print(bnum)
+    
+    
+  
+    
+    let noSquare1 = noNumber.flatMap{$0*$0}
+    print(noSquare1)
+    
+    let avatarURL: String? = "http://blog.liushuaiko.be/images/avatar.PNG"
+    let urlMap = avatarURL.map { str -> NSURL? in
+      let url = NSURL(string: str)
+      return url
+    }
+    
+    print(urlMap)
+    
+    let urlFlatMapc = avatarURL.flatMap {_ in
+      return 0
+    }
+    
+    let urlFlatMap = avatarURL.flatMap { str -> NSURL? in
+      let url = NSURL(string: str)
+      return url
+    }
+    
+    print(urlFlatMap)
+    
     
     let s: String? = "abc"
     //返回一个问号
@@ -101,6 +230,13 @@ internal class  MyTabviewVC: UITableViewController ,UIImagePickerControllerDeleg
      print(bb.a);
 //    print("\(type(of: bb.a))\(bb.a)");
 //    print("\(type(of: bb.a as! Double))\(bb.a as! Double)");
+  }
+  
+  
+  func sequenceTest()  {
+    print("sequenceTest")
+    let bt: BookTest = BookTest()
+    bt.Test()
   }
   
   func imageChooser() {
@@ -286,54 +422,7 @@ func changeC() {
 
 
 
-//public func flatMap<S : SequenceType>(
-//  transform: (${GElement}) throws -> S
-//  ) rethrows -> [S.${GElement}] {
-//    var result: [S.${GElement}] = []
-//    for element in self {
-//      result.appendContentsOf(try transform(element))
-//    }
-//    return result
-//}
-//
-//数组flatMap
-//public func flatMap<T>(
-//  @noescape transform: (${GElement}) throws -> T?
-//  ) rethrows -> [T] {
-//  var result: [T] = []
-//  for element in self {
-//                        过滤Nil
-//    if let newElement = try transform(element) {
-//      result.append(newElement)
-//    }
-//  }
-//  return result
-//}
 
-/// If `self == nil`, returns `nil`.
-/// Otherwise, returns `f(self!)`.
-//public func map<U>(@noescape f: (Wrapped) throws -> U)
-//  rethrows -> U? {
-//    switch self {
-//    case .Some(let y):
-//      return .Some(try f(y))
-//    case .None:
-//      return .None
-//    }
-//}
-//
-///// Returns `nil` if `self` is `nil`,
-///// `f(self!)` otherwise.
-//@warn_unused_result
-//public func flatMap<U>(@noescape f: (Wrapped) throws -> U?)
-//  rethrows -> U? {
-//    switch self {
-//    case .Some(let y):
-//      return try f(y)
-//    case .None:
-//      return .None
-//    }
-//}
 
 
 

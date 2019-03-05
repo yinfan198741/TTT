@@ -92,24 +92,24 @@
 + (void)load {
     //-- Exchange the original implementation with our custom one.
     
-    Method instanceMethodPush = class_getInstanceMethod(self, @selector(pushViewController:animated:));
-    Method safePushMethod = class_getInstanceMethod(self, @selector(safePushViewController:animated:));
-    method_exchangeImplementations(instanceMethodPush, safePushMethod);
-
-    Method didShowVC_Ani = class_getInstanceMethod(self, @selector(didShowViewController:animated:));
-    Method safeDidShowVC_Ani = class_getInstanceMethod(self, @selector(safeDidShowViewController:animated:));
-    method_exchangeImplementations(didShowVC_Ani, safeDidShowVC_Ani);
-
-    Method popVCAni = class_getInstanceMethod(self, @selector(popViewControllerAnimated:));
-    Method safePopAni = class_getInstanceMethod(self, @selector(safePopViewControllerAnimated:));
-    method_exchangeImplementations(popVCAni, safePopAni);
-
-    Method popRoot = class_getInstanceMethod(self, @selector(popToRootViewControllerAnimated:));
-    Method saftPopRoot = class_getInstanceMethod(self, @selector(safePopToRootViewControllerAnimated:));
-    method_exchangeImplementations(popRoot, saftPopRoot);
-
-    Method pop = class_getInstanceMethod(self, @selector(popToViewController:animated:));
-    Method safePop = class_getInstanceMethod(self, @selector(safePopToViewController:animated:));
-    method_exchangeImplementations(pop, safePop);
+//    Method instanceMethodPush = class_getInstanceMethod(self, @selector(pushViewController:animated:));
+//    Method safePushMethod = class_getInstanceMethod(self, @selector(safePushViewController:animated:));
+//    method_exchangeImplementations(instanceMethodPush, safePushMethod);
+//
+//    Method didShowVC_Ani = class_getInstanceMethod(self, @selector(didShowViewController:animated:));
+//    Method safeDidShowVC_Ani = class_getInstanceMethod(self, @selector(safeDidShowViewController:animated:));
+//    method_exchangeImplementations(didShowVC_Ani, safeDidShowVC_Ani);
+//
+//    Method popVCAni = class_getInstanceMethod(self, @selector(popViewControllerAnimated:));
+//    Method safePopAni = class_getInstanceMethod(self, @selector(safePopViewControllerAnimated:));
+//    method_exchangeImplementations(popVCAni, safePopAni);
+//
+//    Method popRoot = class_getInstanceMethod(self, @selector(popToRootViewControllerAnimated:));
+//    Method saftPopRoot = class_getInstanceMethod(self, @selector(safePopToRootViewControllerAnimated:));
+//    method_exchangeImplementations(popRoot, saftPopRoot);
+//
+//    Method pop = class_getInstanceMethod(self, @selector(popToViewController:animated:));
+//    Method safePop = class_getInstanceMethod(self, @selector(safePopToViewController:animated:));
+//    method_exchangeImplementations(pop, safePop);
 }
 @end

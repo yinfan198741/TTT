@@ -25,6 +25,7 @@
 #import "AppearanceViewController.h"
 #import "NSObject+PPrint.h"
 #import "AViewController.h"
+#import "HookTableViewController.h"
 
 
 @interface ViewController ()
@@ -167,6 +168,11 @@ UILabel* _la;
   }];
   [self.source addObject:AppearanceViewController];
 
+  
+  TabItem* hookTest = [TabItem CreateItem:@"hookTest" action:^{
+    [self hookTest];
+  }];
+  [self.source addObject:hookTest];
   
 }
 
@@ -364,13 +370,19 @@ UILabel* _la;
 }
 
 -(void)AppearanceViewController {
-  
   NSLog(@"AppearanceViewController");
   AppearanceViewController * vc = [[AppearanceViewController alloc] init];
   [self presentViewController:vc animated:YES completion:nil];
   
 }
 
+
+- (void)hookTest {
+  NSLog(@"hookTest");
+  HookTableViewController * vc = [[HookTableViewController alloc] init];
+  UINavigationController* nv = [[UINavigationController alloc] initWithRootViewController:vc];
+ [self presentViewController:nv animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
