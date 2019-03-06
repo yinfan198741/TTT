@@ -81,7 +81,7 @@ internal class  MyTabviewVC: UITableViewController ,UIImagePickerControllerDeleg
     source.append(("autoLayoutVC", self.autoLayoutVCE))
     source.append(("protocal", self.protocal))
     source.append(("FunctionVC", self.FunctionVC))
-    source.append(("sequence", self.sequenceTest))
+    source.append(("swiftCallOc", self.swiftCallOc))
     source.append(("sequence", self.sequenceTest))
     
   }
@@ -276,6 +276,12 @@ internal class  MyTabviewVC: UITableViewController ,UIImagePickerControllerDeleg
   func FunctionVC() {
     let fc = TTS.FunctionVC()
     self.present(fc, animated: false, completion: nil)
+  }
+  
+  func swiftCallOc()  {
+    print("swiftCallOc Test")
+    let swiftcallOc = TTS.swiftCallOc()
+    swiftcallOc.callgetreturnNil()
   }
   
   
