@@ -46,15 +46,16 @@
 //
 ///// Returns `nil` if `self` is `nil`,
 ///// `f(self!)` otherwise.
-//@warn_unused_result
-//public func flatMap<U>(@noescape f: (Wrapped) throws -> U?)
-//  rethrows -> U? {
-//    switch self {
-//    case .Some(let y):
-//      return try f(y)
-//    case .None:
-//      return .None
-//    }
+//@_inlineable
+//public func flatMap<U>(
+//  _ transform: (Wrapped) throws -> U?
+//  ) rethrows -> U? {
+//  switch self {
+//  case .some(let y):
+//    return try transform(y)
+//  case .none:
+//    return .none
+//  }
 //}
 
 import Foundation
@@ -77,7 +78,12 @@ internal class  MyTabviewVC: UITableViewController ,UIImagePickerControllerDeleg
     source.append(("Reduce", self.arrayReduce))
     source.append(("protoloverride", self.protoloverride))
     source.append(("imageChooser", self.imageChooser))
+    source.append(("autoLayoutVC", self.autoLayoutVCE))
+    source.append(("protocal", self.protocal))
+    source.append(("FunctionVC", self.FunctionVC))
     source.append(("sequence", self.sequenceTest))
+    source.append(("sequence", self.sequenceTest))
+    
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,6 +123,23 @@ internal class  MyTabviewVC: UITableViewController ,UIImagePickerControllerDeleg
   
   func OptionalTest() {
     print("OptionalTest")
+    
+    let x : Int? = 5
+    let y : Int? = x.map {
+      if $0 < 10 {
+        return 0 // Cannot return nil
+       // return nil // Cannot return nil
+      } else { return $0 }
+    }
+    
+    let y2 : Int? = x.flatMap {
+      if $0 < 10 {
+//        return 0 // Cannot return nil
+         return nil // Cannot return nil
+      } else { return $0 }
+    }
+    print(y)
+    print(y2)
     
   let nilOption = returnOptionTest()
     
@@ -238,6 +261,23 @@ internal class  MyTabviewVC: UITableViewController ,UIImagePickerControllerDeleg
     let bt: BookTest = BookTest()
     bt.Test()
   }
+  
+  func autoLayoutVCE() {
+    let layout = autoLayoutVC()
+    self.present(layout, animated: true, completion: nil)
+  }
+  
+  
+  func protocal()  {
+    print("protocal")
+    let pt = protocalTest()
+    pt.logBar()
+  }
+  func FunctionVC() {
+    let fc = TTS.FunctionVC()
+    self.present(fc, animated: false, completion: nil)
+  }
+  
   
   func imageChooser() {
 //    let chooser = ImagePickerHelper()

@@ -12,7 +12,7 @@
 #import "Test.h"
 #import "PushViewController.h"
 #import "TabItem.h"
-#import "TT-Swift.h"
+#import "TTS-Swift.h"
 #import "CrashViewController.h"
 #import "CallTest.h"
 #import "ThreadViewController.h"

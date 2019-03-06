@@ -42,13 +42,13 @@ class Base: UIView {
   
   func initTest()  {
     // Works fine
-    let instanceA = ClassA(array: [1, 2])
+//    let instanceA = ClassAA(array: [1, 2])
     // Compile error when override is added:
     // error: Initializer does not override a designated initializer from its superclass
     // note: attempt to override convenience initializer here
     //     convenience init(array: [T]) {
     //                 ^
-    let instanceB = ClassB(array: [1, 2])
+//    let instanceB = ClassBB(array: [1, 2])
     
 //    let aa = T(name: "aa")
 //    let bb = T(name: nil)
@@ -70,7 +70,7 @@ class Base: UIView {
 }
 
 
-class ClassA<T> {
+class CClassA<T> {
   
   // This array would be private and not visible from ClassB
   var array: [T]?
@@ -83,7 +83,7 @@ class ClassA<T> {
   }
 }
 
-class ClassB<T>: ClassA<T> {
+class ClassB<T>: CClassA<T> {
   
   var anotherArray: [T]?
   
@@ -115,13 +115,13 @@ extension T {
 
 
 
-class A {
+private class AA {
   init(string:String) {
     print(string)
   }
 }
 
-class B : A {
+private class BB : AA {
   var newVariable:String
   
   init() {
