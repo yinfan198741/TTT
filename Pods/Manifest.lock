@@ -1,16 +1,36 @@
 PODS:
   - GTMBase64 (1.0.1)
+  - Masonry (0.6.4)
+  - ReactiveCocoa (8.0.2):
+    - ReactiveSwift (~> 4.0)
+  - ReactiveObjC (3.1.0)
+  - ReactiveSwift (4.0.0):
+    - Result (~> 4.0)
+  - Result (4.1.0)
 
 DEPENDENCIES:
   - GTMBase64 (~> 1.0.0)
+  - Masonry (~> 0.6.4)
+  - ReactiveCocoa
+  - ReactiveObjC
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GTMBase64
+    - Masonry
+    - ReactiveCocoa
+    - ReactiveObjC
+    - ReactiveSwift
+    - Result
 
 SPEC CHECKSUMS:
   GTMBase64: f0f91be06a7a20b84c8e4fee30c0430395091d82
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  ReactiveCocoa: fbd26e9ba60e98417ee47433e59465a98ed9da0f
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: ad277a0af693809f631c940bcffd1a548854aaf8
+PODFILE CHECKSUM: 665c7fad7b3fa0dcf0c1e53e5e54f3cc2ac87ba3
 
 COCOAPODS: 1.5.3

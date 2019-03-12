@@ -10,7 +10,7 @@
 		669D2D05F691ACF9D0C74F3B /* libPods-TT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98301CD3BADF82F90215CEC1 /* libPods-TT.a */; };
 		A7B49F5821188E7F0081D199 /* HookCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F5721188E7F0081D199 /* HookCTests.swift */; };
 		A7B49F6C21188F0F0081D199 /* envTest.c in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6B21188F0F0081D199 /* envTest.c */; };
-		A7B49F6F211898130081D199 /* SwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6E211898130081D199 /* SwiftTest.swift */; };
+		A7B49F6F211898130081D199 /* SwiftEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6E211898130081D199 /* SwiftEntryVC.swift */; };
 		A7B49F7B211B31BD0081D199 /* Test.c in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F7A211B31BD0081D199 /* Test.c */; };
 		A7B49F82211B359B0081D199 /* DebugConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7B49F7F211B359B0081D199 /* DebugConfig.xcconfig */; };
 		A7B49F83211B359B0081D199 /* Common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7B49F80211B359B0081D199 /* Common.xcconfig */; };
@@ -24,8 +24,34 @@
 		A7D8FA881E9B2BBA00ED8D03 /* TTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA871E9B2BBA00ED8D03 /* TTTests.m */; };
 		A7D8FA931E9B2BBB00ED8D03 /* TTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */; };
 		B50B22F7218FECCB006CFC28 /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50B22F6218FECCB006CFC28 /* ThreadViewController.m */; };
+		B50EE5682237547E00DAA18A /* Example3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50EE5502237547D00DAA18A /* Example3ViewController.xib */; };
+		B50EE5692237547E00DAA18A /* image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B50EE5512237547D00DAA18A /* image.bundle */; };
+		B50EE56A2237547E00DAA18A /* BundleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EE5522237547D00DAA18A /* BundleViewController.m */; };
+		B50EE56B2237547E00DAA18A /* Example1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50EE5542237547D00DAA18A /* Example1ViewController.xib */; };
+		B50EE56E2237547E00DAA18A /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = B50EE55A2237547D00DAA18A /* left.png */; };
+		B50EE56F2237547E00DAA18A /* Example3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EE55B2237547D00DAA18A /* Example3ViewController.m */; };
+		B50EE5702237547E00DAA18A /* Example1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EE55D2237547D00DAA18A /* Example1ViewController.m */; };
+		B50EE5712237547E00DAA18A /* Example2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EE55F2237547D00DAA18A /* Example2ViewController.m */; };
+		B50EE5722237547E00DAA18A /* Example4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EE5602237547E00DAA18A /* Example4ViewController.m */; };
+		B50EE5752237547E00DAA18A /* Example2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50EE5662237547E00DAA18A /* Example2ViewController.xib */; };
+		B50EE5762237547E00DAA18A /* Example4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50EE5672237547E00DAA18A /* Example4ViewController.xib */; };
+		B50EE58C223762AE00DAA18A /* images in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58A223762AE00DAA18A /* images */; };
+		B50EE58D223762AE00DAA18A /* images2 in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58B223762AE00DAA18A /* images2 */; };
+		B50EE58F2237893D00DAA18A /* memory.png in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58E2237893C00DAA18A /* memory.png */; };
 		B52A58072180109600E106E9 /* assetTest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52A58062180109600E106E9 /* assetTest.xcassets */; };
 		B53F202121AFE726006A8D3F /* HashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F202021AFE726006A8D3F /* HashViewController.m */; };
+		B551282B22201AE500374029 /* SubBackNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B551281F22201AE300374029 /* SubBackNaviViewController.m */; };
+		B551282C22201AE500374029 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B551282322201AE400374029 /* CViewController.m */; };
+		B551282D22201AE500374029 /* NavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B551282622201AE500374029 /* NavigationDelegate.m */; };
+		B551282E22201AE500374029 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B551282722201AE500374029 /* BViewController.m */; };
+		B551282F22201AE500374029 /* NavigationBarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B551282822201AE500374029 /* NavigationBarDelegate.m */; };
+		B551283022201AE500374029 /* SubBackNaviViewController+Back.m in Sources */ = {isa = PBXBuildFile; fileRef = B551282922201AE500374029 /* SubBackNaviViewController+Back.m */; };
+		B551283122201AE500374029 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B551282A22201AE500374029 /* AViewController.m */; };
+		B551283922201EF400374029 /* ImageChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551283722201EF300374029 /* ImageChooser.swift */; };
+		B551283A22201EF400374029 /* ImageHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B551283822201EF300374029 /* ImageHeaderViewController.m */; };
+		B551284022201F0C00374029 /* FLAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = B551283C22201F0C00374029 /* FLAppearance.m */; };
+		B551284122201F0C00374029 /* AppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B551283D22201F0C00374029 /* AppearanceViewController.m */; };
+		B551284622201F4D00374029 /* NSObject+PPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = B551284322201F4D00374029 /* NSObject+PPrint.m */; };
 		B55B3FBC21B0DABC005CADF3 /* citydata.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55B3FBB21B0DABC005CADF3 /* citydata.plist */; };
 		B55B3FCD21B1349D005CADF3 /* HookC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55B3FC421B1349C005CADF3 /* HookC.framework */; };
 		B55B3FD421B1349D005CADF3 /* HookCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B55B3FD321B1349D005CADF3 /* HookCTests.m */; };
@@ -53,6 +79,35 @@
 		B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963721A3E4FA0064A81D /* LLDBViewController.m */; };
 		B59D963C21A4F9720064A81D /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963B21A4F9720064A81D /* AnimationViewController.m */; };
 		B5A9FBF8217758870083D5E0 /* SwiftInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9FBF7217758870083D5E0 /* SwiftInit.swift */; };
+		B5BFE3B9222E1C5300B6CFAC /* HookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3B8222E1C5300B6CFAC /* HookTableViewController.m */; };
+		B5BFE3BC222E209800B6CFAC /* CatelogHookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3BB222E209800B6CFAC /* CatelogHookViewController.m */; };
+		B5BFE3BF222E274500B6CFAC /* UIImageView+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3BE222E274500B6CFAC /* UIImageView+Theme.m */; };
+		B5BFE3C1222E59AC00B6CFAC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3C0222E59AC00B6CFAC /* Book.swift */; };
+		B5BFE3C5222E939900B6CFAC /* Moniter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3C3222E939900B6CFAC /* Moniter.m */; };
+		B5BFE3C9222E966400B6CFAC /* FunctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3C7222E966400B6CFAC /* FunctionVC.swift */; };
+		B5BFE3CA222E966400B6CFAC /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3C8222E966400B6CFAC /* BinarySearch.swift */; };
+		B5BFE3D5222E96BA00B6CFAC /* autoCellAutoSizefalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3CC222E96BA00B6CFAC /* autoCellAutoSizefalse.swift */; };
+		B5BFE3D6222E96BA00B6CFAC /* tabcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3CD222E96BA00B6CFAC /* tabcell.swift */; };
+		B5BFE3D7222E96BB00B6CFAC /* autoCellFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3CE222E96BA00B6CFAC /* autoCellFour.swift */; };
+		B5BFE3D8222E96BB00B6CFAC /* autoCellFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3CF222E96BA00B6CFAC /* autoCellFive.swift */; };
+		B5BFE3D9222E96BB00B6CFAC /* autoCellSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3D0222E96BA00B6CFAC /* autoCellSeven.swift */; };
+		B5BFE3DA222E96BB00B6CFAC /* autoLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3D1222E96BA00B6CFAC /* autoLayoutVC.swift */; };
+		B5BFE3DB222E96BB00B6CFAC /* autoCellSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3D2222E96BA00B6CFAC /* autoCellSix.swift */; };
+		B5BFE3DC222E96BB00B6CFAC /* tabcellTow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3D3222E96BA00B6CFAC /* tabcellTow.swift */; };
+		B5BFE3DD222E96BB00B6CFAC /* autoCellThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3D4222E96BA00B6CFAC /* autoCellThree.swift */; };
+		B5BFE3E4222E96F300B6CFAC /* GenericBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3DF222E96F300B6CFAC /* GenericBox.swift */; };
+		B5BFE3E5222E96F300B6CFAC /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3E0222E96F300B6CFAC /* Sequence.swift */; };
+		B5BFE3E6222E96F300B6CFAC /* protocalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3E1222E96F300B6CFAC /* protocalVC.swift */; };
+		B5BFE3E7222E96F300B6CFAC /* protocalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3E2222E96F300B6CFAC /* protocalTest.swift */; };
+		B5BFE3E8222E96F300B6CFAC /* GenericTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3E3222E96F300B6CFAC /* GenericTest.swift */; };
+		B5BFE3EE222E972800B6CFAC /* functionPrograme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3E9222E972700B6CFAC /* functionPrograme.swift */; };
+		B5BFE3EF222E972800B6CFAC /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3EA222E972700B6CFAC /* enumTest.swift */; };
+		B5BFE3F0222E972800B6CFAC /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3EB222E972700B6CFAC /* curry.swift */; };
+		B5BFE3F1222E972800B6CFAC /* perfTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3EC222E972800B6CFAC /* perfTest.swift */; };
+		B5BFE3F2222E972800B6CFAC /* sstest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3ED222E972800B6CFAC /* sstest.swift */; };
+		B5BFE3F4222F64F700B6CFAC /* mutating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3F3222F64F700B6CFAC /* mutating.swift */; };
+		B5BFE3F8222F688700B6CFAC /* OCCallTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3F7222F688700B6CFAC /* OCCallTester.m */; };
+		B5BFE3FA222F68F200B6CFAC /* swiftCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3F9222F68F200B6CFAC /* swiftCaller.swift */; };
 		B5C8D566214A14F2007BF736 /* swiftObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D565214A14F2007BF736 /* swiftObserver.swift */; };
 		B5C8D569214A3645007BF736 /* swiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D568214A3645007BF736 /* swiftVC.swift */; };
 		B5C8D575214F5C54007BF736 /* SwiftMapFlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D574214F5C54007BF736 /* SwiftMapFlatMap.swift */; };
@@ -158,7 +213,7 @@
 		A7B49F6A21188F0F0081D199 /* envTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = envTest.h; sourceTree = "<group>"; };
 		A7B49F6B21188F0F0081D199 /* envTest.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = envTest.c; sourceTree = "<group>"; };
 		A7B49F6D211898130081D199 /* TT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TT-Bridging-Header.h"; sourceTree = "<group>"; };
-		A7B49F6E211898130081D199 /* SwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTest.swift; sourceTree = "<group>"; };
+		A7B49F6E211898130081D199 /* SwiftEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftEntryVC.swift; sourceTree = "<group>"; };
 		A7B49F79211B31B90081D199 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		A7B49F7A211B31BD0081D199 /* Test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Test.c; sourceTree = "<group>"; };
 		A7B49F7F211B359B0081D199 /* DebugConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
@@ -182,9 +237,52 @@
 		A7D8FA941E9B2BBB00ED8D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B50B22F5218FECCB006CFC28 /* ThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
 		B50B22F6218FECCB006CFC28 /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
+		B50EE5502237547D00DAA18A /* Example3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example3ViewController.xib; sourceTree = "<group>"; };
+		B50EE5512237547D00DAA18A /* image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = image.bundle; sourceTree = "<group>"; };
+		B50EE5522237547D00DAA18A /* BundleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleViewController.m; sourceTree = "<group>"; };
+		B50EE5532237547D00DAA18A /* Example3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example3ViewController.h; sourceTree = "<group>"; };
+		B50EE5542237547D00DAA18A /* Example1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1ViewController.xib; sourceTree = "<group>"; };
+		B50EE5592237547D00DAA18A /* Example1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1ViewController.h; sourceTree = "<group>"; };
+		B50EE55A2237547D00DAA18A /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
+		B50EE55B2237547D00DAA18A /* Example3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example3ViewController.m; sourceTree = "<group>"; };
+		B50EE55C2237547D00DAA18A /* BundleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleViewController.h; sourceTree = "<group>"; };
+		B50EE55D2237547D00DAA18A /* Example1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1ViewController.m; sourceTree = "<group>"; };
+		B50EE55E2237547D00DAA18A /* Example2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2ViewController.h; sourceTree = "<group>"; };
+		B50EE55F2237547D00DAA18A /* Example2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example2ViewController.m; sourceTree = "<group>"; };
+		B50EE5602237547E00DAA18A /* Example4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example4ViewController.m; sourceTree = "<group>"; };
+		B50EE5652237547E00DAA18A /* Example4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example4ViewController.h; sourceTree = "<group>"; };
+		B50EE5662237547E00DAA18A /* Example2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example2ViewController.xib; sourceTree = "<group>"; };
+		B50EE5672237547E00DAA18A /* Example4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example4ViewController.xib; sourceTree = "<group>"; };
+		B50EE58A223762AE00DAA18A /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		B50EE58B223762AE00DAA18A /* images2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images2; sourceTree = "<group>"; };
+		B50EE58E2237893C00DAA18A /* memory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memory.png; sourceTree = "<group>"; };
 		B52A58062180109600E106E9 /* assetTest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assetTest.xcassets; sourceTree = "<group>"; };
 		B53F201F21AFE726006A8D3F /* HashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashViewController.h; sourceTree = "<group>"; };
 		B53F202021AFE726006A8D3F /* HashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HashViewController.m; sourceTree = "<group>"; };
+		B551281D22201AE300374029 /* BViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
+		B551281E22201AE300374029 /* CViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
+		B551281F22201AE300374029 /* SubBackNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubBackNaviViewController.m; sourceTree = "<group>"; };
+		B551282022201AE400374029 /* AViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
+		B551282122201AE400374029 /* NavigationBarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarDelegate.h; sourceTree = "<group>"; };
+		B551282222201AE400374029 /* SubBackNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubBackNaviViewController.h; sourceTree = "<group>"; };
+		B551282322201AE400374029 /* CViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
+		B551282422201AE400374029 /* NavigationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationDelegate.h; sourceTree = "<group>"; };
+		B551282522201AE500374029 /* SubBackNaviViewController+Back.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SubBackNaviViewController+Back.h"; sourceTree = "<group>"; };
+		B551282622201AE500374029 /* NavigationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationDelegate.m; sourceTree = "<group>"; };
+		B551282722201AE500374029 /* BViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
+		B551282822201AE500374029 /* NavigationBarDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarDelegate.m; sourceTree = "<group>"; };
+		B551282922201AE500374029 /* SubBackNaviViewController+Back.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SubBackNaviViewController+Back.m"; sourceTree = "<group>"; };
+		B551282A22201AE500374029 /* AViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
+		B551283622201EF300374029 /* ImageHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHeaderViewController.h; sourceTree = "<group>"; };
+		B551283722201EF300374029 /* ImageChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageChooser.swift; sourceTree = "<group>"; };
+		B551283822201EF300374029 /* ImageHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHeaderViewController.m; sourceTree = "<group>"; };
+		B551283C22201F0C00374029 /* FLAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAppearance.m; sourceTree = "<group>"; };
+		B551283D22201F0C00374029 /* AppearanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceViewController.m; sourceTree = "<group>"; };
+		B551283E22201F0C00374029 /* FLAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAppearance.h; sourceTree = "<group>"; };
+		B551283F22201F0C00374029 /* AppearanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceViewController.h; sourceTree = "<group>"; };
+		B551284322201F4D00374029 /* NSObject+PPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PPrint.m"; sourceTree = "<group>"; };
+		B551284422201F4D00374029 /* NSObject+PPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PPrint.h"; sourceTree = "<group>"; };
+		B551284522201F4D00374029 /* NSObject+PropertyPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertyPrint.h"; sourceTree = "<group>"; };
 		B55B3FBB21B0DABC005CADF3 /* citydata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydata.plist; sourceTree = "<group>"; };
 		B55B3FBD21B133B5005CADF3 /* HookC */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HookC; sourceTree = "<group>"; };
 		B55B3FC421B1349C005CADF3 /* HookC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HookC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +322,40 @@
 		B5A9FBF7217758870083D5E0 /* SwiftInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftInit.swift; sourceTree = "<group>"; };
 		B5A9FC1B2179CD000083D5E0 /* TT copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TT copy-Info.plist"; path = "/Users/yinfan/Desktop/Code/yinfangit/tt/TTT/TT copy-Info.plist"; sourceTree = "<absolute>"; };
 		B5A9FC3E2179CD190083D5E0 /* TT copy 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TT copy 2-Info.plist"; path = "/Users/yinfan/Desktop/Code/yinfangit/tt/TTT/TT copy 2-Info.plist"; sourceTree = "<absolute>"; };
+		B5BFE3B7222E1C5300B6CFAC /* HookTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookTableViewController.h; sourceTree = "<group>"; };
+		B5BFE3B8222E1C5300B6CFAC /* HookTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookTableViewController.m; sourceTree = "<group>"; };
+		B5BFE3BA222E209800B6CFAC /* CatelogHookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatelogHookViewController.h; sourceTree = "<group>"; };
+		B5BFE3BB222E209800B6CFAC /* CatelogHookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatelogHookViewController.m; sourceTree = "<group>"; };
+		B5BFE3BD222E274500B6CFAC /* UIImageView+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Theme.h"; sourceTree = "<group>"; };
+		B5BFE3BE222E274500B6CFAC /* UIImageView+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Theme.m"; sourceTree = "<group>"; };
+		B5BFE3C0222E59AC00B6CFAC /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		B5BFE3C3222E939900B6CFAC /* Moniter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Moniter.m; sourceTree = "<group>"; };
+		B5BFE3C4222E939900B6CFAC /* Moniter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Moniter.h; sourceTree = "<group>"; };
+		B5BFE3C7222E966400B6CFAC /* FunctionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionVC.swift; sourceTree = "<group>"; };
+		B5BFE3C8222E966400B6CFAC /* BinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
+		B5BFE3CC222E96BA00B6CFAC /* autoCellAutoSizefalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = autoCellAutoSizefalse.swift; sourceTree = "<group>"; };
+		B5BFE3CD222E96BA00B6CFAC /* tabcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabcell.swift; sourceTree = "<group>"; };
+		B5BFE3CE222E96BA00B6CFAC /* autoCellFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = autoCellFour.swift; sourceTree = "<group>"; };
+		B5BFE3CF222E96BA00B6CFAC /* autoCellFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = autoCellFive.swift; sourceTree = "<group>"; };
+		B5BFE3D0222E96BA00B6CFAC /* autoCellSeven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = autoCellSeven.swift; sourceTree = "<group>"; };
+		B5BFE3D1222E96BA00B6CFAC /* autoLayoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = autoLayoutVC.swift; sourceTree = "<group>"; };
+		B5BFE3D2222E96BA00B6CFAC /* autoCellSix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = autoCellSix.swift; sourceTree = "<group>"; };
+		B5BFE3D3222E96BA00B6CFAC /* tabcellTow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabcellTow.swift; sourceTree = "<group>"; };
+		B5BFE3D4222E96BA00B6CFAC /* autoCellThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = autoCellThree.swift; sourceTree = "<group>"; };
+		B5BFE3DF222E96F300B6CFAC /* GenericBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBox.swift; sourceTree = "<group>"; };
+		B5BFE3E0222E96F300B6CFAC /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		B5BFE3E1222E96F300B6CFAC /* protocalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = protocalVC.swift; sourceTree = "<group>"; };
+		B5BFE3E2222E96F300B6CFAC /* protocalTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = protocalTest.swift; sourceTree = "<group>"; };
+		B5BFE3E3222E96F300B6CFAC /* GenericTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTest.swift; sourceTree = "<group>"; };
+		B5BFE3E9222E972700B6CFAC /* functionPrograme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functionPrograme.swift; sourceTree = "<group>"; };
+		B5BFE3EA222E972700B6CFAC /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
+		B5BFE3EB222E972700B6CFAC /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
+		B5BFE3EC222E972800B6CFAC /* perfTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = perfTest.swift; sourceTree = "<group>"; };
+		B5BFE3ED222E972800B6CFAC /* sstest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sstest.swift; sourceTree = "<group>"; };
+		B5BFE3F3222F64F700B6CFAC /* mutating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mutating.swift; sourceTree = "<group>"; };
+		B5BFE3F6222F688700B6CFAC /* OCCallTester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCCallTester.h; sourceTree = "<group>"; };
+		B5BFE3F7222F688700B6CFAC /* OCCallTester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCCallTester.m; sourceTree = "<group>"; };
+		B5BFE3F9222F68F200B6CFAC /* swiftCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftCaller.swift; sourceTree = "<group>"; };
 		B5C8D565214A14F2007BF736 /* swiftObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftObserver.swift; sourceTree = "<group>"; };
 		B5C8D568214A3645007BF736 /* swiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftVC.swift; sourceTree = "<group>"; };
 		B5C8D574214F5C54007BF736 /* SwiftMapFlatMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMapFlatMap.swift; sourceTree = "<group>"; };
@@ -395,6 +527,17 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				B50EE54F223753DF00DAA18A /* BundleTest */,
+				B5BFE3F5222F686600B6CFAC /* swiftCallOc */,
+				B5BFE3DE222E96F300B6CFAC /* protocal */,
+				B5BFE3CB222E96BA00B6CFAC /* autoCell */,
+				B5BFE3C6222E966400B6CFAC /* swiftFunction */,
+				B5BFE3C2222E939900B6CFAC /* Moniter */,
+				B5BFE3B6222E1C3600B6CFAC /* HookTest */,
+				B551284222201F4D00374029 /* NavigationBar */,
+				B551283B22201F0C00374029 /* Appearance */,
+				B551283522201EF300374029 /* ImageHeader */,
+				B551283222201AF100374029 /* NavigationTest */,
 				B56FBC6121E44697003694E1 /* RACTest */,
 				B55B405D21B61BCB005CADF3 /* dyldCall */,
 				B55B3FBA21B0DA7E005CADF3 /* Resource */,
@@ -459,6 +602,32 @@
 			path = ThreadTest;
 			sourceTree = "<group>";
 		};
+		B50EE54F223753DF00DAA18A /* BundleTest */ = {
+			isa = PBXGroup;
+			children = (
+				B50EE58E2237893C00DAA18A /* memory.png */,
+				B50EE58A223762AE00DAA18A /* images */,
+				B50EE58B223762AE00DAA18A /* images2 */,
+				B50EE5592237547D00DAA18A /* Example1ViewController.h */,
+				B50EE55D2237547D00DAA18A /* Example1ViewController.m */,
+				B50EE5542237547D00DAA18A /* Example1ViewController.xib */,
+				B50EE55E2237547D00DAA18A /* Example2ViewController.h */,
+				B50EE55F2237547D00DAA18A /* Example2ViewController.m */,
+				B50EE5662237547E00DAA18A /* Example2ViewController.xib */,
+				B50EE5532237547D00DAA18A /* Example3ViewController.h */,
+				B50EE55B2237547D00DAA18A /* Example3ViewController.m */,
+				B50EE5502237547D00DAA18A /* Example3ViewController.xib */,
+				B50EE5652237547E00DAA18A /* Example4ViewController.h */,
+				B50EE5602237547E00DAA18A /* Example4ViewController.m */,
+				B50EE5672237547E00DAA18A /* Example4ViewController.xib */,
+				B50EE5512237547D00DAA18A /* image.bundle */,
+				B50EE55A2237547D00DAA18A /* left.png */,
+				B50EE55C2237547D00DAA18A /* BundleViewController.h */,
+				B50EE5522237547D00DAA18A /* BundleViewController.m */,
+			);
+			path = BundleTest;
+			sourceTree = "<group>";
+		};
 		B53F202221AFE731006A8D3F /* Hash */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +635,59 @@
 				B53F202021AFE726006A8D3F /* HashViewController.m */,
 			);
 			path = Hash;
+			sourceTree = "<group>";
+		};
+		B551283222201AF100374029 /* NavigationTest */ = {
+			isa = PBXGroup;
+			children = (
+				B551282022201AE400374029 /* AViewController.h */,
+				B551282A22201AE500374029 /* AViewController.m */,
+				B551281D22201AE300374029 /* BViewController.h */,
+				B551282722201AE500374029 /* BViewController.m */,
+				B551281E22201AE300374029 /* CViewController.h */,
+				B551282322201AE400374029 /* CViewController.m */,
+				B551282122201AE400374029 /* NavigationBarDelegate.h */,
+				B551282822201AE500374029 /* NavigationBarDelegate.m */,
+				B551282422201AE400374029 /* NavigationDelegate.h */,
+				B551282622201AE500374029 /* NavigationDelegate.m */,
+				B551282222201AE400374029 /* SubBackNaviViewController.h */,
+				B551281F22201AE300374029 /* SubBackNaviViewController.m */,
+				B551282522201AE500374029 /* SubBackNaviViewController+Back.h */,
+				B551282922201AE500374029 /* SubBackNaviViewController+Back.m */,
+			);
+			name = NavigationTest;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		B551283522201EF300374029 /* ImageHeader */ = {
+			isa = PBXGroup;
+			children = (
+				B551283622201EF300374029 /* ImageHeaderViewController.h */,
+				B551283722201EF300374029 /* ImageChooser.swift */,
+				B551283822201EF300374029 /* ImageHeaderViewController.m */,
+			);
+			path = ImageHeader;
+			sourceTree = "<group>";
+		};
+		B551283B22201F0C00374029 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				B551283C22201F0C00374029 /* FLAppearance.m */,
+				B551283D22201F0C00374029 /* AppearanceViewController.m */,
+				B551283E22201F0C00374029 /* FLAppearance.h */,
+				B551283F22201F0C00374029 /* AppearanceViewController.h */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		B551284222201F4D00374029 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				B551284322201F4D00374029 /* NSObject+PPrint.m */,
+				B551284422201F4D00374029 /* NSObject+PPrint.h */,
+				B551284522201F4D00374029 /* NSObject+PropertyPrint.h */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		B55B3FBA21B0DA7E005CADF3 /* Resource */ = {
@@ -567,15 +789,91 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
+		B5BFE3B6222E1C3600B6CFAC /* HookTest */ = {
+			isa = PBXGroup;
+			children = (
+				B5BFE3BD222E274500B6CFAC /* UIImageView+Theme.h */,
+				B5BFE3BE222E274500B6CFAC /* UIImageView+Theme.m */,
+				B5BFE3B7222E1C5300B6CFAC /* HookTableViewController.h */,
+				B5BFE3B8222E1C5300B6CFAC /* HookTableViewController.m */,
+				B5BFE3BA222E209800B6CFAC /* CatelogHookViewController.h */,
+				B5BFE3BB222E209800B6CFAC /* CatelogHookViewController.m */,
+			);
+			path = HookTest;
+			sourceTree = "<group>";
+		};
+		B5BFE3C2222E939900B6CFAC /* Moniter */ = {
+			isa = PBXGroup;
+			children = (
+				B5BFE3C3222E939900B6CFAC /* Moniter.m */,
+				B5BFE3C4222E939900B6CFAC /* Moniter.h */,
+			);
+			path = Moniter;
+			sourceTree = "<group>";
+		};
+		B5BFE3C6222E966400B6CFAC /* swiftFunction */ = {
+			isa = PBXGroup;
+			children = (
+				B5BFE3EB222E972700B6CFAC /* curry.swift */,
+				B5BFE3EA222E972700B6CFAC /* enumTest.swift */,
+				B5BFE3E9222E972700B6CFAC /* functionPrograme.swift */,
+				B5BFE3EC222E972800B6CFAC /* perfTest.swift */,
+				B5BFE3ED222E972800B6CFAC /* sstest.swift */,
+				B5BFE3C7222E966400B6CFAC /* FunctionVC.swift */,
+				B5BFE3C8222E966400B6CFAC /* BinarySearch.swift */,
+				B5BFE3F3222F64F700B6CFAC /* mutating.swift */,
+			);
+			path = swiftFunction;
+			sourceTree = "<group>";
+		};
+		B5BFE3CB222E96BA00B6CFAC /* autoCell */ = {
+			isa = PBXGroup;
+			children = (
+				B5BFE3CC222E96BA00B6CFAC /* autoCellAutoSizefalse.swift */,
+				B5BFE3CD222E96BA00B6CFAC /* tabcell.swift */,
+				B5BFE3CE222E96BA00B6CFAC /* autoCellFour.swift */,
+				B5BFE3CF222E96BA00B6CFAC /* autoCellFive.swift */,
+				B5BFE3D0222E96BA00B6CFAC /* autoCellSeven.swift */,
+				B5BFE3D1222E96BA00B6CFAC /* autoLayoutVC.swift */,
+				B5BFE3D2222E96BA00B6CFAC /* autoCellSix.swift */,
+				B5BFE3D3222E96BA00B6CFAC /* tabcellTow.swift */,
+				B5BFE3D4222E96BA00B6CFAC /* autoCellThree.swift */,
+			);
+			path = autoCell;
+			sourceTree = "<group>";
+		};
+		B5BFE3DE222E96F300B6CFAC /* protocal */ = {
+			isa = PBXGroup;
+			children = (
+				B5BFE3DF222E96F300B6CFAC /* GenericBox.swift */,
+				B5BFE3E0222E96F300B6CFAC /* Sequence.swift */,
+				B5BFE3E1222E96F300B6CFAC /* protocalVC.swift */,
+				B5BFE3E2222E96F300B6CFAC /* protocalTest.swift */,
+				B5BFE3E3222E96F300B6CFAC /* GenericTest.swift */,
+			);
+			path = protocal;
+			sourceTree = "<group>";
+		};
+		B5BFE3F5222F686600B6CFAC /* swiftCallOc */ = {
+			isa = PBXGroup;
+			children = (
+				B5BFE3F6222F688700B6CFAC /* OCCallTester.h */,
+				B5BFE3F7222F688700B6CFAC /* OCCallTester.m */,
+				B5BFE3F9222F68F200B6CFAC /* swiftCaller.swift */,
+			);
+			path = swiftCallOc;
+			sourceTree = "<group>";
+		};
 		B5C8D567214A14FD007BF736 /* swiftTest */ = {
 			isa = PBXGroup;
 			children = (
-				A7B49F6E211898130081D199 /* SwiftTest.swift */,
+				A7B49F6E211898130081D199 /* SwiftEntryVC.swift */,
 				B5C8D565214A14F2007BF736 /* swiftObserver.swift */,
 				B5C8D568214A3645007BF736 /* swiftVC.swift */,
 				B5C8D574214F5C54007BF736 /* SwiftMapFlatMap.swift */,
 				B5C8D576214FE553007BF736 /* SwiftDelegate.swift */,
 				B5A9FBF7217758870083D5E0 /* SwiftInit.swift */,
+				B5BFE3C0222E59AC00B6CFAC /* Book.swift */,
 			);
 			path = swiftTest;
 			sourceTree = "<group>";
@@ -871,13 +1169,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50EE58F2237893D00DAA18A /* memory.png in Resources */,
 				A7B49F83211B359B0081D199 /* Common.xcconfig in Resources */,
 				A7B49F82211B359B0081D199 /* DebugConfig.xcconfig in Resources */,
+				B50EE5682237547E00DAA18A /* Example3ViewController.xib in Resources */,
+				B50EE5692237547E00DAA18A /* image.bundle in Resources */,
+				B50EE5752237547E00DAA18A /* Example2ViewController.xib in Resources */,
+				B50EE58D223762AE00DAA18A /* images2 in Resources */,
 				A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */,
+				B50EE5762237547E00DAA18A /* Example4ViewController.xib in Resources */,
 				B55B3FBC21B0DABC005CADF3 /* citydata.plist in Resources */,
+				B50EE58C223762AE00DAA18A /* images in Resources */,
 				A7D8FA7A1E9B2BBA00ED8D03 /* Assets.xcassets in Resources */,
 				A7B49F84211B359B0081D199 /* ReleaseConfig.xcconfig in Resources */,
 				A7D8FA781E9B2BBA00ED8D03 /* Main.storyboard in Resources */,
+				B50EE56B2237547E00DAA18A /* Example1ViewController.xib in Resources */,
+				B50EE56E2237547E00DAA18A /* left.png in Resources */,
 				B52A58072180109600E106E9 /* assetTest.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -966,29 +1273,75 @@
 			files = (
 				B5A9FBF8217758870083D5E0 /* SwiftInit.swift in Sources */,
 				B5670EF8215F12480014807D /* CrashViewController.m in Sources */,
+				B5BFE3E5222E96F300B6CFAC /* Sequence.swift in Sources */,
+				B5BFE3E8222E96F300B6CFAC /* GenericTest.swift in Sources */,
+				B5BFE3EE222E972800B6CFAC /* functionPrograme.swift in Sources */,
+				B5BFE3F4222F64F700B6CFAC /* mutating.swift in Sources */,
+				B5BFE3C1222E59AC00B6CFAC /* Book.swift in Sources */,
 				B53F202121AFE726006A8D3F /* HashViewController.m in Sources */,
+				B5BFE3B9222E1C5300B6CFAC /* HookTableViewController.m in Sources */,
 				B5C8D569214A3645007BF736 /* swiftVC.swift in Sources */,
+				B5BFE3D6222E96BA00B6CFAC /* tabcell.swift in Sources */,
+				B5BFE3D5222E96BA00B6CFAC /* autoCellAutoSizefalse.swift in Sources */,
 				B5670EF5215F11C90014807D /* UncaughtExceptionHandler.m in Sources */,
 				B56FBC6621E44721003694E1 /* Service.m in Sources */,
+				B5BFE3F2222E972800B6CFAC /* sstest.swift in Sources */,
+				B551282C22201AE500374029 /* CViewController.m in Sources */,
 				A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */,
 				A7B49F7B211B31BD0081D199 /* Test.c in Sources */,
 				B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */,
+				B5BFE3E7222E96F300B6CFAC /* protocalTest.swift in Sources */,
 				B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */,
 				B5670EFB215F21F10014807D /* CallTest.m in Sources */,
+				B551284622201F4D00374029 /* NSObject+PPrint.m in Sources */,
+				B551284122201F0C00374029 /* AppearanceViewController.m in Sources */,
+				B5BFE3E4222E96F300B6CFAC /* GenericBox.swift in Sources */,
 				A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */,
-				A7B49F6F211898130081D199 /* SwiftTest.swift in Sources */,
+				B5BFE3DD222E96BB00B6CFAC /* autoCellThree.swift in Sources */,
+				B50EE5712237547E00DAA18A /* Example2ViewController.m in Sources */,
+				B551282E22201AE500374029 /* BViewController.m in Sources */,
+				A7B49F6F211898130081D199 /* SwiftEntryVC.swift in Sources */,
 				A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */,
+				B5BFE3DC222E96BB00B6CFAC /* tabcellTow.swift in Sources */,
+				B5BFE3E6222E96F300B6CFAC /* protocalVC.swift in Sources */,
 				B50B22F7218FECCB006CFC28 /* ThreadViewController.m in Sources */,
+				B50EE5722237547E00DAA18A /* Example4ViewController.m in Sources */,
+				B5BFE3EF222E972800B6CFAC /* enumTest.swift in Sources */,
+				B50EE56A2237547E00DAA18A /* BundleViewController.m in Sources */,
+				B5BFE3F8222F688700B6CFAC /* OCCallTester.m in Sources */,
+				B551283922201EF400374029 /* ImageChooser.swift in Sources */,
+				B5BFE3C9222E966400B6CFAC /* FunctionVC.swift in Sources */,
+				B5BFE3BC222E209800B6CFAC /* CatelogHookViewController.m in Sources */,
+				B50EE5702237547E00DAA18A /* Example1ViewController.m in Sources */,
+				B50EE56F2237547E00DAA18A /* Example3ViewController.m in Sources */,
 				B5FB72E32122842B00325501 /* TabItem.m in Sources */,
+				B551282D22201AE500374029 /* NavigationDelegate.m in Sources */,
+				B5BFE3D8222E96BB00B6CFAC /* autoCellFive.swift in Sources */,
 				B56FBC6C21E47E90003694E1 /* Swear.m in Sources */,
+				B5BFE3DA222E96BB00B6CFAC /* autoLayoutVC.swift in Sources */,
 				B5670EF4215F11C90014807D /* SignalHandler.m in Sources */,
 				B5C8D575214F5C54007BF736 /* SwiftMapFlatMap.swift in Sources */,
+				B5BFE3CA222E966400B6CFAC /* BinarySearch.swift in Sources */,
+				B5BFE3C5222E939900B6CFAC /* Moniter.m in Sources */,
+				B551283A22201EF400374029 /* ImageHeaderViewController.m in Sources */,
+				B5BFE3D7222E96BB00B6CFAC /* autoCellFour.swift in Sources */,
+				B551282B22201AE500374029 /* SubBackNaviViewController.m in Sources */,
 				B5C8D566214A14F2007BF736 /* swiftObserver.swift in Sources */,
+				B5BFE3D9222E96BB00B6CFAC /* autoCellSeven.swift in Sources */,
+				B551283122201AE500374029 /* AViewController.m in Sources */,
+				B551284022201F0C00374029 /* FLAppearance.m in Sources */,
 				B5670EF3215F11C90014807D /* ExceptionModel.m in Sources */,
 				B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */,
+				B551282F22201AE500374029 /* NavigationBarDelegate.m in Sources */,
 				B56FBC6921E44757003694E1 /* RACTester.m in Sources */,
+				B5BFE3F1222E972800B6CFAC /* perfTest.swift in Sources */,
+				B5BFE3BF222E274500B6CFAC /* UIImageView+Theme.m in Sources */,
 				B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */,
+				B5BFE3F0222E972800B6CFAC /* curry.swift in Sources */,
 				A7B49F6C21188F0F0081D199 /* envTest.c in Sources */,
+				B5BFE3DB222E96BB00B6CFAC /* autoCellSix.swift in Sources */,
+				B551283022201AE500374029 /* SubBackNaviViewController+Back.m in Sources */,
+				B5BFE3FA222F68F200B6CFAC /* swiftCaller.swift in Sources */,
 				B59D963C21A4F9720064A81D /* AnimationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1281,6 +1634,7 @@
 				INFOPLIST_FILE = TT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.yinfanTest;
+				PRODUCT_MODULE_NAME = TTS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TT-Bridging-Header.h";
@@ -1303,6 +1657,7 @@
 				INFOPLIST_FILE = TT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.yinfanTest;
+				PRODUCT_MODULE_NAME = TTS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TT-Bridging-Header.h";

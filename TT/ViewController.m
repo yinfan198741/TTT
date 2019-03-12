@@ -26,6 +26,7 @@
 #import "NSObject+PPrint.h"
 #import "AViewController.h"
 #import "HookTableViewController.h"
+#import "BundleViewController.h"
 
 
 @interface ViewController ()
@@ -163,16 +164,21 @@ UILabel* _la;
   [self.source addObject:imageHeaderSwift];
   
   
-  TabItem* AppearanceViewController = [TabItem CreateItem:@"AppearanceViewController" action:^{
-    [self AppearanceViewController];
-  }];
-  [self.source addObject:AppearanceViewController];
+    TabItem* AppearanceViewController = [TabItem            CreateItem:@"AppearanceViewController" action:^{
+        [self AppearanceViewController];
+    }];
+    [self.source addObject:AppearanceViewController];
 
   
-  TabItem* hookTest = [TabItem CreateItem:@"hookTest" action:^{
-    [self hookTest];
-  }];
-  [self.source addObject:hookTest];
+    TabItem* hookTest = [TabItem CreateItem:@"hookTest" action:^{
+        [self hookTest];
+    }];
+    [self.source addObject:hookTest];
+    
+    TabItem* BundleTest = [TabItem CreateItem:@"BundleTest" action:^{
+        [self BundleTest];
+    }];
+    [self.source addObject:BundleTest];
   
 }
 
@@ -383,6 +389,13 @@ UILabel* _la;
   UINavigationController* nv = [[UINavigationController alloc] initWithRootViewController:vc];
  [self presentViewController:nv animated:YES completion:nil];
 }
+
+- (void)BundleTest {
+    BundleViewController* vc = [[BundleViewController alloc] init];
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];

@@ -1,9 +1,4 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-#source 'ssh://git@git.sankuai.com/ios/specs.git' # Sankuai repository specs
-#source 'ssh://git@git.sankuai.com/sjst/bizapp-specs.git' # Merchant repository specs
-#source 'https://github.com/CocoaPods/Specs.git'
-#source 'https://github.com/Artsy/Specs.git'
+
 
 platform :ios, '8.0'
 # use_frameworks!
@@ -16,7 +11,10 @@ target 'TT' do
 
   # Pods for TT
   pod 'GTMBase64', '~> 1.0.0'
-#  pod 'SAKAccount', '4.9.1'
+  pod 'ReactiveObjC'
+  pod 'ReactiveCocoa'
+  pod 'Masonry',  '~> 0.6.4'
+   
 end
 
 
