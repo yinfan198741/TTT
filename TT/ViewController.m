@@ -179,6 +179,12 @@ UILabel* _la;
         [self BundleTest];
     }];
     [self.source addObject:BundleTest];
+    
+    
+    TabItem* StoryBoardTest = [TabItem CreateItem:@"StoryBoardTest" action:^{
+        [self StoryBoardTest];
+    }];
+    [self.source addObject:StoryBoardTest];
   
 }
 
@@ -394,6 +400,18 @@ UILabel* _la;
     BundleViewController* vc = [[BundleViewController alloc] init];
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)StoryBoardTest {
+    NSLog(@"StoryBoardTest");
+    
+    UIViewController* tabVC = [[UIStoryboard storyboardWithName:@"Storyboard"
+                                                         bundle:nil]
+             instantiateViewControllerWithIdentifier:@"SBTAB"];
+    
+    [self presentViewController:tabVC animated:YES completion:nil];
+//    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:tabVC];
+//    [self presentViewController:nav animated:YES completion:nil];
 }
 
 
