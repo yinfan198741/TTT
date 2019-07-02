@@ -24,11 +24,11 @@ char * getenv(const char *name) {
         handle = dlopen("/usr/lib/system/libsystem_c.dylib", RTLD_NOW);
         assert(handle);
         fgetEnv = dlsym(handle, "getenv");
-        printf("Real getenv: %p\nFake getenv: %p\n", fgetEnv, getenv);
+//        printf("Real getenv: %p\nFake getenv: %p\n", fgetEnv, getenv);
 //        fgetEnv f = real_getenv;
        
     });
-     printf(fgetEnv("HOME"));
+//     printf(fgetEnv("HOME"));
 //    void *handle = dlopen("/usr/lib/system/libsystem_c.dylib", RTLD_NOW);
 //    assert(handle);
 //    void *real_getenv = dlsym(handle, "getenv");

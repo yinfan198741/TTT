@@ -23,6 +23,7 @@
 		A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */; };
 		A7D8FA881E9B2BBA00ED8D03 /* TTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA871E9B2BBA00ED8D03 /* TTTests.m */; };
 		A7D8FA931E9B2BBB00ED8D03 /* TTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */; };
+		B5001DEA224BA38D002D15FF /* MJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5001DE9224BA38D002D15FF /* MJUser.m */; };
 		B50B22F7218FECCB006CFC28 /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50B22F6218FECCB006CFC28 /* ThreadViewController.m */; };
 		B50EE5682237547E00DAA18A /* Example3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50EE5502237547D00DAA18A /* Example3ViewController.xib */; };
 		B50EE5692237547E00DAA18A /* image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B50EE5512237547D00DAA18A /* image.bundle */; };
@@ -83,6 +84,7 @@
 		B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963721A3E4FA0064A81D /* LLDBViewController.m */; };
 		B59D963C21A4F9720064A81D /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963B21A4F9720064A81D /* AnimationViewController.m */; };
 		B5A9FBF8217758870083D5E0 /* SwiftInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9FBF7217758870083D5E0 /* SwiftInit.swift */; };
+		B5B5806B228BD143009A0EA3 /* RACSignalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B5806A228BD143009A0EA3 /* RACSignalTest.m */; };
 		B5BFE3B9222E1C5300B6CFAC /* HookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3B8222E1C5300B6CFAC /* HookTableViewController.m */; };
 		B5BFE3BC222E209800B6CFAC /* CatelogHookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3BB222E209800B6CFAC /* CatelogHookViewController.m */; };
 		B5BFE3BF222E274500B6CFAC /* UIImageView+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3BE222E274500B6CFAC /* UIImageView+Theme.m */; };
@@ -116,6 +118,8 @@
 		B5C8D569214A3645007BF736 /* swiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D568214A3645007BF736 /* swiftVC.swift */; };
 		B5C8D575214F5C54007BF736 /* SwiftMapFlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D574214F5C54007BF736 /* SwiftMapFlatMap.swift */; };
 		B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D576214FE553007BF736 /* SwiftDelegate.swift */; };
+		B5CCFA0722CB7B4700858BC5 /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CCFA0622CB7B4700858BC5 /* RACTestViewController.m */; };
+		B5CCFA0B22CB7C1F00858BC5 /* VCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CCFA0A22CB7C1F00858BC5 /* VCBaseViewController.m */; };
 		B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */; };
 		B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DF2121CA1B00325501 /* PushViewController.m */; };
 		B5FB72E32122842B00325501 /* TabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72E22122842B00325501 /* TabItem.m */; };
@@ -239,6 +243,8 @@
 		A7D8FA8E1E9B2BBA00ED8D03 /* TTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTUITests.m; sourceTree = "<group>"; };
 		A7D8FA941E9B2BBB00ED8D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5001DE8224BA38D002D15FF /* MJUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJUser.h; sourceTree = "<group>"; };
+		B5001DE9224BA38D002D15FF /* MJUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJUser.m; sourceTree = "<group>"; };
 		B50B22F5218FECCB006CFC28 /* ThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
 		B50B22F6218FECCB006CFC28 /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
 		B50EE5502237547D00DAA18A /* Example3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example3ViewController.xib; sourceTree = "<group>"; };
@@ -333,6 +339,8 @@
 		B5A9FBF7217758870083D5E0 /* SwiftInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftInit.swift; sourceTree = "<group>"; };
 		B5A9FC1B2179CD000083D5E0 /* TT copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TT copy-Info.plist"; path = "/Users/yinfan/Desktop/Code/yinfangit/tt/TTT/TT copy-Info.plist"; sourceTree = "<absolute>"; };
 		B5A9FC3E2179CD190083D5E0 /* TT copy 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TT copy 2-Info.plist"; path = "/Users/yinfan/Desktop/Code/yinfangit/tt/TTT/TT copy 2-Info.plist"; sourceTree = "<absolute>"; };
+		B5B58069228BD143009A0EA3 /* RACSignalTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACSignalTest.h; sourceTree = "<group>"; };
+		B5B5806A228BD143009A0EA3 /* RACSignalTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACSignalTest.m; sourceTree = "<group>"; };
 		B5BFE3B7222E1C5300B6CFAC /* HookTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookTableViewController.h; sourceTree = "<group>"; };
 		B5BFE3B8222E1C5300B6CFAC /* HookTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookTableViewController.m; sourceTree = "<group>"; };
 		B5BFE3BA222E209800B6CFAC /* CatelogHookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatelogHookViewController.h; sourceTree = "<group>"; };
@@ -371,6 +379,10 @@
 		B5C8D568214A3645007BF736 /* swiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftVC.swift; sourceTree = "<group>"; };
 		B5C8D574214F5C54007BF736 /* SwiftMapFlatMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMapFlatMap.swift; sourceTree = "<group>"; };
 		B5C8D576214FE553007BF736 /* SwiftDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDelegate.swift; sourceTree = "<group>"; };
+		B5CCFA0522CB7B4700858BC5 /* RACTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTestViewController.h; sourceTree = "<group>"; };
+		B5CCFA0622CB7B4700858BC5 /* RACTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
+		B5CCFA0922CB7C1F00858BC5 /* VCBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCBaseViewController.h; sourceTree = "<group>"; };
+		B5CCFA0A22CB7C1F00858BC5 /* VCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCBaseViewController.m; sourceTree = "<group>"; };
 		B5FB72DA2121C73200325501 /* UIViewController+Consistent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Consistent.h"; sourceTree = "<group>"; };
 		B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Consistent.m"; sourceTree = "<group>"; };
 		B5FB72DE2121CA1B00325501 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
@@ -538,6 +550,8 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				B5CCFA0822CB7C0700858BC5 /* VCBase */,
+				B5001DE7224BA361002D15FF /* MJTest */,
 				B568B97622433691001B8571 /* StoryboardTest */,
 				B50EE54F223753DF00DAA18A /* BundleTest */,
 				B5BFE3F5222F686600B6CFAC /* swiftCallOc */,
@@ -603,6 +617,15 @@
 				A7D8FA941E9B2BBB00ED8D03 /* Info.plist */,
 			);
 			path = TTUITests;
+			sourceTree = "<group>";
+		};
+		B5001DE7224BA361002D15FF /* MJTest */ = {
+			isa = PBXGroup;
+			children = (
+				B5001DE8224BA38D002D15FF /* MJUser.h */,
+				B5001DE9224BA38D002D15FF /* MJUser.m */,
+			);
+			path = MJTest;
 			sourceTree = "<group>";
 		};
 		B50B22F4218FECB1006CFC28 /* ThreadTest */ = {
@@ -787,12 +810,17 @@
 		B56FBC6121E44697003694E1 /* RACTest */ = {
 			isa = PBXGroup;
 			children = (
+				B5CCFA0422CB7B2800858BC5 /* cocoracTest */,
 				B56FBC6421E44721003694E1 /* Service.h */,
 				B56FBC6521E44721003694E1 /* Service.m */,
 				B56FBC6721E44757003694E1 /* RACTester.h */,
 				B56FBC6821E44757003694E1 /* RACTester.m */,
 				B56FBC6A21E47E90003694E1 /* Swear.h */,
 				B56FBC6B21E47E90003694E1 /* Swear.m */,
+				B5B58069228BD143009A0EA3 /* RACSignalTest.h */,
+				B5B5806A228BD143009A0EA3 /* RACSignalTest.m */,
+				B5CCFA0522CB7B4700858BC5 /* RACTestViewController.h */,
+				B5CCFA0622CB7B4700858BC5 /* RACTestViewController.m */,
 			);
 			path = RACTest;
 			sourceTree = "<group>";
@@ -902,6 +930,22 @@
 				B5BFE3C0222E59AC00B6CFAC /* Book.swift */,
 			);
 			path = swiftTest;
+			sourceTree = "<group>";
+		};
+		B5CCFA0422CB7B2800858BC5 /* cocoracTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cocoracTest;
+			sourceTree = "<group>";
+		};
+		B5CCFA0822CB7C0700858BC5 /* VCBase */ = {
+			isa = PBXGroup;
+			children = (
+				B5CCFA0922CB7C1F00858BC5 /* VCBaseViewController.h */,
+				B5CCFA0A22CB7C1F00858BC5 /* VCBaseViewController.m */,
+			);
+			path = VCBase;
 			sourceTree = "<group>";
 		};
 		B5FB72D62121C6C700325501 /* safeVCpush */ = {
@@ -1302,12 +1346,15 @@
 				B5670EF8215F12480014807D /* CrashViewController.m in Sources */,
 				B5BFE3E5222E96F300B6CFAC /* Sequence.swift in Sources */,
 				B5BFE3E8222E96F300B6CFAC /* GenericTest.swift in Sources */,
+				B5CCFA0B22CB7C1F00858BC5 /* VCBaseViewController.m in Sources */,
 				B568B97E22433787001B8571 /* SecondViewController.m in Sources */,
 				B5BFE3EE222E972800B6CFAC /* functionPrograme.swift in Sources */,
 				B5BFE3F4222F64F700B6CFAC /* mutating.swift in Sources */,
 				B5BFE3C1222E59AC00B6CFAC /* Book.swift in Sources */,
 				B53F202121AFE726006A8D3F /* HashViewController.m in Sources */,
+				B5001DEA224BA38D002D15FF /* MJUser.m in Sources */,
 				B5BFE3B9222E1C5300B6CFAC /* HookTableViewController.m in Sources */,
+				B5CCFA0722CB7B4700858BC5 /* RACTestViewController.m in Sources */,
 				B5C8D569214A3645007BF736 /* swiftVC.swift in Sources */,
 				B5BFE3D6222E96BA00B6CFAC /* tabcell.swift in Sources */,
 				B5BFE3D5222E96BA00B6CFAC /* autoCellAutoSizefalse.swift in Sources */,
@@ -1317,6 +1364,7 @@
 				B5BFE3F2222E972800B6CFAC /* sstest.swift in Sources */,
 				B551282C22201AE500374029 /* CViewController.m in Sources */,
 				A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */,
+				B5B5806B228BD143009A0EA3 /* RACSignalTest.m in Sources */,
 				A7B49F7B211B31BD0081D199 /* Test.c in Sources */,
 				B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */,
 				B5BFE3E7222E96F300B6CFAC /* protocalTest.swift in Sources */,
