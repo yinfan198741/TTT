@@ -28,6 +28,7 @@
 #import "HookTableViewController.h"
 #import "BundleViewController.h"
 #import "MJUser.h"
+#import "RACTestViewController.h"
 
 
 @interface ViewController ()
@@ -367,9 +368,17 @@ UILabel* _la;
 -(void)RacCall {
   NSLog(@"RacCall");
 //  #import "RACTester.h"
-  RACTester * tester = [[RACTester alloc] init];
-  [tester Test];
+//  RACTester * tester = [[RACTester alloc] init];
+//  [tester Test];
 //  NSLog(@"RacCall = %s",name);
+    
+    RACTestViewController * vc = [[RACTestViewController alloc] init];
+//     UINavigationController* uicon = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self.navigationController pushViewController:vc animated:YES];
+   
+//    [self presentViewController:uicon animated:YES completion:nil];
+//    [uicon pushViewController:vc animated:YES];
+    
 }
 
 

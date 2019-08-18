@@ -158,21 +158,48 @@
         [subscriber sendCompleted];
         return nil;
     }];
-    RACSignal *bindSignal = [signal bind:^RACSignalBindBlock _Nonnull{
-        return ^(NSNumber *value, BOOL *stop) {
-            value = @(value.integerValue * value.integerValue);
-            if (value.intValue == 4) {
-                *stop = YES;
-            }
-            return [RACSignal return:value];
-        };
+    
+    RACSubject* sub = [[RACSubject alloc] init];
+    
+    
+    
+    
+    [sub subscribeNext:^(NSString*   x) {
+        NSLog(@"subscribeNext = %@",x);
     }];
-//    [signal subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"signal: %@", x);
+    
+    
+    [sub sendNext:@"123"];
+    [sub sendNext:@"456"];
+    
+    [signal subscribe:sub];
+    [signal subscribe:sub];
+   
+    
+    
+//    [sub subscribeNext:@"123"];
+    
+    
+//
+//    RACSignal *bindSignal = [signal bind:^RACSignalBindBlock _Nonnull{
+//        return ^(NSNumber *value, BOOL *stop) {
+//            value = @(value.integerValue * value.integerValue);
+////            if (value.intValue == 4) {
+////                *stop = YES;
+////            }
+//            return [RACSignal return:value];
+//        };
 //    }];
-    [bindSignal subscribeNext:^(id  _Nullable x) {
-        NSLog(@"bindSignal: %@", x);
-    }];
+////    [signal subscribeNext:^(id  _Nullable x) {
+////        NSLog(@"signal: %@", x);
+////    }];
+//    [bindSignal subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"bindSignal: %@", x);
+//    }];
+//
+    
+    
+    
 }
 
 - (void)Test4

@@ -1,8 +1,8 @@
 //
-//  RACTestViewController.h
+//  RacDemoViewController.h
 //  TT
 //
-//  Created by 尹凡 on 2019/7/2.
+//  Created by fanyin on 2019/8/18.
 //  Copyright © 2019 fanyin. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RACTestViewController : UITableViewController
+@interface RacDemoViewController : UIViewController
 
 @end
 

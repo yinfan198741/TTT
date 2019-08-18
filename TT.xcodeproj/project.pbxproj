@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		669D2D05F691ACF9D0C74F3B /* libPods-TT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98301CD3BADF82F90215CEC1 /* libPods-TT.a */; };
+		A714906A23099F5200A59AB2 /* RacDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A714906923099F5200A59AB2 /* RacDemoViewController.m */; };
 		A7B49F5821188E7F0081D199 /* HookCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F5721188E7F0081D199 /* HookCTests.swift */; };
 		A7B49F6C21188F0F0081D199 /* envTest.c in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6B21188F0F0081D199 /* envTest.c */; };
 		A7B49F6F211898130081D199 /* SwiftEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6E211898130081D199 /* SwiftEntryVC.swift */; };
@@ -211,6 +212,8 @@
 		1104F4480C0F594D792FE746 /* Pods_TTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6784F60DADB1BD4DE3AFF565 /* Pods_TTUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98301CD3BADF82F90215CEC1 /* libPods-TT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A714906823099F5200A59AB2 /* RacDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RacDemoViewController.h; sourceTree = "<group>"; };
+		A714906923099F5200A59AB2 /* RacDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RacDemoViewController.m; sourceTree = "<group>"; };
 		A7B49F4A21188E7F0081D199 /* HookC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookC.h; sourceTree = "<group>"; };
 		A7B49F4B21188E7F0081D199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B49F5021188E7F0081D199 /* HookCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HookCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -821,6 +824,8 @@
 				B5B5806A228BD143009A0EA3 /* RACSignalTest.m */,
 				B5CCFA0522CB7B4700858BC5 /* RACTestViewController.h */,
 				B5CCFA0622CB7B4700858BC5 /* RACTestViewController.m */,
+				A714906823099F5200A59AB2 /* RacDemoViewController.h */,
+				A714906923099F5200A59AB2 /* RacDemoViewController.m */,
 			);
 			path = RACTest;
 			sourceTree = "<group>";
@@ -1402,6 +1407,7 @@
 				B5BFE3CA222E966400B6CFAC /* BinarySearch.swift in Sources */,
 				B5BFE3C5222E939900B6CFAC /* Moniter.m in Sources */,
 				B551283A22201EF400374029 /* ImageHeaderViewController.m in Sources */,
+				A714906A23099F5200A59AB2 /* RacDemoViewController.m in Sources */,
 				B5BFE3D7222E96BB00B6CFAC /* autoCellFour.swift in Sources */,
 				B551282B22201AE500374029 /* SubBackNaviViewController.m in Sources */,
 				B5C8D566214A14F2007BF736 /* swiftObserver.swift in Sources */,
