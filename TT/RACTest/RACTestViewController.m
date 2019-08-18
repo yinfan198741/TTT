@@ -8,6 +8,7 @@
 
 #import "RACTestViewController.h"
 #import "ReactiveObjC.h"
+#import "RacDemoViewController.h"
 
 @interface RACTestViewController ()
 
@@ -64,6 +65,11 @@
 
 - (void)RacDemo {
     NSLog(@"RacDemo");
+    RacDemoViewController* dvc = [[RacDemoViewController alloc] init];
+    
+    
+    [self presentViewController:dvc animated:YES completion:nil];
+    
 }
 
 

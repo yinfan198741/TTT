@@ -7,6 +7,8 @@
 //
 
 #import "RacDemoViewController.h"
+#import "ReactiveObjC.h"
+
 
 @interface RacDemoViewController ()
 
@@ -17,6 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    self.title = @"RacDemoViewController";
+    self.view.backgroundColor = UIColor.whiteColor;
+    UIGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
+    [self.view addGestureRecognizer:tap];
+}
+
+
+- (void)tap {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
