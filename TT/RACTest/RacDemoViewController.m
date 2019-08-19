@@ -24,6 +24,32 @@
     self.view.backgroundColor = UIColor.whiteColor;
     UIGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
     [self.view addGestureRecognizer:tap];
+  
+    
+    UIButton* bu = [[UIButton alloc] initWithFrame:CGRectMake(10, 100, 200, 50)];
+    bu.backgroundColor = UIColor.redColor;
+    [bu setTitle:@"倒计时" forState:UIControlStateNormal];
+    [bu addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:bu];
+    
+    
+}
+
+- (void)click:(UIButton*)b {
+    
+    RACDisposable* dis = [[RACSignal interval:1 onScheduler:RACScheduler.mainThreadScheduler] subscribeNext:^(NSDate * _Nullable x) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"mm:ss"];
+        NSString *current = [formatter stringFromDate:x];
+        b.titleLabel.text = current;
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
+                                 (int64_t)(10 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+                       [dis dispose];
+                   });
+   NSLog(@"click");
 }
 
 

@@ -33,6 +33,7 @@
                     @[@"RACDisposable",@"RACDisposableTest"],
                     @[@"RACSubject",@"RACSubjectTest"],
                     @[@"switchToLatest",@"switchToLatestTest"],
+                    @[@"MulticastConnection",@"MulticastConnectionTest"],
                     ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
@@ -362,9 +363,72 @@
     //        [signal2 sendNext:@"456"];
     //    });
     
+}
+
+- (void)MulticastConnectionTest {
+    
+    
+    RACSubject* sj = [[RACSubject alloc] init];
+    
+    [sj subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@",x);
+    }];
+    
+    RACSignal* t = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+        [subscriber sendNext:@"123"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    
+    [t subscribe:sj];
     
     
     
+    static BOOL muticast = NO;
+    
+    static int runTime = 0;
+    RACSignal* s1 = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber> subscriber) {
+        
+        runTime ++;
+        NSLog(@"runTime = %d",runTime);
+        
+        [subscriber sendNext:@"1"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    muticast = !muticast;
+    
+    if (!muticast) {
+        
+        NSLog(@"不使用多波===");
+        
+        [s1 subscribeNext:^(id  _Nullable x) {
+            NSLog(@"subscribeNext_1 = %@",x);
+        }];
+        
+        [s1 subscribeNext:^(id  _Nullable x) {
+            NSLog(@"subscribeNext_2 = %@",x);
+        }];
+    }
+    else
+    {
+        
+         NSLog(@"使用多波====");
+        
+        RACMulticastConnection* s2 =  [s1 publish];
+        
+        [s2.signal subscribeNext:^(id  _Nullable x) {
+             NSLog(@"subscribeNext_2_1 = %@",x);
+        }];
+        
+        [s2.signal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"subscribeNext_2_2 = %@",x);
+        }];
+        
+        [s2 connect];
+    }
     
     
 }
