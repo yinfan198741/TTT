@@ -34,6 +34,8 @@
                     @[@"RACSubject",@"RACSubjectTest"],
                     @[@"switchToLatest",@"switchToLatestTest"],
                     @[@"MulticastConnection",@"MulticastConnectionTest"],
+                    @[@"multicommand",@"multicommand"],
+                    @[@"bindTest",@"bindTest"],
                     ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
@@ -434,6 +436,76 @@
 }
 
 
+- (void)multicommand {
+    
+    static int counter = 1;
+    
+    RACCommand* command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * (id  input) {
+        return [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+            
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                counter++;
+                NSLog(@"counter = %d",counter);
+                [subscriber sendNext:@(counter)];
+                [subscriber sendCompleted];
+//            });
+           
+            return nil;
+        }];
+    }];
+    
+    command.allowsConcurrentExecution = YES;
+    
+    [[command.executionSignals switchToLatest] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"1 command.executionSignal = %@",x);
+    }];
+    
+    [[command.executionSignals switchToLatest] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"2 command.executionSignal = %@",x);
+    }];
+    
+    [[command execute:nil] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"1 command execute x = %@ ",x);
+    }];
+    
+    [[command execute:nil] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"2 command execute x = %@ ",x);
+    }];
+    
+    RACSignal* signal3 = [command execute:nil];
+    [signal3 subscribeNext:^(id  _Nullable x) {
+         NSLog(@"signal3 command execute x = %@ ",x);
+    }];
+    
+    [signal3 subscribeNext:^(id  _Nullable x) {
+         NSLog(@"signal3 command execute x = %@ ",x);
+    }];
+}
+
+- (void)bindTest {
+    NSLog(@"bindTest");
+    
+//    RACSignal * _Nullable (^RACSignalBindBlock)(ValueType _Nullable value, BOOL *stop);
+    
+    RACSubject * subject = [RACSubject subject];
+    
+   RACSignal* binded = [subject bind:^RACSignalBindBlock{
+        return ^RACSignal* (id _Nullable value, BOOL *stop){
+            
+            NSString* t = [NSString stringWithFormat:@"bindvalue = %@",value];
+            return [RACSignal return:t];
+        };
+    }];
+    
+    [binded subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@",x);
+    }];
+    
+    [subject sendNext:@"123"];
+    
+    
+    
+}
 
 /*
 #pragma mark - Navigation
