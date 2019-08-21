@@ -36,6 +36,7 @@
                     @[@"MulticastConnection",@"MulticastConnectionTest"],
                     @[@"multicommand",@"multicommand"],
                     @[@"bindTest",@"bindTest"],
+                    @[@"filterTest",@"filterTest"],
                     ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
@@ -376,7 +377,7 @@
         NSLog(@"%@",x);
     }];
     
-    RACSignal* t = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+    RACSignal* t = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber> subscriber) {
         [subscriber sendNext:@"123"];
         [subscriber sendCompleted];
         return nil;
@@ -485,12 +486,10 @@
 - (void)bindTest {
     NSLog(@"bindTest");
     
-//    RACSignal * _Nullable (^RACSignalBindBlock)(ValueType _Nullable value, BOOL *stop);
-    
     RACSubject * subject = [RACSubject subject];
     
-   RACSignal* binded = [subject bind:^RACSignalBindBlock{
-        return ^RACSignal* (id _Nullable value, BOOL *stop){
+    RACSignal* binded = [subject bind:^RACSignalBindBlock{
+        return ^RACSignal* (id value, BOOL *stop){
             
             NSString* t = [NSString stringWithFormat:@"bindvalue = %@",value];
             return [RACSignal return:t];
@@ -502,8 +501,81 @@
     }];
     
     [subject sendNext:@"123"];
+}
+
+
+- (void)filterTest {
+    NSLog(@"filterTest");
     
+    {
+        NSLog(@"===========filter=====begin=====");
+        
+        RACSubject * subject = [RACSubject subject];
+        [[[subject ignore:@"a"] ignore:@"b"] subscribeNext:^(id  _Nullable x) {
+            NSLog(@"%@",x);
+        }];
+        
+        [subject sendNext:@"a"];
+        [subject sendNext:@"a1"];
+        [subject sendNext:@"b"];
+        
+        NSLog(@"===========filter=====end=====");
+    }
     
+    {
+        NSLog(@"===========take=====begin=====");
+        
+        RACSubject * subject = [RACSubject subject];
+        [[[[subject ignore:@"a"] ignore:@"b"] take:1] subscribeNext:^(id  _Nullable x) {
+            NSLog(@"%@",x);
+        }];
+        
+        [subject sendNext:@"a"];
+        [subject sendNext:@"a1"];
+        [subject sendNext:@"b1"];
+        [subject sendNext:@"c1"];
+        [subject sendNext:@"b"];
+        
+        NSLog(@"===========filter=====end=====");
+    }
+    
+    {
+        NSLog(@"===========takeLast=====begin=====");
+        
+        RACSubject * subject = [RACSubject subject];
+        [[[[subject ignore:@"a"] ignore:@"b"] takeLast:1] subscribeNext:^(id  _Nullable x) {
+            NSLog(@"%@",x);
+        }];
+        
+        [subject sendNext:@"a"];
+        [subject sendNext:@"a1"];
+        [subject sendNext:@"b1"];
+        [subject sendNext:@"c1"];
+        [subject sendNext:@"b"];
+        [subject sendCompleted];
+        
+        NSLog(@"===========filter=====end=====");
+    }
+    
+    {
+        NSLog(@"===========takeUntile=====begin=====");
+        
+        RACSubject * subject = [RACSubject subject];
+        RACSubject * subject2 = [RACSubject subject];
+        [[[[subject ignore:@"a"] ignore:@"b"] takeUntil:subject2] subscribeNext:^(id  _Nullable x) {
+            NSLog(@"%@",x);
+        }];
+        
+        [subject sendNext:@"a"];
+        [subject sendNext:@"a1"];
+        [subject sendNext:@"b1"];
+        [subject2 sendNext:@"1"];
+        [subject sendNext:@"c1"];
+        [subject sendNext:@"b"];
+      
+        
+        NSLog(@"===========takeUntile=====end=====");
+    }
     
 }
 
