@@ -37,12 +37,18 @@
                     @[@"multicommand",@"multicommand"],
                     @[@"bindTest",@"bindTest"],
                     @[@"filterTest",@"filterTest"],
+                    @[@"codeToHot",@"codeToHotTest"],
+                    @[@"RacSubjectTest",@"RacSubjectTest"],
+                    @[@"trycatch",@"trycatchTest"],
+                    @[@"autoConnect",@"autoConnectTest"],
+                    @[@"lastTest",@"lastTest"],
+                    @[@"flatMap",@"flatMapTest"],
                     ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
     self.tableView.delegate = self;
     
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 600, 200, 50)];
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(250,700, 200, 50)];
     _label.backgroundColor = UIColor.redColor;
     
     [self.view addSubview:self.label];
@@ -317,6 +323,8 @@
 }
 
 - (void)switchToLatestTest {
+    
+    
     RACSubject *signalofsignal = [RACSubject subject];
     RACSubject *signal1 = [RACSubject subject];
     RACSubject *signal2 = [RACSubject subject];
@@ -346,6 +354,19 @@
     [signal1 sendNext:@"1"];
     [signal2 sendNext:@"2"];
     [signal3 sendNext:@"3"];
+    
+    
+//    RACSignal* s1 = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>  subscriber) {
+//        [subscriber sendNext:@"123"];
+//        [subscriber sendCompleted];
+//        return nil;
+//    }];
+//
+//    [s1 subscribe:signal1];
+    
+    
+//    [s1 s]
+    
     
     
     //    [signalofsignal switchToLatest:^(RACSubject*  _Nullable x) {
@@ -578,6 +599,419 @@
     }
     
 }
+
+- (void)codeToHotTest {
+    NSLog(@"codeToHotTest");
+    
+    
+    static NSInteger type = 0;
+    static NSInteger max = 7;
+//    type = (type = type + 1) % 3;
+    type = type + 1;
+    type = type % max;
+    NSLog(@"type = %ld",(long)type);
+    
+    RACSignal* sourceSignal = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>  subscriber) {
+        NSLog(@"sourceSignal Run=================");
+        [subscriber sendNext:@"123"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    
+//    type = 4;
+    
+    if (type == 0)
+    {
+        RACSubject* subject = [RACSubject subject];
+        [subject subscribeNext:^(id  _Nullable x) {
+            NSLog(@"subject subscribeNext 1= %@",x);
+        }];
+        
+        [subject subscribeNext:^(id  _Nullable x) {
+            NSLog(@"subject subscribeNext 2= %@",x);
+        }];
+        
+        [subject subscribeNext:^(id  _Nullable x) {
+            NSLog(@"subject subscribeNext 3= %@",x);
+        }];
+        
+        [sourceSignal subscribe:subject];
+    }
+    else if (type == 1)
+    {
+        RACMulticastConnection* mc = [sourceSignal publish];
+        
+        [mc.signal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"mc.signal subscribeNext1 = %@",x);
+        }];
+        
+        [mc.signal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"mc.signal subscribeNext2 = %@",x);
+        }];
+        
+        [mc connect];
+    }
+    else if (type == 2)
+    {
+        RACSignal* mc = [[sourceSignal publish] autoconnect];
+        
+        [mc subscribeNext:^(id  _Nullable x) {
+            NSLog(@"mc.publish] autoconnect subscribeNext1 = %@",x);
+        }];
+        
+        [mc subscribeNext:^(id  _Nullable x) {
+            NSLog(@"mc.publish] autoconnect subscribeNext2 = %@",x);
+        }];
+    }
+    else if (type == 3)
+    {
+//        RACSignal* replaySignal = [sourceSignal flattenMap:^ RACSignal * (id  _Nullable value) {
+//            return [[RACSignal return:value] replay];
+//        }];
+        
+        
+        RACSignal *replaySignal = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"源信号被订阅了");
+            [subscriber sendNext:@"假设这是网络1"];
+            [subscriber sendNext:@"假设这是网络2"];
+            [subscriber sendNext:@"假设这是网络3"];
+            [subscriber sendCompleted];
+            return nil;
+        }] replay];
+        
+        
+        NSLog(@"start to subscribeNext@@@@@@@@######$$$$$");
+        
+        [replaySignal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"replaySignal subscribeNext1 = %@",x);
+        }];
+        
+        [replaySignal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"replaySignal subscribeNext2 = %@",x);
+        }];
+    } else if (type == 4)
+    {
+        //        RACSignal* replaySignal = [sourceSignal flattenMap:^ RACSignal * (id  _Nullable value) {
+        //            return [[RACSignal return:value] replay];
+        //        }];
+        
+        
+        RACSignal *replaySignal = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"源信号被订阅了");
+            [subscriber sendNext:@"假设这是网络1"];
+            [subscriber sendNext:@"假设这是网络2"];
+            [subscriber sendNext:@"假设这是网络3"];
+            [subscriber sendCompleted];
+            return nil;
+        }] replayLast];
+        
+        
+        NSLog(@"start to subscribeNext@@@@@@@@######$$$$$");
+        
+        [replaySignal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"replaySignal subscribeNext1 = %@",x);
+        }];
+        
+        [replaySignal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"replaySignal subscribeNext2 = %@",x);
+        }];
+    }
+    else if (type == 5)
+    {
+        //        RACSignal* replaySignal = [sourceSignal flattenMap:^ RACSignal * (id  _Nullable value) {
+        //            return [[RACSignal return:value] replay];
+        //        }];
+        
+        
+        RACSignal *replaySignal = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"源信号被订阅了");
+            [subscriber sendNext:@"假设这是网络1"];
+            [subscriber sendNext:@"假设这是网络2"];
+            [subscriber sendNext:@"假设这是网络3"];
+            [subscriber sendCompleted];
+            return nil;
+        }] replayLast];
+        
+        
+        NSLog(@"start to subscribeNext@@@@@@@@######$$$$$");
+        
+        [replaySignal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"replaySignal subscribeNext1 = %@",x);
+        }];
+        
+        [replaySignal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"replaySignal subscribeNext2 = %@",x);
+        }];
+    }
+    else if (type == 6)
+    {
+        //        RACSignal* replaySignal = [sourceSignal flattenMap:^ RACSignal * (id  _Nullable value) {
+        //            return [[RACSignal return:value] replay];
+        //        }];
+        
+        
+        RACSignal *replaySignal = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"源信号被订阅了");
+            [subscriber sendNext:@"假设这是网络1"];
+            [subscriber sendNext:@"假设这是网络2"];
+            [subscriber sendNext:@"假设这是网络3"];
+            [subscriber sendCompleted];
+            return nil;
+        }] replayLazily];
+        
+        
+        NSLog(@"start to subscribeNext@@@@@@@@######$$$$$");
+        
+        [replaySignal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"replaySignal subscribeNext1 = %@",x);
+        }];
+        
+        [replaySignal subscribeNext:^(id  _Nullable x) {
+            NSLog(@"replaySignal subscribeNext2 = %@",x);
+        }];
+    }
+    
+   
+    
+    
+}
+
+- (void)RacSubjectTest {
+    NSLog(@"RacSubjectTest******************");
+//    RACSubject* subject = [RACSubject subject];
+//    RACSubject* subReplay = [RACReplaySubject subject];
+//
+//    [RACScheduler.mainThreadScheduler afterDelay:1 schedule:^{
+//        NSLog(@"RACScheduler.mainThreadScheduler after 2");
+//        [subject subscribeNext:^(id  _Nullable x) {
+//            NSLog(@"subject subscribeNext = %@",x);
+//        }];
+//
+//        [subReplay subscribeNext:^(id  _Nullable x) {
+//            NSLog(@"subReplay subscribeNext = %@",x);
+//        }];
+//
+//    }];
+//
+//    [subject sendNext:@"subject sendNext"];
+//    [subReplay sendNext:@"subReplay sendNext"];
+
+    RACSubject *subject = [RACSubject subject];
+    RACSubject *replaySubject = [RACReplaySubject subject];
+    
+    [[RACScheduler mainThreadScheduler] afterDelay:0.1 schedule:^{
+        // Subscriber 1
+        [subject subscribeNext:^(id x) {
+            NSLog(@"Subscriber 1 get a next value: %@ from subject", x);
+        }];
+        [replaySubject subscribeNext:^(id x) {
+            NSLog(@"Subscriber 1 get a next value: %@ from replay subject", x);
+        }];
+        
+        // Subscriber 2
+        [subject subscribeNext:^(id x) {
+            NSLog(@"Subscriber 2 get a next value: %@ from subject", x);
+        }];
+        [replaySubject subscribeNext:^(id x) {
+            NSLog(@"Subscriber 2 get a next value: %@ from replay subject", x);
+        }];
+    }];
+    
+    [[RACScheduler mainThreadScheduler] afterDelay:1 schedule:^{
+        [subject sendNext:@"send package 1"];
+        [replaySubject sendNext:@"send package 1"];
+    }];
+    
+    [[RACScheduler mainThreadScheduler] afterDelay:1.1 schedule:^{
+        // Subscriber 3
+        [subject subscribeNext:^(id x) {
+            NSLog(@"Subscriber 3 get a next value: %@ from subject", x);
+        }];
+        [replaySubject subscribeNext:^(id x) {
+            NSLog(@"Subscriber 3 get a next value: %@ from replay subject", x);
+        }];
+        
+        // Subscriber 4
+        [subject subscribeNext:^(id x) {
+            NSLog(@"Subscriber 4 get a next value: %@ from subject", x);
+        }];
+        [replaySubject subscribeNext:^(id x) {
+            NSLog(@"Subscriber 4 get a next value: %@ from replay subject", x);
+        }];
+    }];
+    
+    [[RACScheduler mainThreadScheduler] afterDelay:2 schedule:^{
+        [subject sendNext:@"send package 2"];
+        [replaySubject sendNext:@"send package 2"];
+    }];
+    
+
+}
+
+
+- (void)trycatchTest {
+    NSLog(@"trycatchTest");
+    
+    
+    RACSignal* t1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@"123"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    RACSignal* t2 = [t1 flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+//        return [RACSignal return:@"456"];
+        NSError* err =  [NSError errorWithDomain:@"111" code:10 userInfo:nil];
+        return [RACSignal error:err];
+    }];
+    
+    [[[t2 catch:^RACSignal * _Nonnull(NSError * _Nonnull error) {
+        NSLog(@"error = %@",error);
+//      NSError* err =  [NSError errorWithDomain:@"111" code:100 userInfo:nil];
+//        return [RACSignal error:err];
+        return [RACSignal return:@"error catch"];
+    }] catch:^RACSignal * _Nonnull(NSError * _Nonnull error) {
+         return [RACSignal return:@"error catch2"];
+    }] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"x = %@",x);
+    }];
+    
+}
+
+static RACSignal* t1  = nil;
+
+- (void)autoConnectTest{
+    
+    NSLog(@"autoConnectTest");
+    
+     t1 = [[[RACSignal createSignal:^RACDisposable * (id<RACSubscriber>  subscriber) {
+        NSLog(@"这个是一个网络请求");
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [subscriber sendNext:@"123"];
+            [subscriber sendCompleted];
+        });
+       
+        return  nil;
+    }] publish] autoconnect];
+    
+    [t1 subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribeNext 1 = %@",x);
+    }];
+    
+    [t1 subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribeNext 2 = %@",x);
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [t1 subscribeNext:^(id  _Nullable x) {
+            NSLog(@"subscribeNext 3 = %@",x);
+        }];
+        
+        [t1 subscribeNext:^(id  _Nullable x) {
+            NSLog(@"subscribeNext 4 = %@",x);
+        }];
+        
+    });
+    
+    
+}
+
+- (void)lastTest
+{
+    NSLog(@"lastTest");
+    
+    
+    RACSubject* sub = [RACSubject subject];
+    
+    [sub.switchToLatest subscribeNext:^(id  _Nullable x) {
+        NSLog(@"x= %@",x);
+    }];
+    
+    
+    [[sub flatten] subscribeNext:^(id  _Nullable x) {
+         NSLog(@"%@",x);
+    }];
+    
+//    [sub subscribeNext:^(RACSignal*   x) {
+//        [x subscribeNext:^(id  _Nullable x) {
+//            NSLog(@"%@",x);
+//        }];
+//    }];
+    
+    
+    RACSubject* sub1 = [RACSubject subject];
+    RACSignal* s1 = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>  subscriber) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)),
+                       dispatch_get_main_queue(), ^{
+                           [subscriber sendNext:@"123"];
+                           [subscriber sendCompleted];
+                       });
+        return nil;
+    }];
+    
+    [s1 subscribe:sub1];
+    [sub sendNext:sub1];
+    
+    
+    RACSubject* sub2 = [RACSubject subject];
+    
+    RACSignal* s2 = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>  subscriber) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)),
+                       dispatch_get_main_queue(), ^{
+                           [subscriber sendNext:@"456"];
+                           [subscriber sendCompleted];
+                       });
+        return nil;
+    }];
+    
+    [s2 subscribe:sub2];
+    [sub sendNext:sub2];
+    
+    
+   
+    
+//    [sub1 subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"x = %@",x);
+//    }];
+    
+    
+    
+}
+
+- (void)flatMapTest
+{
+    NSLog(@"flatMapTest");
+    
+    RACSignal* s1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [RACScheduler.mainThreadScheduler afterDelay:1 schedule:^{
+            [subscriber sendNext:@"123"];
+            [subscriber sendCompleted];
+        }];
+       
+        return nil;
+    }];
+    
+    RACSignal* s2 = [s1 flattenMap:^ RACSignal * (id value) {
+        return [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+            
+            [RACScheduler.mainThreadScheduler afterDelay:1 schedule:^{
+                [subscriber sendNext:[NSString stringWithFormat:@"%@,456",value]];
+                [subscriber sendCompleted];
+            }];
+            return nil;
+        }];
+    }];
+    
+    [s2 subscribeNext:^(id  _Nullable x) {
+        NSLog(@"x = %@",x);
+    }];
+    
+}
+
+
 
 /*
 #pragma mark - Navigation
