@@ -43,6 +43,8 @@
                     @[@"autoConnect",@"autoConnectTest"],
                     @[@"lastTest",@"lastTest"],
                     @[@"flatMap",@"flatMapTest"],
+                    @[@"merge",@"mergeTest"],
+                    @[@"eventQuene",@"eventQueneTest"],
                     ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
@@ -325,6 +327,28 @@
 - (void)switchToLatestTest {
     
     
+//    RACSignal *numbers = @[@(0), @(1), @(2)].rac_sequence.signal;
+//
+//    RACSignal *letters1 = @[@"A", @"B", @"C"].rac_sequence.signal;
+//    RACSignal *letters2 = @[@"X", @"Y", @"Z"].rac_sequence.signal;
+//    RACSignal *letters3 = @[@"M", @"N"].rac_sequence.signal;
+//    NSArray *arrayOfSignal = @[letters1, letters2, letters3]; //2
+//
+//
+//    [[[numbers
+//       map:^id(NSNumber *n) {
+//           //3
+//           return arrayOfSignal[n.integerValue];
+//       }]
+//      collect]  //4
+//     subscribeNext:^(NSArray *array) {
+//         DDLogVerbose(@"%@, %@", [array class], array);
+//     } completed:^{
+//         DDLogVerbose(@"completed");
+//     }];
+//}
+    
+    
     RACSubject *signalofsignal = [RACSubject subject];
     RACSubject *signal1 = [RACSubject subject];
     RACSubject *signal2 = [RACSubject subject];
@@ -337,6 +361,11 @@
         [x subscribeNext:^(id  _Nullable x2) {
             NSLog(@"x2 =%@",x2);
         }];
+    }];
+    
+    
+    [[signalofsignal flatten] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"signalofsignal flatten x2 =%@",x);
     }];
     
     
@@ -1008,9 +1037,142 @@ static RACSignal* t1  = nil;
     [s2 subscribeNext:^(id  _Nullable x) {
         NSLog(@"x = %@",x);
     }];
-    
 }
 
+
+- (void)mergeTest
+{
+    NSLog(@"mergeTest");
+    
+    RACSignal* s1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@"123"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    
+    RACSignal* s2 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@"456"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    
+    RACSignal* s3 = [s1 merge:s2];
+    [s3 subscribeNext:^(id  _Nullable x) {
+        NSLog(@"s3 subscribeNext = %@",x);
+    }];
+    
+    
+//    [s1 subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"s1 subscribeNext = %@",x);
+//    }];
+    
+//    [s1 merge:<#(nonnull RACSignal *)#>]
+    
+//    RACSignal* s2 = [s1 flattenMap:^ RACSignal * (id value) {
+//        return [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+//
+//            [RACScheduler.mainThreadScheduler afterDelay:1 schedule:^{
+//                [subscriber sendNext:[NSString stringWithFormat:@"%@,456",value]];
+//                [subscriber sendCompleted];
+//            }];
+//            return nil;
+//        }];
+//    }];
+//
+//    [s2 subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"x = %@",x);
+//    }];
+}
+
+
+- (void)eventQueneTest {
+    
+    
+    static int a = 1;
+    
+    RACSignal* showLoading = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        NSLog(@"UI showLoading===");
+        [subscriber sendNext:@"showLoading"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    
+    RACSignal* hiddenLoading = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        NSLog(@"UI hiddenLoading===");
+        [subscriber sendNext:@"hiddenLoading"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    
+    //点击 - 》 网络下载- 〉 文件
+    RACSignal* tap = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        NSLog(@"1 tap===");
+        a++;
+        [subscriber sendNext:@"tap"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    RACSignal* load = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        NSLog(@"2 load=== a= %d",a);
+        
+        
+        [RACScheduler.mainThreadScheduler afterDelay:2 schedule:^{
+            if (a % 5 == 0) {
+                NSError* e = [NSError errorWithDomain:@"123" code:0 userInfo:nil];
+                [subscriber sendError:e];
+            }
+            else
+            {
+                [subscriber sendNext:@"loading"];
+                [subscriber sendCompleted];
+            }
+        }];
+        return nil;
+    }];
+    
+    
+    RACSignal* save = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        NSLog(@"3 save===");
+        [subscriber sendNext:@"save Over"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    
+//    RACSignal* taks = [[tap concat:load] concat:(nonnull RACSignal *]
+    
+    RACSignal* task = [tap flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+//        return [load flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+//            return save;
+//        }];
+        
+//        return [[showLoading concat:load] flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+//            return [save concat:hiddenLoading];
+//        }];
+        
+        return [[showLoading then:^RACSignal * _Nonnull{
+            return load;
+        }] flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+            return [save then:^RACSignal * _Nonnull{
+                return hiddenLoading;
+            }];
+        }];
+    }];
+    
+    [[task catch:^RACSignal * _Nonnull(NSError * _Nonnull error) {
+//        return [RACSignal error:error];
+        RACSignal* e = [RACSignal return: error];
+        return [RACSignal merge:@[hiddenLoading,e]];
+    }] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"result Over? =%@",x);
+    }];
+    
+}
 
 
 /*
