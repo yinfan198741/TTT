@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.656949"
+            timestampString = "590196213.443248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "-combineCommand"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.65746"
+            timestampString = "590196213.443387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
             landmarkName = "-RACDisposableTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.657794"
+            timestampString = "590196213.4434741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "437"
-            endingLineNumber = "437"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
             landmarkName = "-MulticastConnectionTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.658126"
+            timestampString = "590196213.443557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "427"
-            endingLineNumber = "427"
+            startingLineNumber = "443"
+            endingLineNumber = "443"
             landmarkName = "-MulticastConnectionTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.658424"
+            timestampString = "590196213.443637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "431"
-            endingLineNumber = "431"
+            startingLineNumber = "447"
+            endingLineNumber = "447"
             landmarkName = "-MulticastConnectionTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.658764"
+            timestampString = "590196213.443714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "441"
-            endingLineNumber = "441"
+            startingLineNumber = "457"
+            endingLineNumber = "457"
             landmarkName = "-MulticastConnectionTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.659119"
+            timestampString = "590196213.4437931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "904"
-            endingLineNumber = "904"
+            startingLineNumber = "920"
+            endingLineNumber = "920"
             landmarkName = "-trycatchTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.6594501"
+            timestampString = "590196213.443871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "906"
-            endingLineNumber = "906"
+            startingLineNumber = "922"
+            endingLineNumber = "922"
             landmarkName = "-trycatchTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.6597511"
+            timestampString = "590196213.443951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "545"
-            endingLineNumber = "545"
+            startingLineNumber = "561"
+            endingLineNumber = "561"
             landmarkName = "-bindTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.66004"
+            timestampString = "590196213.444026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1055"
-            endingLineNumber = "1055"
+            startingLineNumber = "1071"
+            endingLineNumber = "1071"
             landmarkName = "-mergeTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.660334"
+            timestampString = "590196213.444097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1048"
-            endingLineNumber = "1048"
+            startingLineNumber = "1064"
+            endingLineNumber = "1064"
             landmarkName = "-mergeTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,12 +202,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "590071286.660638"
+            timestampString = "590196213.444191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1063"
-            endingLineNumber = "1063"
+            startingLineNumber = "1079"
+            endingLineNumber = "1079"
             landmarkName = "-mergeTest"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/RACTest/FPRViewController.m"
+            timestampString = "590196213.444266"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "@implementation FPRViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ReactiveObjC/ReactiveObjC/RACCompoundDisposable.m"
+            timestampString = "590196611.949802"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "-dispose"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

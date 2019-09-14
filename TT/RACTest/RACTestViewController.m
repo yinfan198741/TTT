@@ -9,12 +9,15 @@
 #import "RACTestViewController.h"
 #import "ReactiveObjC.h"
 #import "RacDemoViewController.h"
+#import "FPRViewController.h"
 
 @interface RACTestViewController ()
 
 @property (nonatomic ,strong) NSArray<NSArray*>* source;
 
 @property (nonatomic ,strong) UILabel* label;
+
+@property (nonatomic ,strong) UIButton* retryButtton;
 
 @property (nonatomic, strong) id<RACSubscriber> subscriber;
 
@@ -25,7 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.source = @[@[@"Rsignal Demo",@"RacDemo"],
+    self.source = @[@[@"FPRDemo",@"FPRDemo"],
+                    @[@"Rsignal Demo",@"RacDemo"],
                     @[@"Rsignal Test",@"signalTest"],
                     @[@"commandTest",@"commandTest"],
                     @[@"combineCommand",@"combineCommand"],
@@ -45,6 +49,8 @@
                     @[@"flatMap",@"flatMapTest"],
                     @[@"merge",@"mergeTest"],
                     @[@"eventQuene",@"eventQueneTest"],
+                    @[@"flatten",@"flattenTest"],
+                    @[@"testCollectSignalsAndCombineLatestOrZip",@"testCollectSignalsAndCombineLatestOrZip"],
                     ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
@@ -82,6 +88,16 @@
     
     [self presentViewController:dvc animated:YES completion:nil];
     
+}
+
+
+- (void)FPRDemo {
+	NSLog(@"FPRDemo");
+	FPRViewController* dvc = [[FPRViewController alloc] init];
+	
+	
+	[self presentViewController:dvc animated:YES completion:nil];
+	
 }
 
 
@@ -1174,6 +1190,941 @@ static RACSignal* t1  = nil;
     
 }
 
+
+- (void)flattenTest {
+    NSLog(@"flattenTest");
+    
+    RACSignal * a1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        NSLog(@"RACSignal - a1");
+        [subscriber sendNext:@"a1"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    RACSignal * a2 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+         NSLog(@"RACSignal - a2");
+        [subscriber sendNext:@"a2"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    RACSignal * a3 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+         NSLog(@"RACSignal - a3");
+        [subscriber sendNext:@"a3"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    
+    
+    RACSignal * b = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:a1];
+        [subscriber sendNext:a2];
+        [subscriber sendNext:a3];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+//    [b subscribeNext:^(id  _Nullable x) {
+//
+//    }];
+    
+
+///Value returned from -flattenMap: is not a stream:
+//    crash
+//    [[a1 flatten] subscribeNext:^(id  _Nullable x) {
+//         NSLog(@"a1 flatten x = %@",x);
+//    }];
+
+    [[b flatten] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"b flatten x = %@",x);
+    }];
+    
+}
+
+//http://fengjian0106.github.io/2016/04/17/The-Power-Of-Composition-In-FRP-Part-1/
+
+#pragma mark part_1
+//1
+- (void)initPipeline {
+    @weakify(self);
+    RACSignal *keyboardWillShowNotification =
+    [[NSNotificationCenter.defaultCenter rac_addObserverForName:UIKeyboardWillShowNotification object:nil]
+     map:^id(NSNotification *notification) {
+         //2
+         NSDictionary* userInfo = [notification userInfo];
+         NSValue* aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+         return aValue;
+     }];
+    
+    [[[[[NSNotificationCenter.defaultCenter rac_addObserverForName:UIKeyboardWillHideNotification object:nil]
+        map:^id(NSNotification *notification) {
+            //3
+            return [NSValue valueWithCGRect:CGRectZero];
+        }]
+       merge:keyboardWillShowNotification]   //4
+      takeUntil:self.rac_willDeallocSignal]  //6
+     subscribeNext:^(NSValue *value) {
+         NSLog(@"Keyboard size is: %@", value);
+         //5
+         @strongify(self);
+         //self.messageEditViewContainerViewBottomConstraint.constant = 5.0 + [value CGRectValue].size.height;
+         
+         [self.view updateConstraints];
+         [UIView animateWithDuration:0.6 animations:^{
+             @strongify(self);
+             [self.view layoutIfNeeded];
+         }];
+     } completed:^{
+         //6
+         NSLog(@"%s, Keyboard Notification signal completed", __PRETTY_FUNCTION__);
+     }];
+}
+
+///倒计时
+- (RACSignal *)retryButtonTitleAndEnable {
+    static const NSInteger n = 60;
+    
+    RACSignal *timer = [[[RACSignal interval:1 onScheduler:[RACScheduler mainThreadScheduler]]  //7
+                         map:^id(id value) {
+                             return nil; //8
+                         }]
+                        startWith:nil]; //9
+    
+    //10
+    NSMutableArray *numbers = [[NSMutableArray alloc] init];
+    for (NSInteger i = n; i >= 0; i--) {
+        [numbers addObject:[NSNumber numberWithInteger:i]];
+    }
+    
+    return [[[[[numbers.rac_sequence.signal zipWith:timer]  //11
+               map:^id(RACTuple *tuple) {
+                   //12
+                   NSNumber *number = tuple.first;
+                   NSInteger count = number.integerValue;
+                   
+                   if (count == 0) {
+                       return RACTuplePack(@"重试", [NSNumber numberWithBool:YES]);
+                   } else {
+                       NSString *title = [NSString stringWithFormat:@"重试(%lds)", (long)count];
+                       return RACTuplePack(title, [NSNumber numberWithBool:NO]);
+                   }
+               }]
+              takeUntil:[self rac_willDeallocSignal]] //13
+             setNameWithFormat:@"%s, retryButtonTitleAndEnable signal", __PRETTY_FUNCTION__]
+            logCompleted]; //14
+}
+
+- (void)initPipelines {
+    
+//    self.retryButtton.rac_command =
+    
+    @weakify(self);
+    [[[[[[self.retryButtton rac_signalForControlEvents:UIControlEventTouchUpInside]
+         map:^id(id value) {
+             //2
+             @strongify(self);
+             return [self retryButtonTitleAndEnable];
+         }]
+        startWith:[self retryButtonTitleAndEnable]]  //3
+       switchToLatest]  //4
+      takeUntil:[self rac_willDeallocSignal]]  //5
+     subscribeNext:^(RACTuple *tuple) {
+         //6
+         @strongify(self);
+         NSString *title = tuple.first;
+         [self.retryButtton setTitle:title forState:UIControlStateNormal];
+         self.retryButtton.enabled = ((NSNumber *)tuple.second).boolValue;
+     } completed:^{
+         //5
+         NSLog(@"%s, pipeline completed", __PRETTY_FUNCTION__);
+     }];
+    
+    //这里省略了点击 retryButtton 后具体要做的业务逻辑，同时也省略了验证按钮和验证码输入框的处理逻辑
+}
+
+
+#pragma mark part_2
+
+- (RACSignal*)getUIImageWithURLString:(NSString*)url {
+    return nil;
+}
+
+- (RACSignal*)decodeBarWithUIImage:(UIImage*)image
+{
+    return nil;
+}
+
+- (RACSignal *)decodeBarWithURLString: (NSString *)urlString {
+    NSParameterAssert(urlString != nil);
+    
+    @weakify(self);
+    return [[[self getUIImageWithURLString:urlString]  //1
+             flattenMap:^(UIImage *image) {
+                 @strongify(self);
+                 return [self decodeBarWithUIImage:image];  //2
+             }]
+            timeout:1.5 onScheduler:[RACScheduler schedulerWithPriority:RACSchedulerPriorityDefault]];  //3
+    
+}
+
+-(void)jsCallImageClick:(NSString *)imageUrl imageClickName:(NSString *)imgClickName {
+    NSMutableArray *components = [NSMutableArray arrayWithArray:[imageUrl componentsSeparatedByString:@"&qmSrc:"]];
+    NSMutableArray *temp = [NSMutableArray arrayWithArray:[(NSString*)[components firstObject] componentsSeparatedByString:[NSString stringWithFormat:@"&%@:",imgClickName]]];
+//    [self filterJsArray:temp];
+    NSString *imageUrlString = [NSString stringWithFormat:@"%@",(NSString *)[temp firstObject]];
+    
+    RACSignal *barCodeStringSignal = [self decodeBarWithURLString:imageUrlString];
+    
+    @weakify(self);
+    [[barCodeStringSignal
+      deliverOn:[RACScheduler mainThreadScheduler]]  //1
+     subscribeNext:^(NSString *barCodeString) {
+         @strongify(self);
+//         [self showImageSaveSheetWithImageUrl:imageUrl withImageClickName:imgClickName withBarCode:barCodeString];
+     } error:^(NSError *error) {
+         
+         @strongify(self);
+//         [self showImageSaveSheetWithImageUrl:imageUrl withImageClickName:imgClickName withBarCode:nil];
+     } completed:^{
+     }];
+}
+
+
+
+//
+//- (RACSignal *)getAvatarWithContact: (NSArray *)contact {
+//    RACSignal *addrs = [[contact.rac_sequence
+//                         map:^(NSString *contactItem) {
+//                             return @(contactItem.length);
+//                         }]
+//                        signal];//4
+//
+//    ///越界???
+// return [[[[addrs take:1]  //5
+//              map:^id(NSString *emailAddr) {
+//                  return [[[FMAvatarManager shareInstance] rac_asyncGetAvatar:emailAddr]
+//                          retry:3];  //6
+//              }]
+//             flatten]
+//            catch:^RACSignal *(NSError *error) {
+//                //7
+//                return [RACSignal return:nil]; //8
+//            }];
+//}
+//
+//- (void)initPipelineWithCell:(FMContactCreateAvatarCell *)cell {
+//    @weakify(cell);
+//    [[[[self getAvatarWithContact:self.contact] //1
+//       deliverOnMainThread]
+//      takeUntil:cell.rac_prepareForReuseSignal]
+//     subscribeNext:^(UIImage *image) {
+//         @strongify(cell);
+//         if (image) { //2
+//             [cell.avatarButton setImage:image forState:UIControlStateNormal];
+//         }
+//     } error:^(NSError *error) {
+//         //3
+//     } completed:^{
+//     }];
+//}
+
+#pragma mark part_3
+
+- (void)testCollectSignalsAndCombineLatestOrZip {
+
+//#define _first
+#ifdef _first
+    
+    //1
+    RACSignal *numbers = @[@(0), @(1), @(2)].rac_sequence.signal;
+    
+    RACSignal *letters1 = @[@"A", @"B", @"C"].rac_sequence.signal;
+    RACSignal *letters2 = @[@"X", @"Y", @"Z"].rac_sequence.signal;
+    RACSignal *letters3 = @[@"M", @"N"].rac_sequence.signal;
+    NSArray *arrayOfSignal = @[letters1, letters2, letters3]; //2
+    
+    
+    [[[numbers
+       map:^id(NSNumber *n) {
+           //3
+           return arrayOfSignal[n.integerValue];
+       }]
+      collect]  //4
+     subscribeNext:^(NSArray *array) {
+         
+         NSLog(@"%@, %@", [array class], array);
+     } completed:^{
+         NSLog(@"completed");
+     }];
+#endif
+
+//#define _second
+#ifdef _second
+    
+    RACSignal *numbers = @[@(0), @(1), @(2)].rac_sequence.signal;
+    
+    RACSignal *letters1 = @[@"A", @"B", @"C"].rac_sequence.signal;
+    RACSignal *letters2 = @[@"X", @"Y", @"Z"].rac_sequence.signal;
+    RACSignal *letters3 = @[@"M", @"M"].rac_sequence.signal;
+    NSArray *arrayOfSignal = @[letters1, letters2, letters3];
+    
+
+    
+    
+    [[[[numbers
+        map:^id(NSNumber *n) {
+            return arrayOfSignal[n.integerValue];
+        }]
+       collect]
+      flattenMap:^RACSignal *(NSArray *arrayOfSignal) {
+          //1
+          return [RACSignal combineLatest:arrayOfSignal
+                                   reduce:^(NSString *first, NSString *second, NSString *third) {
+                                       return [NSString stringWithFormat:@"%@-%@-%@", first, second, third];
+                                   }];
+      }]
+     subscribeNext:^(NSString *x) {
+         NSLog(@"%@, %@", [x class], x);
+     } completed:^{
+         NSLog(@"completed");
+     }];
+    
+#endif
+    
+#define _third
+#ifdef _third
+    
+    RACSignal *numbers = @[@(0), @(1), @(2)].rac_sequence.signal;
+    
+    RACSignal *letters1 = @[@"A", @"B", @"C"].rac_sequence.signal;
+    RACSignal *letters2 = @[@"X", @"Y", @"Z"].rac_sequence.signal;
+    RACSignal *letters3 = @[@"M", @"M"].rac_sequence.signal;
+    NSArray *arrayOfSignal = @[letters1, letters2, letters3];
+    
+    
+//    [[RACSignal zip:arrayOfSignal
+//             reduce:^(NSString *first, NSString *second, NSString *third) {
+//                 return [NSString stringWithFormat:@"%@-%@-%@", first, second, third];
+//
+//             }] subscribeNext:^(id  _Nullable x) {
+//                  NSLog(@"========= %@, %@", [x class], x);
+//             }];
+    
+    [[[[numbers
+        map:^id(NSNumber *n) {
+            return arrayOfSignal[n.integerValue];//!! this is Signal, but just use map NOT flatMap
+        }]
+       collect]
+      flattenMap:^RACSignal *(NSArray *arrayOfSignal) {
+          //1
+          return [RACSignal zip:arrayOfSignal
+                         reduce:^(NSString *first, NSString *second, NSString *third) {
+                             return [NSString stringWithFormat:@"%@-%@-%@", first, second, third];
+                             
+                         }];
+      }]
+     subscribeNext:^(NSString *x) {
+         NSLog(@"%@, %@", [x class], x);
+     } completed:^{
+         NSLog(@"completed");
+     }];
+    
+#endif
+    
+}
+//
+//- (RACSignal *)savaAvatar:(UIImage *)image withContact:(NSArray *)contact {
+//    NSParameterAssert(image != nil);
+//    NSParameterAssert(contact.count > 0);
+//
+//    //1
+//    RACSignal *addrs = [[contact.rac_sequence
+//                         map:^(id *contactItem) {
+//                             return contactItem.email;
+//                         }]
+//                        signal];
+//
+//    return [[[[addrs
+//               map:^id(NSString *emailAddr) {
+//                   return [[[[FMAvatarManager shareInstance] rac_setAvatar:emailAddr image:image] //2
+//                            map:^id(id value) {
+//                                //4
+//                                return RACTuplePack(value, nil);
+//                            }]
+//                           catch:^RACSignal *(NSError *error) {
+//                               //3
+//                               return [RACSignal return:RACTuplePack(nil, error)];
+//                           }];
+//               }]
+//              collect]  //5
+//             flattenMap:^RACStream *(NSArray<RACSignal *> *arrayOfSignal) {
+//                 return [[RACSignal zip:arrayOfSignal]  //6
+//                         map:^id(RACTuple *tuple) {     //7
+//                             //8
+//                             return [tuple allObjects];
+//                         }];
+//             }]
+//            map:^id(NSArray<RACTuple *> *value) {
+//                //9
+//                return value;
+//            }];
+//}
+//
+//
+//
+//- (void)initPipline_3 {
+//    @weakify(self);
+//    //1
+//    RACSignal *emailsIsNil = [[RACObserve(self.contact, contactItems) //2
+//                               flattenMap:^id(NSMutableArray *items) {
+//                                   if (items.count == 0) { //3
+//                                       return [RACSignal return:[NSNumber numberWithBool:YES]];
+//                                   }
+//
+//                                   //4
+//                                   return [[[items.rac_sequence.signal
+//                                             map:^id(FMContactItem *item) {
+//                                                 return [[RACObserve(item, email)  //5
+//                                                          distinctUntilChanged]    //6
+//                                                         map:^id(NSString *email) {
+//                                                             //7
+//                                                             return [NSNumber numberWithBool:(email.length == 0)];
+//                                                         }];
+//                                             }]
+//                                            collect]  //8
+//                                           flattenMap:^id(NSArray *arrayOfBoolSignal) {
+//                                               return [[[RACSignal combineLatest:arrayOfBoolSignal]  //9
+//                                                        map:^id(RACTuple *tuple) {
+//                                                            //10
+//                                                            BOOL b = YES;
+//                                                            for (NSUInteger i = 0; i < tuple.count; i++) {
+//                                                                NSNumber *n = [tuple objectAtIndex:i];
+//                                                                b = b && n.boolValue;
+//                                                            }
+//                                                            return [NSNumber numberWithBool:b];
+//                                                        }]
+//                                                       distinctUntilChanged];  //11
+//                                           }];
+//                               }]
+//                              distinctUntilChanged];  //11
+//
+//    //12
+//    RACSignal *phonesIsNil = [[RACObserve(self.contact, telephone)
+//                               map:^id(NSMutableArray *phones) {
+//                                   if (phones.count == 0) {
+//                                       return [NSNumber numberWithBool:YES];
+//                                   }
+//
+//                                   for (NSString *phone in phones) {
+//                                       if (phone.length > 0) {
+//                                           return [NSNumber numberWithBool:NO];
+//                                       }
+//                                   }
+//
+//                                   return [NSNumber numberWithBool:YES];
+//                               }]
+//                              distinctUntilChanged];
+//
+//    RACSignal *addressIsNil = [[RACObserve(self.contact, familyAddress)
+//                                map:^id(NSMutableArray *addrs) {
+//                                    if (addrs.count == 0) {
+//                                        return [NSNumber numberWithBool:YES];
+//                                    }
+//
+//                                    for (NSString *addr in addrs) {
+//                                        if (addr.length > 0) {
+//                                            return [NSNumber numberWithBool:NO];
+//                                        }
+//                                    }
+//
+//                                    return [NSNumber numberWithBool:YES];
+//                                }]
+//                               distinctUntilChanged];
+//
+//    RACSignal *customInfosIsNil = [[RACObserve(self.contact, customInformations)
+//                                    flattenMap:^id(NSMutableArray *infos) {
+//                                        if (infos.count == 0) {
+//                                            return [RACSignal return:[NSNumber numberWithBool:YES]];
+//                                        }
+//
+//                                        return [[[infos.rac_sequence.signal
+//                                                  map:^id(FMCustomInformation *info) {
+//                                                      RACSignal *nameSignal = [[RACObserve(info, name)
+//                                                                                distinctUntilChanged]
+//                                                                               map:^id(NSString *name) {
+//                                                                                   return [NSNumber numberWithBool:(name.length == 0)];
+//                                                                               }];
+//
+//                                                      RACSignal *infoSignal = [[RACObserve(info, information)
+//                                                                                distinctUntilChanged]
+//                                                                               map:^id(NSString *i) {
+//                                                                                   return [NSNumber numberWithBool:(i.length == 0)];
+//                                                                               }];
+//
+//                                                      return [RACSignal combineLatest:@[nameSignal, infoSignal]
+//                                                                               reduce:(id)^id(NSNumber *name, NSNumber *info){
+//                                                                                   return [NSNumber numberWithBool:(name.boolValue && info.boolValue)];
+//                                                                               }];
+//
+//                                                  }]
+//                                                 collect]
+//                                                flattenMap:^id(NSArray *arrayOfBoolSignal) {
+//                                                    return [[[RACSignal combineLatest:arrayOfBoolSignal]
+//                                                             map:^id(RACTuple *tuple) {
+//                                                                 BOOL b = YES;
+//                                                                 for (NSUInteger i = 0; i < tuple.count; i++) {
+//                                                                     NSNumber *n = [tuple objectAtIndex:i];
+//                                                                     b = b && n.boolValue;
+//                                                                 }
+//                                                                 return [NSNumber numberWithBool:b];
+//                                                             }]
+//                                                            distinctUntilChanged];
+//                                                }];
+//                                    }]
+//                                   distinctUntilChanged];
+//
+//    RACSignal *nickIsNil = [[RACObserve(self.contact, nick)
+//                             map:^id(NSString *nick) {
+//                                 @strongify(self);
+//                                 if (self.contact.nick == nil || [self.contact.nick isEqualToString:@""] == YES) {
+//                                     return [NSNumber numberWithBool:YES];
+//                                 }
+//                                 return [NSNumber numberWithBool:NO];
+//                             }]
+//                            distinctUntilChanged];
+//
+//    RACSignal *markIsNil = [RACObserve(self.contact, mark)
+//                            map:^id(NSString *mark) {
+//                                (self);@strongify
+//                                if (self.contact.mark == nil || [self.contact.mark isEqualToString:@""] == YES) {
+//                                    return [NSNumber numberWithBool:YES];
+//                                }
+//                                return [NSNumber numberWithBool:NO];
+//                            }];
+//
+//    RACSignal *birthdayIsNil = [RACObserve(self.contact, birthday)
+//                                map:^id(NSString *birthday) {
+//                                    @strongify(self);
+//                                    if (self.contact.birthday == nil || [self.contact.birthday isEqualToString:@""] == YES) {
+//                                        return [NSNumber numberWithBool:YES];
+//                                    }
+//                                    return [NSNumber numberWithBool:NO];
+//                                }];
+//
+//    //13
+//    NSArray *allSignal = @[nickIsNil, emailsIsNil, markIsNil, phonesIsNil, addressIsNil, birthdayIsNil, customInfosIsNil];
+//    self.contactHasNoPros = [[[[RACSignal combineLatest:allSignal]  //13
+//                               map:^id(RACTuple *tuple) {
+//                                   //14
+//                                   BOOL b = YES;
+//                                   for (NSUInteger i = 0; i < tuple.count; i++) {
+//                                       NSNumber *n = [tuple objectAtIndex:i];
+//                                       b = b && n.boolValue;
+//                                   }
+//                                   return [NSNumber numberWithBool:b];
+//                               }]
+//                              distinctUntilChanged]
+//                             deliverOnMainThread];
+//}
+
+#pragma mark part_4
+
+
+//- (void)snapshotAndEdit {
+//
+//    //1
+//    RACSignal *isNotActive = [[NSNotificationCenter.defaultCenter rac_addObserverForName:UIApplicationWillResignActiveNotification object:nil]
+//                              map:^id(NSNotification *notification) {
+//                                  return [NSNumber numberWithBool:NO];
+//                              }];
+//
+//    RACSignal *isActive = [[[[NSNotificationCenter.defaultCenter rac_addObserverForName:UIApplicationDidBecomeActiveNotification object:nil]
+//                             map:^id(NSNotification *notification) {
+//                                 return [NSNumber numberWithBool:YES];
+//                             }]
+//                            startWith:[NSNumber numberWithBool:YES]]
+//                           merge:isNotActive];
+//
+//    RACSignal *isNotInBackground = [[NSNotificationCenter.defaultCenter rac_addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil]
+//                                    map:^id(NSNotification *notification) {
+//                                        return [NSNumber numberWithBool:NO];
+//                                    }];
+//
+//    RACSignal *isInForeground = [[[[NSNotificationCenter.defaultCenter rac_addObserverForName:UIApplicationWillEnterForegroundNotification object:nil]
+//                                   map:^id(NSNotification *notification) {
+//                                       return [NSNumber numberWithBool:YES];
+//                                   }]
+//                                  startWith:[NSNumber numberWithBool:YES]]
+//                                 merge:isNotInBackground];
+//
+//    //2
+//    RACSignal *didTakeScreenshot = [NSNotificationCenter.defaultCenter rac_addObserverForName:UIApplicationUserDidTakeScreenshotNotification object:nil];
+//
+//    @weakify(self);
+//    RACSignal *imageSignal = [[[[[[[RACSignal if:[RACSignal merge:@[isInForeground, isActive]] then:didTakeScreenshot else:[RACSignal never]] //3
+//                                   takeUntil:self.rac_willDeallocSignal]
+//                                  filter:^BOOL(id value) {
+//                                      //4
+//                                      @strongify(self);
+//                                      return [self filterScreenshotNotification];
+//                                  }]
+//                                 filter:^BOOL(id value) {
+//                                     //5
+//                                     @strongify(self);
+//                                     return self.previewShotView == nil;
+//                                 }]
+//                                map:^id(NSNotification *notification) {
+//                                    //6
+//                                    @strongify(self);
+//                                    return [self takeCurrentScreenshotOfWebview];
+//                                }]
+//                               multicast:[RACReplaySubject subject]]
+//                              autoconnect];//7
+//
+//    //8
+//    RACSignal *hotSignalForPreview = [[[imageSignal
+//                                        map:^id(UIImage *image) {
+//                                            @strongify(self);
+//                                            return [self showScreenshotPreviewView:image];
+//                                        }]
+//                                       multicast:[RACReplaySubject subject]]
+//                                      autoconnect];
+//
+//    //9
+//    RACSignal *cancel = [[hotSignalForPreview
+//                          map:^id(FMScreenshotPreviewView *previewView) {
+//                              return [previewView.cancelSignal
+//                                      map:^id(id value) {
+//                                          return nil;
+//                                      }];
+//                          }]
+//                         switchToLatest];
+//
+//    //10
+//    RACSignal *editImage = [[hotSignalForPreview
+//                             map:^id(FMScreenshotPreviewView *previewView) {
+//                                 return [previewView.editImage
+//                                         map:^id(id value) {
+//                                             return nil;
+//                                         }];
+//                             }]
+//                            switchToLatest];
+//
+//    //11
+//    RACSignal *otherActionForHidePreview = [[hotSignalForPreview
+//                                             map:^id(id value) {
+//                                                 RACSignal *willResignActive = [[[NSNotificationCenter.defaultCenter rac_addObserverForName:UIApplicationWillResignActiveNotification object:nil]
+//                                                                                 take:1]
+//                                                                                takeUntil:[RACSignal merge:@[cancel, editImage]]];
+//
+//                                                 RACSignal *timeout = [[[RACSignal return:nil]
+//                                                                        delay:10.0]
+//                                                                       takeUntil:[RACSignal merge:@[cancel, editImage, willResignActive]]];
+//
+//
+//                                                 return [[RACSignal merge:@[timeout, willResignActive]]
+//                                                         take:1];
+//                                             }]
+//                                            switchToLatest];
+//
+//    //12
+//    RACSignal *shouldHidePreviewView = [RACSignal merge:@[cancel, editImage, otherActionForHidePreview]];
+//
+//    //13
+//    RACSignal *viewWillDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
+//
+//    //14
+//    [[[shouldHidePreviewView
+//       zipWith:hotSignalForPreview]
+//      takeUntil:viewWillDisappear]//13
+//     subscribeNext:^(RACTuple *tuple) {
+//         @strongify(self);
+//         [self hideScreenshotPreviewView:tuple];
+//     } completed:^{
+//     }];
+//
+//    //15
+//    [[[imageSignal sample:editImage]
+//      takeUntil:viewWillDisappear]
+//     subscribeNext:^(UIImage *image) {
+//         @strongify(self);
+//         [self showDrawViewController:image];
+//     } completed:^{
+//     }];
+//
+//}
+
+
+#pragma mark part_5
+
+
+//- (void)fetchNecessaryDataForAccounts:(NSArray<FMAccount *> *)accounts {
+//    NSParameterAssert(accounts != nil);
+//    NSParameterAssert(accounts.count > 0);
+//
+//    @weakify(self);
+//    [[[[[accounts.rac_sequence signal] //1
+//        map:^id(FMAccount *account) {
+//            //2
+//            return [[[QHOldAccountMigration fetchInitialDataForAccount:account]
+//                     map:^id(FMAccount *account) {
+//                         //3
+//                         return RACTuplePack(account, nil);
+//                     }]
+//                    catch:^RACSignal *(NSError *error) {
+//                        //3
+//                        return [RACSignal return:RACTuplePack(account, error)];
+//                    }];
+//        }]
+//       collect] //4
+//      flattenMap:^RACStream *(NSArray *arrayOfSignal) {
+//          ///等待所有信号都完成??? 自己试一下zip
+//          return [[RACSignal zip:arrayOfSignal] //4
+//                  map:^id(RACTuple *tuple) {
+//                      NSMutableArray *successAccounts = [[NSMutableArray alloc] init];
+//                      NSMutableArray *failAccounts = [[NSMutableArray alloc] init];
+//
+//                      for (int i = 0; i < tuple.count; i++) {
+//                          RACTuple *t = [tuple objectAtIndex:i];
+//                          FMAccount *account = t.first;
+//                          NSError *error = t.second;
+//
+//                          if (error) {
+//                              [failAccounts addObject:account];
+//                          } else {
+//                              [successAccounts addObject:account];
+//                          }
+//                      }
+//
+//                      return RACTuplePack([successAccounts copy], [failAccounts copy]);
+//                  }];
+//      }]
+//     subscribeNext:^(RACTuple *tuple) {
+//         @strongify(self);
+//         NSArray *successAccounts = tuple.first;
+//         NSArray *failAccounts = tuple.second;
+//         //5
+//
+//         if (failAccounts.count == 0) {
+//             [self jumpToOriginalLogic];
+//         } else {
+//             NSMutableString *title;
+//             if (successAccounts.count == 0) {
+//                 title = [[NSMutableString alloc] initWithString:@"所有账号迁移失败，请重新登录"];
+//             } else {
+//                 title = [[NSMutableString alloc] initWithString:@"邮箱账号"];
+//                 for (FMAccount *account in failAccounts) {
+//                     [title appendFormat:@"%@, ", account.profile.mailAddress];
+//                 }
+//
+//                 title = [[title substringToIndex:title.length - 2] mutableCopy];
+//                 [title appendString:@"迁移失败，需要重新登录"];
+//             }
+//
+//             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+//             [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//                 @strongify(self);
+//                 for (FMAccount *account in failAccounts) {
+//                     FMMigrationFailAccount *failAccount = [FMMigrationFailAccount convertAccountToMigrationFailAccount:account];
+//                     [failAccount save];
+//
+//                     [[FMManager shareInstance] deleteAccount:account.accountId];
+//                 }
+//                 [self jumpToOriginalLogic];
+//             }]];
+//
+//             UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+//             [viewController presentViewController:alertController animated:YES completion:^{
+//             }];
+//         }
+//     } error:^(NSError *error) {
+//
+//     } completed:^{
+//
+//     }];
+//}
+
+
+///模拟一个场景来实现这个需求
+//- (void)fetchNecessaryDataForAccountsWithProcess:(NSArray<FMAccount *> *)accounts {
+//    NSParameterAssert(accounts != nil);
+//    NSParameterAssert(accounts.count > 0);
+//
+//    @weakify(self);
+//    //1
+//    RACSignal *fetchAllInitialData = [[[[accounts.rac_sequence signal]
+//                                        map:^id(FMAccount *account) {
+//                                            return [[[[[QHOldAccountMigration fetchInitialDataForAccount:account]
+//                                                       map:^id(FMAccount *account) {
+//                                                           return RACTuplePack(account, nil);
+//                                                       }]
+//                                                      catch:^RACSignal *(NSError *error) {
+//                                                          return [RACSignal return:RACTuplePack(account, error)];
+//                                                      }]
+//                                                     multicast:[RACReplaySubject subject]] //3
+//                                                    autoconnect];
+//                                        }]
+//                                       multicast:[RACReplaySubject subject]] //2
+//                                      autoconnect];
+//
+//
+//    //4
+//    RACSignal *businessLogicSignal = [[fetchAllInitialData collect]
+//                                      flattenMap:^RACStream *(NSArray *arrayOfSignal) {
+//                                          return [[RACSignal zip:arrayOfSignal]
+//                                                  map:^id(RACTuple *tuple) {
+//                                                      NSMutableArray *successAccounts = [[NSMutableArray alloc] init];
+//                                                      NSMutableArray *failAccounts = [[NSMutableArray alloc] init];
+//
+//                                                      for (int i = 0; i < tuple.count; i++) {
+//                                                          RACTuple *t = [tuple objectAtIndex:i];
+//                                                          FMAccount *account = t.first;
+//                                                          NSError *error = t.second;
+//
+//                                                          if (error) {
+//                                                              [failAccounts addObject:account];
+//                                                          } else {
+//                                                              [successAccounts addObject:account];
+//                                                          }
+//                                                      }
+//
+//                                                      return RACTuplePack([successAccounts copy], [failAccounts copy]);
+//                                                  }];
+//                                      }];
+//
+//
+//    [businessLogicSignal
+//     subscribeNext:^(RACTuple *tuple) {
+//         @strongify(self);
+//         NSArray *successAccounts = tuple.first;
+//         NSArray *failAccounts = tuple.second;
+//         //5
+//         if (failAccounts.count == 0) {
+//             [self jumpToOriginalLogic];
+//         } else {
+//             NSMutableString *title;
+//             if (successAccounts.count == 0) {
+//                 title = [[NSMutableString alloc] initWithString:@"所有账号迁移失败，请重新登录"];
+//             } else {
+//                 title = [[NSMutableString alloc] initWithString:@"邮箱账号"];
+//                 for (FMAccount *account in failAccounts) {
+//                     [title appendFormat:@"%@, ", account.profile.mailAddress];
+//                 }
+//
+//                 title = [[title substringToIndex:title.length - 2] mutableCopy];
+//                 [title appendString:@"迁移失败，需要重新登录"];
+//             }
+//
+//             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+//             [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//                 @strongify(self);
+//                 for (FMAccount *account in failAccounts) {
+//                     FMMigrationFailAccount *failAccount = [FMMigrationFailAccount convertAccountToMigrationFailAccount:account];
+//                     [failAccount save];
+//
+//                     [[FMManager shareInstance] deleteAccount:account.accountId];
+//                 }
+//                 [self jumpToOriginalLogic];
+//             }]];
+//
+//             UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+//             [viewController presentViewController:alertController animated:YES completion:^{
+//             }];
+//         }
+//     } error:^(NSError *error) {
+//
+//     } completed:^{
+//
+//     }];
+//
+//
+//    //11
+//    static const CGFloat tickCount = 60 / 0.5;
+//    RACSignal *timer = [[RACSignal interval:0.5 onScheduler:[RACScheduler mainThreadScheduler]]
+//                        map:^id(id value) {
+//                            return nil;
+//                        }];
+//
+//    NSMutableArray *numbers = [[NSMutableArray alloc] init];
+//    for (NSInteger i = 0; i < tickCount; i++) {
+//        [numbers addObject:@(i)];
+//    }
+//
+//    RACSignal *counter = [[[[[numbers.rac_sequence signal]
+//                             zipWith:timer]
+//                            map:^id(RACTuple *tuple) {
+//                                NSNumber *n = tuple.first;
+//                                return RACTuplePack(n, @(tickCount), nil);//12
+//                            }]
+//                           takeUntil:businessLogicSignal]
+//                          logCompleted];
+//
+//
+//
+//    //6
+//    NSMutableArray *sequence = [[NSMutableArray alloc] init];
+//    for (int i = 0; i < accounts.count; i++) {
+//        [sequence addObject:@(i + 1)];
+//    }
+//
+//
+//    static NSInteger progressValue = 0;
+//
+//    [[[[[[[fetchAllInitialData flatten]//6
+//          map:^id(RACTuple *tuple) {
+//              //7
+//              return tuple.first;
+//          }]
+//         zipWith:[sequence.rac_sequence signal]]//8
+//        combineLatestWith:[RACSignal return:@(accounts.count)]]//8
+//       map:^id(RACTuple *tuple) {
+//           //9
+//           RACTuple *nestedTuple = tuple.first;
+//           NSNumber *accountsCount = tuple.second;
+//
+//           FMAccount *account = nestedTuple.first;
+//           NSNumber *order = nestedTuple.second;
+//
+//           //10
+//           return RACTuplePack(order, accountsCount, account);
+//       }]
+//      merge:counter]//11
+//     subscribeNext:^(RACTuple *tuple) {
+//         NSNumber *order = tuple.first;
+//         NSNumber *accountsCount = tuple.second;
+//         FMAccount *account = tuple.third;
+//
+//         //13
+//         if (account) {
+//             NSLog(@"fetch initial data finished, order is: [%@, %@], account is: %@", order, accountsCount, account.profile.mailAddress);
+//
+//             NSInteger nextValue = order.integerValue * 100 / accountsCount.integerValue;
+//             if (order.integerValue == accountsCount.integerValue) {
+//                 nextValue = 100;
+//                 progressValue = 100;
+//             }
+//
+//             if (nextValue > progressValue) {
+//                 progressValue = nextValue;
+//             }
+//         } else {
+//             NSLog(@"counter info, [%@, %@]", order, accountsCount);
+//             progressValue = progressValue + 1.0;
+//
+//             //14
+//             if (progressValue > 95) {
+//                 progressValue = 95.0;
+//             }
+//         }
+//
+//         //14
+//         NSLog(@"======== progressValue is: %ld", (long)progressValue);
+//
+//     } error:^(NSError *error) {
+//     } completed:^{
+//     }];
+//}
 
 /*
 #pragma mark - Navigation
