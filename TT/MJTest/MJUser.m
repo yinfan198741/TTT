@@ -15,6 +15,20 @@
 
 @implementation MJStatus
 
+- (id)copyWithZone:(NSZone *)zone
+{
+	return [[self class] mj_objectWithKeyValues:[self mj_JSONObject]];
+}
+
++ (NSDictionary *)mj_objectClassInArray {
+	return @{
+			 @"users":@"MJUser",
+			 };
+}
+
+
+
+
 @end
 
 @implementation MJDishSpuEntity

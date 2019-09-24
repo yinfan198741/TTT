@@ -29,6 +29,7 @@
 #import "BundleViewController.h"
 #import "MJUser.h"
 #import "RACTestViewController.h"
+#import "MJViewController.h"
 
 
 @interface ViewController ()
@@ -432,54 +433,15 @@ UILabel* _la;
 
 - (void)MJTest {
     NSLog(@"MJTest");
-    
-    NSDictionary *dict = @{
-                           @"name" : @"Jack",
-                           @"icon" : @"lufy.png",
-                           @"age" : @20,
-                           @"height" : @"1.55",
-                           @"money" : @100.9,
-                           @"sex" : @(SexFemale),/* 枚举需要使用NSNumber包装 */
-                           @"gay" : @"NO"
-                           };
-    //字典转模型，使用的是mj_objectWithKeyValues:方法
-    MJUser *user = [MJUser mj_objectWithKeyValues:dict];
-    NSLog(@"%@",user.name);
-    
-    NSDictionary *dict2 = @{
-                           @"text" : @"Agree!Nice weather!",
-                           @"user" : @{
-                                   @"name" : @"Jack",
-                                   @"icon" : @"lufy.png"
-                                   },
-                           @"retweetedStatus" : @{
-                                   @"text" : @"Nice weather!",
-                                   @"user" : @{
-                                           @"name" : @"Rose",
-                                           @"icon" : @"nami.png"
-                                           }
-                                   }
-                           };
-    
-    MJStatus *status = [MJStatus mj_objectWithKeyValues:dict2];
-    NSString *text = status.text;
-    NSString *name = status.user.name;
-    NSString *icon = status.user.icon;
-    NSLog(@"text=%@, name=%@, icon=%@", text, name, icon);
-    // text=Agree!Nice weather!, name=Jack, icon=lufy.png
-    NSString *text2 = status.retweetedStatus.text;
-    NSString *name2 = status.retweetedStatus.user.name;
-    NSString *icon2 = status.retweetedStatus.user.icon;
-    NSLog(@"text2=%@, name2=%@, icon2=%@", text2, name2, icon2);
-    
-    
-    NSDictionary* dic3 = @{@"canWeigh" : @"1",
-                          @"code" : @"CFC"};
-    NSLog(@"dic3 = %@",dic3);
-    
-    MJDishSpuEntity *ss = [MJDishSpuEntity mj_objectWithKeyValues:dic3];
-    NSLog(@"ss");
-    
+	
+	
+//	MJViewController* vc = [[MJViewController alloc] init];
+//	UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+//	[self presentViewController:nav animated:YES completion:nil];
+	
+	
+	MJViewController* animation = [[MJViewController alloc] init];
+	[self.navigationController pushViewController:animation animated:true];
     
 }
 

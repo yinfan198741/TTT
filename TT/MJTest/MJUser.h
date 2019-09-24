@@ -29,9 +29,9 @@ typedef enum {
 @end
 
 
-@interface MJStatus : NSObject
+@interface MJStatus : NSObject<NSCopying>
 @property (copy, nonatomic) NSString *text;
-@property (strong, nonatomic) MJUser *user;/* 其他模型类型 */
+@property (strong, nonatomic) NSArray<MJUser*> *users;/* 其他模型类型 */
 @property (strong, nonatomic) MJStatus *retweetedStatus;/* 自我模型类型 */
 @end
 

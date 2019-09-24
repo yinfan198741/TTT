@@ -10,6 +10,7 @@
 		669D2D05F691ACF9D0C74F3B /* libPods-TT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98301CD3BADF82F90215CEC1 /* libPods-TT.a */; };
 		A714906A23099F5200A59AB2 /* RacDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A714906923099F5200A59AB2 /* RacDemoViewController.m */; };
 		A78ED85D232D15C1001A8172 /* FPRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78ED85C232D15C1001A8172 /* FPRViewController.m */; };
+		A78ED861233A5EE7001A8172 /* MJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78ED860233A5EE7001A8172 /* MJViewController.m */; };
 		A7B49F5821188E7F0081D199 /* HookCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F5721188E7F0081D199 /* HookCTests.swift */; };
 		A7B49F6C21188F0F0081D199 /* envTest.c in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6B21188F0F0081D199 /* envTest.c */; };
 		A7B49F6F211898130081D199 /* SwiftEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6E211898130081D199 /* SwiftEntryVC.swift */; };
@@ -217,6 +218,8 @@
 		A714906923099F5200A59AB2 /* RacDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RacDemoViewController.m; sourceTree = "<group>"; };
 		A78ED85B232D15C1001A8172 /* FPRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPRViewController.h; sourceTree = "<group>"; };
 		A78ED85C232D15C1001A8172 /* FPRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPRViewController.m; sourceTree = "<group>"; };
+		A78ED85F233A5EE7001A8172 /* MJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJViewController.h; sourceTree = "<group>"; };
+		A78ED860233A5EE7001A8172 /* MJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJViewController.m; sourceTree = "<group>"; };
 		A7B49F4A21188E7F0081D199 /* HookC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookC.h; sourceTree = "<group>"; };
 		A7B49F4B21188E7F0081D199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B49F5021188E7F0081D199 /* HookCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HookCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -474,6 +477,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A78ED85E233A5ED7001A8172 /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
 		A7B49F4921188E7F0081D199 /* HookC */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +566,7 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				A78ED85E233A5ED7001A8172 /* New Group1 */,
 				B5CCFA0822CB7C0700858BC5 /* VCBase */,
 				B5001DE7224BA361002D15FF /* MJTest */,
 				B568B97622433691001B8571 /* StoryboardTest */,
@@ -630,6 +641,8 @@
 			children = (
 				B5001DE8224BA38D002D15FF /* MJUser.h */,
 				B5001DE9224BA38D002D15FF /* MJUser.m */,
+				A78ED85F233A5EE7001A8172 /* MJViewController.h */,
+				A78ED860233A5EE7001A8172 /* MJViewController.m */,
 			);
 			path = MJTest;
 			sourceTree = "<group>";
@@ -1398,6 +1411,7 @@
 				B5BFE3EF222E972800B6CFAC /* enumTest.swift in Sources */,
 				B50EE56A2237547E00DAA18A /* BundleViewController.m in Sources */,
 				B5BFE3F8222F688700B6CFAC /* OCCallTester.m in Sources */,
+				A78ED861233A5EE7001A8172 /* MJViewController.m in Sources */,
 				B551283922201EF400374029 /* ImageChooser.swift in Sources */,
 				B5BFE3C9222E966400B6CFAC /* FunctionVC.swift in Sources */,
 				B5BFE3BC222E209800B6CFAC /* CatelogHookViewController.m in Sources */,
