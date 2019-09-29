@@ -1,6 +1,1 @@
-module ReactiveCocoa {
-  umbrella header "ReactiveCocoa-umbrella.h"
-
-  export *
-  module * { export * }
-}
+../../../Target Support Files/ReactiveCocoa/ReactiveCocoa.modulemap

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D7F8FCEA1F08999DB3B19C1C7B718C65"
+               BlueprintIdentifier = "67A64CE77F8CA08C6F167BDA939AD7F1"
+               BuildableName = "libGTMBase64.a"
                BlueprintName = "GTMBase64"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libGTMBase64.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

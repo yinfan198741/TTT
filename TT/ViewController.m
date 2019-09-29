@@ -30,6 +30,7 @@
 #import "MJUser.h"
 #import "RACTestViewController.h"
 #import "MJViewController.h"
+#import "BasicTestViewController.h"
 
 
 @interface ViewController ()
@@ -55,124 +56,132 @@ UILabel* _la;
 
 
 -(void)setupSource {
-  //    [TabItem CreateItem:@"function Call" itemSelect:^(){
-  ////        [self click];
-  //        NSLog(@"ttttt");
-  //    }];
-  
-  TabItem* navigationTest = [TabItem CreateItem:@"navigationTest" action:^{
-    [self navigationTest];
-  }];
-  [self.source addObject:navigationTest];
-  
-  TabItem* call = [TabItem CreateItem:@"call" action:^{
-    [self click];
-  }];
-  
-  [self.source addObject:call];
-  
-  TabItem* Eva = [TabItem CreateItem:@"Eva" action:^{
-    [self click2];
-  }];
-  
-  [self.source addObject:Eva];
-  
-  
-  TabItem* UILable = [TabItem CreateItem:@"UILable" action:^{
-    NSLog(@"UILable");
-  }];
-  [self.source addObject:UILable];
-  
-  TabItem* push = [TabItem CreateItem:@"push" action:^{
-    [self click3];
-  }];
-  [self.source addObject:push];
-  
-  TabItem* alert = [TabItem CreateItem:@"alert" action:^{
-    [self click4];
-  }];
-  [self.source addObject:alert];
-  
-  
-  TabItem* alertVC = [TabItem CreateItem:@"alertVC" action:^{
-    [self alertVC];
-  }];
-  [self.source addObject:alertVC];
-  
-  
-  TabItem* swiftCall = [TabItem CreateItem:@"swiftCall" action:^{
-    [self swiftCall];
-  }];
-  [self.source addObject:swiftCall];
-  
-  
-  TabItem* crashVC = [TabItem CreateItem:@"crashVC" action:^{
-    [self crashVC];
-  }];
-  [self.source addObject:crashVC];
-  
-  TabItem* callARMC = [TabItem CreateItem:@"callARMC" action:^{
-    [self callARMC];
-  }];
-  [self.source addObject:callARMC];
-  
-  TabItem* callARMOC = [TabItem CreateItem:@"callARMOC" action:^{
-    [self callARMOC];
-  }];
-  [self.source addObject:callARMOC];
-  
-  
-  TabItem* threadTest = [TabItem CreateItem:@"threadTest" action:^{
-    [self threadTest];
-  }];
-  [self.source addObject:threadTest];
-  
-  TabItem* lldbTest = [TabItem CreateItem:@"lldbTest" action:^{
-    [self lldbTest];
-  }];
-  [self.source addObject:lldbTest];
-  
-  
-  TabItem* AnimationTest = [TabItem CreateItem:@"AnimationTest" action:^{
-    [self AnimationTest];
-  }];
-  [self.source addObject:AnimationTest];
-  
-  
-  TabItem* Base64Sha1Md5 = [TabItem CreateItem:@"Base64Sha1Md5" action:^{
-    [self Base64Sha1Md5];
-  }];
-  [self.source addObject:Base64Sha1Md5];
-  
-  
-  TabItem* dylibCall = [TabItem CreateItem:@"dylibCall" action:^{
-    [self dylibCall];
-  }];
-  [self.source addObject:dylibCall];
-  
-  TabItem* RacCall = [TabItem CreateItem:@"RacCall" action:^{
-    [self RacCall];
-  }];
-  [self.source addObject:RacCall];
-  
-  
-  TabItem* imageHeader = [TabItem CreateItem:@"imageHeader" action:^{
-    [self imageHeader];
-  }];
-  [self.source addObject:imageHeader];
-  
-  TabItem* imageHeaderSwift = [TabItem CreateItem:@"imageHeaderSwift" action:^{
-    [self imageHeaderSwift];
-  }];
-  [self.source addObject:imageHeaderSwift];
-  
-  
+    //    [TabItem CreateItem:@"function Call" itemSelect:^(){
+    ////        [self click];
+    //        NSLog(@"ttttt");
+    //    }];
+    
+    
+    TabItem* navigationTest = [TabItem CreateItem:@"navigationTest" action:^{
+        [self navigationTest];
+    }];
+    [self.source addObject:navigationTest];
+    
+    TabItem* call = [TabItem CreateItem:@"call" action:^{
+        [self click];
+    }];
+    
+    [self.source addObject:call];
+    
+    
+    TabItem* basicTest = [TabItem CreateItem:@"basicTest" action:^{
+        [self basicTest];
+    }];
+    [self.source addObject:basicTest];
+    
+    
+    TabItem* Eva = [TabItem CreateItem:@"Eva" action:^{
+        [self click2];
+    }];
+    
+    [self.source addObject:Eva];
+    
+    
+    TabItem* UILable = [TabItem CreateItem:@"UILable" action:^{
+        NSLog(@"UILable");
+    }];
+    [self.source addObject:UILable];
+    
+    TabItem* push = [TabItem CreateItem:@"push" action:^{
+        [self click3];
+    }];
+    [self.source addObject:push];
+    
+    TabItem* alert = [TabItem CreateItem:@"alert" action:^{
+        [self click4];
+    }];
+    [self.source addObject:alert];
+    
+    
+    TabItem* alertVC = [TabItem CreateItem:@"alertVC" action:^{
+        [self alertVC];
+    }];
+    [self.source addObject:alertVC];
+    
+    
+    TabItem* swiftCall = [TabItem CreateItem:@"swiftCall" action:^{
+        [self swiftCall];
+    }];
+    [self.source addObject:swiftCall];
+    
+    
+    TabItem* crashVC = [TabItem CreateItem:@"crashVC" action:^{
+        [self crashVC];
+    }];
+    [self.source addObject:crashVC];
+    
+    TabItem* callARMC = [TabItem CreateItem:@"callARMC" action:^{
+        [self callARMC];
+    }];
+    [self.source addObject:callARMC];
+    
+    TabItem* callARMOC = [TabItem CreateItem:@"callARMOC" action:^{
+        [self callARMOC];
+    }];
+    [self.source addObject:callARMOC];
+    
+    
+    TabItem* threadTest = [TabItem CreateItem:@"threadTest" action:^{
+        [self threadTest];
+    }];
+    [self.source addObject:threadTest];
+    
+    TabItem* lldbTest = [TabItem CreateItem:@"lldbTest" action:^{
+        [self lldbTest];
+    }];
+    [self.source addObject:lldbTest];
+    
+    
+    TabItem* AnimationTest = [TabItem CreateItem:@"AnimationTest" action:^{
+        [self AnimationTest];
+    }];
+    [self.source addObject:AnimationTest];
+    
+    
+    TabItem* Base64Sha1Md5 = [TabItem CreateItem:@"Base64Sha1Md5" action:^{
+        [self Base64Sha1Md5];
+    }];
+    [self.source addObject:Base64Sha1Md5];
+    
+    
+    TabItem* dylibCall = [TabItem CreateItem:@"dylibCall" action:^{
+        [self dylibCall];
+    }];
+    [self.source addObject:dylibCall];
+    
+    TabItem* RacCall = [TabItem CreateItem:@"RacCall" action:^{
+        [self RacCall];
+    }];
+    [self.source addObject:RacCall];
+    
+    
+    TabItem* imageHeader = [TabItem CreateItem:@"imageHeader" action:^{
+        [self imageHeader];
+    }];
+    [self.source addObject:imageHeader];
+    
+    TabItem* imageHeaderSwift = [TabItem CreateItem:@"imageHeaderSwift" action:^{
+        [self imageHeaderSwift];
+    }];
+    [self.source addObject:imageHeaderSwift];
+    
+    
     TabItem* AppearanceViewController = [TabItem            CreateItem:@"AppearanceViewController" action:^{
         [self AppearanceViewController];
     }];
     [self.source addObject:AppearanceViewController];
-
-  
+    
+    
     TabItem* hookTest = [TabItem CreateItem:@"hookTest" action:^{
         [self hookTest];
     }];
@@ -188,7 +197,7 @@ UILabel* _la;
         [self StoryBoardTest];
     }];
     [self.source addObject:StoryBoardTest];
-  
+    
     
     TabItem* MJTest = [TabItem CreateItem:@"MJTest" action:^{
         [self MJTest];
@@ -249,6 +258,12 @@ UILabel* _la;
   NSLog(@"click123");
   int va = fooFunction();
   _la.text = [NSString stringWithFormat:@"%d",va];
+}
+
+- (void)basicTest {
+    NSLog(@"basicTest");
+    BasicTestViewController* pvc = [[BasicTestViewController alloc] init];
+    [self.navigationController pushViewController:pvc animated:YES];
 }
 
 

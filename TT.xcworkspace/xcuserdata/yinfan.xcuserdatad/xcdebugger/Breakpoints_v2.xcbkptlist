@@ -284,13 +284,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/ViewController.m"
-            timestampString = "583760560.600789"
+            timestampString = "591431579.637066"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "469"
-            endingLineNumber = "469"
-            landmarkName = "-MJTest"
-            landmarkType = "7">
+            startingLineNumber = "472"
+            endingLineNumber = "472">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -300,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/ViewController.m"
-            timestampString = "583760560.601172"
+            timestampString = "591431579.637134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
             landmarkName = "-RacCall"
             landmarkType = "7">
          </BreakpointContent>
@@ -386,6 +384,22 @@
             startingLineNumber = "107"
             endingLineNumber = "107"
             landmarkName = "-Test3"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/VCBase/SecondPageViewController.m"
+            timestampString = "591431579.637393"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

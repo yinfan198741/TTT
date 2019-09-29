@@ -44,6 +44,10 @@
 		B50EE58F2237893D00DAA18A /* memory.png in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58E2237893C00DAA18A /* memory.png */; };
 		B52A58072180109600E106E9 /* assetTest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52A58062180109600E106E9 /* assetTest.xcassets */; };
 		B53F202121AFE726006A8D3F /* HashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F202021AFE726006A8D3F /* HashViewController.m */; };
+		B54E79EC23405FA00035915B /* SecondPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79EB23405FA00035915B /* SecondPageViewController.m */; };
+		B54E79EF234061630035915B /* BasicTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79EE234061630035915B /* BasicTestViewController.m */; };
+		B54E79F22340626E0035915B /* DynamicSysTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79F12340626E0035915B /* DynamicSysTest.m */; };
+		B54E79F623409FCE0035915B /* DynamicSysTest+DySenteic.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79F523409FCE0035915B /* DynamicSysTest+DySenteic.m */; };
 		B551282B22201AE500374029 /* SubBackNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B551281F22201AE300374029 /* SubBackNaviViewController.m */; };
 		B551282C22201AE500374029 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B551282322201AE400374029 /* CViewController.m */; };
 		B551282D22201AE500374029 /* NavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B551282622201AE500374029 /* NavigationDelegate.m */; };
@@ -278,6 +282,15 @@
 		B52A58062180109600E106E9 /* assetTest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assetTest.xcassets; sourceTree = "<group>"; };
 		B53F201F21AFE726006A8D3F /* HashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashViewController.h; sourceTree = "<group>"; };
 		B53F202021AFE726006A8D3F /* HashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HashViewController.m; sourceTree = "<group>"; };
+		B54E79EA23405FA00035915B /* SecondPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondPageViewController.h; sourceTree = "<group>"; };
+		B54E79EB23405FA00035915B /* SecondPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondPageViewController.m; sourceTree = "<group>"; };
+		B54E79ED234061630035915B /* BasicTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicTestViewController.h; sourceTree = "<group>"; };
+		B54E79EE234061630035915B /* BasicTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTestViewController.m; sourceTree = "<group>"; };
+		B54E79F02340626E0035915B /* DynamicSysTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicSysTest.h; sourceTree = "<group>"; };
+		B54E79F12340626E0035915B /* DynamicSysTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicSysTest.m; sourceTree = "<group>"; };
+		B54E79F323409B250035915B /* MYProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYProperty.h; sourceTree = "<group>"; };
+		B54E79F423409FCE0035915B /* DynamicSysTest+DySenteic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DynamicSysTest+DySenteic.h"; sourceTree = "<group>"; };
+		B54E79F523409FCE0035915B /* DynamicSysTest+DySenteic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DynamicSysTest+DySenteic.m"; sourceTree = "<group>"; };
 		B551281D22201AE300374029 /* BViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
 		B551281E22201AE300374029 /* CViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
 		B551281F22201AE300374029 /* SubBackNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubBackNaviViewController.m; sourceTree = "<group>"; };
@@ -477,13 +490,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A78ED85E233A5ED7001A8172 /* New Group1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group1";
-			sourceTree = "<group>";
-		};
 		A7B49F4921188E7F0081D199 /* HookC */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,7 +572,7 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
-				A78ED85E233A5ED7001A8172 /* New Group1 */,
+				B54E79E62340551B0035915B /* IOSBasic */,
 				B5CCFA0822CB7C0700858BC5 /* VCBase */,
 				B5001DE7224BA361002D15FF /* MJTest */,
 				B568B97622433691001B8571 /* StoryboardTest */,
@@ -689,6 +695,20 @@
 				B53F202021AFE726006A8D3F /* HashViewController.m */,
 			);
 			path = Hash;
+			sourceTree = "<group>";
+		};
+		B54E79E62340551B0035915B /* IOSBasic */ = {
+			isa = PBXGroup;
+			children = (
+				B54E79ED234061630035915B /* BasicTestViewController.h */,
+				B54E79EE234061630035915B /* BasicTestViewController.m */,
+				B54E79F02340626E0035915B /* DynamicSysTest.h */,
+				B54E79F12340626E0035915B /* DynamicSysTest.m */,
+				B54E79F323409B250035915B /* MYProperty.h */,
+				B54E79F423409FCE0035915B /* DynamicSysTest+DySenteic.h */,
+				B54E79F523409FCE0035915B /* DynamicSysTest+DySenteic.m */,
+			);
+			path = IOSBasic;
 			sourceTree = "<group>";
 		};
 		B551283222201AF100374029 /* NavigationTest */ = {
@@ -967,6 +987,8 @@
 			children = (
 				B5CCFA0922CB7C1F00858BC5 /* VCBaseViewController.h */,
 				B5CCFA0A22CB7C1F00858BC5 /* VCBaseViewController.m */,
+				B54E79EA23405FA00035915B /* SecondPageViewController.h */,
+				B54E79EB23405FA00035915B /* SecondPageViewController.m */,
 			);
 			path = VCBase;
 			sourceTree = "<group>";
@@ -1187,7 +1209,7 @@
 					};
 					A7D8FA691E9B2BBA00ED8D03 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Y7X96WZD52;
+						DevelopmentTeam = YKBWNE92X7;
 						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
@@ -1374,6 +1396,7 @@
 				B568B97E22433787001B8571 /* SecondViewController.m in Sources */,
 				B5BFE3EE222E972800B6CFAC /* functionPrograme.swift in Sources */,
 				B5BFE3F4222F64F700B6CFAC /* mutating.swift in Sources */,
+				B54E79F623409FCE0035915B /* DynamicSysTest+DySenteic.m in Sources */,
 				B5BFE3C1222E59AC00B6CFAC /* Book.swift in Sources */,
 				B53F202121AFE726006A8D3F /* HashViewController.m in Sources */,
 				B5001DEA224BA38D002D15FF /* MJUser.m in Sources */,
@@ -1391,6 +1414,7 @@
 				B5B5806B228BD143009A0EA3 /* RACSignalTest.m in Sources */,
 				A7B49F7B211B31BD0081D199 /* Test.c in Sources */,
 				B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */,
+				B54E79EF234061630035915B /* BasicTestViewController.m in Sources */,
 				B5BFE3E7222E96F300B6CFAC /* protocalTest.swift in Sources */,
 				B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */,
 				B5670EFB215F21F10014807D /* CallTest.m in Sources */,
@@ -1402,6 +1426,7 @@
 				B5BFE3DD222E96BB00B6CFAC /* autoCellThree.swift in Sources */,
 				B50EE5712237547E00DAA18A /* Example2ViewController.m in Sources */,
 				B551282E22201AE500374029 /* BViewController.m in Sources */,
+				B54E79F22340626E0035915B /* DynamicSysTest.m in Sources */,
 				A7B49F6F211898130081D199 /* SwiftEntryVC.swift in Sources */,
 				A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */,
 				B5BFE3DC222E96BB00B6CFAC /* tabcellTow.swift in Sources */,
@@ -1435,6 +1460,7 @@
 				B551283122201AE500374029 /* AViewController.m in Sources */,
 				B551284022201F0C00374029 /* FLAppearance.m in Sources */,
 				B5670EF3215F11C90014807D /* ExceptionModel.m in Sources */,
+				B54E79EC23405FA00035915B /* SecondPageViewController.m in Sources */,
 				B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */,
 				B551282F22201AE500374029 /* NavigationBarDelegate.m in Sources */,
 				B56FBC6921E44757003694E1 /* RACTester.m in Sources */,
@@ -1735,10 +1761,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y7X96WZD52;
+				DEVELOPMENT_TEAM = YKBWNE92X7;
 				INFOPLIST_FILE = TT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.yinfanTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.yinfanTests;
 				PRODUCT_MODULE_NAME = TTS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1758,10 +1784,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y7X96WZD52;
+				DEVELOPMENT_TEAM = YKBWNE92X7;
 				INFOPLIST_FILE = TT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.yinfanTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.yinfanTests;
 				PRODUCT_MODULE_NAME = TTS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2115,7 +2141,7 @@
 				A7B49F6221188E7F0081D199 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A7D8FA651E9B2BBA00ED8D03 /* Build configuration list for PBXProject "TT" */ = {
 			isa = XCConfigurationList;
@@ -2124,7 +2150,7 @@
 				A7D8FA961E9B2BBB00ED8D03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A7D8FA971E9B2BBB00ED8D03 /* Build configuration list for PBXNativeTarget "TT" */ = {
 			isa = XCConfigurationList;
@@ -2133,7 +2159,7 @@
 				A7D8FA991E9B2BBB00ED8D03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A7D8FA9A1E9B2BBB00ED8D03 /* Build configuration list for PBXNativeTarget "TTTests" */ = {
 			isa = XCConfigurationList;
@@ -2142,7 +2168,7 @@
 				A7D8FA9C1E9B2BBB00ED8D03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A7D8FA9D1E9B2BBB00ED8D03 /* Build configuration list for PBXNativeTarget "TTUITests" */ = {
 			isa = XCConfigurationList;
@@ -2151,7 +2177,7 @@
 				A7D8FA9F1E9B2BBB00ED8D03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B55B3FDB21B1349D005CADF3 /* Build configuration list for PBXNativeTarget "HookC" */ = {
 			isa = XCConfigurationList;
@@ -2160,7 +2186,7 @@
 				B55B3FDD21B1349D005CADF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B55B3FDE21B1349D005CADF3 /* Build configuration list for PBXNativeTarget "HookCTests" */ = {
 			isa = XCConfigurationList;
@@ -2169,7 +2195,7 @@
 				B55B3FE021B1349D005CADF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B55B405321B61964005CADF3 /* Build configuration list for PBXNativeTarget "dyLibTest" */ = {
 			isa = XCConfigurationList;
@@ -2178,7 +2204,7 @@
 				B55B405521B61964005CADF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B55B405621B61964005CADF3 /* Build configuration list for PBXNativeTarget "dyLibTestTests" */ = {
 			isa = XCConfigurationList;
@@ -2187,7 +2213,7 @@
 				B55B405821B61964005CADF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
