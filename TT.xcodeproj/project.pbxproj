@@ -702,9 +702,9 @@
 			children = (
 				B54E79ED234061630035915B /* BasicTestViewController.h */,
 				B54E79EE234061630035915B /* BasicTestViewController.m */,
+				B54E79F323409B250035915B /* MYProperty.h */,
 				B54E79F02340626E0035915B /* DynamicSysTest.h */,
 				B54E79F12340626E0035915B /* DynamicSysTest.m */,
-				B54E79F323409B250035915B /* MYProperty.h */,
 				B54E79F423409FCE0035915B /* DynamicSysTest+DySenteic.h */,
 				B54E79F523409FCE0035915B /* DynamicSysTest+DySenteic.m */,
 			);

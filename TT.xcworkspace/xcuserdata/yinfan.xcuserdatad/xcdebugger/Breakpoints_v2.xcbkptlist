@@ -79,8 +79,10 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Exploded&gt; of generic partial specialization &lt;Signature = @escaping @convention(thin) @convention(method) &lt;A&gt;&lt;A1 where A: Swift.BidirectionalCollection, A1 == Swift.String, A.Element == Swift.Character&gt; (@guaranteed Swift.String, @in_guaranteed A) -&gt; (@unowned Swift.Bool)&gt; of (extension in Swift):Swift.BidirectionalCollection&lt; where A.Element: Swift.Equatable&gt;._ends&lt;A where A1: Swift.BidirectionalCollection, A.Element == A1.Element&gt;(with: A1) -&gt; Swift.Bool"
+                  moduleName = "libswiftCore.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
+                  offsetFromSymbolStart = "1558">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -400,6 +402,22 @@
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/IOSBasic/DynamicSysTest+DySenteic.m"
+            timestampString = "591442106.015996"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-testAgeME"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

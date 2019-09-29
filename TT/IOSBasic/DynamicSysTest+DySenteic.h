@@ -12,7 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DynamicSysTest (DySenteic)
 
+- (void)saveRefObj:(NSString*)str;
 
+- (NSString*)getRefObj;
+
+
+- (NSString*)testAgeME;
 
 @end
 

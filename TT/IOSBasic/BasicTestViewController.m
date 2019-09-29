@@ -8,6 +8,7 @@
 
 #import "BasicTestViewController.h"
 #import "DynamicSysTest.h"
+#import "DynamicSysTest+DySenteic.h"
 
 @interface BasicTestViewController ()
 
@@ -43,6 +44,11 @@
     NSLog(@"tt.myPPName = %@",tt.myPPName);
     [tt setmyPPName:@" cal set tt.myPPName"];
     NSLog(@"tt.myPPName = %@",tt.myPPName);
+    
+    [tt saveRefObj:@"saveRefObj 123"];
+    NSLog(@"getRefObj = %@",[tt getRefObj]);
+    
+    NSLog(@"tt.testAgeME = %@",tt.testAgeME);
 }
 
 /*
