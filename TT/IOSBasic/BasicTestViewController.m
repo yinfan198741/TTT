@@ -9,6 +9,7 @@
 #import "BasicTestViewController.h"
 #import "DynamicSysTest.h"
 #import "DynamicSysTest+DySenteic.h"
+#import "DynamicSysTest+TestMethodConver.h"
 
 @interface BasicTestViewController ()
 
