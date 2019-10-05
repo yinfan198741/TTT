@@ -24,7 +24,12 @@
 
 - (NSString*)testAgeME
 {
-    return @"testAgeME123 from DynamicSysTest";
+    return @"testAgeME123 from DynamicSysTest (DySenteic)";
+}
+
+
+- (NSString*)testcategy1 {
+		return @"testcategy1 from DynamicSysTest (DySenteic)";
 }
 
 @end

@@ -24,6 +24,7 @@
 
 - (NSArray*)createSourceNameFunList {
    return @[@[@"synthesize&dynamic",@"SynthesizedynamicCall"],
+			@[@"categriMethod",@"categriMethodCall"],
       ];
 }
 
@@ -50,6 +51,13 @@
     NSLog(@"getRefObj = %@",[tt getRefObj]);
     
     NSLog(@"tt.testAgeME = %@",tt.testAgeME);
+}
+
+
+- (void)categriMethodCall {
+	DynamicSysTest* tt = [[DynamicSysTest alloc] init];
+	NSLog(@"categriMethodCall testcategy1 = %@",tt.testcategy1);
+	NSLog(@"多个分类存在的方法,根据编译顺序决定、谁最后编译,就插到方法列表前面 categriMethodCall testAgeME = %@",tt.testAgeME);
 }
 
 /*

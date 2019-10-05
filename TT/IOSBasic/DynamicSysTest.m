@@ -75,4 +75,9 @@
 }
 
 
+- (NSString*)testcategy1 {
+//	NSLog(@"")
+	return @"testcategy1 from DynamicSysTest";
+}
+
 @end

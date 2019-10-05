@@ -1393,6 +1393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54E79F22340626E0035915B /* DynamicSysTest.m in Sources */,
 				B54E79F623409FCE0035915B /* DynamicSysTest+DySenteic.m in Sources */,
 				B50AD6EC2340B1AF002DE97C /* DynamicSysTest+TestMethodConver.m in Sources */,
 				B5A9FBF8217758870083D5E0 /* SwiftInit.swift in Sources */,
@@ -1432,7 +1433,6 @@
 				B5BFE3DD222E96BB00B6CFAC /* autoCellThree.swift in Sources */,
 				B50EE5712237547E00DAA18A /* Example2ViewController.m in Sources */,
 				B551282E22201AE500374029 /* BViewController.m in Sources */,
-				B54E79F22340626E0035915B /* DynamicSysTest.m in Sources */,
 				A7B49F6F211898130081D199 /* SwiftEntryVC.swift in Sources */,
 				A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */,
 				B5BFE3DC222E96BB00B6CFAC /* tabcellTow.swift in Sources */,
