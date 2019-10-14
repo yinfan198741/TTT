@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString*)testAgeME;
 
+
+- (NSString*)testcategy1 ;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -250,12 +250,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/MJTest/MJViewController.m"
-            timestampString = "591031822.207159"
+            timestampString = "591693386.500463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "-Test"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "-copyTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/MJTest/MJViewController.m"
-            timestampString = "591031822.207559"
+            timestampString = "591693386.5005471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-copyTest"
             landmarkType = "7">
          </BreakpointContent>

@@ -32,6 +32,9 @@
 - (UIButton*)TestButton
 {
 	UIButton* changeButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 50, 50, 50)];
+	
+	
+	
 	changeButton.backgroundColor = UIColor.redColor;
 	[changeButton setTitle:@"Test" forState:UIControlStateNormal];
 	[changeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -87,6 +90,15 @@
 	
 	
 	NSString* jsonStr = [ms mj_JSONString];
+	
+//	[NSJSONSerialization se]
+	
+	NSError *e = nil;
+	NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:nil options:NSJSONReadingMutableContainers error:&e];
+//	if (!jsonArray) {
+//		NSLog(@"Error parsing JSON: %@", e);
+//	}
+	
 	MJStatus* ms2 = [MJStatus mj_objectWithKeyValues:jsonStr];
 	ms2.retweetedStatus.users[0].name = @"ms2_user1_retweetedStatus";
 	
