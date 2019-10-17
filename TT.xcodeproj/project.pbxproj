@@ -61,6 +61,7 @@
 		B551284022201F0C00374029 /* FLAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = B551283C22201F0C00374029 /* FLAppearance.m */; };
 		B551284122201F0C00374029 /* AppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B551283D22201F0C00374029 /* AppearanceViewController.m */; };
 		B551284622201F4D00374029 /* NSObject+PPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = B551284322201F4D00374029 /* NSObject+PPrint.m */; };
+		B5581E8C23545824008EACB1 /* NumberTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5581E8B23545824008EACB1 /* NumberTestViewController.m */; };
 		B55B3FBC21B0DABC005CADF3 /* citydata.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55B3FBB21B0DABC005CADF3 /* citydata.plist */; };
 		B55B3FCD21B1349D005CADF3 /* HookC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55B3FC421B1349C005CADF3 /* HookC.framework */; };
 		B55B3FD421B1349D005CADF3 /* HookCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B55B3FD321B1349D005CADF3 /* HookCTests.m */; };
@@ -318,6 +319,8 @@
 		B551284322201F4D00374029 /* NSObject+PPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PPrint.m"; sourceTree = "<group>"; };
 		B551284422201F4D00374029 /* NSObject+PPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PPrint.h"; sourceTree = "<group>"; };
 		B551284522201F4D00374029 /* NSObject+PropertyPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertyPrint.h"; sourceTree = "<group>"; };
+		B5581E8A23545824008EACB1 /* NumberTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberTestViewController.h; sourceTree = "<group>"; };
+		B5581E8B23545824008EACB1 /* NumberTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberTestViewController.m; sourceTree = "<group>"; };
 		B55B3FBB21B0DABC005CADF3 /* citydata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydata.plist; sourceTree = "<group>"; };
 		B55B3FBD21B133B5005CADF3 /* HookC */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HookC; sourceTree = "<group>"; };
 		B55B3FC421B1349C005CADF3 /* HookC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HookC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -575,6 +578,7 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				B5581E89235457AD008EACB1 /* NumberDecial */,
 				B54E79E62340551B0035915B /* IOSBasic */,
 				B5CCFA0822CB7C0700858BC5 /* VCBase */,
 				B5001DE7224BA361002D15FF /* MJTest */,
@@ -767,6 +771,15 @@
 				B551284522201F4D00374029 /* NSObject+PropertyPrint.h */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		B5581E89235457AD008EACB1 /* NumberDecial */ = {
+			isa = PBXGroup;
+			children = (
+				B5581E8A23545824008EACB1 /* NumberTestViewController.h */,
+				B5581E8B23545824008EACB1 /* NumberTestViewController.m */,
+			);
+			path = NumberDecial;
 			sourceTree = "<group>";
 		};
 		B55B3FBA21B0DA7E005CADF3 /* Resource */ = {
@@ -1470,6 +1483,7 @@
 				B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */,
 				B551282F22201AE500374029 /* NavigationBarDelegate.m in Sources */,
 				B56FBC6921E44757003694E1 /* RACTester.m in Sources */,
+				B5581E8C23545824008EACB1 /* NumberTestViewController.m in Sources */,
 				A78ED85D232D15C1001A8172 /* FPRViewController.m in Sources */,
 				B5BFE3F1222E972800B6CFAC /* perfTest.swift in Sources */,
 				B5BFE3BF222E274500B6CFAC /* UIImageView+Theme.m in Sources */,

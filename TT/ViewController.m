@@ -31,6 +31,7 @@
 #import "RACTestViewController.h"
 #import "MJViewController.h"
 #import "BasicTestViewController.h"
+#import "NumberTestViewController.h"
 
 
 @interface ViewController ()
@@ -204,7 +205,15 @@ UILabel* _la;
     }];
     [self.source addObject:MJTest];
     
+    
+    TabItem* numberTest = [TabItem CreateItem:@"numberTest" action:^{
+        [self numberTest];
+    }];
+    [self.source addObject:numberTest];
+    
+    
 }
+
 
 
 - (void)viewDidLoad {
@@ -457,6 +466,14 @@ UILabel* _la;
 	
 	MJViewController* animation = [[MJViewController alloc] init];
 	[self.navigationController pushViewController:animation animated:true];
+    
+}
+
+
+- (void)numberTest {
+    NSLog(@"numberTest");
+    NumberTestViewController* animation = [[NumberTestViewController alloc] init];
+    [self.navigationController pushViewController:animation animated:true];
     
 }
 

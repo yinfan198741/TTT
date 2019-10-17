@@ -79,10 +79,8 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Exploded&gt; of generic partial specialization &lt;Signature = @escaping @convention(thin) @convention(method) &lt;A&gt;&lt;A1 where A: Swift.BidirectionalCollection, A1 == Swift.String, A.Element == Swift.Character&gt; (@guaranteed Swift.String, @in_guaranteed A) -&gt; (@unowned Swift.Bool)&gt; of (extension in Swift):Swift.BidirectionalCollection&lt; where A.Element: Swift.Equatable&gt;._ends&lt;A where A1: Swift.BidirectionalCollection, A.Element == A1.Element&gt;(with: A1) -&gt; Swift.Bool"
-                  moduleName = "libswiftCore.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "1558">
+                  offsetFromSymbolStart = "0">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -286,11 +284,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/ViewController.m"
-            timestampString = "591431579.637066"
+            timestampString = "592730459.744357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "472"
-            endingLineNumber = "472">
+            startingLineNumber = "489"
+            endingLineNumber = "489">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -300,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/ViewController.m"
-            timestampString = "591431579.637134"
+            timestampString = "592730459.744422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "385"
-            endingLineNumber = "385"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
             landmarkName = "-RacCall"
             landmarkType = "7">
          </BreakpointContent>
@@ -418,6 +416,22 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "-testAgeME"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/NumberDecial/NumberTestViewController.m"
+            timestampString = "592735089.933532"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-stringToNSNumberCall"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
