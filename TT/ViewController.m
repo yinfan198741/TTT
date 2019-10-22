@@ -32,6 +32,7 @@
 #import "MJViewController.h"
 #import "BasicTestViewController.h"
 #import "NumberTestViewController.h"
+#import "LableTestViewController.h"
 
 
 @interface ViewController ()
@@ -90,6 +91,7 @@ UILabel* _la;
     
     TabItem* UILable = [TabItem CreateItem:@"UILable" action:^{
         NSLog(@"UILable");
+        [self UILableTest];
     }];
     [self.source addObject:UILable];
     
@@ -318,6 +320,13 @@ UILabel* _la;
   
   [uac addAction:ac];
   [self presentViewController:uac animated:YES completion:nil];
+}
+
+
+- (void)UILableTest{
+    
+    LableTestViewController* vc = [[LableTestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)swiftCall {
