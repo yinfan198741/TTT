@@ -10,6 +10,7 @@
 #import "ReactiveObjC.h"
 #import "RacDemoViewController.h"
 #import "FPRViewController.h"
+#import "MBProgressHUD.h"
 
 @interface RACTestViewController ()
 
@@ -21,6 +22,8 @@
 
 @property (nonatomic, strong) id<RACSubscriber> subscriber;
 
+@property (nonatomic, strong) MBProgressHUD* hub;
+
 @end
 
 @implementation RACTestViewController
@@ -28,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.hub = [[MBProgressHUD alloc] init];
     self.source = @[@[@"FPRDemo",@"FPRDemo"],
                     @[@"Rsignal Demo",@"RacDemo"],
                     @[@"Rsignal Test",@"signalTest"],
@@ -1284,13 +1288,23 @@ static RACSignal* t1  = nil;
 //       }];
     
     RACSignal* demoSignal = [self createDemoSignal];
-    [self subScribeAndShowLoadig:demoSignal];
+    
+    demoSignal = [[demoSignal publish] autoconnect];
+    
     [self subScribeForLoading:demoSignal];
+    
+    [self subScribeAndShowLoadig:demoSignal];
+    
 }
 
 - (RACSignal*) createDemoSignal {
     RACSignal* demoSignal =  [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
         
+        NSLog(@"demoSignal%%%%%%%%%%%%%%%%%%%%%% 冷信号被执行");
+        [subscriber sendNext:@"000000"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,  (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [subscriber sendNext:@"____123"];
+        });
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [subscriber sendNext:@"123"];
             [subscriber sendCompleted];
@@ -1303,9 +1317,53 @@ static RACSignal* t1  = nil;
 
 - (void)subScribeAndShowLoadig:(RACSignal*)racSignal
 {
-    [racSignal subscribeNext:^(id  _Nullable x) {
-       
-        NSLog(@"x = %@",x);
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+   
+    static int a = 0;
+    a++;
+    racSignal = [[[racSignal flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//            [subscriber sendNext:@"456"];
+            NSString* v = [NSString stringWithFormat:@"456_ %@",value];
+            [subscriber sendNext:v];
+            [subscriber sendCompleted];
+            return nil;
+        }];
+    }] flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            
+            if (a%2 == 0) {
+                //                [subscriber sendNext:@"789"];
+                NSString* v = [NSString stringWithFormat:@"789_ %@",value];
+                [subscriber sendNext:v];
+                [subscriber sendCompleted];
+            }
+            else
+            {
+                NSError * e = [NSError errorWithDomain:@"errorWithDomain" code:1 userInfo:nil];
+                [subscriber sendError: e];
+            }
+            
+            return nil;
+        }];
+    }] catch:^RACSignal * (NSError * error) {
+        return [RACSignal createSignal:^RACDisposable * (id<RACSubscriber> subscriber) {
+            [subscriber sendNext:@"####"];
+            [subscriber sendCompleted];
+            return nil;
+        }];
+    }]  ;
+    
+    [racSignal subscribeNext:^(id  x) {
+        NSLog(@"sub scribe Next1 x = %@",x);
+    }];
+    
+    [racSignal subscribeNext:^(id  x) {
+        NSLog(@"sub scribe Next2 x = %@",x);
+    }];
+    
+    [racSignal subscribeError:^(NSError *  error) {
+        NSLog(@"Error1");
     } completed:^{
         NSLog(@"completed1");
     }];
@@ -1314,8 +1372,22 @@ static RACSignal* t1  = nil;
 
 - (void)subScribeForLoading:(RACSignal*)racSignal
 {
-    [racSignal subscribeCompleted:^{
-         NSLog(@"completed2");
+//    [racSignal subscribeCompleted:^{
+//         NSLog(@"completed2");
+//         [MBProgressHUD hideHUDForView:self.view animated:YES];
+//    }];
+//
+//    [racSignal subscribeError:^(NSError * _Nullable error) {
+//         NSLog(@"Error2");
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//    }];
+    
+   [racSignal subscribeError:^(NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        NSLog(@"Error2");
+    } completed:^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        NSLog(@"completed2");
     }];
 }
 
