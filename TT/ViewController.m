@@ -33,7 +33,7 @@
 #import "BasicTestViewController.h"
 #import "NumberTestViewController.h"
 #import "LableTestViewController.h"
-
+#import "SafeViewController.h"
 
 @interface ViewController ()
 
@@ -179,7 +179,7 @@ UILabel* _la;
     [self.source addObject:imageHeaderSwift];
     
     
-    TabItem* AppearanceViewController = [TabItem            CreateItem:@"AppearanceViewController" action:^{
+    TabItem* AppearanceViewController = [TabItem CreateItem:@"AppearanceViewController" action:^{
         [self AppearanceViewController];
     }];
     [self.source addObject:AppearanceViewController];
@@ -214,6 +214,10 @@ UILabel* _la;
     [self.source addObject:numberTest];
     
     
+    TabItem* safeTest = [TabItem CreateItem:@"SafeViewController" action:^{
+        [self safeTest];
+    }];
+    [self.source addObject:safeTest];
 }
 
 
@@ -486,6 +490,12 @@ UILabel* _la;
     
 }
 
+
+- (void)safeTest
+{
+    SafeViewController* sa = [[SafeViewController alloc] init];
+    [self.navigationController presentViewController:sa animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];

@@ -51,6 +51,8 @@
                     @[@"eventQuene",@"eventQueneTest"],
                     @[@"flatten",@"flattenTest"],
                     @[@"testCollectSignalsAndCombineLatestOrZip",@"testCollectSignalsAndCombineLatestOrZip"],
+                    @[@"doNext",@"doNextTest"],
+                    @[@"loadingTest",@"loadingTest"],
                     ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
@@ -501,6 +503,9 @@
     
     
 }
+
+
+
 
 
 - (void)multicommand {
@@ -1241,6 +1246,80 @@ static RACSignal* t1  = nil;
     }];
     
 }
+
+
+- (void)doNextTest
+{
+    NSLog(@"doNextTest");
+    
+    [[[[RACSignal return:@(123)]
+      doNext:^(id  _Nullable x) {
+          NSLog(@"doNext1 x= %@",x);
+          x = @(2);
+    }] doNext:^(id  _Nullable x) {
+           NSLog(@"doNext2 x= %@",x);
+          x = @(3);
+    }]  subscribeNext:^(id x) {
+        
+        NSLog(@"subscribeNext x = %@",x);
+    }];
+    
+}
+
+
+- (void)loadingTest
+{
+     NSLog(@"loadingTest");
+    
+//    [[[[RACSignal return:@(123)]
+//       doNext:^(id  _Nullable x) {
+//           NSLog(@"doNext1 x= %@",x);
+//           x = @(2);
+//       }] doNext:^(id  _Nullable x) {
+//           NSLog(@"doNext2 x= %@",x);
+//           x = @(3);
+//       }]  subscribeNext:^(id x) {
+//
+//           NSLog(@"subscribeNext x = %@",x);
+//       }];
+    
+    RACSignal* demoSignal = [self createDemoSignal];
+    [self subScribeAndShowLoadig:demoSignal];
+    [self subScribeForLoading:demoSignal];
+}
+
+- (RACSignal*) createDemoSignal {
+    RACSignal* demoSignal =  [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [subscriber sendNext:@"123"];
+            [subscriber sendCompleted];
+        });
+        
+        return nil;
+    }];
+    return demoSignal;
+}
+
+- (void)subScribeAndShowLoadig:(RACSignal*)racSignal
+{
+    [racSignal subscribeNext:^(id  _Nullable x) {
+       
+        NSLog(@"x = %@",x);
+    } completed:^{
+        NSLog(@"completed1");
+    }];
+    
+}
+
+- (void)subScribeForLoading:(RACSignal*)racSignal
+{
+    [racSignal subscribeCompleted:^{
+         NSLog(@"completed2");
+    }];
+}
+
+
 
 //http://fengjian0106.github.io/2016/04/17/The-Power-Of-Composition-In-FRP-Part-1/
 

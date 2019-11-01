@@ -131,6 +131,7 @@
 		B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D576214FE553007BF736 /* SwiftDelegate.swift */; };
 		B5CCFA0722CB7B4700858BC5 /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CCFA0622CB7B4700858BC5 /* RACTestViewController.m */; };
 		B5CCFA0B22CB7C1F00858BC5 /* VCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CCFA0A22CB7C1F00858BC5 /* VCBaseViewController.m */; };
+		B5F0E13223619EBF00B614DE /* SafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F0E13123619EBF00B614DE /* SafeViewController.m */; };
 		B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */; };
 		B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DF2121CA1B00325501 /* PushViewController.m */; };
 		B5FB72E32122842B00325501 /* TabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72E22122842B00325501 /* TabItem.m */; };
@@ -417,6 +418,8 @@
 		B5CCFA0622CB7B4700858BC5 /* RACTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
 		B5CCFA0922CB7C1F00858BC5 /* VCBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCBaseViewController.h; sourceTree = "<group>"; };
 		B5CCFA0A22CB7C1F00858BC5 /* VCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCBaseViewController.m; sourceTree = "<group>"; };
+		B5F0E13023619EBF00B614DE /* SafeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SafeViewController.h; sourceTree = "<group>"; };
+		B5F0E13123619EBF00B614DE /* SafeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeViewController.m; sourceTree = "<group>"; };
 		B5FB72DA2121C73200325501 /* UIViewController+Consistent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Consistent.h"; sourceTree = "<group>"; };
 		B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Consistent.m"; sourceTree = "<group>"; };
 		B5FB72DE2121CA1B00325501 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
@@ -584,6 +587,7 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				B5F0E12F23619E9A00B614DE /* SafeArea */,
 				B53A7A9423599B490013E9F9 /* UIlabel */,
 				B5581E89235457AD008EACB1 /* NumberDecial */,
 				B54E79E62340551B0035915B /* IOSBasic */,
@@ -1029,6 +1033,15 @@
 			path = VCBase;
 			sourceTree = "<group>";
 		};
+		B5F0E12F23619E9A00B614DE /* SafeArea */ = {
+			isa = PBXGroup;
+			children = (
+				B5F0E13023619EBF00B614DE /* SafeViewController.h */,
+				B5F0E13123619EBF00B614DE /* SafeViewController.m */,
+			);
+			path = SafeArea;
+			sourceTree = "<group>";
+		};
 		B5FB72D62121C6C700325501 /* safeVCpush */ = {
 			isa = PBXGroup;
 			children = (
@@ -1457,6 +1470,7 @@
 				B5BFE3E7222E96F300B6CFAC /* protocalTest.swift in Sources */,
 				B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */,
 				B5670EFB215F21F10014807D /* CallTest.m in Sources */,
+				B5F0E13223619EBF00B614DE /* SafeViewController.m in Sources */,
 				B551284622201F4D00374029 /* NSObject+PPrint.m in Sources */,
 				B551284122201F0C00374029 /* AppearanceViewController.m in Sources */,
 				B5BFE3E4222E96F300B6CFAC /* GenericBox.swift in Sources */,

@@ -9,6 +9,11 @@
 #import "LableTestViewController.h"
 #import "InsetsLabel.h"
 #import "View+MASAdditions.h"
+#import "ReactiveObjC.h"
+
+//今日问题
+//jsonseri
+//archive
 
 @interface LableTestViewController ()
 
@@ -20,6 +25,8 @@
 
 @property (nonatomic, copy) NSString* item;
 
+@property (nonatomic, strong)InsetsLabel* la;
+
 @end
 
 @implementation LableTestViewController
@@ -28,17 +35,21 @@
 - (void)TestLable {
     
     self.item = @"abc";
+    self.showText = @"showText";
     
     InsetsLabel* la = [[InsetsLabel alloc] initWithFrame:CGRectZero];
     la.translatesAutoresizingMaskIntoConstraints = NO;
     la.backgroundColor = UIColor.redColor;
     la.insets = UIEdgeInsetsMake(0, 100, 0, 0);
     la.text = @"123";
+    la.textAlignment = NSTextAlignmentRight;
     [self.view addSubview:la];
     [la mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).mas_offset(10);
         make.top.equalTo(self.view).mas_offset(30);
     }];
+    
+    self.la = la;
     
     UIButton* button = [[UIButton alloc] initWithFrame:CGRectZero];
     button.translatesAutoresizingMaskIntoConstraints = NO;
@@ -53,6 +64,13 @@
     }];
     
     [self bind];
+    
+    
+    UITextField* t = [[UITextField alloc] initWithFrame:CGRectMake(10, 200, 30, 30)];
+    t.backgroundColor = UIColor.redColor;
+    t.keyboardType = UIKeyboardTypeNumberPad;
+    [self.view addSubview:t];
+    
 }
 
 -(void)TTT
@@ -61,11 +79,23 @@
 //    NSString* a = "a";
     NSLog(@"TTT");
     
+   self.showText = [NSString stringWithFormat:@"%@%@",_showText,_item];
+    
+    if (self.showText.length > 40) {
+        self.showText = nil;
+    }
     
 }
 
 - (void)bind {
 //    self.item
+    RAC(self.la,attributedText) = [RACObserve(self,showText) map:^id _Nullable(id  _Nullable value) {
+        if (value!= nil) {
+            NSAttributedString* att = [[NSAttributedString alloc] initWithString:value];
+            return att;
+        }
+        return nil;
+    }];
 }
 
 - (void)viewDidLoad {

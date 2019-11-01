@@ -33,21 +33,73 @@
     return rect;
 }
 
-- (CGSize)intrinsicContentSize {
-    CGSize sz = [super intrinsicContentSize];
-    return CGSizeMake(sz.width + self.insets.left + self.insets.right,
-                      sz.height + self.insets.top + self.insets.bottom);
-}
+
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self bindInsets];
+        //[self bindInsets];
+        [self bindText];
     }
     return self;
 }
 
+
+- (void)bindText {
+
+    @weakify(self)
+    [[[RACSignal combineLatest:@[RACObserve(self,text),
+                                 RACObserve(self,attributedText)]
+                        reduce:^id(NSString* text, NSAttributedString* attr){
+                            return  @(text.length > 0 || attr.length > 0);
+                        }] distinctUntilChanged] subscribeNext:^(id  _Nullable x) {
+                            @strongify(self)
+                            [self invalidateIntrinsicContentSize];
+                            [self setNeedsLayout];
+                        }];
+    
+//    [[RACSignal combineLatest:[RACObserve(self,text),
+//                               RACObserve(self,attributedText)]  reduce:^(NSString* text, NSAttributedString* attr] {
+//        return text.length > 0 || attr.length > 0
+//    }];
+//
+//   [[ RACObserve(self,text), RACObserve(self,attributedText)] ]
+//    [[[RACObserve(self,text) map:^id _Nullable(NSString*   value) {
+//        return @(value.length > 0);
+//    }]  distinctUntilChanged] subscribeNext:^(id x) {
+//        [self invalidateIntrinsicContentSize];
+//        [self setNeedsLayout];
+//    }];
+
+}
+
+//- (CGSize)intrinsicContentSize
+//{
+//    if (self.text.length == 0 && self.attributedText.length == 0) {
+//        return CGSizeZero();
+//    }
+//
+//    return [super intrinsicContentSize];
+//}
+
+
+- (CGSize)intrinsicContentSize {
+    if (self.text.length == 0 && self.attributedText.length == 0) {
+        return CGSizeMake(0, 0);
+    }
+    else {
+        CGSize sz = [super intrinsicContentSize];
+        return CGSizeMake(sz.width + self.insets.left + self.insets.right,
+                          sz.height + self.insets.top + self.insets.bottom);
+    }
+}
+
+
+//- (void)bindText
+//{
+//    RACObserver(self,Text)
+//}
 
 - (void)bindInsets {
     @weakify(self)
