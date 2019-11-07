@@ -22,7 +22,6 @@
 		A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA711E9B2BBA00ED8D03 /* AppDelegate.m */; };
 		A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA741E9B2BBA00ED8D03 /* ViewController.m */; };
 		A7D8FA781E9B2BBA00ED8D03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA761E9B2BBA00ED8D03 /* Main.storyboard */; };
-		A7D8FA7A1E9B2BBA00ED8D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA791E9B2BBA00ED8D03 /* Assets.xcassets */; };
 		A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */; };
 		A7D8FA881E9B2BBA00ED8D03 /* TTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA871E9B2BBA00ED8D03 /* TTTests.m */; };
 		A7D8FA931E9B2BBB00ED8D03 /* TTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */; };
@@ -43,7 +42,6 @@
 		B50EE58C223762AE00DAA18A /* images in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58A223762AE00DAA18A /* images */; };
 		B50EE58D223762AE00DAA18A /* images2 in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58B223762AE00DAA18A /* images2 */; };
 		B50EE58F2237893D00DAA18A /* memory.png in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58E2237893C00DAA18A /* memory.png */; };
-		B52A58072180109600E106E9 /* assetTest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52A58062180109600E106E9 /* assetTest.xcassets */; };
 		B53A7A9723599B870013E9F9 /* LableTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7A9623599B870013E9F9 /* LableTestViewController.m */; };
 		B53F202121AFE726006A8D3F /* HashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F202021AFE726006A8D3F /* HashViewController.m */; };
 		B54E79EC23405FA00035915B /* SecondPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79EB23405FA00035915B /* SecondPageViewController.m */; };
@@ -1346,12 +1344,10 @@
 				B55B3FBC21B0DABC005CADF3 /* citydata.plist in Resources */,
 				B50EE58C223762AE00DAA18A /* images in Resources */,
 				B568B980224337B3001B8571 /* Storyboard.storyboard in Resources */,
-				A7D8FA7A1E9B2BBA00ED8D03 /* Assets.xcassets in Resources */,
 				A7B49F84211B359B0081D199 /* ReleaseConfig.xcconfig in Resources */,
 				A7D8FA781E9B2BBA00ED8D03 /* Main.storyboard in Resources */,
 				B50EE56B2237547E00DAA18A /* Example1ViewController.xib in Resources */,
 				B50EE56E2237547E00DAA18A /* left.png in Resources */,
-				B52A58072180109600E106E9 /* assetTest.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
