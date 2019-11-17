@@ -35,7 +35,7 @@ static captureManager *single = nil;
 - (void)setupWindow
 {
 	captureWindow *w2 = [[captureWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	w2.windowLevel =  UIWindowLevelAlert + 1;
+	w2.windowLevel =  campWindowLeve;
 //	cgf
 	captureViewController* vc2 = [[captureViewController alloc] init];
 	w2.rootViewController = vc2;

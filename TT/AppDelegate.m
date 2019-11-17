@@ -39,7 +39,6 @@
 	// 1.创建UIWindow
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	// 设置UIWindow的背景颜色
-	self.window.backgroundColor = [UIColor redColor];
 
 	///创建root vc
 	ViewController* vc = [[ViewController alloc] init];
@@ -52,7 +51,7 @@
 
 
 	
-	[[captureManager shareSingleObjc] setupWindow];
+//	[[captureManager shareSingleObjc] setupWindow];
 	
 //	// 2. 再创建一个窗口
 //	UIWindow *w2 = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

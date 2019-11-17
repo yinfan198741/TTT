@@ -106,7 +106,7 @@
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "595691404.451858"
+                  timestampString = "595693701.182049"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "448"
@@ -121,7 +121,7 @@
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "595691404.454015"
+                  timestampString = "595693701.183666"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "449"
@@ -186,7 +186,7 @@
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "595691404.464728"
+                  timestampString = "595693701.193779"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "923"
@@ -201,7 +201,7 @@
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "595691404.466795"
+                  timestampString = "595693701.195381"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "924"
@@ -250,7 +250,7 @@
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "595691404.474389"
+                  timestampString = "595693701.2025599"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1072"
@@ -265,7 +265,7 @@
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "595691404.475913"
+                  timestampString = "595693701.204066"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1073"
@@ -314,7 +314,7 @@
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "595691404.483067"
+                  timestampString = "595693701.211028"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1079"
@@ -329,7 +329,7 @@
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "595691404.4848551"
+                  timestampString = "595693701.212796"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1080"
@@ -406,16 +406,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TT/captureUI/captureViewController.m"
-            timestampString = "595691404.312418"
+            filePath = "TT/captureUI/captureManager.m"
+            timestampString = "595693701.0605119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-actionForView:"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-setupWindow"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -425,13 +425,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TT/captureUI/captureManager.m"
-            timestampString = "595691404.312505"
+            filePath = "TT/captureUI/captureViewController.m"
+            timestampString = "595693701.060595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-setupWindow"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-sigtap:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/captureUI/captureViewController.m"
+            timestampString = "595693701.0610141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-sigtap:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/captureUI/captureViewController.m"
+            timestampString = "595693701.061317"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-getWindow"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/captureUI/captureViewController.m"
+            timestampString = "595693701.061633"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-getWindow"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/captureUI/captureViewController.m"
+            timestampString = "595695084.7782741"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-sigtap:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

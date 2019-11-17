@@ -34,6 +34,7 @@
 #import "NumberTestViewController.h"
 #import "LableTestViewController.h"
 #import "SafeViewController.h"
+#import "captureManager.h"
 
 @interface ViewController ()
 
@@ -233,6 +234,14 @@ UILabel* _la;
 
 -(void)viewWillAppear:(BOOL)animated{
   [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	UIWindow *currentKeyWindow = [UIApplication sharedApplication].keyWindow;
+	[[captureManager shareSingleObjc] setupWindow];
+	[currentKeyWindow makeKeyWindow];
 }
 
 

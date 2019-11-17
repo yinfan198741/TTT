@@ -109,12 +109,12 @@
 //	 }];
 	
 	
-	UIWindow *windowForSelection = [[[[[[[UIApplication sharedApplication] windows] rac_sequence]
+	NSArray *windowForSelection = [[[[[[UIApplication sharedApplication] windows] rac_sequence]
 									   filter:^BOOL(UIWindow*  value) {
 										   return value.windowLevel != campWindowLeve;
 									   }] array] sortedArrayUsingComparator:^NSComparisonResult(UIWindow* obj1, UIWindow* obj2) {
 										   return obj1.windowLevel > obj2.windowLevel ? NSOrderedAscending : NSOrderedDescending;
-									   }]lastObject];
+									   }];
 	
 // UIColor* bg = windowForSelection.backgroundColor;
 //	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -123,7 +123,7 @@
 //	windowForSelection.backgroundColor = UIColor.redColor;
 //
 	
-	return windowForSelection;
+	return windowForSelection.firstObject;
 	
 }
 
