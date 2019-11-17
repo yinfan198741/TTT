@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		669D2D05F691ACF9D0C74F3B /* libPods-TT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98301CD3BADF82F90215CEC1 /* libPods-TT.a */; };
 		A714906A23099F5200A59AB2 /* RacDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A714906923099F5200A59AB2 /* RacDemoViewController.m */; };
+		A74003B423813DF200BAA62E /* captureWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A74003B323813DF200BAA62E /* captureWindow.m */; };
+		A74003B723813E1000BAA62E /* captureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74003B623813E1000BAA62E /* captureViewController.m */; };
+		A74003BB23814D7000BAA62E /* captureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A74003BA23814D7000BAA62E /* captureManager.m */; };
+		A74003BE23816D7300BAA62E /* captureViewAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A74003BD23816D7300BAA62E /* captureViewAction.m */; };
 		A78ED85D232D15C1001A8172 /* FPRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78ED85C232D15C1001A8172 /* FPRViewController.m */; };
 		A78ED861233A5EE7001A8172 /* MJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78ED860233A5EE7001A8172 /* MJViewController.m */; };
 		A7B49F5821188E7F0081D199 /* HookCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F5721188E7F0081D199 /* HookCTests.swift */; };
@@ -221,6 +225,14 @@
 		98301CD3BADF82F90215CEC1 /* libPods-TT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A714906823099F5200A59AB2 /* RacDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RacDemoViewController.h; sourceTree = "<group>"; };
 		A714906923099F5200A59AB2 /* RacDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RacDemoViewController.m; sourceTree = "<group>"; };
+		A74003B223813DF200BAA62E /* captureWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = captureWindow.h; sourceTree = "<group>"; };
+		A74003B323813DF200BAA62E /* captureWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = captureWindow.m; sourceTree = "<group>"; };
+		A74003B523813E1000BAA62E /* captureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = captureViewController.h; sourceTree = "<group>"; };
+		A74003B623813E1000BAA62E /* captureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = captureViewController.m; sourceTree = "<group>"; };
+		A74003B923814D7000BAA62E /* captureManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = captureManager.h; sourceTree = "<group>"; };
+		A74003BA23814D7000BAA62E /* captureManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = captureManager.m; sourceTree = "<group>"; };
+		A74003BC23816D7300BAA62E /* captureViewAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = captureViewAction.h; sourceTree = "<group>"; };
+		A74003BD23816D7300BAA62E /* captureViewAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = captureViewAction.m; sourceTree = "<group>"; };
 		A78ED85B232D15C1001A8172 /* FPRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPRViewController.h; sourceTree = "<group>"; };
 		A78ED85C232D15C1001A8172 /* FPRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPRViewController.m; sourceTree = "<group>"; };
 		A78ED85F233A5EE7001A8172 /* MJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJViewController.h; sourceTree = "<group>"; };
@@ -493,6 +505,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A74003A82381365200BAA62E /* captureUI */ = {
+			isa = PBXGroup;
+			children = (
+				A74003B223813DF200BAA62E /* captureWindow.h */,
+				A74003B323813DF200BAA62E /* captureWindow.m */,
+				A74003B523813E1000BAA62E /* captureViewController.h */,
+				A74003B623813E1000BAA62E /* captureViewController.m */,
+				A74003B923814D7000BAA62E /* captureManager.h */,
+				A74003BA23814D7000BAA62E /* captureManager.m */,
+				A74003BC23816D7300BAA62E /* captureViewAction.h */,
+				A74003BD23816D7300BAA62E /* captureViewAction.m */,
+			);
+			path = captureUI;
+			sourceTree = "<group>";
+		};
 		A7B49F4921188E7F0081D199 /* HookC */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,6 +602,7 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				A74003A82381365200BAA62E /* captureUI */,
 				B54E79E62340551B0035915B /* IOSBasic */,
 				B5CCFA0822CB7C0700858BC5 /* VCBase */,
 				B5001DE7224BA361002D15FF /* MJTest */,
@@ -1449,6 +1477,7 @@
 				B50EE5702237547E00DAA18A /* Example1ViewController.m in Sources */,
 				B50EE56F2237547E00DAA18A /* Example3ViewController.m in Sources */,
 				B5FB72E32122842B00325501 /* TabItem.m in Sources */,
+				A74003BE23816D7300BAA62E /* captureViewAction.m in Sources */,
 				B551282D22201AE500374029 /* NavigationDelegate.m in Sources */,
 				B5BFE3D8222E96BB00B6CFAC /* autoCellFive.swift in Sources */,
 				B56FBC6C21E47E90003694E1 /* Swear.m in Sources */,
@@ -1458,11 +1487,13 @@
 				B5BFE3CA222E966400B6CFAC /* BinarySearch.swift in Sources */,
 				B5BFE3C5222E939900B6CFAC /* Moniter.m in Sources */,
 				B551283A22201EF400374029 /* ImageHeaderViewController.m in Sources */,
+				A74003B423813DF200BAA62E /* captureWindow.m in Sources */,
 				A714906A23099F5200A59AB2 /* RacDemoViewController.m in Sources */,
 				B5BFE3D7222E96BB00B6CFAC /* autoCellFour.swift in Sources */,
 				B551282B22201AE500374029 /* SubBackNaviViewController.m in Sources */,
 				B5C8D566214A14F2007BF736 /* swiftObserver.swift in Sources */,
 				B5BFE3D9222E96BB00B6CFAC /* autoCellSeven.swift in Sources */,
+				A74003B723813E1000BAA62E /* captureViewController.m in Sources */,
 				B551283122201AE500374029 /* AViewController.m in Sources */,
 				B551284022201F0C00374029 /* FLAppearance.m in Sources */,
 				B5670EF3215F11C90014807D /* ExceptionModel.m in Sources */,
@@ -1471,6 +1502,7 @@
 				B551282F22201AE500374029 /* NavigationBarDelegate.m in Sources */,
 				B56FBC6921E44757003694E1 /* RACTester.m in Sources */,
 				A78ED85D232D15C1001A8172 /* FPRViewController.m in Sources */,
+				A74003BB23814D7000BAA62E /* captureManager.m in Sources */,
 				B5BFE3F1222E972800B6CFAC /* perfTest.swift in Sources */,
 				B5BFE3BF222E274500B6CFAC /* UIImageView+Theme.m in Sources */,
 				B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */,
