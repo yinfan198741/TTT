@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#define campWindowLeve 1000000000
-
+#define campWindowLeve 1000000000.000000
+					  
 NS_ASSUME_NONNULL_BEGIN
 
 @interface captureManager : NSObject

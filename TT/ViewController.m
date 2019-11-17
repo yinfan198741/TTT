@@ -31,7 +31,9 @@
 #import "RACTestViewController.h"
 #import "MJViewController.h"
 #import "BasicTestViewController.h"
-
+#import "NumberTestViewController.h"
+#import "LableTestViewController.h"
+#import "SafeViewController.h"
 
 @interface ViewController ()
 
@@ -89,6 +91,7 @@ UILabel* _la;
     
     TabItem* UILable = [TabItem CreateItem:@"UILable" action:^{
         NSLog(@"UILable");
+        [self UILableTest];
     }];
     [self.source addObject:UILable];
     
@@ -176,7 +179,7 @@ UILabel* _la;
     [self.source addObject:imageHeaderSwift];
     
     
-    TabItem* AppearanceViewController = [TabItem            CreateItem:@"AppearanceViewController" action:^{
+    TabItem* AppearanceViewController = [TabItem CreateItem:@"AppearanceViewController" action:^{
         [self AppearanceViewController];
     }];
     [self.source addObject:AppearanceViewController];
@@ -204,7 +207,19 @@ UILabel* _la;
     }];
     [self.source addObject:MJTest];
     
+    
+    TabItem* numberTest = [TabItem CreateItem:@"numberTest" action:^{
+        [self numberTest];
+    }];
+    [self.source addObject:numberTest];
+    
+    
+    TabItem* safeTest = [TabItem CreateItem:@"SafeViewController" action:^{
+        [self safeTest];
+    }];
+    [self.source addObject:safeTest];
 }
+
 
 
 - (void)viewDidLoad {
@@ -288,16 +303,17 @@ UILabel* _la;
   NSLog(@"click4");
   
   UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"title1" message:@"message1" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//	alert1.window.windowLevel = 1000;
   [alert1 show];
-  
+//
   NSLog(@"alert1.window = %@   alert1.window.windowLevel = %f",alert1.window,alert1.window.windowLevel);
-  NSLog(@"windows == %@",[UIApplication sharedApplication].windows);
-  
-  
-  UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"title2" message:@"message2" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-  [alert2 show];
-  
-  NSLog(@"alert2.window = %@   alert2.window.windowLevel = %f",alert2.window,alert2.window.windowLevel);
+//  NSLog(@"windows == %@",[UIApplication sharedApplication].windows);
+//
+//
+//  UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"title2" message:@"message2" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//  [alert2 show];
+//
+//  NSLog(@"alert2.window = %@   alert2.window.windowLevel = %f",alert2.window,alert2.window.windowLevel);
 }
 
 -(void)alertVC {
@@ -309,6 +325,13 @@ UILabel* _la;
   
   [uac addAction:ac];
   [self presentViewController:uac animated:YES completion:nil];
+}
+
+
+- (void)UILableTest{
+    
+    LableTestViewController* vc = [[LableTestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)swiftCall {
@@ -460,6 +483,20 @@ UILabel* _la;
     
 }
 
+
+- (void)numberTest {
+    NSLog(@"numberTest");
+    NumberTestViewController* animation = [[NumberTestViewController alloc] init];
+    [self.navigationController pushViewController:animation animated:true];
+    
+}
+
+
+- (void)safeTest
+{
+    SafeViewController* sa = [[SafeViewController alloc] init];
+    [self.navigationController presentViewController:sa animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];

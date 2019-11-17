@@ -26,7 +26,6 @@
 		A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA711E9B2BBA00ED8D03 /* AppDelegate.m */; };
 		A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA741E9B2BBA00ED8D03 /* ViewController.m */; };
 		A7D8FA781E9B2BBA00ED8D03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA761E9B2BBA00ED8D03 /* Main.storyboard */; };
-		A7D8FA7A1E9B2BBA00ED8D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA791E9B2BBA00ED8D03 /* Assets.xcassets */; };
 		A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */; };
 		A7D8FA881E9B2BBA00ED8D03 /* TTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA871E9B2BBA00ED8D03 /* TTTests.m */; };
 		A7D8FA931E9B2BBB00ED8D03 /* TTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */; };
@@ -47,7 +46,7 @@
 		B50EE58C223762AE00DAA18A /* images in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58A223762AE00DAA18A /* images */; };
 		B50EE58D223762AE00DAA18A /* images2 in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58B223762AE00DAA18A /* images2 */; };
 		B50EE58F2237893D00DAA18A /* memory.png in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58E2237893C00DAA18A /* memory.png */; };
-		B52A58072180109600E106E9 /* assetTest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52A58062180109600E106E9 /* assetTest.xcassets */; };
+		B53A7A9723599B870013E9F9 /* LableTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7A9623599B870013E9F9 /* LableTestViewController.m */; };
 		B53F202121AFE726006A8D3F /* HashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F202021AFE726006A8D3F /* HashViewController.m */; };
 		B54E79EC23405FA00035915B /* SecondPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79EB23405FA00035915B /* SecondPageViewController.m */; };
 		B54E79EF234061630035915B /* BasicTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79EE234061630035915B /* BasicTestViewController.m */; };
@@ -65,6 +64,7 @@
 		B551284022201F0C00374029 /* FLAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = B551283C22201F0C00374029 /* FLAppearance.m */; };
 		B551284122201F0C00374029 /* AppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B551283D22201F0C00374029 /* AppearanceViewController.m */; };
 		B551284622201F4D00374029 /* NSObject+PPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = B551284322201F4D00374029 /* NSObject+PPrint.m */; };
+		B5581E8C23545824008EACB1 /* NumberTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5581E8B23545824008EACB1 /* NumberTestViewController.m */; };
 		B55B3FBC21B0DABC005CADF3 /* citydata.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55B3FBB21B0DABC005CADF3 /* citydata.plist */; };
 		B55B3FCD21B1349D005CADF3 /* HookC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55B3FC421B1349C005CADF3 /* HookC.framework */; };
 		B55B3FD421B1349D005CADF3 /* HookCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B55B3FD321B1349D005CADF3 /* HookCTests.m */; };
@@ -97,6 +97,7 @@
 		B59D963C21A4F9720064A81D /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963B21A4F9720064A81D /* AnimationViewController.m */; };
 		B5A9FBF8217758870083D5E0 /* SwiftInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9FBF7217758870083D5E0 /* SwiftInit.swift */; };
 		B5B5806B228BD143009A0EA3 /* RACSignalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B5806A228BD143009A0EA3 /* RACSignalTest.m */; };
+		B5B9E36A235F0E5E00D026DF /* InsetsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B9E369235F0E5E00D026DF /* InsetsLabel.m */; };
 		B5BFE3B9222E1C5300B6CFAC /* HookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3B8222E1C5300B6CFAC /* HookTableViewController.m */; };
 		B5BFE3BC222E209800B6CFAC /* CatelogHookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3BB222E209800B6CFAC /* CatelogHookViewController.m */; };
 		B5BFE3BF222E274500B6CFAC /* UIImageView+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BFE3BE222E274500B6CFAC /* UIImageView+Theme.m */; };
@@ -132,6 +133,7 @@
 		B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C8D576214FE553007BF736 /* SwiftDelegate.swift */; };
 		B5CCFA0722CB7B4700858BC5 /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CCFA0622CB7B4700858BC5 /* RACTestViewController.m */; };
 		B5CCFA0B22CB7C1F00858BC5 /* VCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CCFA0A22CB7C1F00858BC5 /* VCBaseViewController.m */; };
+		B5F0E13223619EBF00B614DE /* SafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F0E13123619EBF00B614DE /* SafeViewController.m */; };
 		B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */; };
 		B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DF2121CA1B00325501 /* PushViewController.m */; };
 		B5FB72E32122842B00325501 /* TabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72E22122842B00325501 /* TabItem.m */; };
@@ -295,6 +297,8 @@
 		B50EE58B223762AE00DAA18A /* images2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images2; sourceTree = "<group>"; };
 		B50EE58E2237893C00DAA18A /* memory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memory.png; sourceTree = "<group>"; };
 		B52A58062180109600E106E9 /* assetTest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assetTest.xcassets; sourceTree = "<group>"; };
+		B53A7A9523599B870013E9F9 /* LableTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LableTestViewController.h; sourceTree = "<group>"; };
+		B53A7A9623599B870013E9F9 /* LableTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LableTestViewController.m; sourceTree = "<group>"; };
 		B53F201F21AFE726006A8D3F /* HashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashViewController.h; sourceTree = "<group>"; };
 		B53F202021AFE726006A8D3F /* HashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HashViewController.m; sourceTree = "<group>"; };
 		B54E79EA23405FA00035915B /* SecondPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondPageViewController.h; sourceTree = "<group>"; };
@@ -330,6 +334,8 @@
 		B551284322201F4D00374029 /* NSObject+PPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PPrint.m"; sourceTree = "<group>"; };
 		B551284422201F4D00374029 /* NSObject+PPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PPrint.h"; sourceTree = "<group>"; };
 		B551284522201F4D00374029 /* NSObject+PropertyPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertyPrint.h"; sourceTree = "<group>"; };
+		B5581E8A23545824008EACB1 /* NumberTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberTestViewController.h; sourceTree = "<group>"; };
+		B5581E8B23545824008EACB1 /* NumberTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberTestViewController.m; sourceTree = "<group>"; };
 		B55B3FBB21B0DABC005CADF3 /* citydata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydata.plist; sourceTree = "<group>"; };
 		B55B3FBD21B133B5005CADF3 /* HookC */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HookC; sourceTree = "<group>"; };
 		B55B3FC421B1349C005CADF3 /* HookC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HookC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -378,6 +384,8 @@
 		B5A9FC3E2179CD190083D5E0 /* TT copy 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TT copy 2-Info.plist"; path = "/Users/yinfan/Desktop/Code/yinfangit/tt/TTT/TT copy 2-Info.plist"; sourceTree = "<absolute>"; };
 		B5B58069228BD143009A0EA3 /* RACSignalTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACSignalTest.h; sourceTree = "<group>"; };
 		B5B5806A228BD143009A0EA3 /* RACSignalTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACSignalTest.m; sourceTree = "<group>"; };
+		B5B9E368235F0E5E00D026DF /* InsetsLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsetsLabel.h; sourceTree = "<group>"; };
+		B5B9E369235F0E5E00D026DF /* InsetsLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsetsLabel.m; sourceTree = "<group>"; };
 		B5BFE3B7222E1C5300B6CFAC /* HookTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookTableViewController.h; sourceTree = "<group>"; };
 		B5BFE3B8222E1C5300B6CFAC /* HookTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookTableViewController.m; sourceTree = "<group>"; };
 		B5BFE3BA222E209800B6CFAC /* CatelogHookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatelogHookViewController.h; sourceTree = "<group>"; };
@@ -420,6 +428,8 @@
 		B5CCFA0622CB7B4700858BC5 /* RACTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
 		B5CCFA0922CB7C1F00858BC5 /* VCBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCBaseViewController.h; sourceTree = "<group>"; };
 		B5CCFA0A22CB7C1F00858BC5 /* VCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCBaseViewController.m; sourceTree = "<group>"; };
+		B5F0E13023619EBF00B614DE /* SafeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SafeViewController.h; sourceTree = "<group>"; };
+		B5F0E13123619EBF00B614DE /* SafeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeViewController.m; sourceTree = "<group>"; };
 		B5FB72DA2121C73200325501 /* UIViewController+Consistent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Consistent.h"; sourceTree = "<group>"; };
 		B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Consistent.m"; sourceTree = "<group>"; };
 		B5FB72DE2121CA1B00325501 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
@@ -603,6 +613,9 @@
 			isa = PBXGroup;
 			children = (
 				A74003A82381365200BAA62E /* captureUI */,
+				B5F0E12F23619E9A00B614DE /* SafeArea */,
+				B53A7A9423599B490013E9F9 /* UIlabel */,
+				B5581E89235457AD008EACB1 /* NumberDecial */,
 				B54E79E62340551B0035915B /* IOSBasic */,
 				B5CCFA0822CB7C0700858BC5 /* VCBase */,
 				B5001DE7224BA361002D15FF /* MJTest */,
@@ -719,6 +732,17 @@
 			path = BundleTest;
 			sourceTree = "<group>";
 		};
+		B53A7A9423599B490013E9F9 /* UIlabel */ = {
+			isa = PBXGroup;
+			children = (
+				B53A7A9523599B870013E9F9 /* LableTestViewController.h */,
+				B53A7A9623599B870013E9F9 /* LableTestViewController.m */,
+				B5B9E368235F0E5E00D026DF /* InsetsLabel.h */,
+				B5B9E369235F0E5E00D026DF /* InsetsLabel.m */,
+			);
+			path = UIlabel;
+			sourceTree = "<group>";
+		};
 		B53F202221AFE731006A8D3F /* Hash */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,6 +819,15 @@
 				B551284522201F4D00374029 /* NSObject+PropertyPrint.h */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		B5581E89235457AD008EACB1 /* NumberDecial */ = {
+			isa = PBXGroup;
+			children = (
+				B5581E8A23545824008EACB1 /* NumberTestViewController.h */,
+				B5581E8B23545824008EACB1 /* NumberTestViewController.m */,
+			);
+			path = NumberDecial;
 			sourceTree = "<group>";
 		};
 		B55B3FBA21B0DA7E005CADF3 /* Resource */ = {
@@ -1024,6 +1057,15 @@
 				B54E79EB23405FA00035915B /* SecondPageViewController.m */,
 			);
 			path = VCBase;
+			sourceTree = "<group>";
+		};
+		B5F0E12F23619E9A00B614DE /* SafeArea */ = {
+			isa = PBXGroup;
+			children = (
+				B5F0E13023619EBF00B614DE /* SafeViewController.h */,
+				B5F0E13123619EBF00B614DE /* SafeViewController.m */,
+			);
+			path = SafeArea;
 			sourceTree = "<group>";
 		};
 		B5FB72D62121C6C700325501 /* safeVCpush */ = {
@@ -1330,12 +1372,10 @@
 				B55B3FBC21B0DABC005CADF3 /* citydata.plist in Resources */,
 				B50EE58C223762AE00DAA18A /* images in Resources */,
 				B568B980224337B3001B8571 /* Storyboard.storyboard in Resources */,
-				A7D8FA7A1E9B2BBA00ED8D03 /* Assets.xcassets in Resources */,
 				A7B49F84211B359B0081D199 /* ReleaseConfig.xcconfig in Resources */,
 				A7D8FA781E9B2BBA00ED8D03 /* Main.storyboard in Resources */,
 				B50EE56B2237547E00DAA18A /* Example1ViewController.xib in Resources */,
 				B50EE56E2237547E00DAA18A /* left.png in Resources */,
-				B52A58072180109600E106E9 /* assetTest.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1448,11 +1488,13 @@
 				A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */,
 				B5B5806B228BD143009A0EA3 /* RACSignalTest.m in Sources */,
 				A7B49F7B211B31BD0081D199 /* Test.c in Sources */,
+				B53A7A9723599B870013E9F9 /* LableTestViewController.m in Sources */,
 				B5C8D577214FE553007BF736 /* SwiftDelegate.swift in Sources */,
 				B54E79EF234061630035915B /* BasicTestViewController.m in Sources */,
 				B5BFE3E7222E96F300B6CFAC /* protocalTest.swift in Sources */,
 				B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */,
 				B5670EFB215F21F10014807D /* CallTest.m in Sources */,
+				B5F0E13223619EBF00B614DE /* SafeViewController.m in Sources */,
 				B551284622201F4D00374029 /* NSObject+PPrint.m in Sources */,
 				B551284122201F0C00374029 /* AppearanceViewController.m in Sources */,
 				B5BFE3E4222E96F300B6CFAC /* GenericBox.swift in Sources */,
@@ -1501,8 +1543,10 @@
 				B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */,
 				B551282F22201AE500374029 /* NavigationBarDelegate.m in Sources */,
 				B56FBC6921E44757003694E1 /* RACTester.m in Sources */,
+				B5581E8C23545824008EACB1 /* NumberTestViewController.m in Sources */,
 				A78ED85D232D15C1001A8172 /* FPRViewController.m in Sources */,
 				A74003BB23814D7000BAA62E /* captureManager.m in Sources */,
+				B5B9E36A235F0E5E00D026DF /* InsetsLabel.m in Sources */,
 				B5BFE3F1222E972800B6CFAC /* perfTest.swift in Sources */,
 				B5BFE3BF222E274500B6CFAC /* UIImageView+Theme.m in Sources */,
 				B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */,
