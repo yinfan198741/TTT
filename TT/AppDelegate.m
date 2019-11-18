@@ -18,44 +18,44 @@
 @implementation AppDelegate
 
 - (void)setupCrash {
-  InstallSignalHandler();
-  InstallUncaughtExceptionHandler();
+    InstallSignalHandler();
+    InstallUncaughtExceptionHandler();
 }
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  
-  [self setupCrash];
-  
+    
+    [self setupCrash];
+    
     ViewController* vc = [[ViewController alloc] init];
     UINavigationController* root = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = root;
     [self.window makeKeyAndVisible];
-  
-  
-  
-  //  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-  //    UIViewController *vc = [UIViewController new];
-  //    vc.view.backgroundColor = [UIColor redColor];
-  //    [self.window.rootViewController presentViewController:vc animated:YES completion:^{
-  //      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-  //        UIViewController *vc1 = [UIViewController new];
-  //        vc1.view.backgroundColor = [UIColor yellowColor];
-  //        [vc presentViewController:vc1 animated:YES completion:nil];
-  //      });
-  //    }];
-  //  });
-  
-  [[UINavigationBar appearance] setTranslucent:NO];
-  
-//  [[FLObject appearance] setTextColor:[UIColor redColor]];
-  
-//  [(FLAppearance *)[FLAppearance appearanceForClass:[self class]] startForwarding:self];
-  
-//  [[UILabel appearance] setTextColor:UIColor.redColor];
-//  [[UILabel appearanceWhenContainedIn:[UITableViewCell class], nil]
-//setTextColor:[UIColor redColor]];
+    
+    
+    
+    //  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //    UIViewController *vc = [UIViewController new];
+    //    vc.view.backgroundColor = [UIColor redColor];
+    //    [self.window.rootViewController presentViewController:vc animated:YES completion:^{
+    //      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //        UIViewController *vc1 = [UIViewController new];
+    //        vc1.view.backgroundColor = [UIColor yellowColor];
+    //        [vc presentViewController:vc1 animated:YES completion:nil];
+    //      });
+    //    }];
+    //  });
+    
+    [[UINavigationBar appearance] setTranslucent:NO];
+    
+    //  [[FLObject appearance] setTextColor:[UIColor redColor]];
+    
+    //  [(FLAppearance *)[FLAppearance appearanceForClass:[self class]] startForwarding:self];
+    
+    //  [[UILabel appearance] setTextColor:UIColor.redColor];
+    //  [[UILabel appearanceWhenContainedIn:[UITableViewCell class], nil]
+    //setTextColor:[UIColor redColor]];
     return YES;
 }
 

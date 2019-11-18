@@ -11,6 +11,7 @@
 #import "RacDemoViewController.h"
 #import "FPRViewController.h"
 #import "MBProgressHUD.h"
+#import "MJUser.h"
 
 @interface RACTestViewController ()
 
@@ -57,6 +58,7 @@
                     @[@"testCollectSignalsAndCombineLatestOrZip",@"testCollectSignalsAndCombineLatestOrZip"],
                     @[@"doNext",@"doNextTest"],
                     @[@"loadingTest",@"loadingTest"],
+                    @[@"changeItem",@"changeItemTest"],
                     ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
@@ -1389,6 +1391,47 @@ static RACSignal* t1  = nil;
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSLog(@"completed2");
     }];
+}
+
+
+- (void)changeItemTest
+{
+    NSLog(@"changeItemTest");
+    
+    MJDishSpuEntity* s1 = [[MJDishSpuEntity alloc] init];
+    s1.code = @"a";
+    
+    MJDishSpuEntity* s2 = [[MJDishSpuEntity alloc] init];
+     s2.code = @"b";
+    
+    MJDishSpuEntity* s3 = [[MJDishSpuEntity alloc] init];
+     s3.code = @"c";
+    
+    
+    MJDishSpuEntity* s4 = [[MJDishSpuEntity alloc] init];
+    s4.code = @"d";
+    
+    NSArray * arryt = @[s1,s2,s3];
+    
+    MJDishSpuEntity* exist = [[[arryt.rac_sequence filter:^BOOL(MJDishSpuEntity* value) {
+        return [value.code isEqualToString:@"b"];
+    }] array] firstObject];
+    
+    exist = s4;
+    
+    MJDishSpuEntity* ttm = [arryt objectAtIndex:1];
+    ttm = s4;
+    
+    
+  NSMutableArray* arrayT = [arryt mutableCopy];
+    arrayT[1] = s4;
+    
+//    arryt = [arrayT]
+    
+    
+//    arryt[1] = s4;
+    
+    NSLog(@"123");
 }
 
 

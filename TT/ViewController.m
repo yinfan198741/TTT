@@ -226,9 +226,66 @@ UILabel* _la;
   [super viewDidLoad];
   self.view.backgroundColor = UIColor.whiteColor;
   self.title = @"Test";
+    
+    
+//    [[UIApplication.sharedApplication windows]
+    
+//    [self addControlbutton];
+    
 //  [UINavigationItemButtonView getpriority(<#int#>, <#id_t#>)]
   
 //  [NSObject getProperties:[UINavigationItemButtonView Class]];
+}
+
+
+- (void)addControlbutton
+{
+//    UIButton* b  = [[UIButton alloc] init:CGRectMake(100, 100, 20, 20)];
+    UIButton* b = [self TestButton];
+    [self.view addSubview:b];
+    
+    UIButton* sb = [self ScrollButton];
+    [self.view addSubview:sb];
+    
+}
+
+- (UIButton*)TestButton
+{
+    UIButton* changeButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 50, 50, 50)];
+    changeButton.backgroundColor = UIColor.redColor;
+    [changeButton setTitle:@"Test" forState:UIControlStateNormal];
+    [changeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [changeButton setTitleColor:UIColor.orangeColor forState:UIControlStateSelected];
+    [changeButton addTarget:self action:@selector(Test) forControlEvents:UIControlEventTouchUpInside];
+    return changeButton;
+}
+
+
+
+- (UIButton*)ScrollButton
+{
+    UIButton* changeButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 110, 50, 50)];
+    changeButton.backgroundColor = UIColor.redColor;
+    [changeButton setTitle:@"ScrollButton" forState:UIControlStateNormal];
+    [changeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [changeButton setTitleColor:UIColor.orangeColor forState:UIControlStateSelected];
+    [changeButton addTarget:self action:@selector(Scroll) forControlEvents:UIControlEventTouchUpInside];
+    return changeButton;
+}
+
+- (void)Test
+{
+    NSLog(@"Test");
+    NSIndexPath * path = [NSIndexPath indexPathForRow:7 inSection:0];
+    [self.tableView performSelector:@selector(_userSelectRowAtPendingSelectionIndexPath:) withObject:path];
+}
+
+
+- (void)Scroll
+{
+    CGPoint po = self.tableView.contentOffset;
+    po.y += 300;
+    [self.tableView setContentOffset:po animated:NO];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -245,6 +302,8 @@ UILabel* _la;
   TabItem* item = (TabItem*)self.source[indexPath.row];
   item.itemActicon();
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+//    [UIApplication.sharedApplication.keyWindow]
 }
 
 
