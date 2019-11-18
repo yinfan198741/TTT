@@ -34,6 +34,7 @@
 #import "NumberTestViewController.h"
 #import "LableTestViewController.h"
 #import "SafeViewController.h"
+#import "captureManager.h"
 
 @interface ViewController ()
 
@@ -292,6 +293,14 @@ UILabel* _la;
   [super viewWillAppear:animated];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	UIWindow *currentKeyWindow = [UIApplication sharedApplication].keyWindow;
+	[[captureManager shareSingleObjc] setupWindow];
+	[currentKeyWindow makeKeyWindow];
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return [self.source count];
@@ -362,16 +371,17 @@ UILabel* _la;
   NSLog(@"click4");
   
   UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"title1" message:@"message1" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//	alert1.window.windowLevel = 1000;
   [alert1 show];
-  
+//
   NSLog(@"alert1.window = %@   alert1.window.windowLevel = %f",alert1.window,alert1.window.windowLevel);
-  NSLog(@"windows == %@",[UIApplication sharedApplication].windows);
-  
-  
-  UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"title2" message:@"message2" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-  [alert2 show];
-  
-  NSLog(@"alert2.window = %@   alert2.window.windowLevel = %f",alert2.window,alert2.window.windowLevel);
+//  NSLog(@"windows == %@",[UIApplication sharedApplication].windows);
+//
+//
+//  UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"title2" message:@"message2" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//  [alert2 show];
+//
+//  NSLog(@"alert2.window = %@   alert2.window.windowLevel = %f",alert2.window,alert2.window.windowLevel);
 }
 
 -(void)alertVC {
