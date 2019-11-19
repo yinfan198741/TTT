@@ -1041,29 +1041,97 @@ static RACSignal* t1  = nil;
 {
     NSLog(@"flatMapTest");
     
-    RACSignal* s1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-        [RACScheduler.mainThreadScheduler afterDelay:1 schedule:^{
-            [subscriber sendNext:@"123"];
-            [subscriber sendCompleted];
-        }];
-       
-        return nil;
-    }];
-    
-    RACSignal* s2 = [s1 flattenMap:^ RACSignal * (id value) {
-        return [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
-            
-            [RACScheduler.mainThreadScheduler afterDelay:1 schedule:^{
-                [subscriber sendNext:[NSString stringWithFormat:@"%@,456",value]];
-                [subscriber sendCompleted];
-            }];
-            return nil;
-        }];
-    }];
-    
-    [s2 subscribeNext:^(id  _Nullable x) {
-        NSLog(@"x = %@",x);
-    }];
+//    RACSignal* s1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//        [RACScheduler.mainThreadScheduler afterDelay:1 schedule:^{
+//            [subscriber sendNext:@"123"];
+//            [subscriber sendCompleted];
+//        }];
+//
+//        return nil;
+//    }];
+//
+//    RACSignal* s2 = [s1 flattenMap:^ RACSignal * (id value) {
+//        return [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+//
+//            [RACScheduler.mainThreadScheduler afterDelay:1 schedule:^{
+//                [subscriber sendNext:[NSString stringWithFormat:@"%@,456",value]];
+//                [subscriber sendCompleted];
+//            }];
+//            return nil;
+//        }];
+//    }];
+//
+//    [s2 subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"x = %@",x);
+//    }];
+	
+	static RACCommand* c;
+	if (c == nil) {
+		c = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+			RACSignal* s1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+				[subscriber sendNext:@"123"];
+				//[subscriber sendCompleted];
+				return nil;
+			}];
+			return s1;
+		}];
+	}
+	
+	NSLog(@"RACCommand 无法执行,导致发送 send next flatmap 不能执行");
+	[[[c execute:nil] flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+		
+		return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+			[subscriber sendNext:[NSString stringWithFormat:@"%@,%@",value,@"456"]];
+			[subscriber sendCompleted];
+			return nil;
+		}];
+		
+	} ] subscribeNext:^(id  _Nullable x) {
+		NSLog(@"subscribeNext1 = %@",x);
+	}] ;
+	
+	RACSignal* s1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+		[subscriber sendNext:@"123"];
+		[subscriber sendCompleted];
+		return nil;
+	}];
+	
+	static int  a =0;
+	a ++;
+	
+	
+	RACSignal* s2 = [[s1 doCompleted:^{
+		NSLog(@"s1 doCompleted");
+	} ] flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+		return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+			if (a % 2 == 0) {
+				NSLog(@"flatmap send next");
+				[subscriber sendNext:[NSString stringWithFormat:@"%@,%@",value,@"456"]];
+				[subscriber sendCompleted];
+			}
+			else
+			{
+				NSLog(@"flatmap send error");
+				NSError* e =[NSError errorWithDomain:@"error" code:1 userInfo:nil];
+				[subscriber sendError:e];
+			}
+			
+			return nil;
+		}];
+	}];
+	
+	[[[s2 catch:^RACSignal * (NSError *  error) {
+		NSLog(@"获取链条上的Error");
+		return [RACSignal return:@"error"];
+	}] doCompleted:^{
+		NSLog(@"s2 doCompleted");
+	}] subscribeNext:^(id  x) {
+		NSLog(@"subscribeNext2 = %@",x);
+	} completed:^{
+		NSLog(@"completed");
+	}];
+	
+	
 }
 
 
@@ -1258,15 +1326,18 @@ static RACSignal* t1  = nil;
 {
     NSLog(@"doNextTest");
     
-    [[[[RACSignal return:@(123)]
-      doNext:^(id  _Nullable x) {
-          NSLog(@"doNext1 x= %@",x);
-          x = @(2);
-    }] doNext:^(id  _Nullable x) {
-           NSLog(@"doNext2 x= %@",x);
-          x = @(3);
-    }]  subscribeNext:^(id x) {
-        
+	[[[[[[RACSignal return:@(123)]
+		doNext:^(id  _Nullable x) {
+			NSLog(@"doNext1 x= %@",x);
+			x = @(2);
+		}] doNext:^(id  _Nullable x) {
+			NSLog(@"doNext2 x= %@",x);
+			x = @(3);
+		}] doCompleted:^{
+			NSLog(@"doCompleted");
+		}]  doCompleted:^{
+			NSLog(@"doCompleted");
+		}]  subscribeNext:^(id x) {
         NSLog(@"subscribeNext x = %@",x);
     }];
     

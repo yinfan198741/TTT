@@ -296,9 +296,9 @@ UILabel* _la;
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
-	UIWindow *currentKeyWindow = [UIApplication sharedApplication].keyWindow;
-	[[captureManager shareSingleObjc] setupWindow];
-	[currentKeyWindow makeKeyWindow];
+//	UIWindow *currentKeyWindow = [UIApplication sharedApplication].keyWindow;
+//	[[captureManager shareSingleObjc] setupWindow];
+//	[currentKeyWindow makeKeyWindow];
 }
 
 
