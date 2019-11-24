@@ -36,6 +36,10 @@
 #import "SafeViewController.h"
 #import "captureManager.h"
 
+#import "StudentA.h"
+#import "PersonA.h"
+
+
 @interface ViewController ()
 
 @property (nonatomic, strong) NSMutableArray* source;
@@ -219,6 +223,13 @@ UILabel* _la;
         [self safeTest];
     }];
     [self.source addObject:safeTest];
+	
+	
+	TabItem* inherite = [TabItem CreateItem:@"inherite" action:^{
+		[self inherite];
+	}];
+	[self.source addObject:inherite];
+	
 }
 
 
@@ -564,6 +575,20 @@ UILabel* _la;
 {
     SafeViewController* sa = [[SafeViewController alloc] init];
     [self.navigationController presentViewController:sa animated:YES completion:nil];
+}
+
+- (void)inherite
+{
+//	NSLog(@"inherite");
+	StudentA* stA = [[StudentA alloc] init];
+	stA.name = @"name";
+	stA.age = 10;
+	stA.schoolName = @"pixian middel school";
+	
+	NSLog(@"stA %@",stA);
+	NSLog(@"stA.good.goodName %@",stA.good.goodName);
+	stA.good.goodName = @"new good name";
+	NSLog(@"stA.good.goodName %@",stA.good.goodName);
 }
 
 - (void)didReceiveMemoryWarning {
