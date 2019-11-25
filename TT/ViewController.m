@@ -44,6 +44,15 @@
 
 @property (nonatomic, strong) NSMutableArray* source;
 
+@property (nonatomic, strong) NSMutableArray* info;//= [[NSMutableArray alloc] initWithCapacity:100];
+
+@property (nonatomic, strong) NSMutableString* logI;
+
+@property (nonatomic, strong) dispatch_source_t timer;
+
+
+@property (nonatomic, strong) dispatch_source_t writeTimer;
+
 @end
 
 UILabel* _la;
@@ -56,7 +65,9 @@ UILabel* _la;
   self = [super init];
   if (self) {
     self.source = [NSMutableArray arrayWithCapacity:10];
+	 self.info = [[NSMutableArray alloc] initWithCapacity:100];
     [self setupSource];
+	  self.logI = [[NSMutableString alloc]init];
   }
   return self;
 }
@@ -229,6 +240,12 @@ UILabel* _la;
 		[self inherite];
 	}];
 	[self.source addObject:inherite];
+	
+	
+	TabItem* logText = [TabItem CreateItem:@"logText" action:^{
+		[self logText];
+	}];
+	[self.source addObject:logText];
 	
 }
 
@@ -590,6 +607,124 @@ UILabel* _la;
 	stA.good.goodName = @"new good name";
 	NSLog(@"stA.good.goodName %@",stA.good.goodName);
 }
+
+
+- (void)logText
+{
+	NSLog(@"logText");
+
+	[self createTimer];
+
+	
+	
+//	NSMutableString* a = [[NSMutableString alloc] initWithCapacity:10];
+//	[a appendString:@"123"];
+//	[a appendString:@"456"];
+//	NSLog(@"%@",a);
+	
+	
+//		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//[						NSString* tlog = [NSString stringWithFormat:@"%@",[NSDate date]] ;
+//						[self writeLog:tlog];
+//					});
+	
+//
+//		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//							NSString* tlog = [NSString stringWithFormat:@"%@",[NSDate date]] ;
+//						[self writeLog:tlog];
+//			writeFileCount++;
+//			if (writeFileCount < 10)
+//			{
+//				goto writeFILE;
+//
+//	}
+	
+	
+	
+}
+
+
+- (void)createTimer
+{
+	
+	__block	int count = 0;
+	
+	// 获得队列
+	
+	dispatch_queue_t queue = dispatch_get_main_queue();
+	
+	// 创建一个定时器(dispatch_source_t本质还是个OC对象)
+	
+	self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+	
+	// 设置定时器的各种属性（几时开始任务，每隔多长时间执行一次）
+	
+	// GCD的时间参数，一般是纳秒（1秒 == 10的9次方纳秒）
+	
+	// 何时开始执行第一个任务
+	
+	// dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC) 比当前时间晚3秒
+	
+	dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC));
+	
+	uint64_t interval = (uint64_t)(1.0 * NSEC_PER_SEC);
+	
+	dispatch_source_set_timer(self.timer, start, interval, 0);
+	
+	// 设置回调
+	
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"ss"];
+	
+	dispatch_source_set_event_handler(self.timer, ^{
+		
+		NSDate *dateNow = [NSDate date];
+		NSString *currentTime = [formatter stringFromDate:dateNow];
+
+		
+		count++;
+		if (count == 4) {
+
+			// 取消定时器
+
+			dispatch_cancel(self.timer);
+
+			self.timer = nil;
+
+		}
+		
+	});
+	
+	// 启动定时器
+	
+	dispatch_resume(self.timer);
+	
+}
+
+
+- (void)writeLog:(NSString*)log
+{
+	
+//	[self.info addObject:log];
+//	[self.logI stringByAppendingString:@"\n"];
+//	[self.logI stringByAppendingString:log];
+	NSLog(@"log = %@",log);
+	
+	
+	
+	[self.logI appendString:[NSString stringWithFormat:@"%@",log]];
+	
+	[self.logI appendString:@"\r"];
+	
+	NSLog(@"logI = %@",self.logI);
+}
+
+
+- (void)writeTofile
+{
+	
+}
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
