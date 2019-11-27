@@ -13,12 +13,21 @@
 #import "captureViewController.h"
 #import "captureManager.h"
 
+#import "HTTPServer.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+
+
+// Log levels: off, error, warn, info, verbose
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface AppDelegate ()
 
 //@property (nonatomic, strong)UIWindow *w2;
 
 @property (nonatomic, strong)captureManager* capManager;
+
+@property (nonatomic, strong)HTTPServer* httpServer;
 
 
 
@@ -29,6 +38,50 @@
 - (void)setupCrash {
     InstallSignalHandler();
     InstallUncaughtExceptionHandler();
+}
+
+
+- (void)startServer
+{
+	// Start the server (and check for problems)
+	
+	NSError *error;
+	if([self.httpServer start:&error])
+	{
+		DDLogInfo(@"Started HTTP Server on port %hu", [self.httpServer listeningPort]);
+	}
+	else
+	{
+		DDLogError(@"Error starting HTTP Server: %@", error);
+	}
+}
+
+
+- (void)startHttpServer
+{
+	[DDLog addLogger:[DDTTYLogger sharedInstance]];
+	
+	// Create server using our custom MyHTTPServer class
+	self.httpServer = [[HTTPServer alloc] init];
+	[self.httpServer setPort:56666];
+	
+	// Tell the server to broadcast its presence via Bonjour.
+	// This allows browsers such as Safari to automatically discover our service.
+	[self.httpServer setType:@"_http._tcp."];
+	
+	// Normally there's no need to run our server on any specific port.
+	// Technologies like Bonjour allow clients to dynamically discover the server's port at runtime.
+	// However, for easy testing you may want force a certain port so you can just hit the refresh button.
+	// [httpServer setPort:12345];
+	
+	// Serve files from our embedded Web folder
+	NSString *webPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Web"];
+	DDLogInfo(@"Setting document root: %@", webPath);
+}
+
+- (void)stopHttpServer
+{
+	[self.httpServer stop];
 }
 
 
@@ -51,6 +104,8 @@
 	[self.window makeKeyAndVisible];
 
 
+	
+	[self startHttpServer];
 	
 //	[[captureManager shareSingleObjc] setupWindow];
 	
