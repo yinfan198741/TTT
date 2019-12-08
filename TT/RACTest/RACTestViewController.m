@@ -25,6 +25,9 @@
 
 @property (nonatomic, strong) MBProgressHUD* hub;
 
+
+@property (nonatomic, strong) RACCommand* switchToLastCommand;
+
 @end
 
 @implementation RACTestViewController
@@ -59,6 +62,8 @@
                     @[@"doNext",@"doNextTest"],
                     @[@"loadingTest",@"loadingTest"],
                     @[@"changeItem",@"changeItemTest"],
+					@[@"switchToLastCommand",@"commandSwitchToLastTest"],
+					@[@"swtichtoLastAsynTest",@"swtichtoLastAsynTest"],
                     ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
@@ -348,8 +353,71 @@
     
 }
 
+
+- (void)swtichtoLastAsynTest {
+	
+	
+	
+	RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+		[subscriber sendNext:@"signal1_1"];
+		[subscriber sendNext:@"signal1_2"];
+		[subscriber sendCompleted];
+		
+		return nil;
+	}];
+	
+	RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+		[subscriber sendNext:@"signal2_1"];
+		[subscriber sendNext:@"signal2_2"];
+		[subscriber sendCompleted];
+		return nil;
+	}];
+	
+	
+	
+	RACSignal *signal = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+		[subscriber sendNext: signal1];
+		[subscriber sendNext: signal2];
+		[subscriber sendCompleted];
+		return nil;
+	}];
+
+	
+	[[signal switchToLatest] subscribeNext:^(id  _Nullable x) {
+		NSLog(@" %@ ", x);
+	}];
+	
+//	RACSignal *newSignal = [signal switchToLatest];
+//	[newSignal subscribeNext:^(id  _Nullable x) {
+//		NSLog(@" %@ ", x);
+//	}];
+	
+}
+
 - (void)switchToLatestTest {
-    
+	
+//	https://spin.atomicobject.com/2014/05/21/reactivecocoa-understanding-switchtolatest/
+	
+//	@implementation TimeKeeper
+//	- (instancetype)init {
+//		if (self = [super init]) {
+//
+//			[[[RACObserve(self, clock)
+//			   map:^(Clock *clock) {
+//				   // Map the changes to the Clock into the currentTime signal
+//				   return clock.currentTime;
+//			   }]
+//			  switchToLatest] // Only interested in signals from the latest Clock
+//			 subscribeNext:^(NSDate *time) {
+//				 NSLog(@"The current time: %@", time);
+//				 ];
+//
+//			 }
+//			 return self;
+//			 }
+//
+//			 @end
+	
     
 //    RACSignal *numbers = @[@(0), @(1), @(2)].rac_sequence.signal;
 //
@@ -372,41 +440,91 @@
 //     }];
 //}
     
-    
-    RACSubject *signalofsignal = [RACSubject subject];
-    RACSubject *signal1 = [RACSubject subject];
-    RACSubject *signal2 = [RACSubject subject];
-    RACSubject *signal3 = [RACSubject subject];
+
     
     
-    
-    [signalofsignal subscribeNext:^(RACSubject*  _Nullable x) {
-        NSLog(@"x =%@",x);
-        [x subscribeNext:^(id  _Nullable x2) {
-            NSLog(@"x2 =%@",x2);
-        }];
-    }];
-    
-    
-    [[signalofsignal flatten] subscribeNext:^(id  _Nullable x) {
-        NSLog(@"signalofsignal flatten x2 =%@",x);
-    }];
-    
-    
+//    [signalofsignal subscribeNext:^(RACSubject*  _Nullable x) {
+//        NSLog(@"x =%@",x);
+//        [x subscribeNext:^(id  _Nullable x2) {
+//            NSLog(@"x2 =%@",x2);
+//        }];
+//    }];
+//
+//
+	
+
+//#if 0
+//
+//	[[[[signalofsignal flattenMap:^ RACSignal * (id   value) {
+//		return value;
+//	}] setNameWithFormat:@"YF "]  logAll] subscribeNext:^(id  _Nullable x) {
+//		NSLog(@"signalofsignal flatMap x1 = %@",x);
+//	}] ;
+//
+//
+//    [[signalofsignal flatten] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"signalofsignal flatten x2 = %@",x);
+//    }];
+//
+//	[signalofsignal sendNext:signal1];
+//
+//	[signal1 sendNext:@"1"];
+//
+//	NSLog(@"Over");
+//
+//	return;
+//#endif
+	
+//	https://github.com/ReactiveCocoa/ReactiveCocoa/issues/3415
+	
+	
+	
+	RACSubject *signalofsignal = [RACSubject subject];
+	RACSubject *signal1 = [RACSubject subject];
+	RACSubject *signal2 = [RACSubject subject];
+	RACSubject *signal3 = [RACSubject subject];
+	
+	
     ///热信号?? 这里要好好看看
     [signalofsignal.switchToLatest subscribeNext:^(id  _Nullable x) {
-        NSLog(@"signalofsignal.switchToLatest x2 =%@",x);
+        NSLog(@"signalofsignal.switchToLatest x2 = %@",x);
     }];
-    
-    
     
     [signalofsignal sendNext:signal1];
     [signalofsignal sendNext:signal2];
-    [signalofsignal sendNext:signal3];
-    
-    [signal1 sendNext:@"1"];
-    [signal2 sendNext:@"2"];
-    [signal3 sendNext:@"3"];
+	[signalofsignal sendNext:signal3];
+	
+	
+	[signal3 sendNext:@"3"];
+	[signal1 sendNext:@"1"];
+	[signal2 sendNext:@"2"];
+	
+	
+//#if 1
+//	[signal3 sendNext:@"3"];
+//	[signal1 sendNext:@"1"];
+//	[signal2 sendNext:@"2"];
+//#endif
+//
+//#if 0
+//
+//	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//		[signal1 sendNext:@"1"];
+//	});
+//
+//	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//		[signal2 sendNext:@"2"];
+//	});
+//
+//
+//	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//		[signal3 sendNext:@"3"];
+//	});
+//
+//#endif
+
+	
+	
     
     
 //    RACSignal* s1 = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>  subscriber) {
@@ -1606,6 +1724,48 @@ static RACSignal* t1  = nil;
      }];
     
     //这里省略了点击 retryButtton 后具体要做的业务逻辑，同时也省略了验证按钮和验证码输入框的处理逻辑
+}
+
+
+
+- (void)commandSwitchToLastTest
+{
+	switchToLastCommandrunTime++;
+	NSString* logInfo =	[NSString stringWithFormat:@"commandSwitchToLastTest = %d",switchToLastCommandrunTime];
+	NSLog(@"logInfo = %@",logInfo);
+	[self.switchToLastCommand execute:nil];
+	
+}
+
+- (void)setupCommandEvent
+{
+	[[[self.switchToLastCommand executionSignals] switchToLatest] subscribeNext:^(id  _Nullable x) {
+		NSLog(@"switchToLastCommand subscribeNext = %@",x);
+	}];
+}
+
+static int switchToLastCommandrunTime = 0;
+
+- (RACCommand*)switchToLastCommand
+{
+	if (_switchToLastCommand == nil) {
+		_switchToLastCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * (id   input) {
+			
+			RACSignal  * sig = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>  subscriber) {
+				dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(switchToLastCommandrunTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+					[subscriber sendNext:
+					 [NSString stringWithFormat:@"%@ = %d" , _switchToLastCommand , switchToLastCommandrunTime]];
+					[subscriber sendCompleted];
+				});
+				return nil;
+			}];
+			return sig;
+		}];
+		
+		[self setupCommandEvent];
+	}
+	_switchToLastCommand.allowsConcurrentExecution = YES;
+	return _switchToLastCommand;
 }
 
 
