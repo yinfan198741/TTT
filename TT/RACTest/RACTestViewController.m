@@ -357,24 +357,28 @@
 - (void)swtichtoLastAsynTest {
 	
 	
-	
+	//	https://github.com/ReactiveCocoa/ReactiveCocoa/issues/3415
 	RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-		[subscriber sendNext:@"signal1_1"];
-		[subscriber sendNext:@"signal1_2"];
-		[subscriber sendCompleted];
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[subscriber sendNext:@"signal1"];
+			[subscriber sendCompleted];
+		});
+		
 		
 		return nil;
 	}];
 	
 	RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-		[subscriber sendNext:@"signal2_1"];
-		[subscriber sendNext:@"signal2_2"];
-		[subscriber sendCompleted];
+		
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[subscriber sendNext:@"signal2"];
+			[subscriber sendCompleted];
+		});
 		return nil;
 	}];
 	
 	
-	
+	///异步 问题 ??? 同步问题
 	RACSignal *signal = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
 		[subscriber sendNext: signal1];
 		[subscriber sendNext: signal2];
@@ -1053,44 +1057,42 @@
     
 }
 
-static RACSignal* t1  = nil;
+//static RACSignal* t1  = nil;
 
-- (void)autoConnectTest{
-    
-    NSLog(@"autoConnectTest");
-    
-     t1 = [[[RACSignal createSignal:^RACDisposable * (id<RACSubscriber>  subscriber) {
-        NSLog(@"这个是一个网络请求");
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [subscriber sendNext:@"123"];
-            [subscriber sendCompleted];
-        });
-       
-        return  nil;
-    }] publish] autoconnect];
-    
-    [t1 subscribeNext:^(id  _Nullable x) {
-        NSLog(@"subscribeNext 1 = %@",x);
-    }];
-    
-    [t1 subscribeNext:^(id  _Nullable x) {
-        NSLog(@"subscribeNext 2 = %@",x);
-    }];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [t1 subscribeNext:^(id  _Nullable x) {
-            NSLog(@"subscribeNext 3 = %@",x);
-        }];
-        
-        [t1 subscribeNext:^(id  _Nullable x) {
-            NSLog(@"subscribeNext 4 = %@",x);
-        }];
-        
-    });
-    
-    
+- (void)autoConnectTest {
+	
+	NSLog(@"autoConnectTest");
+	
+	RACSignal* t1 = [[[RACSignal createSignal:^RACDisposable * (id<RACSubscriber>  subscriber) {
+		NSLog(@"这个是一个网络请求");
+		
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[subscriber sendNext:@"123"];
+			[subscriber sendCompleted];
+		});
+		
+		return  nil;
+	}] publish] autoconnect];
+	
+	[t1 subscribeNext:^(id x) {
+		NSLog(@"subscribeNext 1 = %@",x);
+	}];
+	
+	[t1 subscribeNext:^(id x) {
+		NSLog(@"subscribeNext 2 = %@",x);
+	}];
+	
+	//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+	//
+	//        [t1 subscribeNext:^(id  _Nullable x) {
+	//            NSLog(@"subscribeNext 3 = %@",x);
+	//        }];
+	//
+	//        [t1 subscribeNext:^(id  _Nullable x) {
+	//            NSLog(@"subscribeNext 4 = %@",x);
+	//        }];
+	//
+	//    });
 }
 
 - (void)lastTest
@@ -1391,24 +1393,35 @@ static RACSignal* t1  = nil;
 - (void)flattenTest {
     NSLog(@"flattenTest");
     
-    RACSignal * a1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-        NSLog(@"RACSignal - a1");
-        [subscriber sendNext:@"a1"];
-        [subscriber sendCompleted];
-        return nil;
-    }];
+	RACSignal * a1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+		
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			NSLog(@"RACSignal - a1");
+			[subscriber sendNext:@"a1"];
+			[subscriber sendCompleted];
+		});
+		
+		
+		return nil;
+	}];
     
     RACSignal * a2 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-         NSLog(@"RACSignal - a2");
-        [subscriber sendNext:@"a2"];
-        [subscriber sendCompleted];
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			NSLog(@"RACSignal - a2");
+			[subscriber sendNext:@"a2"];
+			[subscriber sendCompleted];
+		});
+		
         return nil;
     }];
     
     RACSignal * a3 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-         NSLog(@"RACSignal - a3");
-        [subscriber sendNext:@"a3"];
-        [subscriber sendCompleted];
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			NSLog(@"RACSignal - a3");
+			[subscriber sendNext:@"a3"];
+			[subscriber sendCompleted];
+		});
+		
         return nil;
     }];
     
@@ -1421,17 +1434,7 @@ static RACSignal* t1  = nil;
         [subscriber sendCompleted];
         return nil;
     }];
-    
-//    [b subscribeNext:^(id  _Nullable x) {
-//
-//    }];
-    
-
-///Value returned from -flattenMap: is not a stream:
-//    crash
-//    [[a1 flatten] subscribeNext:^(id  _Nullable x) {
-//         NSLog(@"a1 flatten x = %@",x);
-//    }];
+	
 
     [[b flatten] subscribeNext:^(id  _Nullable x) {
         NSLog(@"b flatten x = %@",x);
