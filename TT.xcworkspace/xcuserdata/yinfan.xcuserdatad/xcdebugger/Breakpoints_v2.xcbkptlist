@@ -546,7 +546,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1373"
             endingLineNumber = "1373"
-            landmarkName = "-subScribeAndShowLoadig:"
+            landmarkName = "-eventQueneTest"
             landmarkType = "7">
             <Locations>
                <Location
@@ -595,7 +595,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1375"
             endingLineNumber = "1375"
-            landmarkName = "-subScribeAndShowLoadig:"
+            landmarkName = "-eventQueneTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -612,7 +612,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1365"
             endingLineNumber = "1365"
-            landmarkName = "-subScribeAndShowLoadig:"
+            landmarkName = "-eventQueneTest"
             landmarkType = "7">
             <Locations>
                <Location
@@ -661,7 +661,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1393"
             endingLineNumber = "1393"
-            landmarkName = "-subScribeForLoading:"
+            landmarkName = "-eventQueneTest"
             landmarkType = "7">
             <Locations>
                <Location
@@ -710,7 +710,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1396"
             endingLineNumber = "1396"
-            landmarkName = "-subScribeForLoading:"
+            landmarkName = "-eventQueneTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -727,7 +727,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1299"
             endingLineNumber = "1299"
-            landmarkName = "-loadingTest"
+            landmarkName = "-mergeTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -744,7 +744,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1369"
             endingLineNumber = "1369"
-            landmarkName = "-subScribeAndShowLoadig:"
+            landmarkName = "-eventQueneTest"
             landmarkType = "7">
             <Locations>
                <Location
@@ -872,7 +872,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1466"
             endingLineNumber = "1466"
-            landmarkName = "-commandTestDebug"
+            landmarkName = "-doNextTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -888,7 +888,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1538"
             endingLineNumber = "1538"
-            landmarkName = "-commandTestDebug"
+            landmarkName = "-subScribeAndShowLoadig:"
             landmarkType = "7">
             <Locations>
                <Location
@@ -936,7 +936,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1447"
             endingLineNumber = "1447"
-            landmarkName = "-commandTestexecuting"
+            landmarkName = "-flattenTest"
             landmarkType = "7">
             <Locations>
                <Location
@@ -984,7 +984,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1621"
             endingLineNumber = "1621"
-            landmarkName = "-demoTTItem"
+            landmarkName = "-changeItemTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1000,7 +1000,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1617"
             endingLineNumber = "1617"
-            landmarkName = "-demoTTItem"
+            landmarkName = "-changeItemTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

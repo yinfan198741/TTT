@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>iPhone HTTP Server Example</title>
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+
+<script type="text/javascript">
+	function get(url,callback,params){
+    var request=new XMLHttpRequest();
+    request.open("GET"/*HEAD*/,url/*+?params+*/);
+    request.send(null);
+    // setTimeout(get("log.txt",null,null),1000 * 5);
+}
+
+// function test()
+// {
+	// alert("ffffff");
+// }
+
+ // setTimeout(get("log.txt",null,null),1000 * 5);
+
+ // get("http://www.baidu.com",null,null);
+
+
+var timer = setInterval(function(){
+    doItPerSecond();
+},1000)
+ 
+var num = 0;
+function doItPerSecond() {
+    //dosomething...
+    num++;
+    console.log(num);
+    get("log.txt",null,null);
+}
+
+</script>
+
+<h1>Welcome to CocoaHTTPServer!</h1>
+
+You can customize this page for your app, make other pages, or even serve up dynamic content.1234<br/>
+
+<a href="https://github.com/robbiehanson/CocoaHTTPServer">CocoaHTTPServer Project Page</a><br/>
+
+</body>
+</html>
