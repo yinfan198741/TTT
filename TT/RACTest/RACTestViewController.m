@@ -12,6 +12,7 @@
 #import "FPRViewController.h"
 #import "MBProgressHUD.h"
 #import "MJUser.h"
+#import "RACPassthroughSubscriber.h"
 
 @interface RACTestViewController ()
 
@@ -25,6 +26,8 @@
 
 @property (nonatomic, strong) MBProgressHUD* hub;
 
+@property (nonatomic, strong)  RACCommand* commandTest ;
+
 @end
 
 @implementation RACTestViewController
@@ -33,7 +36,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hub = [[MBProgressHUD alloc] init];
-    self.source = @[@[@"FPRDemo",@"FPRDemo"],
+    self.source = @[
+                    @[@"commandTestexecuting",@"commandTestexecuting"],
+                    @[@"commandTestDebug",@"commandTestDebug"],
+                    @[@"FPRDemo",@"FPRDemo"],
                     @[@"Rsignal Demo",@"RacDemo"],
                     @[@"Rsignal Test",@"signalTest"],
                     @[@"commandTest",@"commandTest"],
@@ -59,7 +65,8 @@
                     @[@"doNext",@"doNextTest"],
                     @[@"loadingTest",@"loadingTest"],
                     @[@"changeItem",@"changeItemTest"],
-                    ];
+                     @[@"demoTTItem",@"demoTTItem"],
+                   ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
     self.tableView.delegate = self;
@@ -124,7 +131,7 @@
 }
 
 
-- (void)commandTest {
+- (void)commandTestLog {
     NSLog(@"commandTest");
     
     RACCommand* command_1 = [[RACCommand alloc] initWithSignalBlock:^RACSignal * (id   input) {
@@ -1434,6 +1441,195 @@ static RACSignal* t1  = nil;
     NSLog(@"123");
 }
 
+
+- (void)commandTestexecuting
+{
+    [[self.commandTest executing] subscribeNext:^(NSNumber * _Nullable x) {
+        NSLog(@"executing123 = %@",x);
+    }];
+}
+
+- (void)commandTestDebug
+{
+    NSLog(@"commandTestDebug=========");
+    
+    static int a =0;
+    static int b =0;
+
+//    a++;
+//    NSLog(@"a = %d",a);
+    
+//    b++;
+//    NSLog(@"b = %d",b);
+    
+    
+    if (_commandTest == nil) {
+        _commandTest = [[RACCommand alloc] initWithSignalBlock:^RACSignal * (id  input) {
+            
+            
+//            RACSignal* a = [[RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+//
+//                [subscriber sendNext:@"123"];
+//                [subscriber sendCompleted];
+//                return nil;
+//            }] setNameWithFormat:@"AAAAA"] ;
+//
+//
+//            RACSignal* b = [[RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+//
+//                //                           [subscriber sendNext:@"456"];
+//                //                           [subscriber sendCompleted];
+//
+//                NSError* e = [NSError errorWithDomain:@"123" code:123 userInfo:nil];
+////                [subscriber sendError:e];
+//                return nil;
+//            }] setNameWithFormat:@"BBBBB"] ;
+//
+//            RACSignal *c  =
+//            [[[RACSignal combineLatest:@[a,b]] catch:^RACSignal * _Nonnull(NSError * _Nonnull error) {
+//                return [RACSignal return:error];
+//            }] then:^RACSignal * _Nonnull{
+//                return [[RACSignal return:@"AAAA"] doNext:^(id  _Nullable x) {
+//                    NSLog(@"doNext AAAAA");
+//                }];
+//            }];
+            
+            RACSignal *c  = [[RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+                
+                //                NSError* e = [NSError errorWithDomain:@"123" code:123 userInfo:nil];
+                //                 [subscriber sendError:e];
+                
+                [subscriber sendNext:@"123"];
+                //                [subscriber sendCompleted];
+                return nil;
+            }] timeout:5 onScheduler:RACScheduler.mainThreadScheduler] ;
+            
+            return c;
+            
+//            return [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+//
+//                NSLog(@"source flat map 只有在前面的信号输出 next 才能执行");
+////                NSLog(@"source send sendCompleted");
+////                [subscriber sendNext:@"123"];
+////                [subscriber sendCompleted];
+//
+//
+////                if (a%5 == 0) {
+//                     NSLog(@"source send sendError");
+//                    [subscriber sendError:nil];
+////
+////                }
+//                return nil;
+//            }];
+        }];
+//        _commandTest.allowsConcurrentExecution = YES;
+        
+        
+        
+     
+    }
+    
+   
+    
+    
+
+    
+    [[[[self.commandTest execute:nil]
+       flattenMap:^ RACSignal * (id value) {
+        NSLog(@"flatMap one**********");
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            //            if (b % 3 == 0) {
+            //                NSLog(@"flatMap one send error");
+            //                [subscriber sendError:nil];
+            //                return nil;
+            //            }
+            NSLog(@"flatMap one send next");
+            [subscriber sendNext:[NSString stringWithFormat:@"%@%@",value,@"456"]];
+            //            [subscriber sendCompleted];
+            
+            return nil;
+        }];
+        
+    }] flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+        NSLog(@"flatMap two**********");
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            NSLog(@"flatMap tow send next**********");
+            [subscriber sendNext:[NSString stringWithFormat:@"%@%@",value,@"789"]];
+            //            [subscriber sendCompleted];
+            return nil;
+        }];
+    }] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribeNext = %@",x);
+    } error:^(NSError * _Nullable error) {
+        NSLog(@"NSError = %@",error);
+    }];
+    
+    
+}
+
+RACSignal *__weak signal1_weak_;
+RACSignal *__weak signal2_weak_;
+
+- (void)demoTTItem
+{
+    NSLog(@"123");
+    
+    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    signal1_weak_ = signal1;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"1******* %@", signal1_weak_);
+    });
+    
+    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"123");
+//            subscriber
+            RACPassthroughSubscriber* a = (RACPassthroughSubscriber*)subscriber;
+             NSLog(@"RACPassthroughSubscriber = %@",a);
+            [subscriber sendNext:@"444"];
+            [subscriber sendCompleted];
+        });
+        return nil;
+    }];
+    [signal2 subscribeNext:^(id  _Nullable x) {
+        NSLog(@"xxxxxx%@", x);
+    }];
+    signal2_weak_ = signal2;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"2******** %@", signal2_weak_);
+    });
+//    NSLog(@"signal2 = %@",signal2);
+//
+//    __weak typeof(RACSignal*) wSelf = signal2;
+//    NSLog(@"weak signal2 = %@",wSelf);
+//
+//
+//    MJUser* user = [[MJUser alloc] init];
+//    user.name = @"MJUser_name";
+//     NSLog(@"strong User = %@",user);
+//     __weak typeof(MJUser*) wuser = user;
+//     NSLog(@"weak User = %@",wuser);
+////    @weakify(signal2)
+//    dispatch_async(dispatch_get_main_queue(), ^{
+////        __strong typeof(RACSignal*) strongSelf = wSelf;
+//         __strong typeof(MJUser*) strongUser = wuser;
+////        __weak typeof(RACSignal*) wSelf = signal2;
+////        NSLog(@"2*******  %@", signal2_weak_);
+//         NSLog(@"21*******  %@", signal2);
+////         NSLog(@"22*******  %@", strongSelf);
+//
+//        [signal2 subscribeNext:^(id  _Nullable x) {
+//            NSLog(@"xxxxxx2 %@", x);
+//        }];
+//
+//        NSLog(@"strongUser = %@",strongUser.name);
+//
+//    });
+}
 
 
 //http://fengjian0106.github.io/2016/04/17/The-Power-Of-Composition-In-FRP-Part-1/

@@ -46,6 +46,7 @@
 		B50EE58C223762AE00DAA18A /* images in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58A223762AE00DAA18A /* images */; };
 		B50EE58D223762AE00DAA18A /* images2 in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58B223762AE00DAA18A /* images2 */; };
 		B50EE58F2237893D00DAA18A /* memory.png in Resources */ = {isa = PBXBuildFile; fileRef = B50EE58E2237893C00DAA18A /* memory.png */; };
+		B5351A14239A5B04003A359E /* aaA.m in Sources */ = {isa = PBXBuildFile; fileRef = B5351A13239A5B04003A359E /* aaA.m */; };
 		B53A7A9723599B870013E9F9 /* LableTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7A9623599B870013E9F9 /* LableTestViewController.m */; };
 		B53F202121AFE726006A8D3F /* HashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F202021AFE726006A8D3F /* HashViewController.m */; };
 		B54E79EC23405FA00035915B /* SecondPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79EB23405FA00035915B /* SecondPageViewController.m */; };
@@ -93,6 +94,7 @@
 		B56FBC6621E44721003694E1 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6521E44721003694E1 /* Service.m */; };
 		B56FBC6921E44757003694E1 /* RACTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6821E44757003694E1 /* RACTester.m */; };
 		B56FBC6C21E47E90003694E1 /* Swear.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6B21E47E90003694E1 /* Swear.m */; };
+		B58381A32383EB070063DD76 /* 1574155084111-image.png in Resources */ = {isa = PBXBuildFile; fileRef = B58381A22383EB060063DD76 /* 1574155084111-image.png */; };
 		B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963721A3E4FA0064A81D /* LLDBViewController.m */; };
 		B59D963C21A4F9720064A81D /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963B21A4F9720064A81D /* AnimationViewController.m */; };
 		B5A9FBF8217758870083D5E0 /* SwiftInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9FBF7217758870083D5E0 /* SwiftInit.swift */; };
@@ -297,6 +299,8 @@
 		B50EE58B223762AE00DAA18A /* images2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images2; sourceTree = "<group>"; };
 		B50EE58E2237893C00DAA18A /* memory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memory.png; sourceTree = "<group>"; };
 		B52A58062180109600E106E9 /* assetTest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assetTest.xcassets; sourceTree = "<group>"; };
+		B5351A12239A5B04003A359E /* aaA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aaA.h; sourceTree = "<group>"; };
+		B5351A13239A5B04003A359E /* aaA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aaA.m; sourceTree = "<group>"; };
 		B53A7A9523599B870013E9F9 /* LableTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LableTestViewController.h; sourceTree = "<group>"; };
 		B53A7A9623599B870013E9F9 /* LableTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LableTestViewController.m; sourceTree = "<group>"; };
 		B53F201F21AFE726006A8D3F /* HashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashViewController.h; sourceTree = "<group>"; };
@@ -375,6 +379,7 @@
 		B56FBC6821E44757003694E1 /* RACTester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTester.m; sourceTree = "<group>"; };
 		B56FBC6A21E47E90003694E1 /* Swear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swear.h; sourceTree = "<group>"; };
 		B56FBC6B21E47E90003694E1 /* Swear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Swear.m; sourceTree = "<group>"; };
+		B58381A22383EB060063DD76 /* 1574155084111-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1574155084111-image.png"; path = "../../../../1574155084111-image.png"; sourceTree = "<group>"; };
 		B59D963621A3E4FA0064A81D /* LLDBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLDBViewController.h; sourceTree = "<group>"; };
 		B59D963721A3E4FA0064A81D /* LLDBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLDBViewController.m; sourceTree = "<group>"; };
 		B59D963A21A4F9720064A81D /* AnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
@@ -663,6 +668,7 @@
 		A7D8FA6D1E9B2BBA00ED8D03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B58381A22383EB060063DD76 /* 1574155084111-image.png */,
 				A7D8FA6E1E9B2BBA00ED8D03 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -693,6 +699,8 @@
 				B5001DE9224BA38D002D15FF /* MJUser.m */,
 				A78ED85F233A5EE7001A8172 /* MJViewController.h */,
 				A78ED860233A5EE7001A8172 /* MJViewController.m */,
+				B5351A12239A5B04003A359E /* aaA.h */,
+				B5351A13239A5B04003A359E /* aaA.m */,
 			);
 			path = MJTest;
 			sourceTree = "<group>";
@@ -1360,6 +1368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58381A32383EB070063DD76 /* 1574155084111-image.png in Resources */,
 				B50EE58F2237893D00DAA18A /* memory.png in Resources */,
 				A7B49F83211B359B0081D199 /* Common.xcconfig in Resources */,
 				A7B49F82211B359B0081D199 /* DebugConfig.xcconfig in Resources */,
@@ -1464,6 +1473,7 @@
 				B54E79F22340626E0035915B /* DynamicSysTest.m in Sources */,
 				B54E79F623409FCE0035915B /* DynamicSysTest+DySenteic.m in Sources */,
 				B50AD6EC2340B1AF002DE97C /* DynamicSysTest+TestMethodConver.m in Sources */,
+				B5351A14239A5B04003A359E /* aaA.m in Sources */,
 				B5A9FBF8217758870083D5E0 /* SwiftInit.swift in Sources */,
 				B5670EF8215F12480014807D /* CrashViewController.m in Sources */,
 				B5BFE3E5222E96F300B6CFAC /* Sequence.swift in Sources */,
