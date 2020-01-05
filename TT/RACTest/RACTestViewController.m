@@ -28,6 +28,9 @@
 
 @property (nonatomic, strong) RACCommand* switchToLastCommand;
 
+@property (nonatomic, strong) NSString* obcTest;
+
+
 @end
 
 @implementation RACTestViewController
@@ -36,7 +39,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hub = [[MBProgressHUD alloc] init];
-    self.source = @[@[@"FPRDemo",@"FPRDemo"],
+    self.source = @[@[@"RACOBserver",@"RACOBserver"],
+					@[@"FPRDemo",@"FPRDemo"],
                     @[@"Rsignal Demo",@"RacDemo"],
                     @[@"Rsignal Test",@"signalTest"],
                     @[@"commandTest",@"commandTest"],
@@ -93,6 +97,35 @@
     [self performSelector: NSSelectorFromString(sel) withObject:nil] ;
 }
 
+
+- (void)RACOBserver
+{
+	
+	RAC(self,title) = RACObserve(self, obcTest);
+	
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		
+		dispatch_async(dispatch_get_global_queue(0,0), ^{
+			self.obcTest = @"123";
+		});
+	});
+	
+	
+	return;
+	
+	dispatch_async(dispatch_get_global_queue(0, 0), ^{
+		__weak RACTestViewController* wk = self;
+		RAC(self,title) = RACObserve(wk, obcTest);
+	});
+	
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		
+		dispatch_async(dispatch_get_global_queue(0,0), ^{
+			self.obcTest = @"123";
+		});
+	});
+	
+}
 
 - (void)RacDemo {
     NSLog(@"RacDemo");

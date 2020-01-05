@@ -81,7 +81,10 @@
 	[target.rac_deallocDisposable removeDisposable:self];
 	[observer.rac_deallocDisposable removeDisposable:self];
 
-	[target removeObserver:RACKVOProxy.sharedProxy forKeyPath:self.keyPath context:(__bridge void *)self];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
+		[target removeObserver:RACKVOProxy.sharedProxy forKeyPath:self.keyPath context:(__bridge void *)self];
+	});
+	
 	[RACKVOProxy.sharedProxy removeObserver:self forContext:(__bridge void *)self];
 }
 

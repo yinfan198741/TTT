@@ -35,7 +35,7 @@
 #import "LableTestViewController.h"
 #import "SafeViewController.h"
 #import "captureManager.h"
-
+#import "KVOTestVC.h"
 #import "StudentA.h"
 #import "PersonA.h"
 
@@ -78,7 +78,13 @@ UILabel* _la;
     ////        [self click];
     //        NSLog(@"ttttt");
     //    }];
-    
+	
+	
+	TabItem* kvoTest = [TabItem CreateItem:@"kvoTest" action:^{
+		[self kvoTest];
+	}];
+	[self.source addObject:kvoTest];
+	
     
     TabItem* navigationTest = [TabItem CreateItem:@"navigationTest" action:^{
         [self navigationTest];
@@ -352,6 +358,13 @@ UILabel* _la;
   }
   cell.textLabel.textColor = UIColor.blackColor;
   return cell;
+}
+
+
+- (void)kvoTest
+{
+	KVOTestVC* vc = [[KVOTestVC alloc] init];
+	[self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)navigationTest {
