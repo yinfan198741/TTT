@@ -8,6 +8,7 @@
 
 #import "MJViewController.h"
 #import "MJUser.h"
+#import "aaA.h"
 
 @interface MJViewController ()
 
@@ -141,6 +142,34 @@
 - (void)copyTest {
     
     
+    
+    aaA* a = [aaA createInstance:@"123"];
+    aaA* b = [aaA createInstance:@"456"];
+    
+    NSArray * dt =  @[a];
+    
+   NSDictionary* ddd = [dt mj_JSONObject];
+    
+    
+    NSError* err = nil;
+    aaAArray * orderNoPrintdish =  [[aaAArray alloc] init];
+    [orderNoPrintdish.printInfo addObject:a];
+    [orderNoPrintdish.printInfo addObject:b];
+    
+//          NSData *JSONData1 = [NSJSONSerialization dataWithJSONObject:dt options:0 error:&err];
+    
+    NSDictionary *orderPrintKitchenOperateTOs = [orderNoPrintdish mj_JSONObject];
+    BOOL valid = [NSJSONSerialization isValidJSONObject:orderPrintKitchenOperateTOs];
+    
+    NSLog(@"orderPrintKitchenOperateTOs = %@",orderPrintKitchenOperateTOs);
+    
+    
+    NSData *JSONData2 = [NSJSONSerialization dataWithJSONObject:orderPrintKitchenOperateTOs options:0 error:&err];
+    
+    
+    
+    
+    
     MJStatus* ms = [[MJStatus alloc] init];
     ms.text = @"123";
     
@@ -163,11 +192,11 @@
     
     MJUser* user1_retweetedStatus = [[MJUser alloc] init];
     user1_retweetedStatus.name = @"user1_retweetedStatus";
-     user1_retweetedStatus.testValue = 1.1;
+    user1_retweetedStatus.testValue = 1.1;
     
     MJUser* user2_retweetedStatus = [[MJUser alloc] init];
     user2_retweetedStatus.name = @"user2_retweetedStatus";
-      user2_retweetedStatus.testValue = 1.2;
+    user2_retweetedStatus.testValue = 1.2;
     
     ms_retweetedStatus.users = @[user1_retweetedStatus,user2_retweetedStatus];
     
@@ -179,22 +208,22 @@
     NSString* jsonStr = [ms mj_JSONString];
     
     
-//    NSError *e = nil;
-//    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:ms options:NSJSONReadingMutableContainers error:&e];
-//
-//
-//    if (!jsonArray) {
-//        NSLog(@"Error parsing JSON: %@", e);
-//    }
+    //    NSError *e = nil;
+    //    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:ms options:NSJSONReadingMutableContainers error:&e];
+    //
+    //
+    //    if (!jsonArray) {
+    //        NSLog(@"Error parsing JSON: %@", e);
+    //    }
     
     
-  
+    
     
     MJStatus* ms2 = [MJStatus mj_objectWithKeyValues:jsonStr];
     ms2.retweetedStatus.users[0].name = @"ms2_user1_retweetedStatus";
     
-   MJStatus* ms3 =  [ms copy];
-        ms3.retweetedStatus.users[0].name = @"ms3_user1_retweetedStatus";
+    MJStatus* ms3 =  [ms copy];
+    ms3.retweetedStatus.users[0].name = @"ms3_user1_retweetedStatus";
     
     NSLog(@"ms2 = %@",ms2);
     NSLog(@"ms.retweetedStatus.users[0].name = %@ testV = %f",
@@ -207,60 +236,60 @@
     
     
     
-//    NSDictionary *dict = @{
-//                           @"name" : @"Jack",
-//                           @"icon" : @"lufy.png",
-//                           @"age" : @20,
-//                           @"height" : @"1.55",
-//                           @"money" : @100.9,
-//                           @"sex" : @(SexFemale),/* 枚举需要使用NSNumber包装 */
-//                           @"gay" : @"NO"
-//                           };
-//    //字典转模型，使用的是mj_objectWithKeyValues:方法
-//    MJUser *user = [MJUser mj_objectWithKeyValues:dict];
-//    NSLog(@"%@",user.name);
-//
-//    NSDictionary *dict2 = @{
-//                            @"text" : @"Agree!Nice weather!",
-//                            @"user" : @{
-//                                    @"name" : @"Jack",
-//                                    @"icon" : @"lufy.png"
-//                                    },
-//                            @"retweetedStatus" : @{
-//                                    @"text" : @"Nice weather!",
-//                                    @"user" : @{
-//                                            @"name" : @"Rose",
-//                                            @"icon" : @"nami.png"
-//                                            }
-//                                    }
-//                            };
-//
-//    MJStatus *st = [MJStatus mj_objectWithKeyValues:dict2];
-//
-//    NSString* jsonStr = [st mj_JSONString];
-//
-////    MJStatus *st1 = [MJStatus mj_objectWithKeyValues:jsonStr];
-//
-//    MJStatus *st1 = [st copy];
-//    st1.user.name = @"st1";
-//    NSLog(@" st.user.name = %@ ,  st1.user.name =  %@ ",  st.user.name, st1.user.name);
-//    NSString *text = status.text;
-//    NSString *name = status.user.name;
-//    NSString *icon = status.user.icon;
-//    NSLog(@"text=%@, name=%@, icon=%@", text, name, icon);
-//    // text=Agree!Nice weather!, name=Jack, icon=lufy.png
-//    NSString *text2 = status.retweetedStatus.text;
-//    NSString *name2 = status.retweetedStatus.user.name;
-//    NSString *icon2 = status.retweetedStatus.user.icon;
-//    NSLog(@"text2=%@, name2=%@, icon2=%@", text2, name2, icon2);
-//
-//
-//    NSDictionary* dic3 = @{@"canWeigh" : @"1",
-//                           @"code" : @"CFC"};
-//    NSLog(@"dic3 = %@",dic3);
-//
-//    MJDishSpuEntity *ss = [MJDishSpuEntity mj_objectWithKeyValues:dic3];
-//    NSLog(@"ss");
+    //    NSDictionary *dict = @{
+    //                           @"name" : @"Jack",
+    //                           @"icon" : @"lufy.png",
+    //                           @"age" : @20,
+    //                           @"height" : @"1.55",
+    //                           @"money" : @100.9,
+    //                           @"sex" : @(SexFemale),/* 枚举需要使用NSNumber包装 */
+    //                           @"gay" : @"NO"
+    //                           };
+    //    //字典转模型，使用的是mj_objectWithKeyValues:方法
+    //    MJUser *user = [MJUser mj_objectWithKeyValues:dict];
+    //    NSLog(@"%@",user.name);
+    //
+    //    NSDictionary *dict2 = @{
+    //                            @"text" : @"Agree!Nice weather!",
+    //                            @"user" : @{
+    //                                    @"name" : @"Jack",
+    //                                    @"icon" : @"lufy.png"
+    //                                    },
+    //                            @"retweetedStatus" : @{
+    //                                    @"text" : @"Nice weather!",
+    //                                    @"user" : @{
+    //                                            @"name" : @"Rose",
+    //                                            @"icon" : @"nami.png"
+    //                                            }
+    //                                    }
+    //                            };
+    //
+    //    MJStatus *st = [MJStatus mj_objectWithKeyValues:dict2];
+    //
+    //    NSString* jsonStr = [st mj_JSONString];
+    //
+    ////    MJStatus *st1 = [MJStatus mj_objectWithKeyValues:jsonStr];
+    //
+    //    MJStatus *st1 = [st copy];
+    //    st1.user.name = @"st1";
+    //    NSLog(@" st.user.name = %@ ,  st1.user.name =  %@ ",  st.user.name, st1.user.name);
+    //    NSString *text = status.text;
+    //    NSString *name = status.user.name;
+    //    NSString *icon = status.user.icon;
+    //    NSLog(@"text=%@, name=%@, icon=%@", text, name, icon);
+    //    // text=Agree!Nice weather!, name=Jack, icon=lufy.png
+    //    NSString *text2 = status.retweetedStatus.text;
+    //    NSString *name2 = status.retweetedStatus.user.name;
+    //    NSString *icon2 = status.retweetedStatus.user.icon;
+    //    NSLog(@"text2=%@, name2=%@, icon2=%@", text2, name2, icon2);
+    //
+    //
+    //    NSDictionary* dic3 = @{@"canWeigh" : @"1",
+    //                           @"code" : @"CFC"};
+    //    NSLog(@"dic3 = %@",dic3);
+    //
+    //    MJDishSpuEntity *ss = [MJDishSpuEntity mj_objectWithKeyValues:dic3];
+    //    NSLog(@"ss");
     
 }
 

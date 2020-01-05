@@ -29,21 +29,25 @@
 - (void)nsnumberTestCall {
     NSLog(@"nsnumberTestCall");
     
-    double a = 1.135500;
+    double a = 69.90000001;
     NSNumber* number_a = @(a);
     NSLog(@"去掉了零number_a = %@",number_a.stringValue);
+    [self Test:number_a.stringValue];
     
-    double b = 0.134500;
+    double b = 0.135500;
     NSNumber* number_b = @(b);
     NSLog(@"去掉了零number_b = %@",number_b.stringValue);
+     [self Test:number_b.stringValue];
     
     double c = 0.134400;
     NSNumber* number_c = @(c);
     NSLog(@"去掉了零number_c = %@",number_c.stringValue);
+     [self Test:number_c.stringValue];
     
-    double d = 1;
+    double d = 1.0;
     NSNumber* number_d = @(d);
     NSLog(@"去掉了零number_d = %@",number_d.stringValue);
+    [self Test:number_d.stringValue];
     
     NSNumberFormatter* formatter = [self formatter1];
     NSLog(@"formatter1 number_a = %@", [formatter stringFromNumber:number_a]);
@@ -92,10 +96,32 @@
     return formatter;
 }
 
+- (void)Test:(NSString*)value
+{
+    NSLog(@"Test:(NSString*)value ===== ");
+    
+    NSDecimalNumber* decimal  = [NSDecimalNumber decimalNumberWithString:value];
+    NSDecimalNumberHandler* hander = [NSDecimalNumberHandler
+                                      decimalNumberHandlerWithRoundingMode:NSRoundPlain
+                                      scale:2
+                                      raiseOnExactness:NO
+                                      raiseOnOverflow:NO
+                                      raiseOnUnderflow:NO
+                                      raiseOnDivideByZero:NO];
+    decimal = [decimal decimalNumberByRoundingAccordingToBehavior:hander];
+    
+    NSNumber* doubleValue = @([decimal doubleValue]);
+    NSLog(@"doubleValue = %@ ****",doubleValue.stringValue);
+    NSLog(@"\n");
+//    [stringFromNumber ]
+//    double d = [decimal doubleValue];
+}
+
+
 
 - (void)stringToNSNumberCall{
     NSLog(@"stringToNSNumberCall");
-    NSString* t = @"0.008";
+    NSString* t = @"0.00896";
     double t1 = t.doubleValue;
     NSLog(@"%f",t1);
 }

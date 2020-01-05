@@ -89,6 +89,8 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
   
   	[self setupCrash];
+    
+   
 	
 	// 1.创建UIWindow
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -98,11 +100,12 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 	ViewController* vc = [[ViewController alloc] init];
 	UINavigationController* root = [[UINavigationController alloc] initWithRootViewController:vc];
 	self.window.rootViewController = root;
-	
+
 	// 让UIWindow显示出来(让窗口成为主窗口 并且显示出来)
 	// 一个应用程序只能有一个主窗口
 	[self.window makeKeyAndVisible];
-
+    
+    return YES;
 
 	
 	[self startHttpServer];
@@ -136,7 +139,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 	
 
 	
-	return YES;
+
 
 	
 	
