@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.179938"
+            timestampString = "600525693.383418"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "254"
@@ -42,43 +42,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.180079"
+            timestampString = "600525693.3835599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "330"
             endingLineNumber = "330"
             landmarkName = "-commandcocurent"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/RACTest/RACTestViewController.m"
+            timestampString = "600525693.383616"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1030"
+            endingLineNumber = "1030"
+            landmarkName = "-RacSubjectTest"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[RACTestViewController RACDisposableTest]"
+                  symbolName = "__39-[RACTestViewController RacSubjectTest]_block_invoke"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920169.8678631"
+                  timestampString = "600525693.709855"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "342"
-                  endingLineNumber = "342"
-                  offsetFromSymbolStart = "37">
+                  startingLineNumber = "1030"
+                  endingLineNumber = "1030"
+                  offsetFromSymbolStart = "122">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__42-[RACTestViewController RACDisposableTest]_block_invoke"
+                  symbolName = "__39-[RACTestViewController RacSubjectTest]_block_invoke_4"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920169.870338"
+                  timestampString = "600525693.712165"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "344"
-                  endingLineNumber = "344"
-                  offsetFromSymbolStart = "48">
+                  startingLineNumber = "1031"
+                  endingLineNumber = "1031"
+                  offsetFromSymbolStart = "51">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -90,23 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.1801341"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1030"
-            endingLineNumber = "1030"
-            landmarkName = "-RacSubjectTest"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.1801831"
+            timestampString = "600525693.3836679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1032"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.18023"
+            timestampString = "600525693.38372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "671"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.180276"
+            timestampString = "600525693.383778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1247"
@@ -150,31 +150,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__36-[RACTestViewController flatMapTest]_block_invoke_7"
+                  symbolName = "__36-[RACTestViewController flatMapTest]_block_invoke_3"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920169.888033"
+                  timestampString = "600525693.727084"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1258"
-                  endingLineNumber = "1258"
-                  offsetFromSymbolStart = "33">
+                  startingLineNumber = "1248"
+                  endingLineNumber = "1248"
+                  offsetFromSymbolStart = "192">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__36-[RACTestViewController flatMapTest]_block_invoke_8"
+                  symbolName = "__36-[RACTestViewController flatMapTest]_block_invoke_5"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920169.889616"
+                  timestampString = "600525693.7298141"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1259"
-                  endingLineNumber = "1259"
-                  offsetFromSymbolStart = "48">
+                  startingLineNumber = "1249"
+                  endingLineNumber = "1249"
+                  offsetFromSymbolStart = "51">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.18032"
+            timestampString = "600525693.383822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1255"
@@ -426,7 +426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.180719"
+            timestampString = "600525693.384227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "473"
@@ -442,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.180769"
+            timestampString = "600525693.384275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "478"
@@ -458,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.180814"
+            timestampString = "600525693.384318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "462"
@@ -474,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.180872"
+            timestampString = "600525693.384362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "456"
@@ -506,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.180948"
+            timestampString = "600525693.384437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "405"
@@ -522,45 +522,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.1809911"
+            timestampString = "600525693.384479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "395"
             endingLineNumber = "395"
             landmarkName = "@implementation RACTestViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[RACTestViewController swtichtoLastAsynTest]_block_invoke_3"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920169.982743"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "406"
-                  endingLineNumber = "406"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[RACTestViewController swtichtoLastAsynTest]_block_invoke_4"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920169.984321"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "406"
-                  endingLineNumber = "406"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -570,45 +538,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.181035"
+            timestampString = "600525693.384522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "384"
             endingLineNumber = "384"
             landmarkName = "-RACSubjectTest"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[RACTestViewController swtichtoLastAsynTest]_block_invoke"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920169.988675"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "395"
-                  endingLineNumber = "395"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[RACTestViewController swtichtoLastAsynTest]_block_invoke_2"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920169.99025"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "395"
-                  endingLineNumber = "395"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -618,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.181075"
+            timestampString = "600525693.384563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1089"
@@ -634,45 +570,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.1811171"
+            timestampString = "600525693.384604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1099"
             endingLineNumber = "1099"
             landmarkName = "@implementation RACTestViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RACTestViewController autoConnectTest]"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920169.997739"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1110"
-                  endingLineNumber = "1110"
-                  offsetFromSymbolStart = "178">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[RACTestViewController autoConnectTest]_block_invoke_3"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920169.99965"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1111"
-                  endingLineNumber = "1111"
-                  offsetFromSymbolStart = "51">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -682,45 +586,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/RACTest/RACTestViewController.m"
-            timestampString = "600522585.181159"
+            timestampString = "600525693.384647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1103"
             endingLineNumber = "1103"
             landmarkName = "-autoConnectTest"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RACTestViewController autoConnectTest]"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920170.005888"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1114"
-                  endingLineNumber = "1114"
-                  offsetFromSymbolStart = "216">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[RACTestViewController autoConnectTest]_block_invoke_4"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "599920170.0083539"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1115"
-                  endingLineNumber = "1115"
-                  offsetFromSymbolStart = "51">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -778,11 +650,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/KVO/KVOTestVC.m"
-            timestampString = "599920723.3482471"
+            timestampString = "600525693.384778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "-dealloc"
             landmarkType = "7">
          </BreakpointContent>
@@ -794,11 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/KVO/KVOTestVC.m"
-            timestampString = "599920723.348308"
+            timestampString = "600525693.384823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "-change"
             landmarkType = "7">
          </BreakpointContent>

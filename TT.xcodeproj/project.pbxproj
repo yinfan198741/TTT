@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		669D2D05F691ACF9D0C74F3B /* libPods-TT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98301CD3BADF82F90215CEC1 /* libPods-TT.a */; };
 		A714906A23099F5200A59AB2 /* RacDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A714906923099F5200A59AB2 /* RacDemoViewController.m */; };
+		A734877D23CB4259000B9564 /* SOUnsafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A734877C23CB4259000B9564 /* SOUnsafeObject.m */; };
 		A74003B423813DF200BAA62E /* captureWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A74003B323813DF200BAA62E /* captureWindow.m */; };
 		A74003B723813E1000BAA62E /* captureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74003B623813E1000BAA62E /* captureViewController.m */; };
 		A74003BB23814D7000BAA62E /* captureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A74003BA23814D7000BAA62E /* captureManager.m */; };
@@ -105,16 +106,12 @@
 		B55B3FCD21B1349D005CADF3 /* HookC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55B3FC421B1349C005CADF3 /* HookC.framework */; };
 		B55B3FD421B1349D005CADF3 /* HookCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B55B3FD321B1349D005CADF3 /* HookCTests.m */; };
 		B55B3FD621B1349D005CADF3 /* HookC.h in Headers */ = {isa = PBXBuildFile; fileRef = B55B3FC621B1349C005CADF3 /* HookC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B55B3FD921B1349D005CADF3 /* HookC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55B3FC421B1349C005CADF3 /* HookC.framework */; };
-		B55B3FDA21B1349D005CADF3 /* HookC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B55B3FC421B1349C005CADF3 /* HookC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B55B3FE121B134B9005CADF3 /* HookC.h in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F4A21188E7F0081D199 /* HookC.h */; };
 		B55B3FE221B134B9005CADF3 /* getEnvHook.h in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6621188EBC0081D199 /* getEnvHook.h */; };
 		B55B3FE321B134B9005CADF3 /* getEnvHook.c in Sources */ = {isa = PBXBuildFile; fileRef = A7B49F6721188EBC0081D199 /* getEnvHook.c */; };
 		B55B404521B61964005CADF3 /* dyLibTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55B403C21B61964005CADF3 /* dyLibTest.framework */; };
 		B55B404C21B61964005CADF3 /* dyLibTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B55B404B21B61964005CADF3 /* dyLibTestTests.m */; };
 		B55B404E21B61964005CADF3 /* dyLibTest.h in Headers */ = {isa = PBXBuildFile; fileRef = B55B403E21B61964005CADF3 /* dyLibTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B55B405121B61964005CADF3 /* dyLibTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55B403C21B61964005CADF3 /* dyLibTest.framework */; };
-		B55B405221B61964005CADF3 /* dyLibTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B55B403C21B61964005CADF3 /* dyLibTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B55B405B21B6198C005CADF3 /* dyLibHello.h in Headers */ = {isa = PBXBuildFile; fileRef = B55B405921B6198C005CADF3 /* dyLibHello.h */; };
 		B55B405C21B6198C005CADF3 /* dyLibHello.c in Sources */ = {isa = PBXBuildFile; fileRef = B55B405A21B6198C005CADF3 /* dyLibHello.c */; };
 		B5670EF3215F11C90014807D /* ExceptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EED215F11C90014807D /* ExceptionModel.m */; };
@@ -211,13 +208,6 @@
 			remoteGlobalIDString = A7D8FA691E9B2BBA00ED8D03;
 			remoteInfo = TT;
 		};
-		B55B3FD721B1349D005CADF3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A7D8FA621E9B2BBA00ED8D03 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B55B3FC321B1349C005CADF3;
-			remoteInfo = HookC;
-		};
 		B55B404621B61964005CADF3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A7D8FA621E9B2BBA00ED8D03 /* Project object */;
@@ -232,29 +222,7 @@
 			remoteGlobalIDString = A7D8FA691E9B2BBA00ED8D03;
 			remoteInfo = TT;
 		};
-		B55B404F21B61964005CADF3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A7D8FA621E9B2BBA00ED8D03 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B55B403B21B61964005CADF3;
-			remoteInfo = dyLibTest;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		A7B49F6421188E7F0081D199 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B55B3FDA21B1349D005CADF3 /* HookC.framework in Embed Frameworks */,
-				B55B405221B61964005CADF3 /* dyLibTest.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		033B8B13AD73AEF8C329338F /* Pods-TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TT/Pods-TT.debug.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +231,8 @@
 		98301CD3BADF82F90215CEC1 /* libPods-TT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A714906823099F5200A59AB2 /* RacDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RacDemoViewController.h; sourceTree = "<group>"; };
 		A714906923099F5200A59AB2 /* RacDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RacDemoViewController.m; sourceTree = "<group>"; };
+		A734877B23CB4259000B9564 /* SOUnsafeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOUnsafeObject.h; sourceTree = "<group>"; };
+		A734877C23CB4259000B9564 /* SOUnsafeObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOUnsafeObject.m; sourceTree = "<group>"; };
 		A74003B223813DF200BAA62E /* captureWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = captureWindow.h; sourceTree = "<group>"; };
 		A74003B323813DF200BAA62E /* captureWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = captureWindow.m; sourceTree = "<group>"; };
 		A74003B523813E1000BAA62E /* captureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = captureViewController.h; sourceTree = "<group>"; };
@@ -557,8 +527,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B55B405121B61964005CADF3 /* dyLibTest.framework in Frameworks */,
-				B55B3FD921B1349D005CADF3 /* HookC.framework in Frameworks */,
 				669D2D05F691ACF9D0C74F3B /* libPods-TT.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,6 +587,15 @@
 				98301CD3BADF82F90215CEC1 /* libPods-TT.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A734877A23CB4237000B9564 /* DeallocTest */ = {
+			isa = PBXGroup;
+			children = (
+				A734877B23CB4259000B9564 /* SOUnsafeObject.h */,
+				A734877C23CB4259000B9564 /* SOUnsafeObject.m */,
+			);
+			path = DeallocTest;
 			sourceTree = "<group>";
 		};
 		A74003A82381365200BAA62E /* captureUI */ = {
@@ -859,6 +836,7 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				A734877A23CB4237000B9564 /* DeallocTest */,
 				A7BCA03C23C0E9B300EAF4BE /* KVO */,
 				A74003CA238C260100BAA62E /* FileLoad */,
 				A74003C0238A877700BAA62E /* inherite */,
@@ -1400,13 +1378,10 @@
 				A7D8FA661E9B2BBA00ED8D03 /* Sources */,
 				A7D8FA671E9B2BBA00ED8D03 /* Frameworks */,
 				A7D8FA681E9B2BBA00ED8D03 /* Resources */,
-				A7B49F6421188E7F0081D199 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B55B3FD821B1349D005CADF3 /* PBXTargetDependency */,
-				B55B405021B61964005CADF3 /* PBXTargetDependency */,
 			);
 			name = TT;
 			productName = TT;
@@ -1743,6 +1718,7 @@
 				A74003C6238A87A600BAA62E /* StudentA.m in Sources */,
 				B53F202121AFE726006A8D3F /* HashViewController.m in Sources */,
 				B5001DEA224BA38D002D15FF /* MJUser.m in Sources */,
+				A734877D23CB4259000B9564 /* SOUnsafeObject.m in Sources */,
 				A74003F6238EBD2400BAA62E /* HTTPErrorResponse.m in Sources */,
 				B5BFE3B9222E1C5300B6CFAC /* HookTableViewController.m in Sources */,
 				B5CCFA0722CB7B4700858BC5 /* RACTestViewController.m in Sources */,
@@ -1929,11 +1905,6 @@
 			target = A7D8FA691E9B2BBA00ED8D03 /* TT */;
 			targetProxy = B55B3FD021B1349D005CADF3 /* PBXContainerItemProxy */;
 		};
-		B55B3FD821B1349D005CADF3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B55B3FC321B1349C005CADF3 /* HookC */;
-			targetProxy = B55B3FD721B1349D005CADF3 /* PBXContainerItemProxy */;
-		};
 		B55B404721B61964005CADF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B55B403B21B61964005CADF3 /* dyLibTest */;
@@ -1943,11 +1914,6 @@
 			isa = PBXTargetDependency;
 			target = A7D8FA691E9B2BBA00ED8D03 /* TT */;
 			targetProxy = B55B404821B61964005CADF3 /* PBXContainerItemProxy */;
-		};
-		B55B405021B61964005CADF3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B55B403B21B61964005CADF3 /* dyLibTest */;
-			targetProxy = B55B404F21B61964005CADF3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

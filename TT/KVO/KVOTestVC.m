@@ -7,6 +7,7 @@
 //
 
 #import "KVOTestVC.h"
+#import "SOUnsafeObject.h"
 
 
 
@@ -82,6 +83,9 @@
 	[bu1 setTitle:@"change" forState:UIControlStateNormal];
 	[bu1 addTarget:self action:@selector(change) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:bu1];
+
+	SOUnsafeObject* asd = [[SOUnsafeObject alloc] init];
+	[asd reloadDataInBackground];
 }
 
 - (void)click
