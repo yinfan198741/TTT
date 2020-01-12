@@ -26,12 +26,9 @@
 
 @property (nonatomic, strong) MBProgressHUD* hub;
 
-<<<<<<< HEAD
 @property (nonatomic, strong)  RACCommand* commandTest ;
-=======
 
 @property (nonatomic, strong) RACCommand* switchToLastCommand;
->>>>>>> 919329aa405f2b38036667a9df78e8901c520093
 
 @property (nonatomic, strong) NSString* obcTest;
 
@@ -44,15 +41,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hub = [[MBProgressHUD alloc] init];
-<<<<<<< HEAD
     self.source = @[@[@"RACOBserver",@"RACOBserver"],
 					@[@"FPRDemo",@"FPRDemo"],
-=======
-    self.source = @[
                     @[@"commandTestexecuting",@"commandTestexecuting"],
                     @[@"commandTestDebug",@"commandTestDebug"],
                     @[@"FPRDemo",@"FPRDemo"],
->>>>>>> 8ec6d1e18986298b92a9160fc6c44427169b8ba8
                     @[@"Rsignal Demo",@"RacDemo"],
                     @[@"Rsignal Test",@"signalTest"],
                     @[@"commandTest",@"commandTest"],
@@ -78,14 +71,10 @@
                     @[@"doNext",@"doNextTest"],
                     @[@"loadingTest",@"loadingTest"],
                     @[@"changeItem",@"changeItemTest"],
-<<<<<<< HEAD
                      @[@"demoTTItem",@"demoTTItem"],
-                   ];
-=======
 					@[@"switchToLastCommand",@"commandSwitchToLastTest"],
 					@[@"swtichtoLastAsynTest",@"swtichtoLastAsynTest"],
                     ];
->>>>>>> 919329aa405f2b38036667a9df78e8901c520093
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
     self.tableView.delegate = self;

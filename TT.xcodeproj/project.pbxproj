@@ -129,7 +129,6 @@
 		B56FBC6621E44721003694E1 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6521E44721003694E1 /* Service.m */; };
 		B56FBC6921E44757003694E1 /* RACTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6821E44757003694E1 /* RACTester.m */; };
 		B56FBC6C21E47E90003694E1 /* Swear.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6B21E47E90003694E1 /* Swear.m */; };
-		B58381A32383EB070063DD76 /* 1574155084111-image.png in Resources */ = {isa = PBXBuildFile; fileRef = B58381A22383EB060063DD76 /* 1574155084111-image.png */; };
 		B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963721A3E4FA0064A81D /* LLDBViewController.m */; };
 		B59D963C21A4F9720064A81D /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D963B21A4F9720064A81D /* AnimationViewController.m */; };
 		B5A9FBF8217758870083D5E0 /* SwiftInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9FBF7217758870083D5E0 /* SwiftInit.swift */; };
@@ -1617,12 +1616,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				B58381A32383EB070063DD76 /* 1574155084111-image.png in Resources */,
-=======
 				A740041F238EBD7600BAA62E /* About.txt in Resources */,
 				A7400436238EC17300BAA62E /* index.html in Resources */,
->>>>>>> 919329aa405f2b38036667a9df78e8901c520093
 				B50EE58F2237893D00DAA18A /* memory.png in Resources */,
 				A740041D238EBD7600BAA62E /* README.txt in Resources */,
 				A7B49F83211B359B0081D199 /* Common.xcconfig in Resources */,
