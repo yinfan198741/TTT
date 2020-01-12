@@ -10,6 +10,7 @@
 		669D2D05F691ACF9D0C74F3B /* libPods-TT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98301CD3BADF82F90215CEC1 /* libPods-TT.a */; };
 		A714906A23099F5200A59AB2 /* RacDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A714906923099F5200A59AB2 /* RacDemoViewController.m */; };
 		A734877D23CB4259000B9564 /* SOUnsafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A734877C23CB4259000B9564 /* SOUnsafeObject.m */; };
+		A734878023CB4D46000B9564 /* SOUnsafeObjectVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A734877F23CB4D46000B9564 /* SOUnsafeObjectVCViewController.m */; };
 		A74003B423813DF200BAA62E /* captureWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A74003B323813DF200BAA62E /* captureWindow.m */; };
 		A74003B723813E1000BAA62E /* captureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74003B623813E1000BAA62E /* captureViewController.m */; };
 		A74003BB23814D7000BAA62E /* captureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A74003BA23814D7000BAA62E /* captureManager.m */; };
@@ -233,6 +234,8 @@
 		A714906923099F5200A59AB2 /* RacDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RacDemoViewController.m; sourceTree = "<group>"; };
 		A734877B23CB4259000B9564 /* SOUnsafeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOUnsafeObject.h; sourceTree = "<group>"; };
 		A734877C23CB4259000B9564 /* SOUnsafeObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOUnsafeObject.m; sourceTree = "<group>"; };
+		A734877E23CB4D46000B9564 /* SOUnsafeObjectVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOUnsafeObjectVCViewController.h; sourceTree = "<group>"; };
+		A734877F23CB4D46000B9564 /* SOUnsafeObjectVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOUnsafeObjectVCViewController.m; sourceTree = "<group>"; };
 		A74003B223813DF200BAA62E /* captureWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = captureWindow.h; sourceTree = "<group>"; };
 		A74003B323813DF200BAA62E /* captureWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = captureWindow.m; sourceTree = "<group>"; };
 		A74003B523813E1000BAA62E /* captureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = captureViewController.h; sourceTree = "<group>"; };
@@ -594,6 +597,8 @@
 			children = (
 				A734877B23CB4259000B9564 /* SOUnsafeObject.h */,
 				A734877C23CB4259000B9564 /* SOUnsafeObject.m */,
+				A734877E23CB4D46000B9564 /* SOUnsafeObjectVCViewController.h */,
+				A734877F23CB4D46000B9564 /* SOUnsafeObjectVCViewController.m */,
 			);
 			path = DeallocTest;
 			sourceTree = "<group>";
@@ -1789,6 +1794,7 @@
 				B551283A22201EF400374029 /* ImageHeaderViewController.m in Sources */,
 				A7400400238EBD2400BAA62E /* MultipartFormDataParser.m in Sources */,
 				A7400421238EBD7600BAA62E /* DDFileLogger.m in Sources */,
+				A734878023CB4D46000B9564 /* SOUnsafeObjectVCViewController.m in Sources */,
 				A7400419238EBD7600BAA62E /* DDTTYLogger.m in Sources */,
 				A74003B423813DF200BAA62E /* captureWindow.m in Sources */,
 				A74003FC238EBD2400BAA62E /* HTTPMessage.m in Sources */,

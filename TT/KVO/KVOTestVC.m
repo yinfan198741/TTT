@@ -8,7 +8,7 @@
 
 #import "KVOTestVC.h"
 #import "SOUnsafeObject.h"
-
+#import "SOUnsafeObjectVCViewController.h"
 
 
 @interface kvoPP : NSObject
@@ -84,8 +84,12 @@
 	[bu1 addTarget:self action:@selector(change) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:bu1];
 
-	SOUnsafeObject* asd = [[SOUnsafeObject alloc] init];
-	[asd reloadDataInBackground];
+//	SOUnsafeObject* asd = [[SOUnsafeObject alloc] init];
+//	[asd reloadDataInBackground];
+	
+	SOUnsafeObjectVCViewController* vct = [[SOUnsafeObjectVCViewController alloc] init];
+	[vct reloadDataInBackground];
+	
 }
 
 - (void)click
