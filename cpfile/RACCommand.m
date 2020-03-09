@@ -258,7 +258,7 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 	}];
 
 	[connection connect];
-//	return [connection.signal setNameWithFormat:@"%@ -execute: %@", self, [input rac_description]];r
+	return [connection.signal setNameWithFormat:@"%@ -execute: %@", self, [input rac_description]];
 }
 
 #pragma mark NSKeyValueObserving

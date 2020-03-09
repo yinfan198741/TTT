@@ -108,7 +108,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     return YES;
 
 	
-	[self startHttpServer];
 	
 //	[[captureManager shareSingleObjc] setupWindow];
 	
