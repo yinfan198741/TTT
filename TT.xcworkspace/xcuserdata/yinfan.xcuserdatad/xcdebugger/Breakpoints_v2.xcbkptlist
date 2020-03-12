@@ -298,23 +298,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BF3F2745-F6B1-43AA-A548-3B648CA0FEB4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TT/ViewController.m"
-            timestampString = "593603769.2631249"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "567"
-            endingLineNumber = "567"
-            landmarkName = "-BundleTest"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C3993DD1-75F7-4F2A-A803-2C92F67A4B72"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -476,42 +459,10 @@
             timestampString = "594292417.933987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1396"
-            endingLineNumber = "1396"
+            startingLineNumber = "1420"
+            endingLineNumber = "1420"
             landmarkName = "-eventQueneTest"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D42E8441-3812-483F-BCED-E858C70F77DB - 52cb3c3e8752245f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RACTestViewController eventQueneTest]"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yinfan/Desktop/Code/mygitCode/TTT/TT/RACTest/RACTestViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1397"
-                  endingLineNumber = "1397"
-                  offsetFromSymbolStart = "169">
-               </Location>
-               <Location
-                  uuid = "D42E8441-3812-483F-BCED-E858C70F77DB - 3333760a40e5e3b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[RACTestViewController eventQueneTest]_block_invoke_4"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yinfan/Desktop/Code/mygitCode/TTT/TT/RACTest/RACTestViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1398"
-                  endingLineNumber = "1398"
-                  offsetFromSymbolStart = "51">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -525,8 +476,8 @@
             timestampString = "594292417.9341379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1398"
-            endingLineNumber = "1398"
+            startingLineNumber = "1422"
+            endingLineNumber = "1422"
             landmarkName = "-eventQueneTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -542,42 +493,10 @@
             timestampString = "594292417.93425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1388"
-            endingLineNumber = "1388"
+            startingLineNumber = "1412"
+            endingLineNumber = "1412"
             landmarkName = "-eventQueneTest"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FF411D38-07C1-432C-9CAD-D7C054A04F38 - 52cb3c3e8752245f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RACTestViewController eventQueneTest]"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yinfan/Desktop/Code/mygitCode/TTT/TT/RACTest/RACTestViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1389"
-                  endingLineNumber = "1389"
-                  offsetFromSymbolStart = "127">
-               </Location>
-               <Location
-                  uuid = "FF411D38-07C1-432C-9CAD-D7C054A04F38 - 3333760a44e5e3bb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[RACTestViewController eventQueneTest]_block_invoke_3"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yinfan/Desktop/Code/mygitCode/TTT/TT/RACTest/RACTestViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1390"
-                  endingLineNumber = "1390"
-                  offsetFromSymbolStart = "51">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -591,40 +510,40 @@
             timestampString = "594292417.9343489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1416"
-            endingLineNumber = "1416"
+            startingLineNumber = "1440"
+            endingLineNumber = "1440"
             landmarkName = "-eventQueneTest"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "47E2257D-80E5-42EF-B7C1-D91C511B0947 - 52cb3c3e8752245f"
+                  uuid = "47E2257D-80E5-42EF-B7C1-D91C511B0947 - 1838d13333d9087f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[RACTestViewController eventQueneTest]"
+                  symbolName = "__39-[RACTestViewController eventQueneTest]_block_invoke.644"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yinfan/Desktop/Code/mygitCode/TTT/TT/RACTest/RACTestViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1416"
-                  endingLineNumber = "1416"
-                  offsetFromSymbolStart = "211">
+                  startingLineNumber = "1440"
+                  endingLineNumber = "1440"
+                  offsetFromSymbolStart = "48">
                </Location>
                <Location
-                  uuid = "47E2257D-80E5-42EF-B7C1-D91C511B0947 - 3333760a48e5e3b6"
+                  uuid = "47E2257D-80E5-42EF-B7C1-D91C511B0947 - 51a1c5db8f9ab6eb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__39-[RACTestViewController eventQueneTest]_block_invoke_6"
+                  symbolName = "__39-[RACTestViewController eventQueneTest]_block_invoke_2.645"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yinfan/Desktop/Code/mygitCode/TTT/TT/RACTest/RACTestViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1417"
-                  endingLineNumber = "1417"
-                  offsetFromSymbolStart = "51">
+                  startingLineNumber = "1441"
+                  endingLineNumber = "1441"
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -640,8 +559,8 @@
             timestampString = "594292417.9344651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1419"
-            endingLineNumber = "1419"
+            startingLineNumber = "1443"
+            endingLineNumber = "1443"
             landmarkName = "-eventQueneTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -657,8 +576,8 @@
             timestampString = "594292417.934642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1322"
-            endingLineNumber = "1322"
+            startingLineNumber = "1346"
+            endingLineNumber = "1346"
             landmarkName = "-mergeTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -674,8 +593,8 @@
             timestampString = "594292417.93496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1392"
-            endingLineNumber = "1392"
+            startingLineNumber = "1416"
+            endingLineNumber = "1416"
             landmarkName = "-eventQueneTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -754,8 +673,8 @@
             filePath = "TT/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
+            startingLineNumber = "478"
+            endingLineNumber = "478"
             landmarkName = "-basicTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -770,9 +689,9 @@
             filePath = "TT/RACTest/RACTestViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1489"
-            endingLineNumber = "1489"
-            landmarkName = "-flattenTest"
+            startingLineNumber = "1513"
+            endingLineNumber = "1513"
+            landmarkName = "-doNextTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -786,9 +705,9 @@
             filePath = "TT/RACTest/RACTestViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1561"
-            endingLineNumber = "1561"
-            landmarkName = "-createDemoSignal"
+            startingLineNumber = "1585"
+            endingLineNumber = "1585"
+            landmarkName = "-subScribeAndShowLoadig:"
             landmarkType = "7">
             <Locations>
                <Location
@@ -827,54 +746,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9765FD24-EF60-4FB0-838B-79697C0AC407"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TT/RACTest/RACTestViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1470"
-            endingLineNumber = "1470"
-            landmarkName = "-flattenTest"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9765FD24-EF60-4FB0-838B-79697C0AC407 - bab8b9f73260e952"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RACTestViewController flattenTest]"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yinfan/Desktop/Code/mygitCode/TTT/TT/RACTest/RACTestViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1470"
-                  endingLineNumber = "1470"
-                  offsetFromSymbolStart = "93">
-               </Location>
-               <Location
-                  uuid = "9765FD24-EF60-4FB0-838B-79697C0AC407 - 522063ba5d5f93f3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[RACTestViewController flattenTest]_block_invoke_3"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yinfan/Desktop/Code/mygitCode/TTT/TT/RACTest/RACTestViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1471"
-                  endingLineNumber = "1471"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "709601A9-8851-40F6-912A-CF94AB33A3F4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -882,9 +753,9 @@
             filePath = "TT/RACTest/RACTestViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1644"
-            endingLineNumber = "1644"
-            landmarkName = "-subScribeForLoading:"
+            startingLineNumber = "1668"
+            endingLineNumber = "1668"
+            landmarkName = "-changeItemTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -898,9 +769,9 @@
             filePath = "TT/RACTest/RACTestViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1640"
-            endingLineNumber = "1640"
-            landmarkName = "-subScribeForLoading:"
+            startingLineNumber = "1664"
+            endingLineNumber = "1664"
+            landmarkName = "-changeItemTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -962,8 +833,8 @@
             filePath = "TT/RACTest/RACTestViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "-commandTestLog"
             landmarkType = "7">
          </BreakpointContent>
@@ -1003,17 +874,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "43246A60-E18E-4B00-AFC1-C081312C8FEE"
+            uuid = "5E406DB9-15EE-424F-9E34-888E126512D1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveObjC/ReactiveObjC/RACCommand.m"
+            filePath = "TT/RACTest/RACTestViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "-initWithEnabled:signalBlock:"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-commandInnerSignalConcate"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5E406DB9-15EE-424F-9E34-888E126512D1 - 3ddb01099a35209c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RACTestViewController commandInnerSignalConcate]"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yinfan/Desktop/Code/mygitCode/TTT/TT/RACTest/RACTestViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "5E406DB9-15EE-424F-9E34-888E126512D1 - c7bac354ef4838bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__50-[RACTestViewController commandInnerSignalConcate]_block_invoke"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yinfan/Desktop/Code/mygitCode/TTT/TT/RACTest/RACTestViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -33,10 +33,34 @@
 @property (nonatomic, strong) NSString* obcTest;
 
 
+@property (nonatomic, strong) RACCommand* commandInnerSignal;
+
 @end
 
 @implementation RACTestViewController
 
+
+- (RACCommand*)commandInnerSignal {
+    if (_commandInnerSignal == nil) {
+        _commandInnerSignal = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+            return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+                [subscriber sendNext:@"c1"];
+                [subscriber sendCompleted];
+                return nil;
+            }];
+        }];
+    }
+    return _commandInnerSignal;
+}
+
+- (void)commandInnerSignalConcate
+{
+    [[self.commandInnerSignal execute:nil] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribeNext");
+    } error:^(NSError * _Nullable error) {
+          NSLog(@"error");
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -74,6 +98,7 @@
                      @[@"demoTTItem",@"demoTTItem"],
 					@[@"switchToLastCommand",@"commandSwitchToLastTest"],
 					@[@"swtichtoLastAsynTest",@"swtichtoLastAsynTest"],
+                    @[@"commandInnerSignalConcate",@"commandInnerSignalConcate"],
                     ];
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.dataSource =  self;
@@ -2189,6 +2214,32 @@ static int switchToLastCommandrunTime = 0;
 #endif
     
 }
+
+
+//if (self.commandInnerSignal == nil) {
+//       self.commandInnerSignal  = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+//           RACSignal* c1 =  [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//               [subscriber sendNext:@"c1"];
+//               [subscriber sendCompleted];
+//               return nil;
+//           }];
+//           return c1;
+//       }];
+//       [[self.commandInnerSignal executing] subscribeNext:^(NSNumber * _Nullable x) {
+//           NSLog(@"executing = %@",x);
+//       } error:^(NSError * _Nullable error) {
+//             NSLog(@"error = %@",error);
+//       }];
+//
+//       [[[self.commandInnerSignal executionSignals] switchToLatest] subscribeNext:^(id  _Nullable x) {
+//            NSLog(@"123 subscribeNext= %@",x );
+//       } error:^(NSError * _Nullable error) {
+//           NSLog(@"123 NSError= %@",error );
+//       }];
+//   }
+
+
+
 //
 //- (RACSignal *)savaAvatar:(UIImage *)image withContact:(NSArray *)contact {
 //    NSParameterAssert(image != nil);
@@ -2791,5 +2842,7 @@ static int switchToLastCommandrunTime = 0;
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end
