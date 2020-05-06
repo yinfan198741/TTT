@@ -24,8 +24,15 @@
   [imageView setBackgroundColor:[UIColor redColor]];
   [self.view addSubview:imageView];
   
-
+	self.meSetcontrollerName = @"categrouy =  CatelogHookViewController";
 }
+
+
+- (void)dealloc
+{
+	NSLog(@"delloc = %@",self.meSetcontrollerName);
+}
+
 
 /*
 #pragma mark - Navigation

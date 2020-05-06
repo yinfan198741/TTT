@@ -9,6 +9,7 @@
 #import "HookTableViewController.h"
 #import "TabItem.h"
 #import "CatelogHookViewController.h"
+#import "UIViewController+AddParamterAndFunction.h"
 
 @interface HookTableViewController ()
 @property (nonatomic, strong) NSMutableArray* source;
@@ -19,9 +20,10 @@
 - (instancetype)init
 {
   self = [super init];
-  if (self) {
-    self.source = [NSMutableArray arrayWithCapacity:10];
-  }
+	if (self) {
+		self.source = [NSMutableArray arrayWithCapacity:10];
+		self.meSetcontrollerName = @"HookTableViewController";
+	}
   return self;
 }
 
@@ -70,6 +72,13 @@
 
 - (void)hookSwizz {
   NSLog(@"hookSwizz");
+}
+
+
+- (void)dealloc
+{
+	
+	
 }
 
 @end

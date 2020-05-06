@@ -79,6 +79,11 @@ UILabel* _la;
     //        NSLog(@"ttttt");
     //    }];
 	
+	TabItem* hookTest = [TabItem CreateItem:@"hookTest" action:^{
+		[self hookTest];
+	}];
+	[self.source addObject:hookTest];
+	
 	
 	TabItem* kvoTest = [TabItem CreateItem:@"kvoTest" action:^{
 		[self kvoTest];
@@ -205,12 +210,7 @@ UILabel* _la;
         [self AppearanceViewController];
     }];
     [self.source addObject:AppearanceViewController];
-    
-    
-    TabItem* hookTest = [TabItem CreateItem:@"hookTest" action:^{
-        [self hookTest];
-    }];
-    [self.source addObject:hookTest];
+
     
     TabItem* BundleTest = [TabItem CreateItem:@"BundleTest" action:^{
         [self BundleTest];
