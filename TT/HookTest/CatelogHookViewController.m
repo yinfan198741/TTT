@@ -15,15 +15,15 @@
 @implementation CatelogHookViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-  self.view.backgroundColor = UIColor.whiteColor;
-  
-  UIImageView *imageView = [[UIImageView alloc]
-                            initWithFrame:CGRectMake(100, 100, 100, 100)];
-  imageView.image = [UIImage imageNamed:@"inventory_selected"];
-  [imageView setBackgroundColor:[UIColor redColor]];
-  [self.view addSubview:imageView];
-  
+	[super viewDidLoad];
+	self.view.backgroundColor = UIColor.whiteColor;
+	
+	UIImageView *imageView = [[UIImageView alloc]
+							  initWithFrame:CGRectMake(100, 100, 100, 100)];
+	imageView.image = [UIImage imageNamed:@"inventory_selected"];
+	[imageView setBackgroundColor:[UIColor redColor]];
+	[self.view addSubview:imageView];
+	
 	self.meSetcontrollerName = @"categrouy =  CatelogHookViewController";
 }
 

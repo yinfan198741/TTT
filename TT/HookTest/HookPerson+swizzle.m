@@ -12,7 +12,7 @@
 @implementation HookPerson (swizzle)
 
 + (void)load {
-//	[self jr_swizzleMethod:@selector(p_sayHello) withMethod:@selector(sayHello) error:nil];
+	[self jr_swizzleMethod:@selector(p_sayHello) withMethod:@selector(sayHello) error:nil];
 }
 
 - (void)p_sayHello {

@@ -89,13 +89,12 @@
 	
 	NSLog(@"#HookStudent start call sayHello");
 	HookStudent* hs = [[HookStudent alloc] init];
-	
 	[hs sayHello];
 	
 	
-	NSLog(@"#HookPerson start call sayHello");
-	HookPerson* hp = [[HookPerson alloc] init];
-	[hp sayHello];
+//	NSLog(@"#HookPerson start call sayHello");
+//	HookPerson* hp = [[HookPerson alloc] init];
+//	[hp sayHello];
 	
 }
 

@@ -1755,6 +1755,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7DD1150245E73AC001DC1B3 /* HookPerson+swizzle.m in Sources */,
+				A7DD114D245E7378001DC1B3 /* HookStudent+swizzle.m in Sources */,
 				B54E79F22340626E0035915B /* DynamicSysTest.m in Sources */,
 				A7400403238EBD2400BAA62E /* DDNumber.m in Sources */,
 				A7400406238EBD2400BAA62E /* HTTPServer.m in Sources */,
@@ -1839,7 +1840,6 @@
 				A74003BE23816D7300BAA62E /* captureViewAction.m in Sources */,
 				B551282D22201AE500374029 /* NavigationDelegate.m in Sources */,
 				A74003C3238A878A00BAA62E /* PersonA.m in Sources */,
-				A7DD114D245E7378001DC1B3 /* HookStudent+swizzle.m in Sources */,
 				B5BFE3D8222E96BB00B6CFAC /* autoCellFive.swift in Sources */,
 				A74003FB238EBD2400BAA62E /* HTTPRedirectResponse.m in Sources */,
 				B56FBC6C21E47E90003694E1 /* Swear.m in Sources */,
