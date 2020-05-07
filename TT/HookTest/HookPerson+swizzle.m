@@ -12,13 +12,15 @@
 @implementation HookPerson (swizzle)
 
 + (void)load {
-	[self jr_swizzleMethod:@selector(p_sayHello) withMethod:@selector(sayHello) error:nil];
+//	[self jr_swizzleMethod:@selector(p_sayHello) withMethod:@selector(sayHello) error:nil];
 }
 
 - (void)p_sayHello {
+	
+	NSLog(@"Person + swizzle say hello 1");
 	[self p_sayHello];
 	
-	NSLog(@"Person + swizzle say hello");
+	NSLog(@"Person + swizzle say hello 2");
 }
 
 @end

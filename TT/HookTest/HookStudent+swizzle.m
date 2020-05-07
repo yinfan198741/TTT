@@ -15,10 +15,13 @@
 	[self jr_swizzleMethod:@selector(s_sayHello) withMethod:@selector(sayHello) error:nil];
 }
 
+///注意编译顺序
 - (void)s_sayHello {
+	SEL s = _cmd;
+	NSLog(@"Student + swizzle say hello 1 %@",[NSString stringWithUTF8String:s]);
 	[self s_sayHello];
 	
-	NSLog(@"Student + swizzle say hello");
+	NSLog(@"Student + swizzle say hello 2");
 }
 
 @end

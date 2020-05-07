@@ -53,6 +53,13 @@
 
 @property (nonatomic, strong) dispatch_source_t writeTimer;
 
+
+@property (nonatomic, strong) NSString* morethreadString;
+
+
+@property (nonatomic, copy) NSArray* morethreadArray;
+
+
 @end
 
 UILabel* _la;
@@ -64,14 +71,19 @@ UILabel* _la;
 {
   self = [super init];
   if (self) {
-    self.source = [NSMutableArray arrayWithCapacity:10];
-	 self.info = [[NSMutableArray alloc] initWithCapacity:100];
-    [self setupSource];
-	  self.logI = [[NSMutableString alloc]init];
+    
   }
   return self;
 }
 
+
+- (void)initSource
+{
+    self.source = [NSMutableArray arrayWithCapacity:10];
+     self.info = [[NSMutableArray alloc] initWithCapacity:100];
+    [self setupSource];
+      self.logI = [[NSMutableString alloc]init];
+}
 
 -(void)setupSource {
     //    [TabItem CreateItem:@"function Call" itemSelect:^(){
@@ -84,6 +96,20 @@ UILabel* _la;
 	}];
 	[self.source addObject:hookTest];
 	
+	
+    
+    TabItem* morethread = [TabItem CreateItem:@"morethread" action:^{
+        [self morethread];
+    }];
+    [self.source addObject:morethread];
+    
+    
+    TabItem* sendEmail = [TabItem CreateItem:@"sendEmail" action:^{
+        [self sendEmail];
+    }];
+    [self.source addObject:sendEmail];
+    
+    
 	
 	TabItem* kvoTest = [TabItem CreateItem:@"kvoTest" action:^{
 		[self kvoTest];
@@ -263,6 +289,7 @@ UILabel* _la;
   self.title = @"Test";
     
     
+    [self initSource];
 //    [[UIApplication.sharedApplication windows]
     
 //    [self addControlbutton];
@@ -360,6 +387,66 @@ UILabel* _la;
   return cell;
 }
 
+
+- (void)morethread
+{
+    NSLog(@"morethread start");
+    int times = 1000;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        for (int i = 0; i < times ; i++) {
+               dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                   self.morethreadString = [NSString stringWithFormat:@"%d",i];
+                   self.morethreadArray = @[@"test"];
+               });
+           }
+    });
+   
+     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    for (int i = 0; i < times ; i++) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSString* t = self.morethreadString;
+            NSArray* array =  self.morethreadArray;
+            NSLog(@"%@",t);
+            NSLog(@"%@",array);
+        });
+    }
+     });
+     NSLog(@"morethread end");
+}
+
+- (void)sendEmail
+{
+    NSLog(@"123");
+    NSString * name = @"YF";
+    NSString* reason = @"reason";
+    NSString* arr = @"arr";
+    
+    
+    
+    NSString *filePath2 = [[NSBundle mainBundle] pathForResource:@"a" ofType:@"txt"];
+    NSData *imageData2 = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:filePath2]];
+    
+    NSString* newStr = [[NSString alloc] initWithData:imageData2 encoding:NSUTF8StringEncoding];
+    NSString *crashLogInfo = newStr;// [NSString stringWithFormat:@"exception type : %@ \n crash reason : %@ \n call stack info : %@", name, reason, arr];
+    NSString *urlStr = [NSString stringWithFormat:@"mailto:594317569@qq.com?subject=bug报告&body=感谢您的配合!错误详情:%@",crashLogInfo];
+    NSURL *url = [NSURL URLWithString:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    [[UIApplication sharedApplication] openURL:url];
+    
+    
+//    NSDictionary *dic1 = @{
+//                           @"command":@"1020",
+//                           @"result" :@"1",
+//                           @"returnFromApp":@"0",
+//                           @"scene":@"0",
+//                           @"sdkver":@"1.5",
+//                           @"title":@"不接微信的sdk成功进行微信分享了"
+//                           };
+//    NSDictionary *diction = @{@"wx63e70d351f028e3c":dic1};
+//    NSData *output1=[NSPropertyListSerialization dataWithPropertyList:diction format:NSPropertyListBinaryFormat_v1_0 options:0 error:nil];
+//    [[UIPasteboard generalPasteboard] setData:output1 forPasteboardType:@"content"];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"weixin://app/wx63e70d351f028e3c/sendreq/?"]];
+    
+}
 
 - (void)kvoTest
 {
