@@ -91,12 +91,21 @@ UILabel* _la;
     //        NSLog(@"ttttt");
     //    }];
 	
+<<<<<<< HEAD
     
     TabItem* NSNumericSearch = [TabItem CreateItem:@"NSNumericSearch" action:^{
         [self NSNumericSearch];
     }];
     [self.source addObject:NSNumericSearch];
     
+=======
+	TabItem* hookTest = [TabItem CreateItem:@"hookTest" action:^{
+		[self hookTest];
+	}];
+	[self.source addObject:hookTest];
+	
+	
+>>>>>>> 965056cd5a122af36ba0582ac89b01f664063732
     
     TabItem* morethread = [TabItem CreateItem:@"morethread" action:^{
         [self morethread];
@@ -236,12 +245,7 @@ UILabel* _la;
         [self AppearanceViewController];
     }];
     [self.source addObject:AppearanceViewController];
-    
-    
-    TabItem* hookTest = [TabItem CreateItem:@"hookTest" action:^{
-        [self hookTest];
-    }];
-    [self.source addObject:hookTest];
+
     
     TabItem* BundleTest = [TabItem CreateItem:@"BundleTest" action:^{
         [self BundleTest];

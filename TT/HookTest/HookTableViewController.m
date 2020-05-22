@@ -9,6 +9,9 @@
 #import "HookTableViewController.h"
 #import "TabItem.h"
 #import "CatelogHookViewController.h"
+#import "UIViewController+AddParamterAndFunction.h"
+#import "HookStudent.h"
+#import "HookPerson.h"
 
 @interface HookTableViewController ()
 @property (nonatomic, strong) NSMutableArray* source;
@@ -19,9 +22,10 @@
 - (instancetype)init
 {
   self = [super init];
-  if (self) {
-    self.source = [NSMutableArray arrayWithCapacity:10];
-  }
+	if (self) {
+		self.source = [NSMutableArray arrayWithCapacity:10];
+		self.meSetcontrollerName = @"HookTableViewController";
+	}
   return self;
 }
 
@@ -37,6 +41,12 @@
     [self hookSwizz];
   }];
   [self.source addObject:hookSwizz];
+	
+	
+	TabItem* hookStudentSwizz = [TabItem CreateItem:@"hookStudentSwizz" action:^{
+		[self hookStudentSwizz];
+	}];
+	[self.source addObject:hookStudentSwizz];
   
 }
 
@@ -70,6 +80,29 @@
 
 - (void)hookSwizz {
   NSLog(@"hookSwizz");
+}
+
+
+- (void)hookStudentSwizz
+{
+
+	
+	NSLog(@"#HookStudent start call sayHello");
+	HookStudent* hs = [[HookStudent alloc] init];
+	[hs sayHello];
+	
+	
+//	NSLog(@"#HookPerson start call sayHello");
+//	HookPerson* hp = [[HookPerson alloc] init];
+//	[hp sayHello];
+	
+}
+
+
+- (void)dealloc
+{
+	
+	
 }
 
 @end

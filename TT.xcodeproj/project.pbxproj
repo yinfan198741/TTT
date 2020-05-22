@@ -65,6 +65,11 @@
 		A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */; };
 		A7D8FA881E9B2BBA00ED8D03 /* TTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA871E9B2BBA00ED8D03 /* TTTests.m */; };
 		A7D8FA931E9B2BBB00ED8D03 /* TTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */; };
+		A7DD1141245E67B1001DC1B3 /* UIViewController+AddParamterAndFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DD1140245E67B1001DC1B3 /* UIViewController+AddParamterAndFunction.m */; };
+		A7DD1144245E724C001DC1B3 /* HookPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DD1143245E724C001DC1B3 /* HookPerson.m */; };
+		A7DD1147245E72CA001DC1B3 /* HookStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DD1146245E72CA001DC1B3 /* HookStudent.m */; };
+		A7DD114D245E7378001DC1B3 /* HookStudent+swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DD114C245E7378001DC1B3 /* HookStudent+swizzle.m */; };
+		A7DD1150245E73AC001DC1B3 /* HookPerson+swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DD114F245E73AC001DC1B3 /* HookPerson+swizzle.m */; };
 		B5001DEA224BA38D002D15FF /* MJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5001DE9224BA38D002D15FF /* MJUser.m */; };
 		B50AD6EC2340B1AF002DE97C /* DynamicSysTest+TestMethodConver.m in Sources */ = {isa = PBXBuildFile; fileRef = B50AD6EB2340B1AF002DE97C /* DynamicSysTest+TestMethodConver.m */; };
 		B50B22F7218FECCB006CFC28 /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50B22F6218FECCB006CFC28 /* ThreadViewController.m */; };
@@ -347,6 +352,16 @@
 		A7D8FA8E1E9B2BBA00ED8D03 /* TTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTUITests.m; sourceTree = "<group>"; };
 		A7D8FA941E9B2BBB00ED8D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7DD113F245E67B1001DC1B3 /* UIViewController+AddParamterAndFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AddParamterAndFunction.h"; sourceTree = "<group>"; };
+		A7DD1140245E67B1001DC1B3 /* UIViewController+AddParamterAndFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AddParamterAndFunction.m"; sourceTree = "<group>"; };
+		A7DD1142245E724C001DC1B3 /* HookPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookPerson.h; sourceTree = "<group>"; };
+		A7DD1143245E724C001DC1B3 /* HookPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookPerson.m; sourceTree = "<group>"; };
+		A7DD1145245E72CA001DC1B3 /* HookStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookStudent.h; sourceTree = "<group>"; };
+		A7DD1146245E72CA001DC1B3 /* HookStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookStudent.m; sourceTree = "<group>"; };
+		A7DD114B245E7378001DC1B3 /* HookStudent+swizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HookStudent+swizzle.h"; sourceTree = "<group>"; };
+		A7DD114C245E7378001DC1B3 /* HookStudent+swizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HookStudent+swizzle.m"; sourceTree = "<group>"; };
+		A7DD114E245E73AC001DC1B3 /* HookPerson+swizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HookPerson+swizzle.h"; sourceTree = "<group>"; };
+		A7DD114F245E73AC001DC1B3 /* HookPerson+swizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HookPerson+swizzle.m"; sourceTree = "<group>"; };
 		B5001DE8224BA38D002D15FF /* MJUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJUser.h; sourceTree = "<group>"; };
 		B5001DE9224BA38D002D15FF /* MJUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJUser.m; sourceTree = "<group>"; };
 		B50AD6EA2340B1AF002DE97C /* DynamicSysTest+TestMethodConver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DynamicSysTest+TestMethodConver.h"; sourceTree = "<group>"; };
@@ -1205,6 +1220,16 @@
 				B5BFE3B8222E1C5300B6CFAC /* HookTableViewController.m */,
 				B5BFE3BA222E209800B6CFAC /* CatelogHookViewController.h */,
 				B5BFE3BB222E209800B6CFAC /* CatelogHookViewController.m */,
+				A7DD113F245E67B1001DC1B3 /* UIViewController+AddParamterAndFunction.h */,
+				A7DD1140245E67B1001DC1B3 /* UIViewController+AddParamterAndFunction.m */,
+				A7DD1142245E724C001DC1B3 /* HookPerson.h */,
+				A7DD1143245E724C001DC1B3 /* HookPerson.m */,
+				A7DD1145245E72CA001DC1B3 /* HookStudent.h */,
+				A7DD1146245E72CA001DC1B3 /* HookStudent.m */,
+				A7DD114B245E7378001DC1B3 /* HookStudent+swizzle.h */,
+				A7DD114C245E7378001DC1B3 /* HookStudent+swizzle.m */,
+				A7DD114E245E73AC001DC1B3 /* HookPerson+swizzle.h */,
+				A7DD114F245E73AC001DC1B3 /* HookPerson+swizzle.m */,
 			);
 			path = HookTest;
 			sourceTree = "<group>";
@@ -1725,11 +1750,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7DD1150245E73AC001DC1B3 /* HookPerson+swizzle.m in Sources */,
+				A7DD114D245E7378001DC1B3 /* HookStudent+swizzle.m in Sources */,
 				B54E79F22340626E0035915B /* DynamicSysTest.m in Sources */,
 				A7400403238EBD2400BAA62E /* DDNumber.m in Sources */,
 				A7400406238EBD2400BAA62E /* HTTPServer.m in Sources */,
 				B54E79F623409FCE0035915B /* DynamicSysTest+DySenteic.m in Sources */,
 				B50AD6EC2340B1AF002DE97C /* DynamicSysTest+TestMethodConver.m in Sources */,
+				A7DD1144245E724C001DC1B3 /* HookPerson.m in Sources */,
 				B5351A14239A5B04003A359E /* aaA.m in Sources */,
 				B5A9FBF8217758870083D5E0 /* SwiftInit.swift in Sources */,
 				B5670EF8215F12480014807D /* CrashViewController.m in Sources */,
@@ -1758,6 +1786,7 @@
 				B5670EF5215F11C90014807D /* UncaughtExceptionHandler.m in Sources */,
 				B56FBC6621E44721003694E1 /* Service.m in Sources */,
 				B5BFE3F2222E972800B6CFAC /* sstest.swift in Sources */,
+				A7DD1147245E72CA001DC1B3 /* HookStudent.m in Sources */,
 				B551282C22201AE500374029 /* CViewController.m in Sources */,
 				A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */,
 				B5B5806B228BD143009A0EA3 /* RACSignalTest.m in Sources */,
@@ -1789,6 +1818,7 @@
 				B50EE5722237547E00DAA18A /* Example4ViewController.m in Sources */,
 				B5BFE3EF222E972800B6CFAC /* enumTest.swift in Sources */,
 				B50EE56A2237547E00DAA18A /* BundleViewController.m in Sources */,
+				A7DD1141245E67B1001DC1B3 /* UIViewController+AddParamterAndFunction.m in Sources */,
 				A74003FE238EBD2400BAA62E /* WebSocket.m in Sources */,
 				B5BFE3F8222F688700B6CFAC /* OCCallTester.m in Sources */,
 				A74003F9238EBD2400BAA62E /* HTTPFileResponse.m in Sources */,

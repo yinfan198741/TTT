@@ -16,6 +16,8 @@ target 'TT' do
   pod 'Masonry',  '~> 0.6.4'
   pod 'MJExtension', '3.0.15.1'
   pod 'MBProgressHUD'
+	pod 'JRSwizzle'
+   
 
 #    post_install do |installer|
 #

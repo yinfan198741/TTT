@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "F0834A90-FFF5-473B-9EE2-6EDB59BD4679"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "EFAEAB19-2BDE-446B-B191-96161AA06D85"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -17,11 +19,44 @@
             endingLineNumber = "254"
             landmarkName = "-combineCommand"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EFAEAB19-2BDE-446B-B191-96161AA06D85 - 4295405f6581b811"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[RACTestViewController combineCommand]_block_invoke"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "254"
+                  endingLineNumber = "254"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "EFAEAB19-2BDE-446B-B191-96161AA06D85 - ff9143627e5c96bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[RACTestViewController combineCommand]_block_invoke_2"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "256"
+                  endingLineNumber = "256"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "14942AAC-D2D7-4A21-A5A9-CAF816066F43"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -38,6 +73,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D57B8328-7D9D-4760-8300-DF77D6AD9A48"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -54,6 +90,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "75D99A42-7A26-4FAF-B680-07A9AC13F9ED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -65,43 +102,12 @@
             endingLineNumber = "1030"
             landmarkName = "-RacSubjectTest"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[RACTestViewController RacSubjectTest]_block_invoke"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "600526263.850044"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1030"
-                  endingLineNumber = "1030"
-                  offsetFromSymbolStart = "122">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[RACTestViewController RacSubjectTest]_block_invoke_4"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "600526263.8516769"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1031"
-                  endingLineNumber = "1031"
-                  offsetFromSymbolStart = "51">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7BF3152F-2CF6-400B-89EE-88C9FA56B7C4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -118,6 +124,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6BEAF798-D0A4-45AE-A672-43A702FF0B53"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -134,6 +141,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "75FC20CD-71FB-4D0D-8A79-B3A920DA968B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -145,43 +153,12 @@
             endingLineNumber = "1247"
             landmarkName = "-flatMapTest"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[RACTestViewController flatMapTest]_block_invoke_3"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "600526263.862666"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1248"
-                  endingLineNumber = "1248"
-                  offsetFromSymbolStart = "192">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[RACTestViewController flatMapTest]_block_invoke_5"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
-                  timestampString = "600526263.864253"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1249"
-                  endingLineNumber = "1249"
-                  offsetFromSymbolStart = "51">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5AE30B32-BB49-4393-8F6D-32A44CB304C1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -193,11 +170,44 @@
             endingLineNumber = "1255"
             landmarkName = "-flatMapTest"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5AE30B32-BB49-4393-8F6D-32A44CB304C1 - 4262943d51fad4cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[RACTestViewController flatMapTest]_block_invoke"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1255"
+                  endingLineNumber = "1255"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "5AE30B32-BB49-4393-8F6D-32A44CB304C1 - 737f4a9005e0237f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[RACTestViewController flatMapTest]_block_invoke_2"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1256"
+                  endingLineNumber = "1256"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "69FCB49F-A5FA-43C7-9B5D-6704C586FFC6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -214,6 +224,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "4B79A8BC-9B5D-4001-9ADF-F06A4D552BAC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -230,6 +241,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AAE12F3C-1CF8-40B5-BF1E-5DC72BE33BD8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -246,6 +258,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3B9B1732-BAAA-4718-92DD-71E27DA228C4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -262,6 +275,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D4EE6704-1AD0-4CFF-8162-CBD42B2AC80B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -278,6 +292,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "70589A75-4C0E-44E3-94F6-FC4184D74FCB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -294,6 +309,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "340DE036-D7BC-4148-A82B-E11DA3F2B1C6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -310,6 +326,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B3154C28-8EC0-436C-9B89-67477B833B1D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -326,6 +343,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "20A5AAC1-BD0F-41A0-88B8-7EA4E0BB3149"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -342,6 +360,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9EAA57D0-E077-4C32-9355-D31B8DBAA7D1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -358,6 +377,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "228C6090-56F1-4AB0-89AF-63A8E98AA0F3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -374,6 +394,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7C848EDB-B782-4C4C-B9D1-0DC89DD961CC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -390,6 +411,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "8CCCF6FF-BBE3-4AFE-ABE2-D2B1D8688549"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -406,6 +428,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "4277247B-0F31-44DE-B6D3-D5D6EE8BD25A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -422,6 +445,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5AB3D5E6-6AA5-4286-B225-DB78B2A2F790"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -438,6 +462,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "17AE3166-4081-423C-9162-E5DE5D1A11B5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -454,6 +479,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "12532A95-EB10-4F2A-93D8-8703A9E5BF9A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -470,6 +496,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "22BA7229-CDF6-4518-84C3-18211DB740BF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -486,6 +513,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5C0E789B-312F-4625-A3BF-108ECA9D4F8B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -502,6 +530,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B61C6149-6F19-4DF4-8AB8-DA34B930D141"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -518,6 +547,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6016A803-E635-48CA-A199-10D1C52EA168"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -534,6 +564,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "CE52A2FF-0A49-4806-A451-34D3A65A014B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -545,11 +576,44 @@
             endingLineNumber = "384"
             landmarkName = "-RACSubjectTest"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CE52A2FF-0A49-4806-A451-34D3A65A014B - d9eef36571737c7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RACTestViewController RACDisposableTest]"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "385"
+                  endingLineNumber = "385"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "CE52A2FF-0A49-4806-A451-34D3A65A014B - 47f390fc9660feab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[RACTestViewController RACDisposableTest]_block_invoke.308"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "386"
+                  endingLineNumber = "386"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E1D643BA-1711-44EC-B208-A92403169E57"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -566,6 +630,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "DC129D80-CFD9-4833-AF6B-41E6FDB6DEEE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -577,11 +642,44 @@
             endingLineNumber = "1099"
             landmarkName = "@implementation RACTestViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "DC129D80-CFD9-4833-AF6B-41E6FDB6DEEE - 360e0b57be671c1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RACTestViewController trycatchTest]"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1099"
+                  endingLineNumber = "1099"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "DC129D80-CFD9-4833-AF6B-41E6FDB6DEEE - 6028563d29ff5573"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__37-[RACTestViewController trycatchTest]_block_invoke"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fanyin/Desktop/Code/TTT/TT/RACTest/RACTestViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1100"
+                  endingLineNumber = "1100"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "70BDC313-2916-47AA-A729-2F0768926122"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -598,6 +696,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1F567E73-70C4-4626-B055-742E3014E918"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -614,6 +713,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "4D5560EA-9937-441C-A7A0-E490FDDD23B5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -630,6 +730,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D663D966-5CAE-41F4-8A2D-4C72A6CB7A8D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -646,6 +747,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "930B9A40-62B8-4698-970A-3D8535B31AC9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -662,6 +764,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5D3EE355-2703-4924-A715-79DC9DCB8841"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -678,6 +781,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9145854F-588D-4FC4-8432-7206492F40A7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -694,16 +798,83 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E95B1E0C-C3C0-4F13-9508-A8007619C6EC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/DeallocTest/SOUnsafeObjectVCViewController.m"
-            timestampString = "600526273.8557529"
+            timestampString = "610166316.814445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
             endingLineNumber = "61"
             landmarkName = "-dealloc"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B596CA1D-9BE9-4A9F-9DF1-D9EEAAF04728"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/HookTest/HookTableViewController.m"
+            timestampString = "610169729.858539"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-hookSwizz"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E8101BE-8519-4E0D-BFCC-C1199E6A9C28"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/HookTest/UIViewController+AddParamterAndFunction.m"
+            timestampString = "610169729.858641"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-meSetcontrollerName"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D4780CD-70DF-4ACE-9437-864907DE5BAD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/HookTest/HookStudent+swizzle.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "+load"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75D3A2DD-9203-4AD0-A046-D7ED45AFC1FE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/HookTest/HookPerson+swizzle.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "+load"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
