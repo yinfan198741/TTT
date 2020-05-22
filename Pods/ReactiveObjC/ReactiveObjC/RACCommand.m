@@ -1,13 +1,13 @@
 //
 //  RACCommand.m
-//  ReactiveCocoa
+//  ReactiveObjC
 //
 //  Created by Josh Abernathy on 3/3/12.
 //  Copyright (c) 2012 GitHub, Inc. All rights reserved.
 //
 
 #import "RACCommand.h"
-#import "RACEXTScope.h"
+#import <ReactiveObjC/RACEXTScope.h>
 #import "NSArray+RACSequenceAdditions.h"
 #import "NSObject+RACDeallocating.h"
 #import "NSObject+RACDescription.h"
@@ -18,28 +18,20 @@
 #import "RACSequence.h"
 #import "RACSignal+Operations.h"
 #import <libkern/OSAtomic.h>
-#import <objc/runtime.h>
 
-NSString * const RACCommandErrorDomain = @"RACCommandErrorDomain";
+NSErrorDomain const RACCommandErrorDomain = @"RACCommandErrorDomain";
 NSString * const RACUnderlyingCommandErrorKey = @"RACUnderlyingCommandErrorKey";
 
-const NSInteger RACCommandErrorNotEnabled = 1;
-
 @interface RACCommand () {
-	// The mutable array backing `activeExecutionSignals`.
-	//
-	// This should only be used while synchronized on `self`.
-	NSMutableArray *_activeExecutionSignals;
-
 	// Atomic backing variable for `allowsConcurrentExecution`.
 	volatile uint32_t _allowsConcurrentExecution;
 }
 
-// An array of signals representing in-flight executions, in the order they
-// began.
-//
-// This property is KVO-compliant.
-@property (atomic, copy, readonly) NSArray *activeExecutionSignals;
+/// A subject that sends added execution signals.
+@property (nonatomic, strong, readonly) RACSubject *addedExecutionSignalsSubject;
+
+/// A subject that sends the new value of `allowsConcurrentExecution` whenever it changes.
+@property (nonatomic, strong, readonly) RACSubject *allowsConcurrentExecutionSubject;
 
 // `enabled`, but without a hop to the main thread.
 //
@@ -48,13 +40,6 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 
 // The signal block that the receiver was initialized with.
 @property (nonatomic, copy, readonly) RACSignal * (^signalBlock)(id input);
-
-// Adds a signal to `activeExecutionSignals` and generates a KVO notification.
-- (void)addActiveExecutionSignal:(RACSignal *)signal;
-
-// Removes a signal from `activeExecutionSignals` and generates a KVO
-// notification.
-- (void)removeActiveExecutionSignal:(RACSignal *)signal;
 
 @end
 
@@ -67,92 +52,41 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 }
 
 - (void)setAllowsConcurrentExecution:(BOOL)allowed {
-	[self willChangeValueForKey:@keypath(self.allowsConcurrentExecution)];
-
 	if (allowed) {
 		OSAtomicOr32Barrier(1, &_allowsConcurrentExecution);
 	} else {
 		OSAtomicAnd32Barrier(0, &_allowsConcurrentExecution);
 	}
 
-	[self didChangeValueForKey:@keypath(self.allowsConcurrentExecution)];
-}
-
-- (NSArray *)activeExecutionSignals {
-	@synchronized (self) {
-		return [_activeExecutionSignals copy];
-	}
-}
-
-- (void)addActiveExecutionSignal:(RACSignal *)signal {
-	NSCParameterAssert([signal isKindOfClass:RACSignal.class]);
-
-	@synchronized (self) {
-		// The KVO notification has to be generated while synchronized, because
-		// it depends on the index remaining consistent.
-		NSIndexSet *indexes = [NSIndexSet indexSetWithIndex:_activeExecutionSignals.count];
-		[self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:@keypath(self.activeExecutionSignals)];
-		[_activeExecutionSignals addObject:signal];
-		[self didChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:@keypath(self.activeExecutionSignals)];
-	}
-}
-
-- (void)removeActiveExecutionSignal:(RACSignal *)signal {
-	NSCParameterAssert([signal isKindOfClass:RACSignal.class]);
-
-	@synchronized (self) {
-		// The indexes have to be calculated and the notification generated
-		// while synchronized, because they depend on the indexes remaining
-		// consistent.
-		NSIndexSet *indexes = [_activeExecutionSignals indexesOfObjectsPassingTest:^ BOOL (RACSignal *obj, NSUInteger index, BOOL *stop) {
-			return obj == signal;
-		}];
-
-		if (indexes.count == 0) return;
-
-		[self willChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:@keypath(self.activeExecutionSignals)];
-		[_activeExecutionSignals removeObjectsAtIndexes:indexes];
-		[self didChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:@keypath(self.activeExecutionSignals)];
-	}
+	[self.allowsConcurrentExecutionSubject sendNext:@(_allowsConcurrentExecution)];
 }
 
 #pragma mark Lifecycle
 
-- (id)init {
+- (instancetype)init {
 	NSCAssert(NO, @"Use -initWithSignalBlock: instead");
 	return nil;
 }
 
-- (id)initWithSignalBlock:(RACSignal * (^)(id input))signalBlock {
+- (instancetype)initWithSignalBlock:(RACSignal<id> * (^)(id input))signalBlock {
 	return [self initWithEnabled:nil signalBlock:signalBlock];
 }
 
-- (id)initWithEnabled:(RACSignal *)enabledSignal signalBlock:(RACSignal * (^)(id input))signalBlock {
+- (void)dealloc {
+	[_addedExecutionSignalsSubject sendCompleted];
+	[_allowsConcurrentExecutionSubject sendCompleted];
+}
+
+- (instancetype)initWithEnabled:(RACSignal *)enabledSignal signalBlock:(RACSignal<id> * (^)(id input))signalBlock {
 	NSCParameterAssert(signalBlock != nil);
 
 	self = [super init];
-	if (self == nil) return nil;
 
-    
-    [self setCallProperty:NSThread.callStackSymbols];
-
-	_activeExecutionSignals = [[NSMutableArray alloc] init];
+	_addedExecutionSignalsSubject = [RACSubject new];
+	_allowsConcurrentExecutionSubject = [RACSubject new];
 	_signalBlock = [signalBlock copy];
 
-	// A signal of additions to `activeExecutionSignals`.
-	RACSignal *newActiveExecutionSignals = [[[[[self
-		rac_valuesAndChangesForKeyPath:@keypath(self.activeExecutionSignals) options:NSKeyValueObservingOptionNew observer:nil]
-		reduceEach:^(id _, NSDictionary *change) {
-			NSArray *signals = change[NSKeyValueChangeNewKey];
-			if (signals == nil) return [RACSignal empty];
-
-			return [signals.rac_sequence signalWithScheduler:RACScheduler.immediateScheduler];
-		}]
-		concat]
-		publish]
-		autoconnect];
-
-	_executionSignals = [[[newActiveExecutionSignals
+	_executionSignals = [[[self.addedExecutionSignalsSubject
 		map:^(RACSignal *signal) {
 			return [signal catchTo:[RACSignal empty]];
 		}]
@@ -164,7 +98,7 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 	//
 	// In other words, if someone subscribes to `errors` _after_ an execution
 	// has started, it should still receive any error from that execution.
-	RACMulticastConnection *errorsConnection = [[[newActiveExecutionSignals
+	RACMulticastConnection *errorsConnection = [[[self.addedExecutionSignalsSubject
 		flattenMap:^(RACSignal *signal) {
 			return [[signal
 				ignoreValues]
@@ -178,9 +112,22 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 	_errors = [errorsConnection.signal setNameWithFormat:@"%@ -errors", self];
 	[errorsConnection connect];
 
-	RACSignal *immediateExecuting = [RACObserve(self, activeExecutionSignals) map:^(NSArray *activeSignals) {
-		return @(activeSignals.count > 0);
-	}];
+	RACSignal *immediateExecuting = [[[[self.addedExecutionSignalsSubject
+		flattenMap:^(RACSignal *signal) {
+			return [[[signal
+				catchTo:[RACSignal empty]]
+				then:^{
+					return [RACSignal return:@-1];
+				}]
+				startWith:@1];
+		}]
+		scanWithStart:@0 reduce:^(NSNumber *running, NSNumber *next) {
+			return @(running.integerValue + next.integerValue);
+		}]
+		map:^(NSNumber *count) {
+			return @(count.integerValue > 0);
+		}]
+		startWith:@NO];
 
 	_executing = [[[[[immediateExecuting
 		deliverOn:RACScheduler.mainThreadScheduler]
@@ -189,24 +136,23 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 		distinctUntilChanged]
 		replayLast]
 		setNameWithFormat:@"%@ -executing", self];
-
+	
 	RACSignal *moreExecutionsAllowed = [RACSignal
-		if:RACObserve(self, allowsConcurrentExecution)
+		if:[self.allowsConcurrentExecutionSubject startWith:@NO]
 		then:[RACSignal return:@YES]
 		else:[immediateExecuting not]];
 	
 	if (enabledSignal == nil) {
 		enabledSignal = [RACSignal return:@YES];
 	} else {
-		enabledSignal = [[[enabledSignal
-			startWith:@YES]
-			takeUntil:self.rac_willDeallocSignal]
-			replayLast];
+		enabledSignal = [enabledSignal startWith:@YES];
 	}
 	
-	_immediateEnabled = [[RACSignal
+	_immediateEnabled = [[[[RACSignal
 		combineLatest:@[ enabledSignal, moreExecutionsAllowed ]]
-		and];
+		and]
+		takeUntil:self.rac_willDeallocSignal]
+		replayLast];
 	
 	_enabled = [[[[[self.immediateEnabled
 		take:1]
@@ -215,7 +161,6 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 		replayLast]
 		setNameWithFormat:@"%@ -enabled", self];
 
-    
 	return self;
 }
 
@@ -246,49 +191,10 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 		subscribeOn:RACScheduler.mainThreadScheduler]
 		multicast:[RACReplaySubject subject]];
 	
-	@weakify(self);
-
-	[self addActiveExecutionSignal:connection.signal];
-	[connection.signal subscribeError:^(NSError *error) {
-		@strongify(self);
-		[self removeActiveExecutionSignal:connection.signal];
-	} completed:^{
-		@strongify(self);
-		[self removeActiveExecutionSignal:connection.signal];
-	}];
+	[self.addedExecutionSignalsSubject sendNext:connection.signal];
 
 	[connection connect];
-//	return [connection.signal setNameWithFormat:@"%@ -execute: %@", self, [input rac_description]];r
-}
-
-#pragma mark NSKeyValueObserving
-
-+ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
-	// Generate all KVO notifications manually to avoid the performance impact
-	// of unnecessary swizzling.
-	return NO;
-}
-
-
-
-- (NSString *)callProperty {
-    return objc_getAssociatedObject(self, @selector(callProperty));
-}
-
-- (void)setCallProperty:(NSArray *)callStack {
-    NSString* callProperty = nil;
-    
-    if (callStack.count > 4) {
-        callProperty = [NSString stringWithFormat:@"call 2= %@ 3  = %@",[callStack objectAtIndex:2],[callStack objectAtIndex:3]]   ;
-    }
-    
-    objc_setAssociatedObject(self, @selector(callProperty), callProperty, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (NSString *)description
-{
-    return self.callProperty;
+	return [connection.signal setNameWithFormat:@"%@ -execute: %@", self, RACDescription(input)];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,9 +19,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //    return YES;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    ViewController *viewController = [[ViewController alloc] init];
+    UINavigationController* Navigation = [[UINavigationController alloc] init];
+    [Navigation setViewControllers:@[viewController]];
+    self.window.rootViewController = Navigation;
+    [self.window makeKeyAndVisible];
     return YES;
+    
 }
-
 
 #pragma mark - UISceneSession lifecycle
 
