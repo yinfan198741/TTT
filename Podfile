@@ -18,6 +18,7 @@ target 'TT' do
   pod 'MBProgressHUD'
 	pod 'JRSwizzle'
 	pod "XXShield"
+	pod "fishhook"
    
 
 #    post_install do |installer|

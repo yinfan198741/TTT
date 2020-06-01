@@ -1,40 +1,44 @@
 PODS:
+  - fishhook (0.2)
   - GTMBase64 (1.0.1)
   - JRSwizzle (1.0)
   - Masonry (0.6.4)
   - MBProgressHUD (1.2.0)
   - MJExtension (3.0.15.1)
   - ReactiveObjC (3.1.1)
+  - XXShield (2.2.0)
 
 DEPENDENCIES:
+  - fishhook
   - GTMBase64 (~> 1.0.0)
   - JRSwizzle
   - Masonry (~> 0.6.4)
   - MBProgressHUD
   - MJExtension (= 3.0.15.1)
   - ReactiveObjC
+  - XXShield
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
+    - fishhook
     - GTMBase64
     - JRSwizzle
     - Masonry
     - MBProgressHUD
     - MJExtension
     - ReactiveObjC
+    - XXShield
 
 SPEC CHECKSUMS:
+  fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   GTMBase64: f0f91be06a7a20b84c8e4fee30c0430395091d82
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  XXShield: 1627b07bbc34be33040b2fed774cc4bae37c36eb
 
-<<<<<<< HEAD
-PODFILE CHECKSUM: e966adeb29b51fe3d44d84742a6e070dd0f5b7b4
-=======
-PODFILE CHECKSUM: c2f24f2bfd6c44226c160af68a385a92fc39c822
->>>>>>> 965056cd5a122af36ba0582ac89b01f664063732
+PODFILE CHECKSUM: 327a585db04d9a0299af50b70ad164f36a08ba64
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.5.3
