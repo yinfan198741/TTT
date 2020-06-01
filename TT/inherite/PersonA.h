@@ -12,9 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PersonA : NSObject
 
-//{
-//	buyGoods* good;
-//}
+{
+	@public
+	NSString* bbs;
+}
 
 @property (nonatomic ,strong) NSString* name;
 

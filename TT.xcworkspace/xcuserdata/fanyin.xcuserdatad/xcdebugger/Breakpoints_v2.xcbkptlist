@@ -865,16 +865,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "75D3A2DD-9203-4AD0-A046-D7ED45AFC1FE"
+            uuid = "BFD97CF1-5D8E-4313-BA30-219FBA147DD0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TT/HookTest/HookPerson+swizzle.m"
+            filePath = "TT/inherite/StudentA.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "+load"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-setName:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

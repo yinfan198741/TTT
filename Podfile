@@ -16,6 +16,7 @@ target 'TT' do
   pod 'MJExtension', '3.0.15.1'
   pod 'MBProgressHUD'
 	pod 'JRSwizzle'
+	pod "XXShield"
    
 
 #    post_install do |installer|
