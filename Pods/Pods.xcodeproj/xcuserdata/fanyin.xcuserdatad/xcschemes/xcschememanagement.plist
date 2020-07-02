@@ -53,13 +53,6 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>XXShield.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
-		</dict>
 		<key>fishhook.xcscheme</key>
 		<dict>
 			<key>isShown</key>

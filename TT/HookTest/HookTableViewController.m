@@ -12,6 +12,16 @@
 #import "UIViewController+AddParamterAndFunction.h"
 #import "HookStudent.h"
 #import "HookPerson.h"
+#import "fishhook.h"
+
+
+static void (*sys_nslog)(NSString *format,...);
+
+void myNSLog(NSString *format, ...) {
+    format = [format stringByAppendingString:@"hook成功！"];
+    sys_nslog(format);
+    sys_nslog(@"%s",__func__);
+}
 
 @interface HookTableViewController ()
 @property (nonatomic, strong) NSMutableArray* source;
@@ -47,6 +57,16 @@
 		[self hookStudentSwizz];
 	}];
 	[self.source addObject:hookStudentSwizz];
+	
+	TabItem* fishhookTest = [TabItem CreateItem:@"fishhookTest" action:^{
+	  [self fishhookTest];
+	}];
+	[self.source addObject:fishhookTest];
+	
+	TabItem* fishhookLog = [TabItem CreateItem:@"fishhookLog" action:^{
+	  [self fishhookLog];
+	}];
+	[self.source addObject:fishhookLog];
   
 }
 
@@ -96,6 +116,35 @@
 //	HookPerson* hp = [[HookPerson alloc] init];
 //	[hp sayHello];
 	
+}
+
+
+- (void)fishhookTest
+{
+
+	
+	NSLog(@"#fishhookTest");
+	
+	
+	struct rebinding rebindInfo;
+    rebindInfo.name = "NSLog";
+    rebindInfo.replacement = myNSLog;
+    rebindInfo.replaced = (void *)&sys_nslog;
+    
+    struct rebinding rebs[1] = {rebindInfo};
+    /**
+     重新绑定符号
+
+     @param rebindings#> 存放rebingding结构体的数组 description#>
+     @param rebindings_nel#> 数组的长度 description#>
+     @return return value description
+     */
+    rebind_symbols(rebs, 1);
+}
+
+- (void)fishhookLog
+{
+	NSLog(@"fishhookLog");
 }
 
 

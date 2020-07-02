@@ -23,4 +23,8 @@
 	return _good;
 }
 
+- (void)callName
+{
+	NSLog(@"PersonA callName");
+}
 @end
