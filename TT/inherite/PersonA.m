@@ -10,7 +10,10 @@
 
 
 
+
 @implementation PersonA
+
+
 @synthesize good = _good;
 
 -(buyGoods*)good
@@ -22,5 +25,16 @@
 	}
 	return _good;
 }
+
+- (NSInteger)getAge
+{
+    return _age;
+}
+
+
+//- (void)callName
+//{
+//    NSLog(@"callName PersonA");
+//}
 
 @end

@@ -98,6 +98,32 @@
 	
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7.0) {
+            self.navigationController.delegate = self;
+        }
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7.0) {
+           self.navigationController.delegate = nil;
+       }
+}
+
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    id <UIViewControllerTransitionCoordinator>tc = navigationController.topViewController.transitionCoordinator;
+    [tc notifyWhenInteractionChangesUsingBlock:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        BOOL isCancelled = [context isCancelled];
+        NSLog(@"isCancelled = %@",isCancelled ? @"YES": @"NO");
+    }];
+}
+
 
 - (void)dealloc
 {

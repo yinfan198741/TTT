@@ -10,4 +10,10 @@
 
 @implementation StudentA
 
+- (void)callName
+{
+    [super callName];
+    NSLog(@"StudentA callName");
+}
+
 @end

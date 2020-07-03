@@ -91,21 +91,18 @@ UILabel* _la;
     //        NSLog(@"ttttt");
     //    }];
 	
-<<<<<<< HEAD
     
     TabItem* NSNumericSearch = [TabItem CreateItem:@"NSNumericSearch" action:^{
         [self NSNumericSearch];
     }];
     [self.source addObject:NSNumericSearch];
     
-=======
 	TabItem* hookTest = [TabItem CreateItem:@"hookTest" action:^{
 		[self hookTest];
 	}];
 	[self.source addObject:hookTest];
 	
 	
->>>>>>> 965056cd5a122af36ba0582ac89b01f664063732
     
     TabItem* morethread = [TabItem CreateItem:@"morethread" action:^{
         [self morethread];
@@ -487,9 +484,18 @@ UILabel* _la;
 //  _la.text = [NSString stringWithFormat:@"%d",va];
 //  AViewController* ac = [[AViewController alloc] init];
 //  UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:ac];
-
+//    self = nil;
+   __weak __typeof__(self) weakSelf = self;
+    
   [self presentViewController:[AViewController createNavigationControler]
-                     animated:true completion:nil];
+                     animated:true completion:^{
+      
+      typeof(self);
+//     __strong ViewController* self = weakSelf;
+//      self = nil;
+//      [self kvoTest];
+      
+  }];
 }
 
 - (void)click {
@@ -728,11 +734,14 @@ UILabel* _la;
 	stA.name = @"name";
 	stA.age = 10;
 	stA.schoolName = @"pixian middel school";
+    
+    [stA callName];
+//    [stA s]
 	
-	NSLog(@"stA %@",stA);
-	NSLog(@"stA.good.goodName %@",stA.good.goodName);
-	stA.good.goodName = @"new good name";
-	NSLog(@"stA.good.goodName %@",stA.good.goodName);
+//	NSLog(@"stA %@",stA);
+//	NSLog(@"stA.good.goodName %@",stA.good.goodName);
+//	stA.good.goodName = @"new good name";
+//	NSLog(@"stA.good.goodName %@",stA.good.goodName);
 }
 
 

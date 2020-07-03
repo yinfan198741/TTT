@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic ,strong, readonly) buyGoods* good;
 
+- (void)callName;
+
 @end
 
 NS_ASSUME_NONNULL_END

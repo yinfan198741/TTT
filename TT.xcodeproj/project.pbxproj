@@ -92,6 +92,7 @@
 		B5351A14239A5B04003A359E /* aaA.m in Sources */ = {isa = PBXBuildFile; fileRef = B5351A13239A5B04003A359E /* aaA.m */; };
 		B53A7A9723599B870013E9F9 /* LableTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7A9623599B870013E9F9 /* LableTestViewController.m */; };
 		B53F202121AFE726006A8D3F /* HashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F202021AFE726006A8D3F /* HashViewController.m */; };
+		B547955A24AE0D5B00DAB071 /* NSObject+callName.m in Sources */ = {isa = PBXBuildFile; fileRef = B547955924AE0D5B00DAB071 /* NSObject+callName.m */; };
 		B54E79EC23405FA00035915B /* SecondPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79EB23405FA00035915B /* SecondPageViewController.m */; };
 		B54E79EF234061630035915B /* BasicTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79EE234061630035915B /* BasicTestViewController.m */; };
 		B54E79F22340626E0035915B /* DynamicSysTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E79F12340626E0035915B /* DynamicSysTest.m */; };
@@ -397,6 +398,8 @@
 		B53A7A9623599B870013E9F9 /* LableTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LableTestViewController.m; sourceTree = "<group>"; };
 		B53F201F21AFE726006A8D3F /* HashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashViewController.h; sourceTree = "<group>"; };
 		B53F202021AFE726006A8D3F /* HashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HashViewController.m; sourceTree = "<group>"; };
+		B547955824AE0D5B00DAB071 /* NSObject+callName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+callName.h"; sourceTree = "<group>"; };
+		B547955924AE0D5B00DAB071 /* NSObject+callName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+callName.m"; sourceTree = "<group>"; };
 		B54E79EA23405FA00035915B /* SecondPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondPageViewController.h; sourceTree = "<group>"; };
 		B54E79EB23405FA00035915B /* SecondPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondPageViewController.m; sourceTree = "<group>"; };
 		B54E79ED234061630035915B /* BasicTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicTestViewController.h; sourceTree = "<group>"; };
@@ -645,6 +648,8 @@
 				A74003C5238A87A600BAA62E /* StudentA.m */,
 				A74003C7238A924200BAA62E /* buyGoods.h */,
 				A74003C8238A924200BAA62E /* buyGoods.m */,
+				B547955824AE0D5B00DAB071 /* NSObject+callName.h */,
+				B547955924AE0D5B00DAB071 /* NSObject+callName.m */,
 			);
 			path = inherite;
 			sourceTree = "<group>";
@@ -1755,6 +1760,7 @@
 				B54E79F22340626E0035915B /* DynamicSysTest.m in Sources */,
 				A7400403238EBD2400BAA62E /* DDNumber.m in Sources */,
 				A7400406238EBD2400BAA62E /* HTTPServer.m in Sources */,
+				B547955A24AE0D5B00DAB071 /* NSObject+callName.m in Sources */,
 				B54E79F623409FCE0035915B /* DynamicSysTest+DySenteic.m in Sources */,
 				B50AD6EC2340B1AF002DE97C /* DynamicSysTest+TestMethodConver.m in Sources */,
 				A7DD1144245E724C001DC1B3 /* HookPerson.m in Sources */,
