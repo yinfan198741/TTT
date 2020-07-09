@@ -83,7 +83,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "330"
             endingLineNumber = "330"
-            landmarkName = "-commandcocurent"
+            landmarkName = "-combineCommand"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -489,7 +489,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "462"
             endingLineNumber = "462"
-            landmarkName = "-switchToLatestTest"
+            landmarkName = "-swtichtoLastAsynTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -506,7 +506,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "456"
             endingLineNumber = "456"
-            landmarkName = "-switchToLatestTest"
+            landmarkName = "-swtichtoLastAsynTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -540,7 +540,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "405"
             endingLineNumber = "405"
-            landmarkName = "-swtichtoLastAsynTest"
+            landmarkName = "-RACSubjectTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -557,8 +557,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "395"
             endingLineNumber = "395"
-            landmarkName = "@implementation RACTestViewController"
-            landmarkType = "3">
+            landmarkName = "-RACSubjectTest"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -574,7 +574,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "384"
             endingLineNumber = "384"
-            landmarkName = "-RACSubjectTest"
+            landmarkName = "-RACDisposableTest"
             landmarkType = "7">
             <Locations>
                <Location
@@ -623,7 +623,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1089"
             endingLineNumber = "1089"
-            landmarkName = "-trycatchTest"
+            landmarkName = "-RacSubjectTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -640,8 +640,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1099"
             endingLineNumber = "1099"
-            landmarkName = "@implementation RACTestViewController"
-            landmarkType = "3">
+            landmarkName = "-trycatchTest"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "DC129D80-CFD9-4833-AF6B-41E6FDB6DEEE - 360e0b57be671c1d"
@@ -689,7 +689,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1103"
             endingLineNumber = "1103"
-            landmarkName = "-autoConnectTest"
+            landmarkName = "-trycatchTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -724,23 +724,6 @@
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "-autoconnect"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D663D966-5CAE-41F4-8A2D-4C72A6CB7A8D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveObjC/ReactiveObjC/RACKVOTrampoline.m"
-            timestampString = "599920723.348152"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-initWithTarget:observer:keyPath:options:block:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -782,7 +765,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9145854F-588D-4FC4-8432-7206492F40A7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/ReactiveObjC/ReactiveObjC/NSObject+RACKVOWrapper.m"
@@ -823,8 +806,8 @@
             timestampString = "610169729.858539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "-hookSwizz"
             landmarkType = "7">
          </BreakpointContent>
@@ -849,32 +832,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4D4780CD-70DF-4ACE-9437-864907DE5BAD"
+            uuid = "EE70CF43-3359-4E0B-9A55-CBEC72DB8951"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TT/HookTest/HookStudent+swizzle.m"
+            filePath = "TT/HookTest/HookTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "+load"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "75D3A2DD-9203-4AD0-A046-D7ED45AFC1FE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TT/HookTest/HookPerson+swizzle.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "+load"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "-fishhookTest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

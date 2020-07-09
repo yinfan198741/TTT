@@ -14,6 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString* schoolName;
 
+
+@property (nonatomic, copy) dispatch_block_t myBlock;
+
+
+- (void)callName;
+
+- (void)callTT;
 @end
 
 NS_ASSUME_NONNULL_END

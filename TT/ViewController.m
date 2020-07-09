@@ -738,6 +738,7 @@ UILabel* _la;
     [stA callName];
 //    [stA s]
 	
+	[stA callTT];
 //	NSLog(@"stA %@",stA);
 //	NSLog(@"stA.good.goodName %@",stA.good.goodName);
 //	stA.good.goodName = @"new good name";

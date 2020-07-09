@@ -37,4 +37,8 @@
 //    NSLog(@"callName PersonA");
 //}
 
+- (void)callName
+{
+	NSLog(@"PersonA callName");
+}
 @end
