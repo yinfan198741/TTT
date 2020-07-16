@@ -15,6 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)sayHello;
 
+
+- (void)run;
+
+- (void)eat;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -67,6 +67,11 @@ void myNSLog(NSString *format, ...) {
 	  [self fishhookLog];
 	}];
 	[self.source addObject:fishhookLog];
+    
+    TabItem* runhook = [TabItem CreateItem:@"runhook" action:^{
+      [self runhook];
+    }];
+    [self.source addObject:runhook];
   
 }
 
@@ -178,6 +183,27 @@ void myNSLog(NSString *format, ...) {
 {
 	
 	
+}
+
+
+- (void)runhook
+{
+    NSLog(@"runhook start************");
+    
+    HookPerson* p = [[HookPerson alloc] init];
+     NSLog(@"HookPerson 111");
+    [p run];
+    [p eat];
+     NSLog(@"HookPerson 222");
+    
+    HookStudent* s = [[HookStudent alloc] init];
+    
+    NSLog(@"HookStudent 111");
+    [s run];
+    [s eat];
+    NSLog(@"HookStudent 222");
+    
+    NSLog(@"runhook end************");
 }
 
 @end
