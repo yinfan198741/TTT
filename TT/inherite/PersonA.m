@@ -32,6 +32,7 @@
 }
 
 
+
 //- (void)callName
 //{
 //    NSLog(@"callName PersonA");
@@ -41,4 +42,28 @@
 {
 	NSLog(@"PersonA callName");
 }
+
+- (void)abcttt:(NSInteger)tt
+{
+    
+}
+
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+{
+    Method method = class_getInstanceMethod([self class], @selector(abcttt:));
+    return [NSMethodSignature signatureWithObjCTypes:method_getTypeEncoding(method)];
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation
+{
+    int aaa;
+//    [anInvocation getArgument:&aaa atIndex:0];
+     [anInvocation getArgument:&aaa atIndex:2];
+    
+    NSLog(@"%d", aaa);
+    kill(getpid(), 9);
+}
+
+
 @end

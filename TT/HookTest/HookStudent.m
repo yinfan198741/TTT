@@ -35,7 +35,21 @@
                                                  method_getTypeEncoding(eatM));
     
     
-    method_exchangeImplementations(runM, eatM);
+
+    
+    Method runMs =  class_getInstanceMethod([self superclass], @selector(run));
+    Method eatMs =  class_getInstanceMethod([self superclass], @selector(eat));
+    
+    NSLog(@"123");
+
+    
+    Method runM3 =  class_getInstanceMethod([self class], @selector(run));
+    Method eatM3 =  class_getInstanceMethod([self class], @selector(eat));
+    
+    
+    method_exchangeImplementations(runM3, eatM3);
+    
+     NSLog(@"123");
 }
 
 

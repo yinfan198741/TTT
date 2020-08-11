@@ -21,7 +21,7 @@
     NSLog(@"HookPersonload");
     Method runM =  class_getInstanceMethod([self class], @selector(run));
     Method eatM =  class_getInstanceMethod([self class], @selector(eat));
-    method_exchangeImplementations(runM, eatM);
+//    method_exchangeImplementations(runM, eatM);
 }
 
 

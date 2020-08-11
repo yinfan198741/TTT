@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "buyGoods.h"
+#import <objc/runtime.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PersonA : NSObject
@@ -29,6 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)callName;
 
+
+- (void)abc:(NSInteger)tt;
+
+
+
+- (void)abcttt:(NSInteger)tt;
 @end
 
 NS_ASSUME_NONNULL_END

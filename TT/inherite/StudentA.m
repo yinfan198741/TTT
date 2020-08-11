@@ -32,6 +32,21 @@
 
 
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self class]; // sa
+        [super class];// sa
+    }
+    return self;
+}
+
+- (id)class
+{
+    return object_getClass(self);
+}
+
 -(void)testBlockSuper
 {
 	

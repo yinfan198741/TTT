@@ -414,28 +414,48 @@ UILabel* _la;
 
 - (void)morethread
 {
-    NSLog(@"morethread start");
-    int times = 1000;
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        for (int i = 0; i < times ; i++) {
-               dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                   self.morethreadString = [NSString stringWithFormat:@"%d",i];
-                   self.morethreadArray = @[@"test"];
-               });
-           }
-    });
-   
-     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-    for (int i = 0; i < times ; i++) {
+//    NSLog(@"morethread start");
+//    int times = 1000;
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        for (int i = 0; i < times ; i++) {
+//               dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//                   self.morethreadString = [NSString stringWithFormat:@"%d",i];
+//                   self.morethreadArray = @[@"test"];
+//               });
+//           }
+//    });
+//
+//     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//    for (int i = 0; i < times ; i++) {
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            NSString* t = self.morethreadString;
+//            NSArray* array =  self.morethreadArray;
+//            NSLog(@"%@",t);
+//            NSLog(@"%@",array);
+//        });
+//    }
+//     });
+//     NSLog(@"morethread end");
+    
+    
+    
+    NSProcessInfo* info = [NSProcessInfo processInfo];
+    
+    
+    __block int* a = malloc(sizeof(int) * 1000);// [1000];
+    NSMutableArray *originArray = [NSMutableArray arrayWithCapacity:1000000];
+    for (int i = 0 ; i < 1000; i++) {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            NSString* t = self.morethreadString;
-            NSArray* array =  self.morethreadArray;
-            NSLog(@"%@",t);
-            NSLog(@"%@",array);
+            NSString* obj = [NSString stringWithFormat:@"item%ld", i];
+            NSInteger count = [originArray count];
+//            NSLog(@"count = %d",count);
+            [originArray addObject:obj];
+//            a[i] = i;
+                        
         });
     }
-     });
-     NSLog(@"morethread end");
+    
+  
 }
 
 - (void)sendEmail
@@ -750,9 +770,11 @@ UILabel* _la;
 {
 	NSLog(@"logText");
 
-	[self createTimer];
-
-	
+//	[self createTimer];
+    
+    
+    PersonA * pp  = [[PersonA alloc] init];
+    [pp abc:10];
 	
 //	NSMutableString* a = [[NSMutableString alloc] initWithCapacity:10];
 //	[a appendString:@"123"];
