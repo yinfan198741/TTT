@@ -16,18 +16,18 @@
 	NSLog(@"person say hello");
 }
 
-+ (void)load
-{
-    NSLog(@"HookPersonload");
-    Method runM =  class_getInstanceMethod([self class], @selector(run));
-    Method eatM =  class_getInstanceMethod([self class], @selector(eat));
-//    method_exchangeImplementations(runM, eatM);
-}
+//+ (void)load
+//{
+//    NSLog(@"HookPersonload");
+//    Method runM =  class_getInstanceMethod([self class], @selector(run));
+//    Method eatM =  class_getInstanceMethod([self class], @selector(eat));
+////    method_exchangeImplementations(runM, eatM);
+//}
 
 
 - (void)run
 {
-    NSLog(@"selector = %@ person run", NSStringFromSelector(_cmd));
+    NSLog(@"self = %@ selector = %@ person run", self, NSStringFromSelector(_cmd));
 }
 
 - (void)eat

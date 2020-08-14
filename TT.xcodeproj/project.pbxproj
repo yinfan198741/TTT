@@ -131,6 +131,7 @@
 		B568B97E22433787001B8571 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B568B97D22433787001B8571 /* SecondViewController.m */; };
 		B568B980224337B3001B8571 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B568B97F224337B3001B8571 /* Storyboard.storyboard */; };
 		B568B9862243407B001B8571 /* SBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B568B9852243407B001B8571 /* SBViewController.m */; };
+		B56C4CDF24E66F500020087E /* HookBird.m in Sources */ = {isa = PBXBuildFile; fileRef = B56C4CDE24E66F500020087E /* HookBird.m */; };
 		B56FBC6621E44721003694E1 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6521E44721003694E1 /* Service.m */; };
 		B56FBC6921E44757003694E1 /* RACTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6821E44757003694E1 /* RACTester.m */; };
 		B56FBC6C21E47E90003694E1 /* Swear.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FBC6B21E47E90003694E1 /* Swear.m */; };
@@ -468,6 +469,8 @@
 		B568B97F224337B3001B8571 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		B568B9842243407B001B8571 /* SBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBViewController.h; sourceTree = "<group>"; };
 		B568B9852243407B001B8571 /* SBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBViewController.m; sourceTree = "<group>"; };
+		B56C4CDD24E66F500020087E /* HookBird.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookBird.h; sourceTree = "<group>"; };
+		B56C4CDE24E66F500020087E /* HookBird.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookBird.m; sourceTree = "<group>"; };
 		B56FBC6421E44721003694E1 /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		B56FBC6521E44721003694E1 /* Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
 		B56FBC6721E44757003694E1 /* RACTester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTester.h; sourceTree = "<group>"; };
@@ -1235,6 +1238,8 @@
 				A7DD114C245E7378001DC1B3 /* HookStudent+swizzle.m */,
 				A7DD114E245E73AC001DC1B3 /* HookPerson+swizzle.h */,
 				A7DD114F245E73AC001DC1B3 /* HookPerson+swizzle.m */,
+				B56C4CDD24E66F500020087E /* HookBird.h */,
+				B56C4CDE24E66F500020087E /* HookBird.m */,
 			);
 			path = HookTest;
 			sourceTree = "<group>";
@@ -1778,6 +1783,7 @@
 				B5BFE3F4222F64F700B6CFAC /* mutating.swift in Sources */,
 				B5BFE3C1222E59AC00B6CFAC /* Book.swift in Sources */,
 				A74003C6238A87A600BAA62E /* StudentA.m in Sources */,
+				B56C4CDF24E66F500020087E /* HookBird.m in Sources */,
 				B53F202121AFE726006A8D3F /* HashViewController.m in Sources */,
 				B5001DEA224BA38D002D15FF /* MJUser.m in Sources */,
 				A734877D23CB4259000B9564 /* SOUnsafeObject.m in Sources */,

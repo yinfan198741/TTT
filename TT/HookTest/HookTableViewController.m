@@ -13,6 +13,7 @@
 #import "HookStudent.h"
 #import "HookPerson.h"
 #import "fishhook.h"
+#import "HookBird.h"
 
 
 static void (*sys_nslog)(NSString *format,...);
@@ -190,18 +191,37 @@ void myNSLog(NSString *format, ...) {
 {
     NSLog(@"runhook start************");
     
-    HookPerson* p = [[HookPerson alloc] init];
-     NSLog(@"HookPerson 111");
-    [p run];
-    [p eat];
-     NSLog(@"HookPerson 222");
+//    HookPerson* p = [[HookPerson alloc] init];
+//     NSLog(@"HookPerson 111");
+//    [p run];
+//    [p eat];
+//     NSLog(@"HookPerson 222");
+//
+//    HookStudent* s = [[HookStudent alloc] init];
+//
+//    NSLog(@"HookStudent 111");
+//    [s run];
+//    [s eat];
+//    NSLog(@"HookStudent 222");
+    
+    
+//    HookPerson* p = [[HookPerson alloc] init];
     
     HookStudent* s = [[HookStudent alloc] init];
     
-    NSLog(@"HookStudent 111");
-    [s run];
-    [s eat];
-    NSLog(@"HookStudent 222");
+    HookBird* b = [[HookBird alloc] init];
+    
+    
+//    [p run];
+    
+    
+    [s study];
+//    [s run];
+    
+    [b fly:10];
+    
+    
+    
     
     NSLog(@"runhook end************");
 }

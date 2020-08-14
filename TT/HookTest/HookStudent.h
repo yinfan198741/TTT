@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 //- (void)eat;
 
+
+- (void)study;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

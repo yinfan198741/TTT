@@ -36,6 +36,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (void)abcttt:(NSInteger)tt;
+
+
+-(void)pp;
+
 @end
 
 NS_ASSUME_NONNULL_END

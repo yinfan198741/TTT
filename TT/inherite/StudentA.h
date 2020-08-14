@@ -21,6 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)callName;
 
 - (void)callTT;
+
+
+
+-(void)ss;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
