@@ -528,7 +528,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1440"
                   endingLineNumber = "1440"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "60">
                </Location>
                <Location
                   uuid = "47E2257D-80E5-42EF-B7C1-D91C511B0947 - 51a1c5db8f9ab6eb"
@@ -899,7 +899,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "58"
                   endingLineNumber = "58"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "28">
                </Location>
                <Location
                   uuid = "5E406DB9-15EE-424F-9E34-888E126512D1 - c7bac354ef4838bd"
@@ -914,7 +914,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "59"
                   endingLineNumber = "59"
-                  offsetFromSymbolStart = "51">
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1016,8 +1016,8 @@
             filePath = "TT/HookTest/HookTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "-runhook"
             landmarkType = "7">
          </BreakpointContent>
@@ -1025,31 +1025,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0CAC8F36-11C9-47AC-AD3D-C4202A9C38EB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TT/HookTest/HookBird.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "-fly:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1A6D8E45-F684-4DBC-B14B-7BB8E44A98DA"
+            uuid = "51C49E4B-F78F-429A-9AF9-74F01256017A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TT/HookTest/HookStudent.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "-study"
             landmarkType = "7">
          </BreakpointContent>
@@ -1057,32 +1041,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EAC88919-DB92-4658-B8EB-22DF699A00DC"
+            uuid = "3E811EB9-7507-4400-925F-A8E6BDD46D4E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TT/HookTest/HookStudent.m"
+            filePath = "TT/HookTest/HookBird.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "+load"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B1A26B2B-9B9A-4820-A0D1-A34C9539EACA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TT/HookTest/HookStudent.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "+load"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-fly:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

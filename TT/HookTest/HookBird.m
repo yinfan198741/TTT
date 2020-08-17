@@ -20,10 +20,12 @@
     return self;
 }
 
-- (void)fly:(NSInteger)age
+- (void)fly:(NSInteger)ageshi
 {
     
     NSLog(@"self = %@ selector = %@ HookBird fly", self, NSStringFromSelector(_cmd));
+    
+    NSLog(@"123");
     
    if([self respondsToSelector:@selector(name)])
    {

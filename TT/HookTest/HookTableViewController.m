@@ -213,7 +213,13 @@ void myNSLog(NSString *format, ...) {
     
     
 //    [p run];
+
     
+/*
+#交换了方法
+#1 方法里面的self 会变
+#2 方法里面的cmd 会变
+*/
     
     [s study];
 //    [s run];

@@ -75,10 +75,12 @@
     
     char* ss = "123";
     
-    sss sf;
+    sss *sf = malloc(sizeof(sss));
+    sf->a = 0x12345678;
+    sf->b = 0x78563412;
     
-    void (*tt)(sss, char*) = s;
-    tt(sf,"1");
+//    void (*tt)(sss*, char*) = s;
+//    tt(sf,"1");
     
     
     method_exchangeImplementations(study, fly);
@@ -87,7 +89,8 @@
 
 - (void)study
 {
-      NSLog(@"self = %@ selector = %@ HookStudent study", self, NSStringFromSelector(_cmd));
+//    NSLog(@"123");
+      NSLog(@"self = %p selector = %@ HookStudent study", self, NSStringFromSelector(_cmd));
 }
 
 //- (void)run
