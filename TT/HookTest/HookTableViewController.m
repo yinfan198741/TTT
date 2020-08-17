@@ -203,8 +203,12 @@ void myNSLog(NSString *format, ...) {
 //    [s run];
 //    [s eat];
 //    NSLog(@"HookStudent 222");
+    HookPerson*  p = [[HookPerson alloc] init];
+    NSLog(@"HookPerson = %@",p);
+    [p run];
     
     
+    return;
 //    HookPerson* p = [[HookPerson alloc] init];
     
     HookStudent* s = [[HookStudent alloc] init];
