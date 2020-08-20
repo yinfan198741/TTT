@@ -36,4 +36,24 @@
 }
 
 
+-(void)dealloc
+{
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+         [self TTTS];
+    });
+   
+}
+
+- (void)TTTS
+{
+    
+    NSLog(@"123");
+    
+    __weak __typeof(self)weak_self = self;
+    
+     NSLog(@"%@", weak_self);
+}
+
+
 @end

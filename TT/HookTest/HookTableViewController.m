@@ -205,7 +205,7 @@ void myNSLog(NSString *format, ...) {
 //    NSLog(@"HookStudent 222");
     HookPerson*  p = [[HookPerson alloc] init];
     NSLog(@"HookPerson = %@",p);
-    [p run];
+//    [p run];
     
     
     return;
