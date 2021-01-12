@@ -122,6 +122,7 @@
 		B55B404E21B61964005CADF3 /* dyLibTest.h in Headers */ = {isa = PBXBuildFile; fileRef = B55B403E21B61964005CADF3 /* dyLibTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B55B405B21B6198C005CADF3 /* dyLibHello.h in Headers */ = {isa = PBXBuildFile; fileRef = B55B405921B6198C005CADF3 /* dyLibHello.h */; };
 		B55B405C21B6198C005CADF3 /* dyLibHello.c in Sources */ = {isa = PBXBuildFile; fileRef = B55B405A21B6198C005CADF3 /* dyLibHello.c */; };
+		B5600FED256D32B6006098C1 /* RACSignal+PP.m in Sources */ = {isa = PBXBuildFile; fileRef = B5600FEC256D32B6006098C1 /* RACSignal+PP.m */; };
 		B5670EF3215F11C90014807D /* ExceptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EED215F11C90014807D /* ExceptionModel.m */; };
 		B5670EF4215F11C90014807D /* SignalHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EEE215F11C90014807D /* SignalHandler.m */; };
 		B5670EF5215F11C90014807D /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5670EF1215F11C90014807D /* UncaughtExceptionHandler.m */; };
@@ -452,6 +453,8 @@
 		B55B404D21B61964005CADF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55B405921B6198C005CADF3 /* dyLibHello.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dyLibHello.h; sourceTree = "<group>"; };
 		B55B405A21B6198C005CADF3 /* dyLibHello.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dyLibHello.c; sourceTree = "<group>"; };
+		B5600FEB256D32B6006098C1 /* RACSignal+PP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RACSignal+PP.h"; sourceTree = "<group>"; };
+		B5600FEC256D32B6006098C1 /* RACSignal+PP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+PP.m"; sourceTree = "<group>"; };
 		B5670EED215F11C90014807D /* ExceptionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionModel.m; sourceTree = "<group>"; };
 		B5670EEE215F11C90014807D /* SignalHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalHandler.m; sourceTree = "<group>"; };
 		B5670EEF215F11C90014807D /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
@@ -867,6 +870,7 @@
 		A7D8FA6C1E9B2BBA00ED8D03 /* TT */ = {
 			isa = PBXGroup;
 			children = (
+				B514E2962551606300D8E083 /* ARM64 */,
 				B50E556C241881B900FC6A95 /* a.txt */,
 				A734877A23CB4237000B9564 /* DeallocTest */,
 				A7BCA03C23C0E9B300EAF4BE /* KVO */,
@@ -997,6 +1001,13 @@
 				B50EE5522237547D00DAA18A /* BundleViewController.m */,
 			);
 			path = BundleTest;
+			sourceTree = "<group>";
+		};
+		B514E2962551606300D8E083 /* ARM64 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ARM64;
 			sourceTree = "<group>";
 		};
 		B53A7A9423599B490013E9F9 /* UIlabel */ = {
@@ -1197,6 +1208,8 @@
 				A714906923099F5200A59AB2 /* RacDemoViewController.m */,
 				A78ED85B232D15C1001A8172 /* FPRViewController.h */,
 				A78ED85C232D15C1001A8172 /* FPRViewController.m */,
+				B5600FEB256D32B6006098C1 /* RACSignal+PP.h */,
+				B5600FEC256D32B6006098C1 /* RACSignal+PP.m */,
 			);
 			path = RACTest;
 			sourceTree = "<group>";
@@ -1424,6 +1437,7 @@
 				A7D8FA661E9B2BBA00ED8D03 /* Sources */,
 				A7D8FA671E9B2BBA00ED8D03 /* Frameworks */,
 				A7D8FA681E9B2BBA00ED8D03 /* Resources */,
+				6D6869A7874D2FA6A43FE39C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1728,6 +1742,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6D6869A7874D2FA6A43FE39C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TT/Pods-TT-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TT/Pods-TT-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B53DCA5023FACE3A0059FA21 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1777,6 +1815,7 @@
 				B5CCFA0B22CB7C1F00858BC5 /* VCBaseViewController.m in Sources */,
 				A7400404238EBD2400BAA62E /* DDData.m in Sources */,
 				B568B97E22433787001B8571 /* SecondViewController.m in Sources */,
+				B5600FED256D32B6006098C1 /* RACSignal+PP.m in Sources */,
 				A74003FD238EBD2400BAA62E /* HTTPConnection.m in Sources */,
 				A74003FF238EBD2400BAA62E /* MultipartMessageHeaderField.m in Sources */,
 				B5BFE3EE222E972800B6CFAC /* functionPrograme.swift in Sources */,

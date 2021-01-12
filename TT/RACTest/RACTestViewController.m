@@ -13,6 +13,7 @@
 #import "MBProgressHUD.h"
 #import "MJUser.h"
 #import "RACPassthroughSubscriber.h"
+#import "RACSignal+PP.h"
 
 @interface RACTestViewController ()
 
@@ -546,6 +547,32 @@
 //	https://github.com/ReactiveCocoa/ReactiveCocoa/issues/3415
 	
 	
+    
+    RACSubject *signalOfSignals = [RACSubject subject];
+    RACSubject *signalA = [RACSubject subject];
+    RACSubject *signalB = [RACSubject subject];
+    // 获取信号中信号最近发出信号，订阅最近发出的信号。
+    // 注意switchToLatest：只能用于信号中的信号
+//    [signalOfSignals.switchToLatest subscribeNext:^(id x) {
+//        NSLog(@"%@",x);
+//    }];
+    
+    RACSignal* signal = signalOfSignals.switchToLatest;
+    [signal subscribeNext:^(id  _Nullable x) {
+          NSLog(@"%@",x);
+    } completed:^{
+         NSLog(@"completed");
+    }];
+    
+    [signalOfSignals sendNext:signalA];
+    [signalOfSignals sendNext:signalB];
+   
+    [signalB sendNext:@"signalB"];
+    [signalA sendNext:@"signalA"];
+   
+    
+    return;
+    
 	
 	RACSubject *signalofsignal = [RACSubject subject];
 	RACSubject *signal1 = [RACSubject subject];
@@ -554,18 +581,26 @@
 	
 	
     ///热信号?? 这里要好好看看
+//    [signalofsignal.switchToLatest subscribeNext:^(id  _Nullable x) {
+//    }];
+//
+    
     [signalofsignal.switchToLatest subscribeNext:^(id  _Nullable x) {
         NSLog(@"signalofsignal.switchToLatest x2 = %@",x);
+    } completed:^{
+         NSLog(@"signalofsignal.switchToLatest");
     }];
+    
     
     [signalofsignal sendNext:signal1];
     [signalofsignal sendNext:signal2];
 	[signalofsignal sendNext:signal3];
 	
-	
-	[signal3 sendNext:@"3"];
 	[signal1 sendNext:@"1"];
-	[signal2 sendNext:@"2"];
+    [signal2 sendNext:@"2"];
+	[signal3 sendNext:@"3"];
+	
+	
 	
 	
 //#if 1
@@ -1545,15 +1580,44 @@
 //           NSLog(@"subscribeNext x = %@",x);
 //       }];
     
-    RACSignal* demoSignal = [self createDemoSignal];
+//    RACSignal* demoSignal = [self createDemoSignal];
+//
+//
+//    [[demoSignal takeLoading] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"takeLoading");
+//    }];
     
-    demoSignal = [[demoSignal publish] autoconnect];
     
-    [self subScribeForLoading:demoSignal];
+//    demoSignal = [[demoSignal publish] autoconnect];
+//
+//    [self subScribeForLoading:demoSignal];
+//
+//    [self subScribeAndShowLoadig:demoSignal];
     
-    [self subScribeAndShowLoadig:demoSignal];
+
     
+    RACSignal* sourceSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,  (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [subscriber sendNext:@"____123"];
+            [subscriber sendCompleted];
+        });
+        return nil;
+    }];
+    
+    
+    RACDisposable* di = [[sourceSignal takeLoading] subscribeNext:^(id  _Nullable x) {
+       NSLog(@"subscribeNext");
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [di dispose];
+    });
+    
+
 }
+
+
+
 
 - (RACSignal*) createDemoSignal {
     RACSignal* demoSignal =  [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {

@@ -38,6 +38,7 @@
 #import "KVOTestVC.h"
 #import "StudentA.h"
 #import "PersonA.h"
+#import "MMKV.h"
 
 
 @interface ViewController ()
@@ -773,8 +774,8 @@ UILabel* _la;
 //	[self createTimer];
     
     
-    PersonA * pp  = [[PersonA alloc] init];
-    [pp abc:10];
+//    PersonA * pp  = [[PersonA alloc] init];
+//    [pp abc:10];
 	
 //	NSMutableString* a = [[NSMutableString alloc] initWithCapacity:10];
 //	[a appendString:@"123"];
@@ -798,8 +799,29 @@ UILabel* _la;
 //
 //	}
 	
-	
-	
+    int abc = 0x12345;
+    char* data = "大强🧱";
+    int bcd = 0x54321;
+    NSString* a = [NSString stringWithCString:data encoding:NSUTF8StringEncoding];
+    NSInteger length = a.length;
+    NSLog(@"length = %ld", length);
+    NSData* dd = [a dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* dd2 = [a dataUsingEncoding:NSUTF16StringEncoding];
+    NSLog(@"123");
+    
+    
+    
+//    MMKV *mmkv = [MMKV defaultMMKV];
+//        
+//    [mmkv setBool:YES forKey:@"bool"];
+//    BOOL bValue = [mmkv getBoolForKey:@"bool"];
+//        
+//    [mmkv setInt32:-1024 forKey:@"int32"];
+//    int32_t iValue = [mmkv getInt32ForKey:@"int32"];
+//        
+//    [mmkv setString:@"hello, mmkv" forKey:@"string"];
+//    NSString *str = [mmkv getStringForKey:@"string"];
+    
 }
 
 

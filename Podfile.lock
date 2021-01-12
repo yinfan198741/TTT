@@ -1,40 +1,119 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - FBSDKCoreKit (7.0.0):
+    - FBSDKCoreKit/Basics (= 7.0.0)
+    - FBSDKCoreKit/Core (= 7.0.0)
+  - FBSDKCoreKit/Basics (7.0.0)
+  - FBSDKCoreKit/Core (7.0.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (7.0.0):
+    - FBSDKLoginKit/Login (= 7.0.0)
+  - FBSDKLoginKit/Login (7.0.0):
+    - FBSDKCoreKit (~> 7.0.0)
+  - FBSDKShareKit (7.0.0):
+    - FBSDKShareKit/Share (= 7.0.0)
+  - FBSDKShareKit/Share (7.0.0):
+    - FBSDKCoreKit (~> 7.0.0)
   - fishhook (0.2)
   - GTMBase64 (1.0.1)
+  - IQKeyboardManager (6.5.5)
   - JRSwizzle (1.0)
   - Masonry (0.6.4)
   - MBProgressHUD (1.2.0)
   - MJExtension (3.0.15.1)
+  - MMKV (1.1.1):
+    - MMKVCore (~> 1.1.1)
+  - MMKVCore (1.1.1)
   - ReactiveObjC (3.1.1)
+  - SVProgressHUD (2.2.5)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
+  - AFNetworking
+  - BlocksKit
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
   - fishhook
   - GTMBase64 (~> 1.0.0)
+  - IQKeyboardManager
   - JRSwizzle
   - Masonry (~> 0.6.4)
   - MBProgressHUD
   - MJExtension (= 3.0.15.1)
+  - MMKV
   - ReactiveObjC
+  - SVProgressHUD
+  - YYText
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - BlocksKit
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - FBSDKShareKit
     - fishhook
     - GTMBase64
+    - IQKeyboardManager
     - JRSwizzle
     - Masonry
     - MBProgressHUD
     - MJExtension
+    - MMKV
+    - MMKVCore
     - ReactiveObjC
+    - SVProgressHUD
+    - YYText
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  FBSDKCoreKit: 8ad31cd09f793d1d7e84cf20fd6cebfe80ad318d
+  FBSDKLoginKit: 5d1e321dc45ab1fa09198b77fc17c32a06f008c0
+  FBSDKShareKit: 7ec93bf49516a91513d64863f54121155bbd7f78
   fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   GTMBase64: f0f91be06a7a20b84c8e4fee30c0430395091d82
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MMKV: 5eb44526fcf38152328ebfeff5ec585972ace00d
+  MMKVCore: 2748bf702287a814a6c514d054033e41e07f5c0f
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: a9c02fcf1a849202521ea42a87bd76cc5573b90e
+PODFILE CHECKSUM: d0ed435b15bfd18104bafb5e9fa71304f861ae95
 
 COCOAPODS: 1.5.3

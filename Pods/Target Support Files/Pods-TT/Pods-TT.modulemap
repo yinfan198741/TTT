@@ -1,0 +1,6 @@
+module Pods_TT {
+  umbrella header "Pods-TT-umbrella.h"
+
+  export *
+  module * { export * }
+}

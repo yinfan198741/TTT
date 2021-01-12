@@ -19,8 +19,17 @@ target 'TT' do
 	pod 'JRSwizzle'
 #	pod "XXShield"
 	pod "fishhook"
-   
+   pod 'MMKV'
 
+   
+   pod 'FBSDKCoreKit'
+   pod 'FBSDKLoginKit'
+   pod 'FBSDKShareKit'
+   pod 'AFNetworking'
+   pod 'IQKeyboardManager'
+   pod 'YYText'
+   pod 'SVProgressHUD'
+   pod 'BlocksKit'
 #    post_install do |installer|
 #
 #
