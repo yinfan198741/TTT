@@ -39,6 +39,8 @@
 #import "StudentA.h"
 #import "PersonA.h"
 #import "MMKV.h"
+#include "ll.hpp"
+
 
 
 @interface ViewController ()
@@ -397,20 +399,100 @@ UILabel* _la;
 
 - (void)NSNumericSearch
 {
-    NSString *num1 = @"5.2.-1";
-    NSString *num2 = @"5.2";
-    
-    NSComparisonResult res = [num1 compare:num2 options:NSNumericSearch];
-    
-       if ([num1 compare:num2 options:NSNumericSearch] == NSOrderedDescending)
-       {
-           NSLog(@"%@ is bigger",num1);
-       }else
-       {
-           NSLog(@"%@ is bigger",num2);
-       }
-    
+//	NSString *num1 = @"5.2.-1";
+//	NSString *num2 = @"5.2";
+//
+//	NSComparisonResult res = [num1 compare:num2 options:NSNumericSearch];
+//
+//	if ([num1 compare:num2 options:NSNumericSearch] == NSOrderedDescending)
+//		{
+//		NSLog(@"%@ is bigger",num1);
+//		}else
+//			{
+//			NSLog(@"%@ is bigger",num2);
+//			}
+	
+	
+	NSLog(@"123");
+	
+//	deepTree();
+	return;
+	
+	int a[] = { 4 , 6 ,8 , 5 , 9 };
+	
+//	for (int *i  in &a) {
+//		printf(@"%ld",*i);
+//	}
+	int*  p = a;
+	for (int i = 0; i < sizeof(a)/sizeof(int); i++) {
+		printf("%d ",*(a+i));
+	}
+	
+	int s =  sizeof(a)/sizeof(int);
+	
+	for (int i = s/2 + 1 ; i >= 0; i--) {
+		maked(a, 0, i);
+	}
+	
+	printf("======\n");
+	
+	for (int i = 0; i < s; i++) {
+		printf("%d ",p[0]);
+	}
 }
+
+void mswap(int* a , int s , int t)
+{
+	int temp = *(a + s);
+	*(a+s) = t;
+	*(a+t) = temp;
+}
+
+
+void maked(int *a , int s, int idx)
+{
+	int temp = *(a + idx);
+	//	for (int i = s/2 + 1 ; i >= 0; i--) {
+	int lidx = (idx*2 + 1);
+	int ridx = (idx*2 + 2);
+	
+	if (lidx) {
+		
+	}
+	
+	int left = *(a + lidx);
+	int right = *(a + ridx);
+	
+	if (temp < MAX(left, right)) {
+		if (left > right) {
+			mswap(a, lidx, idx);
+		}
+		else {
+			mswap(a, ridx, idx);
+		}
+	}
+	//	}
+}
+
+//- (void)maked:(int*)a size:(int)s setI:(int)idx
+//{
+//	int temp = *(a + idx);
+////	for (int i = s/2 + 1 ; i >= 0; i--) {
+//		int lidx = (idx*2 + 1);
+//		int ridx = (idx*2 + 2);
+//		int left = *(a + lidx);
+//		int right = *(a + ridx);
+//
+//		if (temp < MAX(left, right)) {
+//			if (left > right) {
+//				mswap(a, lidx, idx);
+//			}
+//			else {
+//				mswap(a, ridx, idx);
+//			}
+//		}
+////	}
+//}
 
 
 - (void)morethread

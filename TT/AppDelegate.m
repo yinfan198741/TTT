@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "LLViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +24,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ViewController *viewController = [[ViewController alloc] init];
+    LLViewController *viewController = [[LLViewController alloc] init];
     UINavigationController* Navigation = [[UINavigationController alloc] init];
     [Navigation setViewControllers:@[viewController]];
     self.window.rootViewController = Navigation;
