@@ -24,7 +24,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    LLViewController *viewController = [[LLViewController alloc] init];
+    LLViewController *viewController = [[ViewController alloc] init];
     UINavigationController* Navigation = [[UINavigationController alloc] init];
     [Navigation setViewControllers:@[viewController]];
     self.window.rootViewController = Navigation;

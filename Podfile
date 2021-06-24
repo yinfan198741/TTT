@@ -30,6 +30,7 @@ target 'TT' do
    pod 'YYText'
    pod 'SVProgressHUD'
    pod 'BlocksKit'
+#   pod 'CocoaLumberjack'
 #    post_install do |installer|
 #
 #

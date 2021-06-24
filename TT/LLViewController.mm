@@ -10,7 +10,88 @@
 #include "ll.hpp"
 #include "MyPopViewController.h"
 #include "CustomePopoverBackgroundView.h"
+#include <objc/message.h>
 
+
+@interface TS : NSObject
+
+@end
+
+@implementation TS
+
+@end
+
+
+@interface TS2 : NSObject
+
+@end
+
+@implementation TS2
+
+@end
+
+@interface father : NSObject
+
+- (void)eat;
+@end
+
+@implementation father
+
+- (void)eat
+{
+	NSLog(@"father eat");
+	
+}
+
+-(Class)getMyClass
+{
+	return [self class];
+}
+
+- (Class)class
+{
+	return TS.class;
+}
+
+@end
+
+
+@interface son : father
+
+- (void)eat;
+
+@end
+
+@implementation son
+
+- (void)eat
+{
+	[super eat];
+//	NSLog(@"son eat");
+}
+
+-(void)test
+{
+	
+	father *cA = [[father alloc] init];
+	NSLog(@"selfClass: %@, superClass: %@", [self class], [cA class]);
+	//son fasther
+	
+	NSLog(@"1selfClass: %@, superClass: %@", [self class], [super getMyClass]);
+	///son son
+	//ts2 ts2
+	
+	NSLog(@"2selfClass: %@, superClass: %@", [self class], [super class]);
+	///son son
+	///ts2 ts
+}
+
+- (Class)class
+{
+	return TS2.class;
+}
+
+@end
 
 @interface LLViewController ()
 {
@@ -39,9 +120,67 @@
 	// Do any additional setup after loading the view.
 }
 
+
+
 - (void)createButtonTouched
 {
-	deepTree();
+//	deepTree();
+	
+	
+//	int c = 20;
+//	int *t= &c;
+//	int val = 10;
+//	char* fmt = "val = %d\n";
+//	void (^blk)(void) = ^{
+//		// block 内截获的是 10 和 fmt 指针指向的地址
+//		printf(fmt, val);
+//		printf("c1\n");
+//		printf(fmt, *t);
+//		*t = 220;
+//		printf("c2\n");
+//		printf(fmt, *t);
+//	};
+//	
+//	// blk 只是截获了 val 的瞬间值(10)去初始化 block 结构体的 val 成员变量，
+//	// val 的值无论再怎么改写，都与 block 结构体内的值再无瓜葛
+//	val = 2;
+//	c = 110;
+//	// 修改了 fmt 指针的指向，blk 对应 block 结构体只是截获了 fmt 指针原始指向的 char 字符串，
+//	// 所以 blk 内打印使用的还是 "val = %d\n"
+//	fmt = "These values were changed. val = %d\n";
+//	printf(fmt, c);
+//	printf("c3\n");
+//	blk();
+//	printf("c4\n");
+//	printf(fmt, c);
+
+	son* s  = [[son alloc] init];
+	[s test];
+//	[s eat];
+	
+	
+//	son* s  = [[son alloc] init];
+//	[s eat];
+//
+//
+	struct objc_super superReceiver = {
+		self,
+		objc_getClass("son")
+	};
+
+//	struct objc_super* p = &superReceiver;
+//	id sr = (__bridge id)p;
+//
+//	((void (*)(id, SEL))(void *)objc_msgSendSuper)(sr, sel_registerName("eat"));
+	
+//	((void (*)(id, SEL))(void*)objc_msgSendSuper(&superReceiver,sel_registerName("eat"));
+	
+	
+	
+	
+	
+	return;
+	
 	
 	MyPopViewController* pop = [[MyPopViewController alloc] init];
 	pop.preferredContentSize = CGSizeMake(UIScreen.mainScreen.bounds.size.width, 200);

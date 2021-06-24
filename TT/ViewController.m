@@ -653,6 +653,17 @@ void maked(int *a , int s, int idx)
   UIAlertController * uac = [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleAlert];
   UIAlertAction* ac = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
     NSLog(@"aaaa");
+	  
+	  
+	  UIAlertController * uacb = [UIAlertController alertControllerWithTitle:@"title1" message:@"message1" preferredStyle:UIAlertControllerStyleAlert];
+	  UIAlertAction* acb = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+		  
+	  }];
+	  
+	  [uacb addAction:acb];
+	  
+	  [uac presentViewController:uacb animated:YES completion:nil];
+	  
   }];
   
   [uac addAction:ac];

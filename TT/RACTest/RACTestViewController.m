@@ -15,6 +15,144 @@
 #import "RACPassthroughSubscriber.h"
 #import "RACSignal+PP.h"
 
+typedef id(^Prodeuce)(id value);
+typedef void(^runNext)(id value);
+
+@interface stream : NSObject
+@property(nonatomic, strong) id value;
+@property(nonatomic, copy) Prodeuce produce;
+- (void)run:(runNext)runNext;
+- (id)map:(Prodeuce)p;
+- (stream*)flatMap:(Prodeuce)p;
+@end
+
+@implementation stream
+
+- (instancetype)init
+{
+  self = [super init];
+  __weak typeof(self) weakself = self;
+  self.produce = ^id(id value) {
+    __strong typeof(self) strongSelf = weakself;
+    return strongSelf.value;
+  };
+  return self;
+}
+
+- (void)run:(runNext)runNext
+{
+//  return self.produce(self.value);
+//  self.produce = p;
+//  return self.produce();
+//  id value ;
+  id runValue = self.produce(self.value);
+  if (runValue) {
+    runNext(runValue);
+  }
+  
+  
+}
+
+- (id)map:(Prodeuce)p
+{
+//  Prodeuce oldP = self.produce ;
+//  id oldValue = self.value;
+//  Prodeuce warp = ^id(id value)
+//  {
+//      id oldrunValue = oldP(oldValue);
+//      return p(oldrunValue);
+//  };
+  
+  
+  stream* s = [stream new];
+  __weak typeof(self) weak = self;
+  s.produce = ^id(id value1) {
+    __block id vvs = nil;
+    [weak run:^(id value2) {
+      vvs = value2;
+    }];
+    
+    s.value = p(vvs);
+    
+    return s.value;
+  };
+ 
+  return s;
+//  self.produce = warp;
+  
+//  __block id ret = nil;
+//
+//  [s run:^(id value) {
+//    ret = value;
+//  }];
+//  return ret;
+}
+
+- (stream*)flatMap:(Prodeuce)p
+{
+  
+//  id mapv = [self map:p];
+//  stream* s = [stream new];
+//  s.value = mapv;
+//  return s.produce(s.value);
+  
+  stream* s = [stream new];
+  
+  s.produce = ^id(id value) {
+     __block id vvs = nil;
+    [self run:^(id value) {
+      vvs = value;
+    }];
+    id fp = p(vvs);
+    if ([fp isKindOfClass:[stream class]]) {
+      [fp run:^(id ret) {
+        s.value = ret;
+      }];
+    } else {
+      s.value = fp;
+    }
+    
+    
+    return s.value;
+  };
+  return s;
+}
+
+- (stream*)filter:(Prodeuce)filter
+{
+  Prodeuce oldP = self.produce;
+  id oldValue = self.value;
+  Prodeuce warpFilter = ^id(id value) {
+    id oldrunValue = oldP(oldValue);
+    if ([filter(oldrunValue) isEqual: @(YES)]) {
+      stream* old = [stream new];
+      old.produce = oldP;
+      old.value = oldValue;
+      return old;
+    }
+    return nil;
+  };
+
+  self.produce = warpFilter;
+
+
+  stream* filter_s = [stream new];
+  filter_s.produce = ^id(id value) {
+    __block id vvs = nil;
+    [self run:^(id value) {
+      vvs = value;
+    }];
+    if ([filter(vvs) isEqual:@(YES)]) {
+       filter_s.value = vvs;
+    }
+    return filter_s.value;
+  };
+  return filter_s;
+}
+
+
+@end
+
 @interface RACTestViewController ()
 
 @property (nonatomic ,strong) NSArray<NSArray*>* source;
@@ -132,7 +270,88 @@
 
 - (void)RACOBserver
 {
-	
+  stream* s = [stream new];
+  s.value = @1;
+
+  
+//  [[s map:^id(NSNumber* value) {
+//    return @(value.intValue * 5);
+//  }] run:^(NSNumber* value) {
+//    NSLog(@"map = %@",value);
+//  }];
+  
+//  NSNumber* v = [s map:^id(NSNumber* value) {
+//    return @(value.intValue * 5);
+//  }];
+//  NSLog(@"%@",v);
+
+  
+//  [[[s flatMap:^id(NSNumber* value1) {
+//    return @(value1.intValue + 1);
+//  }] flatMap:^id(NSNumber* value2) {
+//    return @(value2.intValue * 5);
+//  }] run:^(NSNumber* value) {
+//    NSLog(@"total value = %@",value);
+//  }];
+  
+  
+  [[[s flatMap:^id(NSNumber* value1) {
+    return @(value1.intValue + 1);
+  }] filter:^id(NSNumber* value2) {
+    return @(value2.intValue != 2);
+  }] run:^(id value) {
+     NSLog(@"total value = %@",value);
+  }];
+  
+  
+  
+  
+  
+  return;
+  
+//  [[[s flatMap:^id(NSNumber* value) {
+//    return @(value.integerValue * 20);
+//  }] filter:^id(NSNumber* value) {
+//    return @(value.intValue == 20);
+//  }] run:^(stream* value) {
+//
+//    [value run:^(NSNumber* value) {
+//          NSLog(@"filter1 = %d",value.intValue);
+//    }];
+//  }];
+  
+  stream* s2 = [stream new];
+  s2.value = @1;
+  
+  [[[s2 flatMap:^id(NSNumber* value) {
+    return @(value.integerValue * 20);
+  }] filter:^id(NSNumber* value) {
+    return @(value.intValue == 30);
+  }] run:^(stream* value) {
+    
+    [value run:^(NSNumber* value) {
+      NSLog(@"filter2 = %d",value.intValue);
+    }];
+  }];
+  
+  
+  [[[RACSignal return:@(1)] map:^id _Nullable(NSNumber*  _Nullable value) {
+    return [RACSignal return:@( value.integerValue * 2)];
+  }] subscribeNext:^(id  _Nullable x) {
+    
+  }];
+  
+  [[[RACSignal return:@(1)] flattenMap:^__kindof RACSignal * _Nullable(NSNumber*   _Nullable value) {
+     return [RACSignal return:@( value.integerValue * 2)];
+  }] subscribeNext:^(id  _Nullable x) {
+    
+  }];
+  
+  
+  
+//  NSLog(@"%@",va);
+  return;
+  
 	RAC(self,title) = RACObserve(self, obcTest);
 	
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -191,6 +410,41 @@
     [signal subscribeNext:^(id  _Nullable x) {
         NSLog(@"x = %@",x);
     }];
+  
+  
+  RACSignal* signal2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    
+    RACSignal* t =  [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+      [subscriber sendNext:@"123"];
+      [subscriber sendCompleted];
+      return [RACDisposable disposableWithBlock:^{
+        NSLog(@"RACDisposable disposableWithBlock");
+      }];
+    }];
+    
+    [subscriber sendNext:t];
+    [subscriber sendCompleted];
+    return [RACDisposable disposableWithBlock:^{
+      NSLog(@"RACDisposable disposableWithBlock");
+    }];
+    
+  }];
+  
+  
+  [signal2 subscribeNext:^(id  _Nullable x) {
+    NSLog(@"1_ %@",x);
+  }];
+  
+  
+  [[signal2 flattenMap:^ RACSignal * (id   value) {
+    return value;
+  }] subscribeNext:^(id  _Nullable x) {
+    NSLog(@"2_  %@",x);
+  }];
+  
+  
+  
+  
 }
 
 
@@ -557,21 +811,21 @@
 //        NSLog(@"%@",x);
 //    }];
     
-    RACSignal* signal = signalOfSignals.switchToLatest;
-    [signal subscribeNext:^(id  _Nullable x) {
-          NSLog(@"%@",x);
-    } completed:^{
-         NSLog(@"completed");
-    }];
-    
-    [signalOfSignals sendNext:signalA];
-    [signalOfSignals sendNext:signalB];
-   
-    [signalB sendNext:@"signalB"];
-    [signalA sendNext:@"signalA"];
-   
-    
-    return;
+//    RACSignal* signal = signalOfSignals.switchToLatest;
+//    [signal subscribeNext:^(id  _Nullable x) {
+//          NSLog(@"%@",x);
+//    } completed:^{
+//         NSLog(@"completed");
+//    }];
+//
+//    [signalOfSignals sendNext:signalA];
+//    [signalOfSignals sendNext:signalB];
+//
+//    [signalB sendNext:@"signalB"];
+//    [signalA sendNext:@"signalA"];
+//
+//
+//    return;
     
 	
 	RACSubject *signalofsignal = [RACSubject subject];
@@ -586,21 +840,29 @@
 //
     
     [signalofsignal.switchToLatest subscribeNext:^(id  _Nullable x) {
-        NSLog(@"signalofsignal.switchToLatest x2 = %@",x);
+        NSLog(@"signalofsignal.switchToLatest x = %@",x);
     } completed:^{
          NSLog(@"signalofsignal.switchToLatest");
     }];
     
     
+  
+//  [[signalofsignal flatten] subscribeNext:^(RACSignal*  _Nullable x) {
+//     NSLog(@"signalofsignal.flatten x = %@",x);
+//  }];
+  
     [signalofsignal sendNext:signal1];
+    [signalofsignal sendNext:signal3];
     [signalofsignal sendNext:signal2];
-	[signalofsignal sendNext:signal3];
+    
 	
-	[signal1 sendNext:@"1"];
-    [signal2 sendNext:@"2"];
-	[signal3 sendNext:@"3"];
+	 [signal1 sendNext:@"1"];
+   [signal2 sendNext:@"2"];
+	 [signal3 sendNext:@"3"];
 	
 	
+ 
+  
 	
 	
 //#if 1

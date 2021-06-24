@@ -181,6 +181,7 @@
 		B5CCFA0722CB7B4700858BC5 /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CCFA0622CB7B4700858BC5 /* RACTestViewController.m */; };
 		B5CCFA0B22CB7C1F00858BC5 /* VCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CCFA0A22CB7C1F00858BC5 /* VCBaseViewController.m */; };
 		B5F0E13223619EBF00B614DE /* SafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F0E13123619EBF00B614DE /* SafeViewController.m */; };
+		B5F52D83260D897D003EB5F1 /* BaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F52D82260D897D003EB5F1 /* BaseTest.m */; };
 		B5FB72DC2121C73200325501 /* UIViewController+Consistent.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */; };
 		B5FB72E02121CA1B00325501 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72DF2121CA1B00325501 /* PushViewController.m */; };
 		B5FB72E32122842B00325501 /* TabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB72E22122842B00325501 /* TabItem.m */; };
@@ -548,6 +549,8 @@
 		B5CCFA0A22CB7C1F00858BC5 /* VCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCBaseViewController.m; sourceTree = "<group>"; };
 		B5F0E13023619EBF00B614DE /* SafeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SafeViewController.h; sourceTree = "<group>"; };
 		B5F0E13123619EBF00B614DE /* SafeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeViewController.m; sourceTree = "<group>"; };
+		B5F52D81260D897D003EB5F1 /* BaseTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTest.h; sourceTree = "<group>"; };
+		B5F52D82260D897D003EB5F1 /* BaseTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTest.m; sourceTree = "<group>"; };
 		B5FB72DA2121C73200325501 /* UIViewController+Consistent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Consistent.h"; sourceTree = "<group>"; };
 		B5FB72DB2121C73200325501 /* UIViewController+Consistent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Consistent.m"; sourceTree = "<group>"; };
 		B5FB72DE2121CA1B00325501 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
@@ -668,6 +671,8 @@
 				A74003C8238A924200BAA62E /* buyGoods.m */,
 				B547955824AE0D5B00DAB071 /* NSObject+callName.h */,
 				B547955924AE0D5B00DAB071 /* NSObject+callName.m */,
+				B5F52D81260D897D003EB5F1 /* BaseTest.h */,
+				B5F52D82260D897D003EB5F1 /* BaseTest.m */,
 			);
 			path = inherite;
 			sourceTree = "<group>";
@@ -1954,6 +1959,7 @@
 				B551283122201AE500374029 /* AViewController.m in Sources */,
 				B551284022201F0C00374029 /* FLAppearance.m in Sources */,
 				B5670EF3215F11C90014807D /* ExceptionModel.m in Sources */,
+				B5F52D83260D897D003EB5F1 /* BaseTest.m in Sources */,
 				A7400426238EBDCB00BAA62E /* GCDAsyncSocket.m in Sources */,
 				B54E79EC23405FA00035915B /* SecondPageViewController.m in Sources */,
 				B59D963821A3E4FA0064A81D /* LLDBViewController.m in Sources */,
