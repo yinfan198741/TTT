@@ -206,6 +206,8 @@ typedef void(^runNext)(id value);
     self.hub = [[MBProgressHUD alloc] init];
     self.source = @[@[@"RACOBserver",@"RACOBserver"],
 					@[@"FPRDemo",@"FPRDemo"],
+                    @[@"showPopTest",@"showPopTest"],
+                    @[@"firstTake",@"firstTake"],
                     @[@"commandTestexecuting",@"commandTestexecuting"],
                     @[@"commandTestDebug",@"commandTestDebug"],
                     @[@"FPRDemo",@"FPRDemo"],
@@ -265,6 +267,150 @@ typedef void(^runNext)(id value);
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString* sel = self.source[indexPath.row][1];
     [self performSelector: NSSelectorFromString(sel) withObject:nil] ;
+}
+
+static RACReplaySubject* isShowPop;
+
+
+- (void)initT
+{
+  isShowPop = [RACReplaySubject replaySubjectWithCapacity:1];
+  [isShowPop sendNext:@YES];
+}
+
+
+-(RACSignal*)whenNotShow
+{
+  RACSignal* notShowSignal = [RACSignal createSignal:^RACDisposable * (id<RACSubscriber>  subscriber) {
+    
+    [[isShowPop ignore:@YES] subscribeNext:^(id  _Nullable x) {
+      [subscriber sendNext:@YES];
+      [subscriber sendCompleted];
+    }];
+    return nil;
+  }];
+  return notShowSignal;
+}
+
+
+- (RACSignal*)showPop
+{
+  
+  if([[isShowPop first] boolValue]){
+    return [[self whenNotShow]  flattenMap:^ RACSignal * (NSNumber* value) {
+      return value.boolValue ? [self showPop]: [RACSignal empty];
+    }];
+  }
+  else
+      {
+      RACSignal* signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@YES];
+        [subscriber sendCompleted];
+        return nil;
+      }];
+    
+      return signal;
+      }
+  
+//  [isShowPop subscribeNext:^(id  _Nullable x) {
+//    BOOL show = x;
+//    if (show) {
+//      [self showPop];
+//      return;
+//    }
+//  }];
+//
+//  RACSignal* signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//    [subscriber sendNext:@YES];
+//    [subscriber sendCompleted];
+//    return nil;
+//  }];
+//
+//  return signal;
+}
+
+
+- (void)showPopTest
+{
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    [self initT];
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
+      NSLog(@"isShowPop ---start");
+      [isShowPop sendNext:@NO];
+      NSLog(@"isShowPop ---NO");
+    });
+    
+  });
+  
+  RACSignal* sig =[self showPop];
+  
+  [sig subscribeNext:^(id  _Nullable x) {
+    NSLog(@"sig_1  = %@", x);
+  }];
+  
+  RACSignal* sig2 =[self showPop];
+  
+  [sig2 subscribeNext:^(id  _Nullable x) {
+    NSLog(@"sig_2  = %@", x);
+  }];
+  
+}
+
+
+- (void)firstTake
+{
+  NSLog(@"firstTake");
+  
+// RACSignal* s =  [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//    [subscriber sendNext:@1];
+//    [subscriber sendNext:@2];
+//    [subscriber sendCompleted];
+//   return nil;
+// }];
+//
+//
+//
+//
+//
+//  [[s take:1] subscribeNext:^(id  _Nullable x) {
+//    NSLog(@"123_1 %@  %@",x , NSThread.currentThread);
+//  }];
+//
+//  [[s take:2] subscribeNext:^(id  _Nullable x) {
+//    NSLog(@"123_2 %@ % @",x, NSThread.currentThread);
+//  }];
+//
+  
+  
+  
+  RACSubject* sub = [[RACSubject alloc] init];
+  
+//  [[sub take:1] subscribeNext:^(id   x) {
+//    NSLog(@"sub 123_1 %@  %@",x , NSThread.currentThread);
+//  }];
+//
+//
+//  [[sub take:3] subscribeNext:^(id   x) {
+//     NSLog(@"sub _123_2 %@ % @",x, NSThread.currentThread);
+//  }];
+  
+  
+  [sub subscribeNext:^(id  _Nullable x) {
+    NSLog(@"sub _123_2 %@ % @",x, NSThread.currentThread);
+  }];
+  
+  [sub sendNext:@"1"];
+  
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+     [sub sendNext:@"2"];
+  });
+  
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
+    [sub sendNext:@"3"];
+  });
 }
 
 
