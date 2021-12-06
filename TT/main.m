@@ -17,8 +17,8 @@ int main(int argc, char * argv[]) {
 //  __weak NSObject *weakObj = obj;
   
   
-  BaseTest* ba = [[BaseTest alloc] init];
-  [ba Test];
+//  BaseTest* ba = [[BaseTest alloc] init];
+//  [ba Test];
   
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

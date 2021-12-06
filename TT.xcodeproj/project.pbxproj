@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6166DE32275DBDBB00A77662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6166DE31275DBDBB00A77662 /* LaunchScreen.storyboard */; };
+		6166DE35275E0DE400A77662 /* CombineTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6166DE34275E0DE400A77662 /* CombineTestViewController.swift */; };
+		6166DE38275E198400A77662 /* loadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6166DE37275E198400A77662 /* loadTool.swift */; };
 		669D2D05F691ACF9D0C74F3B /* libPods-TT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98301CD3BADF82F90215CEC1 /* libPods-TT.a */; };
 		A714906A23099F5200A59AB2 /* RacDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A714906923099F5200A59AB2 /* RacDemoViewController.m */; };
 		A734877D23CB4259000B9564 /* SOUnsafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A734877C23CB4259000B9564 /* SOUnsafeObject.m */; };
@@ -62,7 +65,6 @@
 		A7D8FA6F1E9B2BBA00ED8D03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA6E1E9B2BBA00ED8D03 /* main.m */; };
 		A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA711E9B2BBA00ED8D03 /* AppDelegate.m */; };
 		A7D8FA751E9B2BBA00ED8D03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA741E9B2BBA00ED8D03 /* ViewController.m */; };
-		A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */; };
 		A7D8FA881E9B2BBA00ED8D03 /* TTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA871E9B2BBA00ED8D03 /* TTTests.m */; };
 		A7D8FA931E9B2BBB00ED8D03 /* TTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D8FA921E9B2BBB00ED8D03 /* TTUITests.m */; };
 		A7DD1141245E67B1001DC1B3 /* UIViewController+AddParamterAndFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DD1140245E67B1001DC1B3 /* UIViewController+AddParamterAndFunction.m */; };
@@ -242,6 +244,9 @@
 /* Begin PBXFileReference section */
 		033B8B13AD73AEF8C329338F /* Pods-TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TT/Pods-TT.debug.xcconfig"; sourceTree = "<group>"; };
 		1104F4480C0F594D792FE746 /* Pods_TTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6166DE31275DBDBB00A77662 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6166DE34275E0DE400A77662 /* CombineTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTestViewController.swift; sourceTree = "<group>"; };
+		6166DE37275E198400A77662 /* loadTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadTool.swift; sourceTree = "<group>"; };
 		6784F60DADB1BD4DE3AFF565 /* Pods_TTUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98301CD3BADF82F90215CEC1 /* libPods-TT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A714906823099F5200A59AB2 /* RacDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RacDemoViewController.h; sourceTree = "<group>"; };
@@ -352,7 +357,6 @@
 		A7D8FA731E9B2BBA00ED8D03 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A7D8FA741E9B2BBA00ED8D03 /* ViewController.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
 		A7D8FA791E9B2BBA00ED8D03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A7D8FA7C1E9B2BBA00ED8D03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7D8FA7E1E9B2BBA00ED8D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7D8FA831E9B2BBA00ED8D03 /* TTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8FA871E9B2BBA00ED8D03 /* TTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTests.m; sourceTree = "<group>"; };
@@ -632,6 +636,23 @@
 				98301CD3BADF82F90215CEC1 /* libPods-TT.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6166DE33275E0DC200A77662 /* CombineTest */ = {
+			isa = PBXGroup;
+			children = (
+				6166DE36275E196E00A77662 /* load */,
+				6166DE34275E0DE400A77662 /* CombineTestViewController.swift */,
+			);
+			path = CombineTest;
+			sourceTree = "<group>";
+		};
+		6166DE36275E196E00A77662 /* load */ = {
+			isa = PBXGroup;
+			children = (
+				6166DE37275E198400A77662 /* loadTool.swift */,
+			);
+			path = load;
 			sourceTree = "<group>";
 		};
 		A734877A23CB4237000B9564 /* DeallocTest */ = {
@@ -935,7 +956,6 @@
 				A7D8FA741E9B2BBA00ED8D03 /* ViewController.m */,
 				A7D8FA791E9B2BBA00ED8D03 /* Assets.xcassets */,
 				B52A58062180109600E106E9 /* assetTest.xcassets */,
-				A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */,
 				A7D8FA7E1E9B2BBA00ED8D03 /* Info.plist */,
 				A7400432238EC17300BAA62E /* index copy.html */,
 				A7400433238EC17300BAA62E /* index.html */,
@@ -945,6 +965,7 @@
 				B5FB72E22122842B00325501 /* TabItem.m */,
 				B58E8A3625AFE79A0077B909 /* LLViewController.h */,
 				B58E8A3725AFE79A0077B909 /* LLViewController.mm */,
+				6166DE31275DBDBB00A77662 /* LaunchScreen.storyboard */,
 			);
 			path = TT;
 			sourceTree = "<group>";
@@ -1225,6 +1246,7 @@
 		B56FBC6121E44697003694E1 /* RACTest */ = {
 			isa = PBXGroup;
 			children = (
+				6166DE33275E0DC200A77662 /* CombineTest */,
 				B5CCFA0422CB7B2800858BC5 /* cocoracTest */,
 				B56FBC6421E44721003694E1 /* Service.h */,
 				B56FBC6521E44721003694E1 /* Service.m */,
@@ -1616,7 +1638,7 @@
 					};
 					A7D8FA691E9B2BBA00ED8D03 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = YKBWNE92X7;
+						DevelopmentTeam = V5N2KN89N3;
 						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
@@ -1703,7 +1725,6 @@
 				B50EE5692237547E00DAA18A /* image.bundle in Resources */,
 				B50EE5752237547E00DAA18A /* Example2ViewController.xib in Resources */,
 				B50EE58D223762AE00DAA18A /* images2 in Resources */,
-				A7D8FA7D1E9B2BBA00ED8D03 /* LaunchScreen.storyboard in Resources */,
 				B50EE5762237547E00DAA18A /* Example4ViewController.xib in Resources */,
 				B55B3FBC21B0DABC005CADF3 /* citydata.plist in Resources */,
 				A7400434238EC17300BAA62E /* untitled.html in Resources */,
@@ -1711,6 +1732,7 @@
 				A7400435238EC17300BAA62E /* index copy.html in Resources */,
 				B568B980224337B3001B8571 /* Storyboard.storyboard in Resources */,
 				A7B49F84211B359B0081D199 /* ReleaseConfig.xcconfig in Resources */,
+				6166DE32275DBDBB00A77662 /* LaunchScreen.storyboard in Resources */,
 				B50EE56B2237547E00DAA18A /* Example1ViewController.xib in Resources */,
 				B50EE56E2237547E00DAA18A /* left.png in Resources */,
 			);
@@ -1788,23 +1810,19 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TT/Pods-TT-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TT/Pods-TT-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TT/Pods-TT-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TT/Pods-TT-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B53DCA5023FACE3A0059FA21 /* ShellScript */ = {
@@ -1856,6 +1874,7 @@
 				B5CCFA0B22CB7C1F00858BC5 /* VCBaseViewController.m in Sources */,
 				A7400404238EBD2400BAA62E /* DDData.m in Sources */,
 				B568B97E22433787001B8571 /* SecondViewController.m in Sources */,
+				6166DE35275E0DE400A77662 /* CombineTestViewController.swift in Sources */,
 				B5600FED256D32B6006098C1 /* RACSignal+PP.m in Sources */,
 				A74003FD238EBD2400BAA62E /* HTTPConnection.m in Sources */,
 				A74003FF238EBD2400BAA62E /* MultipartMessageHeaderField.m in Sources */,
@@ -1941,6 +1960,7 @@
 				B5BFE3CA222E966400B6CFAC /* BinarySearch.swift in Sources */,
 				B5BFE3C5222E939900B6CFAC /* Moniter.m in Sources */,
 				B551283A22201EF400374029 /* ImageHeaderViewController.m in Sources */,
+				6166DE38275E198400A77662 /* loadTool.swift in Sources */,
 				A7400400238EBD2400BAA62E /* MultipartFormDataParser.m in Sources */,
 				A7400421238EBD7600BAA62E /* DDFileLogger.m in Sources */,
 				A734878023CB4D46000B9564 /* SOUnsafeObjectVCViewController.m in Sources */,
@@ -2074,17 +2094,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		A7D8FA7B1E9B2BBA00ED8D03 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7D8FA7C1E9B2BBA00ED8D03 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		A7B49F6121188E7F0081D199 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2189,7 +2198,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2232,7 +2241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2250,7 +2259,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YKBWNE92X7;
+				DEVELOPMENT_TEAM = V5N2KN89N3;
 				INFOPLIST_FILE = TT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waiter.yfwatier;

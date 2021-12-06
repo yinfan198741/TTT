@@ -15,6 +15,8 @@
 #import "RACPassthroughSubscriber.h"
 #import "RACSignal+PP.h"
 
+#import "TTS-Swift.h"
+
 typedef id(^Prodeuce)(id value);
 typedef void(^runNext)(id value);
 
@@ -204,7 +206,9 @@ typedef void(^runNext)(id value);
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hub = [[MBProgressHUD alloc] init];
-    self.source = @[@[@"RACOBserver",@"RACOBserver"],
+    self.source = @[
+                    @[@"CombineDemo",@"CombineDemo"],
+                    @[@"RACOBserver",@"RACOBserver"],
 					@[@"FPRDemo",@"FPRDemo"],
                     @[@"showPopTest",@"showPopTest"],
                     @[@"firstTake",@"firstTake"],
@@ -413,6 +417,13 @@ static RACReplaySubject* isShowPop;
   });
 }
 
+
+- (void)CombineDemo
+{
+    NSLog(@"CombineDemo");
+    CombineTestViewController* vc = [[CombineTestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (void)RACOBserver
 {

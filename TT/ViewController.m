@@ -94,6 +94,12 @@ UILabel* _la;
     //        NSLog(@"ttttt");
     //    }];
 	
+	TabItem* RacCall = [TabItem CreateItem:@"RacCall" action:^{
+		[self RacCall];
+	}];
+	[self.source addObject:RacCall];
+
+	
     
     TabItem* NSNumericSearch = [TabItem CreateItem:@"NSNumericSearch" action:^{
         [self NSNumericSearch];
@@ -224,10 +230,6 @@ UILabel* _la;
     }];
     [self.source addObject:dylibCall];
     
-    TabItem* RacCall = [TabItem CreateItem:@"RacCall" action:^{
-        [self RacCall];
-    }];
-    [self.source addObject:RacCall];
     
     
     TabItem* imageHeader = [TabItem CreateItem:@"imageHeader" action:^{

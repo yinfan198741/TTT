@@ -29,20 +29,20 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - FBSDKCoreKit (7.0.0):
-    - FBSDKCoreKit/Basics (= 7.0.0)
-    - FBSDKCoreKit/Core (= 7.0.0)
-  - FBSDKCoreKit/Basics (7.0.0)
-  - FBSDKCoreKit/Core (7.0.0):
+  - FBSDKCoreKit (7.1.1):
+    - FBSDKCoreKit/Basics (= 7.1.1)
+    - FBSDKCoreKit/Core (= 7.1.1)
+  - FBSDKCoreKit/Basics (7.1.1)
+  - FBSDKCoreKit/Core (7.1.1):
     - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (7.0.0):
-    - FBSDKLoginKit/Login (= 7.0.0)
-  - FBSDKLoginKit/Login (7.0.0):
-    - FBSDKCoreKit (~> 7.0.0)
-  - FBSDKShareKit (7.0.0):
-    - FBSDKShareKit/Share (= 7.0.0)
-  - FBSDKShareKit/Share (7.0.0):
-    - FBSDKCoreKit (~> 7.0.0)
+  - FBSDKLoginKit (7.1.1):
+    - FBSDKLoginKit/Login (= 7.1.1)
+  - FBSDKLoginKit/Login (7.1.1):
+    - FBSDKCoreKit (~> 7.1.1)
+  - FBSDKShareKit (7.1.1):
+    - FBSDKShareKit/Share (= 7.1.1)
+  - FBSDKShareKit/Share (7.1.1):
+    - FBSDKCoreKit (~> 7.1.1)
   - fishhook (0.2)
   - GTMBase64 (1.0.1)
   - IQKeyboardManager (6.5.5)
@@ -76,12 +76,8 @@ DEPENDENCIES:
   - YYText
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - AFNetworking
+  https://github.com/CocoaPods/Specs.git:
     - BlocksKit
-    - FBSDKCoreKit
-    - FBSDKLoginKit
-    - FBSDKShareKit
     - fishhook
     - GTMBase64
     - IQKeyboardManager
@@ -94,13 +90,18 @@ SPEC REPOS:
     - ReactiveObjC
     - SVProgressHUD
     - YYText
+  trunk:
+    - AFNetworking
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - FBSDKShareKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  FBSDKCoreKit: 8ad31cd09f793d1d7e84cf20fd6cebfe80ad318d
-  FBSDKLoginKit: 5d1e321dc45ab1fa09198b77fc17c32a06f008c0
-  FBSDKShareKit: 7ec93bf49516a91513d64863f54121155bbd7f78
+  FBSDKCoreKit: b46507dc8b8cefed31d644e74d7cc30e2a715ef8
+  FBSDKLoginKit: 1a61d79e2b25e2fc0d03dccab1e34b38bbdf2546
+  FBSDKShareKit: 00a055c1999b099596e00212dd1c0600c6697019
   fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   GTMBase64: f0f91be06a7a20b84c8e4fee30c0430395091d82
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
@@ -116,4 +117,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 25e58d44ab596c87c0dc3c8f03024baa7b2cbdb3
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.2

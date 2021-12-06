@@ -298,7 +298,7 @@ struct structA {
 }
 
 
-enum Result {
+enum myResult {
     case success(Int)
     case message(String)
     case error(Error)
@@ -308,18 +308,18 @@ enum Result {
 
 
 final class Signal {
-    fileprivate typealias Subscriber = (Result) -> Void
+    fileprivate typealias Subscriber = (myResult) -> Void
     fileprivate var subscribers: [Subscriber] = []
-    func send(_ result: Result) {
+    func send(_ result: myResult) {
         for subscriber in subscribers {
             subscriber(result)
         }
     }
-    func subscribe(_ subscriber: @escaping (Result) -> Void) {
+    func subscribe(_ subscriber: @escaping (myResult) -> Void) {
         subscribers.append(subscriber)
     }
     
-    static func empty() -> ((Result) -> Void, Signal) {
+    static func empty() -> ((myResult) -> Void, Signal) {
         let signal = Signal()
         return (signal.send, signal)
     }
