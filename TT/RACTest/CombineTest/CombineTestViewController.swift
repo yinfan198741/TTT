@@ -104,11 +104,15 @@ class CombineTestViewController: UIViewController {
         
         let tool = LoadTool<LoadUser, LoadUser>(localUser: loadFileTool(),
                                                 netUser: loadNetTool())
-        tool.fetchUser().sink { comp in
-            print("comp = \(comp)")
-        } receiveValue: { usr in
-            print("usr = \(usr)")
-        }
+        
+        
+        tool.test()
+        
+//        tool.fetchUser().sink { comp in
+//            print("comp = \(comp)")
+//        } receiveValue: { usr in
+//            print("usr = \(usr)")
+//        }
 
     }
     

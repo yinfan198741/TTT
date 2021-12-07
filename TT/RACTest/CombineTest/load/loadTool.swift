@@ -43,7 +43,7 @@ struct loadFileTool <FfileUserType> : loadFileUserProtocal where FfileUserType: 
         let str =
             """
             {
-                "name": "yinfan",
+                "name": "yinfan_file",
                 "age" : 18
             }
             """
@@ -69,8 +69,8 @@ struct loadNetTool<LnetUserType> : loadNetUserProtocal where LnetUserType : Coda
         
         let str =
                         """
-                        {
-                            "name": "yinfan",
+                        {x
+                            "name": "yinfan_net",
                             "age" : 18
                         }
                         """
@@ -89,40 +89,75 @@ struct loadNetTool<LnetUserType> : loadNetUserProtocal where LnetUserType : Coda
     
 }
 
+struct Tcancel {
+   static var cancellables = Set<AnyCancellable>()
+}
 
-struct LoadTool<FileUser, NetUser> where FileUser : Codable , NetUser : Codable{
+
+
+
+struct LoadTool<FileUser : Codable, NetUser : Codable> {
     
     var localUser : loadFileTool<FileUser>
     var netUser : loadNetTool<NetUser>
     
     
     func test() {
-        let str =
-            """
-            {
-                "name": "yinfan",
-                "age" : 18
-            }
-            """
-            .data(using: .utf8)
+//        let str =
+//            """
+//            {
+//                "name": "yinfan",
+//                "age" : 18
+//            }
+//            """
+//            .data(using: .utf8)
+//
+//        let decoder = JSONDecoder.init()
+//
+//        if let data = str {
+//            do {
+//             let user =  try decoder.decode(LoadUser.self, from: data)
+//                print("user = \(user)")
+//            } catch let err {
+//                print("err = \(err)")
+//            }
+//        }https://www.donnywals.com/configuring-error-types-when-using-flatmap-in-combine/
         
-        let decoder = JSONDecoder.init()
         
-        if let data = str {
-            do {
-             let user =  try decoder.decode(LoadUser.self, from: data)
-                print("user = \(user)")
-            } catch let err {
-                print("err = \(err)")
-            }
-        }
-    }
-    
-    
-    func fetchUser() -> AnyPublisher<FileUser, Error>  {
+        let someURL = URL.init(string: "https://www.baidu.com")
+        URLSession.shared.dataTaskPublisher(for: someURL!).sink { e in
+            print("e = \(e)")
+        } receiveValue: { v in
+            print("v = \(v)")
+        }.store(in: &Tcancel.cancellables)
 
-        test()
         
+//        let v =  URLSession.shared.dataTaskPublisher(for: someURL!).map { t in
+//            return t
+//        }
+//    https://www.donnywals.com/configuring-error-types-when-using-flatmap-in-combine/
+        URLSession.shared.dataTaskPublisher(for: someURL!)
+            .mapError({ t in
+               return t as Error
+            })
+          .flatMap({ output -> AnyPublisher<Data, Error> in
+              return Just("abc".data(using: .utf8)!)
+                  .setFailureType(to: Error.self)
+                  .eraseToAnyPublisher()
+          })
+        
+//          .flatMap({ output -> AnyPublisher<Data, Error> in
+//
+//          })
+        
+    }
+}
+
+
+extension LoadTool where FileUser == NetUser
+{
+    func fetchUser() -> AnyPublisher<FileUser, Error> {
+
         let fUser = Future<FileUser , Error> { p in
             let user = localUser.loadFile()
             switch user {
@@ -131,6 +166,8 @@ struct LoadTool<FileUser, NetUser> where FileUser : Codable , NetUser : Codable{
             case let .failure(error):
                 p(.failure(error))
             }
+        }.map { t in
+            return t
         }
         
         
@@ -142,7 +179,7 @@ struct LoadTool<FileUser, NetUser> where FileUser : Codable , NetUser : Codable{
             case let .failure(error):
                 p(.failure(error))
             }
-        }.eraseToAnyPublisher()
+        }
         
 //        fUser.subscribe(on: <#T##Scheduler#>, options: <#T##Scheduler.SchedulerOptions?#>)
 //        return fUser.flatMap { s in
@@ -157,14 +194,30 @@ struct LoadTool<FileUser, NetUser> where FileUser : Codable , NetUser : Codable{
 //
 //        }.eraseToAnyPublisher()
           
-        return fUser.flatMap { t in
-            return Just(t).mapError { n in
-                return LoadUserError(info: "TTT")
-            }
+//        return fUser.flatMap { t in
+//            return Just(t).mapError { n in
+//                return LoadUserError(info: "TTT")
+//            }
+//        }.eraseToAnyPublisher()
+        
+//        return fUser.map { e in
+//            return NUser
+//        }.eraseToAnyPublisher()
+        
+      return  fUser.tryCatch { e in
+          return NUser.tryCatch { e in
+              return Just(LoadUser(name: "failed", age: 0) as! FileUser)
+          }
         }.eraseToAnyPublisher()
+        
+//     return fUser.map { t in
+//          return  Just(t)
+//        }.eraseToAnyPublisher()
     }
 }
-    
+
+
+// https://www.swiftbysundell.com/articles/under-the-hood-of-futures-and-promises-in-swift/
 //    func loadFile() -> Result<LoadUser.Type, Error> {
 ////        FileManager.default.currentDirectoryPath
 //        var str =
