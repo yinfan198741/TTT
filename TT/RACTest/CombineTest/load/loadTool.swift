@@ -13,6 +13,14 @@ import Combine
 ///测试崩溃
 ///combine
 
+//https://swiftrocks.com/whats-type-and-self-swift-metatypes.html
+//https://learnappmaking.com/self-swift-how-to/
+
+//https://www.swiftbysundell.com/articles/under-the-hood-of-futures-and-promises-in-swift/
+
+
+
+
 struct LoadUser : Codable {
     var name: String
     var age : Int
