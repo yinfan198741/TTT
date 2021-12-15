@@ -9,6 +9,35 @@
 import UIKit
 import Combine
 
+class BottomAlertBaseView: UIView {
+
+    lazy var titleLabel: UILabel =   {
+        let t = UILabel.init()
+        return t
+    }()
+  
+     override init(frame: CGRect) {
+        super.init(frame:frame)
+         self.setupView()
+    }
+    
+    func setupView()
+    {
+        self.titleLabel = UILabel.init()
+    }
+    
+    
+//    convenience init() {
+//        self.titleLabel = UILabel.init()
+////        self.init(frame:CGRect.init(x: 0,y: 0,width: 0,height: 0))
+//    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
 
 extension UIControl {
     
