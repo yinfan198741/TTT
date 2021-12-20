@@ -9,6 +9,49 @@
 import UIKit
 import Combine
 
+
+
+//public class C1: NSObject {
+//    public func method() { print("C") }
+//}
+//
+//public class B1: C1 {
+//}
+//extension B1 {
+//    override public func method() { print("B") }
+//}
+//
+//public class A1: B1 {
+//}
+//extension A1 {
+//    override public func method() { print("A") }
+//}
+
+public class AA: NSObject {
+     func method() { print("C") }
+    
+     public var method1:(Int) -> String {
+         return doMethod1
+     }
+}
+
+extension AA {
+    func doMethod1(i : Int) -> String{
+        return "AA"
+    }
+}
+
+
+public class BB: AA {
+    override  func method() { print("BB") }
+}
+
+
+public class CC: AA {
+    override  func method() { print("CC") }
+}
+
+
 class BottomAlertBaseView: UIView {
 
     lazy var titleLabel: UILabel =   {
@@ -120,10 +163,10 @@ class CombineTestViewController: UIViewController {
         b.addTarget(self, action: #selector(tt), for: .touchUpInside)
         b.backgroundColor = .blue
         self.view.addSubview(b)
-        b.publisher(for: .touchUpInside).sink { [weak self] s in
-            print("s touchUpInside = \(s)")
-            self?.loadTestImp()
-        }.store(in: &cancellables)
+//        b.publisher(for: .touchUpInside).sink { [weak self] s in
+//            print("s touchUpInside = \(s)")
+//            self?.loadTestImp()
+//        }.store(in: &cancellables)
         
     }
     
@@ -179,7 +222,13 @@ class CombineTestViewController: UIViewController {
     @objc
     func tt()
     {
-        NSLog("12")
+        
+        
+        
+        let c = CC()
+        c.method()
+        
+//        NSLog("12")
 //
 //        let f1 = Future<String, Error> { p in
 //            p(.success("res1"))
