@@ -115,19 +115,19 @@ extension T {
 
 
 
-private class AA {
-  init(string:String) {
-    print(string)
-  }
-}
-
-private class BB : AA {
-  var newVariable:String
-  
-  init() {
-    self.newVariable = "hello"
-    super.init(string: "aaaaa")
-  }
-}
+//private class AA {
+//  init(string:String) {
+//    print(string)
+//  }
+//}
+//
+//private class BB : AA {
+//  var newVariable:String
+//  
+//  init() {
+//    self.newVariable = "hello"
+//    super.init(string: "aaaaa")
+//  }
+//}
 
 

@@ -149,11 +149,57 @@ class CombineTestViewController: UIViewController {
     
     var cancellables = Set<AnyCancellable>()
     
+    var startButton: UIButton? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.combineTest()
         self.loadTest()
+        
+        self.loadS()
+        self.setupButton()
+    }
+    
+    
+    func setupButton() {
+        
+        let sstartButton = UIButton.init(frame: CGRect.init(x: 240, y: 100, width: 100, height: 100))
+        sstartButton.setTitle("Timer", for: .normal)
+        sstartButton.addTarget(self, action: #selector(timerS), for: .touchUpInside)
+        sstartButton.backgroundColor = .blue
+        self.view.addSubview(sstartButton)
+        
+        self.startButton = sstartButton
+    }
+    var timerCan: AnyCancellable?
+    
+    deinit {
+//        if let tt = timerCan {
+//            tt.cancel()
+//        }
+    }
+    
+    @objc
+    func timerS() {
+        print("abc")
+        
+        if  let ttimer = timerCan {
+            ttimer.cancel()
+        }
+        self.timeCountDown = 60
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.timerCan = Timer.publish(every: 1, on: .main, in: .commonModes).autoconnect().sink {[weak self] v in
+                print("v = \(v)")
+                //            if let newV = self?.timeCountDown {
+                //                newV -= 1
+                //                self?.timeCountDown = newV
+                //            }
+                self?.timeCountDown -= 1
+            }
+        }
+
     }
     
 
@@ -218,15 +264,152 @@ class CombineTestViewController: UIViewController {
 //        }.store(in: &cancellables)
     }
     
+struct EmptyError: Error {
+    var info: String?
+}
     
+struct ParseError: Error {}
+    
+    func romanNumeral(from:Int) throws -> String {
+        let romanNumeralDict: [Int : String] =
+        [1:"I", 2:"II", 3:"III", 4:"IV", 5:"V"]
+        guard let numeral = romanNumeralDict[from] else {
+            throw ParseError()
+        }
+        return numeral
+    }
+           
+    func ticket(s : NSNumber?) throws -> String {
+        if let ss = s {
+            return "剩余\(ss)秒"
+        }
+        throw EmptyError(info: "hhh")
+    }
+            
+    
+    let numbers = [5, 4, 3, 2, 1, 0]
+    
+    func loadS ()
+    {
+        
+        
+//        ca = numbers.publisher
+//            .tryMap { try self.romanNumeral(from: $0) }
+//            .sink(
+//                receiveCompletion: {
+//                    print ("completion: \($0)")
+//
+//                },
+//                receiveValue: {
+//                    print ("abcd  \($0)", terminator: " ")
+//
+//                }
+//             )
+        
+//        ca = $timeCountDown.flatMap({ str in
+//            return str+"当前时间"
+//        }).sin { v in
+//            print("v = \(v)")
+//        }
+        
+//        let v = $timeCountDown.map { str in
+//            return str?+"当前时间"
+//        }
+//        v.sink { ss in
+//            print(ss)
+//        }
+        
+        
+        ca = $timeCountDown.map { currentV -> AnyPublisher<String,Never> in
+                    let v = currentV.description+"秒"
+                    return Just(v).eraseToAnyPublisher()
+        }.switchToLatest().sink { str in
+            print("str = \(str)")
+        }
+        
+//        ca = $timeCountDown.map { currentV -> AnyPublisher<String,Never> in
+//            let v = currentV.description+"秒"
+//            return Just(v).eraseToAnyPublisher()
+//        }.sink {[weak self] str in
+//            print("str = \(str)")
+//            self?.startButton?.setTitle(str, for: .normal)
+//            self?.startButton?.setTitle(str, for: .disabled)
+//        }
+        
+
+//        ca = $timeCountDown.map { currentV -> String in
+////            return currentV+"秒"
+//            let v = currentV+"秒"
+//            return v
+//        }.sink { str in
+//            print("str = \(str)")
+//        }
+        
+        
+//        ca = $timeCountDown.tryMap { [weak self] newInt in
+//            try self?.ticket(s: newInt)
+//        }.sink { ss in
+//            print("ss = \(ss)")
+//        } receiveValue: { vv in
+//            print("vv = \(vv)")
+//        }
+
+        
+        
+//        ca = $timeCountDown
+//            .tryMap { str in
+//            if let s = str {
+//                return s + "acb"
+//            } else {
+//                throw EmptyError(info: "hhh")
+//            }
+//            }.sink(receiveCompletion: { e in
+//                print(e)
+//            }, receiveValue: { <#_#> in
+//                <#code#>
+//            })
+            
+        
+//        $timeCountDown.tryMap({ str -> AnyPublisher<String, Error> in
+//            if let s = str {
+//                return( s + "abc").publisher.eraseToAnyPublisher()
+//            }
+//
+//        })
+        
+//        ca = $timeCountDown.map { str -> String? in
+////            return str! + "abc"
+//            if let s = str {
+//                return s + "acb"
+//            }
+//            return nil
+//        }.replaceNil(with: EmptyError.self)
+//        .sink(receiveValue: { v in
+//            print(v)
+//        })
+    }
+    
+    @Published var timeCountDown: Int = 60
+    var ca: AnyCancellable?
     @objc
     func tt()
     {
         
         
+        self.timeCountDown = (Int)(Date.timeIntervalBetween1970AndReferenceDate)
+        print(self.timeCountDown)
+//        $timeCountDown.flatMap { str -> Result<String,Error> in
+//            if let _str = str {
+//                return Result.success(_str)
+//            }
+//            return Result.failure()
+//        }.sink { value in
+//            print(value)
+//        }
         
-        let c = CC()
-        c.method()
+        
+//        let c = CC()
+//        c.method()
         
 //        NSLog("12")
 //
