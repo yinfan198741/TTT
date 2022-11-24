@@ -90,3 +90,17 @@ struct pointerTest {
 //    reutrn "vv"
 //    }
 //}
+
+
+
+extension Array {
+    
+    func accu<T, Res>(_  res: Res, _ nextP:((_ res : Res, Element) -> T))->[T] {
+        var result:[T] = []
+        var start = res
+        return self.map { item in
+           return nextP(start, item)
+        }
+    }
+    
+}
