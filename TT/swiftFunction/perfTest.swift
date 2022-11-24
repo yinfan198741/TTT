@@ -95,12 +95,37 @@ struct pointerTest {
 
 extension Array {
     
-    func accu<T, Res>(_  res: Res, _ nextP:((_ res : Res, Element) -> T))->[T] {
+    func accu<T, Res>(_  res: Res, _ nextP:((_ res : Res, Element) -> T))->[T] where T == Res{
         var result:[T] = []
         var start = res
         return self.map { item in
-           return nextP(start, item)
+            start = nextP(start, item)
+            return start
         }
     }
     
 }
+
+
+
+struct myAdavaceSwift {
+    func TestArray() {
+        var list = [1,2,3,4];
+        var start = 0;
+        var res = 0;
+        var nlist = list.accu(start, +)
+        print(nlist)
+        
+        let frequencies = "hello".frequencies
+        print(frequencies)
+    }
+}
+
+
+extension Sequence where Element: Hashable {
+    var frequencies: [Element:Int] {
+        let frequencyPairs = self.map { ($0, 1) }
+        return Dictionary(frequencyPairs, uniquingKeysWith: +)
+    }
+}
+

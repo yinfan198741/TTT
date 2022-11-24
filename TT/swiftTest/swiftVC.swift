@@ -37,11 +37,18 @@ internal class swiftVC: UIViewController {
         bt.backgroundColor = .blue
         bt.setTitle("观察者", for: .normal)
         bt.setTitleColor(.red, for: .normal)
-//        bt.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
+        bt.addTarget(self, action: #selector(buttonAdavaceSwift), for: .touchUpInside)
         bt.frame = CGRect(x: 10, y: 200, width: 100, height: 100)
         self.view.addSubview(bt)
-        
         self.addTabDiss()
+    }
+    
+    
+    @objc
+    func buttonAdavaceSwift() {
+        NSLog("%@", "buttonAdavaceSwift")
+        let adavaceSwift = myAdavaceSwift()
+        adavaceSwift.TestArray()
     }
     
     func buttonTap() {

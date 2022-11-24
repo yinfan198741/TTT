@@ -94,6 +94,12 @@ UILabel* _la;
     //        NSLog(@"ttttt");
     //    }];
 	
+	
+	TabItem* SwiftTest = [TabItem CreateItem:@"SwiftTest" action:^{
+		[self SwiftTest123];
+	}];
+	[self.source addObject:SwiftTest];
+	
 	TabItem* RacCall = [TabItem CreateItem:@"RacCall" action:^{
 		[self RacCall];
 	}];
@@ -742,6 +748,28 @@ void maked(int *a , int s, int idx)
   HashViewController* hash = [[HashViewController alloc] init];
   [self.navigationController pushViewController:hash animated:true];
 }
+
+
+-(void)SwiftTest123 {
+	NSLog(@"SwiftTest");
+	//  char* name = getDylibName();
+	//  NSLog(@"name = %s",name);
+	
+	//	var arrT = [1,2,3];
+	//	arrT.accu
+	
+	//	[let advaceSwfit:] = AdavaceSwift();
+	//	advaceSwfit.
+	
+	//	var advaceSwfit = myAdavaceSwift1();
+	//	var a = myAdavaceSwift1();
+	//	var ad = myAdavaceSwift();
+	
+	swiftVC* vc = [[swiftVC alloc] init];
+	[self.navigationController pushViewController:vc animated:YES];
+
+}
+
 
 -(void)dylibCall {
   NSLog(@"dylibCall");
