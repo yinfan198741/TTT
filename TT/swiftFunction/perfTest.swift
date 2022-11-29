@@ -110,15 +110,53 @@ extension Array {
 
 struct myAdavaceSwift {
     func TestArray() {
-        var list = [1,2,3,4];
-        var start = 0;
-        var res = 0;
-        var nlist = list.accu(start, +)
-        print(nlist)
+//        var list = [1,2,3,4];
+//        var start = 0;
+//        var res = 0;
+//        var nlist = list.accu(start, +)
+//        print(nlist)
+//
+//        let frequencies = "hello".frequencies
+//        print(frequencies)
         
-        let frequencies = "hello".frequencies
-        print(frequencies)
+        optionalTest()
     }
+    
+    func optionalTest() {
+        let stringNumbers = ["1", "2", "three"]
+        var ints = stringNumbers.map { item in
+            return Int(item)
+        }
+        
+        for int in ints {
+            print(int)
+        }
+        
+        print("======1")
+        var iterator = ints.makeIterator()
+        while let mint = iterator.next() {
+            print(mint)
+        }
+        
+        print("======2")
+        for case let int? in ints {
+            print("int = \(int)")
+        }
+        
+        print("======3")
+        for case let .some(v) in ints {
+            print("v = \(v) ")
+        }
+         
+        print("======4")
+        let j = 5
+        if case 0..<10 = j {
+        print("\(j) within range")
+        } // 5 within range
+        
+//        print(ints)
+    }
+    
 }
 
 
