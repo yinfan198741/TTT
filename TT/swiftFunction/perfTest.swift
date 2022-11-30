@@ -154,9 +154,46 @@ struct myAdavaceSwift {
         print("\(j) within range")
         } // 5 within range
         
+        
+        var op: Optional<String> = Optional.init("abc")
+        print(op)
+        
+        
+        var op2:String?
+        
+        if op2 != nil {
+          print("op2 != nil")
+        } else {
+            print("op2 == nil")
+        }
+        
+        var t = ["1" ,"a"].flatMap { return Int.init($0)
+        }
+        print(t)
+        
+        var t2 = ["1" ,"a"].map { return Int.init($0)
+        }
+        print(t2)
+        
+        
+       var dt = [1,2,3].map(doubleT)
+        print(dt)
+//        if op2? {
+//            print("op2 != nil")
+//        }
+        
+        var dt2 = [1,2,3].map(doubleTM)
+         print(dt2)
+        
+        
 //        print(ints)
     }
     
+    func doubleT(_ v:Int) -> Int {
+        return v*2;
+    }
+    func doubleTM(_ v:Int)-> Void {
+    }
 }
 
 
