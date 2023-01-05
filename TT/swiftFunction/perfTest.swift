@@ -183,16 +183,89 @@ struct myAdavaceSwift {
 //        }
         
         var dt2 = [1,2,3].map(doubleTM)
-         print(dt2)
+        print(dt2)
+        
+        var dt3 = [1,2,3].flatMap(doubleTQ)
+        print("dt3 = \(dt3)")
+        
+        var dt4 = [1,2,3].map(doubleTQ)
+        print("dt4 = \(dt4)")
         
         
+        var dt5 = [1,2,3].map(doubleTQQ)
+        print("dt5 = \(dt5)")
+        
+        var dt6 = [1,2,3].flatMap(doubleTQQ)
+        print("dt6 = \(dt6)")
 //        print(ints)
+        
+        
+        let alertV = AlertView()
+        var log = logger()
+//        alertV.buttonTaped = log.logedIdx
+//        alertV.buttonTaped = { idx in
+//            print("idx = \(idx)")
+//            log.logedIdx(idx)
+//        }
+        alertV.fire()
+       print("log.list = \(log.list)")
     }
     
     func doubleT(_ v:Int) -> Int {
         return v*2;
     }
+    
     func doubleTM(_ v:Int)-> Void {
+    }
+    
+    func doubleTQ(_ v:Int) -> Int? {
+        return v*2;
+    }
+    
+    func doubleTQQ(_ v:Int) -> Int?? {
+        return .some(v*2);
+    }
+}
+
+
+struct pointTest {
+    var x:Int
+    var y:Int
+    
+    var xx_yy: Int = {
+        return 100
+    }()
+    
+    var x_yy: Int {
+        return 101
+    }
+}
+
+extension pointTest {
+    var x_y:Int {
+        return x + y
+    }
+}
+
+
+class AlertView {
+    var buttons:[String]
+    var buttonTaped:((_ idx:Int) -> Void)?
+    
+    init(buttons: [String] = ["OK","Cancel"]) {
+        self.buttons = buttons
+    }
+    
+    func fire() {
+        buttonTaped?(1)
+    }
+}
+
+struct logger {
+    var list:[Int] = []
+    mutating func logedIdx(_ idx: Int){
+        list.append(idx)
+        print(list)
     }
 }
 
