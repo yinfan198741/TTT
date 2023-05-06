@@ -95,19 +95,17 @@ UILabel* _la;
     //    }];
 	
 	
+	TabItem* RacCall = [TabItem CreateItem:@"RacCall" action:^{
+		[self RacCall];
+	}];
+	[self.source addObject:RacCall];
+	
 	TabItem* SwiftTest = [TabItem CreateItem:@"SwiftTest" action:^{
 		[self SwiftTest123];
 	}];
 	[self.source addObject:SwiftTest];
 	
-	TabItem* RacCall = [TabItem CreateItem:@"RacCall" action:^{
-		[self RacCall];
-	}];
-	[self.source addObject:RacCall];
-
-	
-    
-    TabItem* NSNumericSearch = [TabItem CreateItem:@"NSNumericSearch" action:^{
+	TabItem* NSNumericSearch = [TabItem CreateItem:@"NSNumericSearch" action:^{
         [self NSNumericSearch];
     }];
     [self.source addObject:NSNumericSearch];

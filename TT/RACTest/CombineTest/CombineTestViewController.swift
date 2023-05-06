@@ -82,11 +82,70 @@ class BottomAlertBaseView: UIView {
 }
 
 
+public struct Always<Output>: Publisher {
+  public typealias Failure = Never
+
+  public let output: Output
+
+  public init(_ output: Output) {
+    self.output = output
+  }
+
+  public func receive<S: Subscriber>(subscriber: S) where S.Input == Output, S.Failure == Failure {
+    let subscription = Subscription(output: output, subscriber: subscriber)
+    subscriber.receive(subscription: subscription)
+  }
+}
+
+private extension Always {
+  final class Subscription<S: Subscriber> where S.Input == Output, S.Failure == Failure {
+    private let output: Output
+    private var subscriber: S?
+
+    init(output: Output, subscriber: S) {
+      self.output = output
+      self.subscriber = subscriber
+    }
+  }
+}
+
+extension Always.Subscription: Cancellable {
+  func cancel() {
+    subscriber = nil
+  }
+}
+
+extension Always.Subscription: Subscription {
+  func request(_ demand: Subscribers.Demand) {
+    var demand = demand
+    while let subscriber = subscriber, demand > 0 {
+      demand -= 1
+      demand += subscriber.receive(output)
+    }
+  }
+}
+
+
 extension UIControl {
     
+    func publisher(for event: UIControl.Event) -> UIControl.InteractionPublisher {
+        return InteractionPublisher(control: self, event: event)
+    }
+    
+    struct InteractionPublisher: Publisher {
+        
+        typealias Output = Event
+        typealias Failure = Never
+        var control: UIControl
+        var event: Event
+        
+        func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, Event == S.Input {
+            let subtion = InteractionSubscription<S>(control: control, event: event, s: subscriber)
+            subscriber.receive(subscription: subtion)
+        }
+    }
+    
     class InteractionSubscription<S: Subscriber>: Subscription where S.Input == Event {
-        
-        
         var control: UIControl
         var event: Event
         var subscriber: S
@@ -106,40 +165,18 @@ extension UIControl {
             send()
         }
         
+        func send() {
+            self.subscriber.receive(event)
+        }
+        
         func request(_ demand: Subscribers.Demand) {
            
         }
         
         func cancel() {
-            
-        }
-        
-        func send() {
-            self.subscriber.receive(event)
-        }
-        
-    }
-    
-    struct InteractionPublisher: Publisher {
-        
-        typealias Output = Event
-        typealias Failure = Never
-        var control: UIControl
-        var event: Event
-        
-        
-        func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, Event == S.Input {
-            let subtion = InteractionSubscription<S>(control: control, event: event, s: subscriber)
-            subscriber.receive(subscription: subtion)
+
         }
     }
-        
-    
-    
-    func publisher(for event: UIControl.Event) -> UIControl.InteractionPublisher {
-        return InteractionPublisher(control: self, event: event)
-    }
-    
 }
 
 
@@ -159,6 +196,8 @@ class CombineTestViewController: UIViewController {
         
         self.loadS()
         self.setupButton()
+        
+        self.setupAnyButton()
     }
     
     
@@ -169,9 +208,24 @@ class CombineTestViewController: UIViewController {
         sstartButton.addTarget(self, action: #selector(timerS), for: .touchUpInside)
         sstartButton.backgroundColor = .blue
         self.view.addSubview(sstartButton)
-        
         self.startButton = sstartButton
     }
+    
+    var cancle: AnyCancellable?
+    
+    func setupAnyButton() {
+        
+        let sstartButton = UIButton.init(frame: CGRect.init(x: 10, y: 200, width: 100, height: 100))
+        sstartButton.setTitle("Any", for: .normal)
+//        sstartButton.addTarget(self, action: #selector(anyButton), for: .touchUpInside)
+        cancle = sstartButton.publisher(for: .touchUpInside).sink { ev in
+            print("ev = \(ev)")
+        }
+        sstartButton.backgroundColor = .blue
+        self.view.addSubview(sstartButton)
+        self.startButton = sstartButton
+    }
+    
     var timerCan: AnyCancellable?
     
     deinit {
@@ -202,6 +256,10 @@ class CombineTestViewController: UIViewController {
 
     }
     
+    @objc
+    func anyButton() {
+        print("anyButton")
+    }
 
     func loadTest()  {
         let b = UIButton(frame: CGRect.init(x: 120, y: 100, width: 100, height: 100))

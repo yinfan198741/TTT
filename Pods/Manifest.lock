@@ -29,6 +29,7 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - CombineExt (1.8.0)
   - FBSDKCoreKit (7.1.1):
     - FBSDKCoreKit/Basics (= 7.1.1)
     - FBSDKCoreKit/Core (= 7.1.1)
@@ -60,6 +61,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - BlocksKit
+  - CombineExt
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -92,13 +94,15 @@ SPEC REPOS:
     - YYText
   trunk:
     - AFNetworking
+    - CombineExt
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
+  BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
+  CombineExt: c4daa97ef75754d8ef319bd79edeef82652f3eea
   FBSDKCoreKit: b46507dc8b8cefed31d644e74d7cc30e2a715ef8
   FBSDKLoginKit: 1a61d79e2b25e2fc0d03dccab1e34b38bbdf2546
   FBSDKShareKit: 00a055c1999b099596e00212dd1c0600c6697019
@@ -115,6 +119,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 25e58d44ab596c87c0dc3c8f03024baa7b2cbdb3
+PODFILE CHECKSUM: a4dee167fa5dec676512136597b79866adda4d65
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.3
