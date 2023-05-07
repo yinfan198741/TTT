@@ -182,6 +182,101 @@ extension UIControl {
 }
 
 
+struct myError: Error{
+    
+}
+
+class myPublisbeWithError : Publisher {
+    func receive<S>(subscriber: S) where S : Subscriber, myError == S.Failure, Int == S.Input {
+        
+        let mySubction = mySubscriptionWithError(subscriber: subscriber)
+        subscriber.receive(subscription: mySubction)
+    }
+    
+    typealias Output = Int
+    
+    typealias Failure = myError
+}
+
+class mySubscriptionWithError<S: Subscriber>: Subscription where S.Input == Int, S.Failure == myError {
+    var subscriber: S?
+    init(subscriber: S) {
+        self.subscriber = subscriber
+    }
+    
+    func request(_ demand: Subscribers.Demand) {
+        print("request")
+        _ = subscriber?.receive(5)
+    }
+    
+    func cancel() {
+        print("cancel")
+        subscriber = nil
+    }
+}
+
+
+class myPublisber : Publisher {
+    
+    typealias Output = Int
+    
+    typealias Failure = Never
+    
+    func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, Int == S.Input {
+//        _ = subscriber.receive(1)
+//        _ = subscriber.receive(2)
+//        subscriber.receive(completion: .finished)
+//        subscriber.receive(subscription: <#T##Subscription#>)
+//        let mySubction = mySubscription()
+//        mySubction.subscriber = subscriber
+//        subscriber.receive(subscription: mySubction)
+//        let mySubction = mySubscription(output: Int.self, subscriber: subscriber)
+//        subscriber.receive(subscription: mySubction)
+        
+        let mySubction = mySubscription(subscriber: subscriber)
+        subscriber.receive(subscription: mySubction)
+    }
+}
+
+
+class mySubscriber: Subscriber {
+   
+    
+    typealias Input = Int
+    
+    typealias Failure = Never
+    
+    func receive(subscription: Subscription) {
+        subscription.request(.unlimited)
+    }
+    
+    func receive(_ input: Int) -> Subscribers.Demand {
+        print("receive = \(input)")
+        return .unlimited
+    }
+    
+    func receive(completion: Subscribers.Completion<Never>) {
+        print("receive Completion")
+    }
+}
+
+class mySubscription<S: Subscriber>: Subscription where S.Input == Int {
+    var subscriber: S?
+    init(subscriber: S) {
+        self.subscriber = subscriber
+    }
+    
+    func request(_ demand: Subscribers.Demand) {
+        print("request")
+        _ = subscriber?.receive(5)
+    }
+    
+    func cancel() {
+        print("cancel")
+        subscriber = nil
+    }
+}
+
 class CombineTestViewController: UIViewController {
 
     
@@ -201,6 +296,8 @@ class CombineTestViewController: UIViewController {
         
         self.setupControlEventButton()
         self.setupAnyButton()
+        
+        self.setupMyPubButton()
     }
     
     
@@ -228,13 +325,34 @@ class CombineTestViewController: UIViewController {
     }
     
     func setupAnyButton() {
-        
         let sstartButton = UIButton.init(frame: CGRect.init(x: 120, y: 210, width: 100, height: 100))
         sstartButton.setTitle("Any", for: .normal)
         sstartButton.addTarget(self, action: #selector(AnyTest), for: .touchUpInside)
         sstartButton.backgroundColor = .blue
         self.view.addSubview(sstartButton)
     }
+    
+    
+    func setupMyPubButton() {
+        let sstartButton = UIButton.init(frame: CGRect.init(x: 230, y: 210, width: 100, height: 100))
+        sstartButton.setTitle("myPub", for: .normal)
+//        sstartButton.addTarget(self, action: #selector(AnyTest), for: .touchUpInside)
+       let pub = sstartButton.publisher(for: .touchUpInside).flatMap { e in
+            return myPublisber.init()
+        }
+        
+        let mySubser = mySubscriber()
+        pub.receive(subscriber: mySubser)
+        
+        sstartButton.backgroundColor = .blue
+        self.view.addSubview(sstartButton)
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            print("asyncAfter")
+            self.timerCan?.cancel()
+        }
+}
     
     var timerCan: AnyCancellable?
     
