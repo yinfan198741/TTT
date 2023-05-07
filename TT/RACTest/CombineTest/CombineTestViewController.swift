@@ -116,13 +116,15 @@ extension Always.Subscription: Cancellable {
 }
 
 extension Always.Subscription: Subscription {
-  func request(_ demand: Subscribers.Demand) {
-    var demand = demand
-    while let subscriber = subscriber, demand > 0 {
-      demand -= 1
-      demand += subscriber.receive(output)
+    func request(_ demand: Subscribers.Demand) {
+        //    var demand = demand
+        //    while let subscriber = subscriber, demand > 0 {
+        //      demand -= 1
+        //      demand += subscriber.receive(output)
+        //    }
+
+        subscriber?.receive(output)
     }
-  }
 }
 
 
@@ -166,7 +168,7 @@ extension UIControl {
         }
         
         func send() {
-            self.subscriber.receive(event)
+           _ = self.subscriber.receive(event)
         }
         
         func request(_ demand: Subscribers.Demand) {
@@ -197,6 +199,7 @@ class CombineTestViewController: UIViewController {
         self.loadS()
         self.setupButton()
         
+        self.setupControlEventButton()
         self.setupAnyButton()
     }
     
@@ -213,17 +216,24 @@ class CombineTestViewController: UIViewController {
     
     var cancle: AnyCancellable?
     
-    func setupAnyButton() {
+    func setupControlEventButton() {
         
-        let sstartButton = UIButton.init(frame: CGRect.init(x: 10, y: 200, width: 100, height: 100))
-        sstartButton.setTitle("Any", for: .normal)
-//        sstartButton.addTarget(self, action: #selector(anyButton), for: .touchUpInside)
+        let sstartButton = UIButton.init(frame: CGRect.init(x: 10, y: 210, width: 100, height: 100))
+        sstartButton.setTitle("ControlEvent", for: .normal)
         cancle = sstartButton.publisher(for: .touchUpInside).sink { ev in
             print("ev = \(ev)")
         }
         sstartButton.backgroundColor = .blue
         self.view.addSubview(sstartButton)
-        self.startButton = sstartButton
+    }
+    
+    func setupAnyButton() {
+        
+        let sstartButton = UIButton.init(frame: CGRect.init(x: 120, y: 210, width: 100, height: 100))
+        sstartButton.setTitle("Any", for: .normal)
+        sstartButton.addTarget(self, action: #selector(AnyTest), for: .touchUpInside)
+        sstartButton.backgroundColor = .blue
+        self.view.addSubview(sstartButton)
     }
     
     var timerCan: AnyCancellable?
@@ -232,6 +242,26 @@ class CombineTestViewController: UIViewController {
 //        if let tt = timerCan {
 //            tt.cancel()
 //        }
+    }
+    
+    @objc
+    func AnyTest() {
+        print("AnyTest")
+        timerCan = Always.init(5).sink { v in
+            print("v = \(v)")
+        }
+        
+        
+        
+        let publisher = [1,2,3,4,5].publisher
+        let subscriber = Subscribers.Sink<Int, Never> { e in
+            print("e = \(e)")
+        } receiveValue: { v in
+            print("v = \(v)")
+        }
+        
+        publisher.subscribe(subscriber)
+        
     }
     
     @objc
