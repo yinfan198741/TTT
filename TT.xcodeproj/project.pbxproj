@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61224F0E2A0AA7B300956369 /* openCombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61224F0D2A0AA7B300956369 /* openCombineViewController.swift */; };
 		6166DE32275DBDBB00A77662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6166DE31275DBDBB00A77662 /* LaunchScreen.storyboard */; };
 		6166DE35275E0DE400A77662 /* CombineTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6166DE34275E0DE400A77662 /* CombineTestViewController.swift */; };
 		6166DE38275E198400A77662 /* loadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6166DE37275E198400A77662 /* loadTool.swift */; };
@@ -244,6 +245,7 @@
 /* Begin PBXFileReference section */
 		033B8B13AD73AEF8C329338F /* Pods-TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TT/Pods-TT.debug.xcconfig"; sourceTree = "<group>"; };
 		1104F4480C0F594D792FE746 /* Pods_TTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61224F0D2A0AA7B300956369 /* openCombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openCombineViewController.swift; sourceTree = "<group>"; };
 		6166DE31275DBDBB00A77662 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6166DE34275E0DE400A77662 /* CombineTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTestViewController.swift; sourceTree = "<group>"; };
 		6166DE37275E198400A77662 /* loadTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadTool.swift; sourceTree = "<group>"; };
@@ -638,11 +640,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		61224F0B2A0AA5AA00956369 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		6166DE33275E0DC200A77662 /* CombineTest */ = {
 			isa = PBXGroup;
 			children = (
 				6166DE36275E196E00A77662 /* load */,
 				6166DE34275E0DE400A77662 /* CombineTestViewController.swift */,
+				61224F0D2A0AA7B300956369 /* openCombineViewController.swift */,
 			);
 			path = CombineTest;
 			sourceTree = "<group>";
@@ -869,6 +879,7 @@
 		A7D8FA611E9B2BBA00ED8D03 = {
 			isa = PBXGroup;
 			children = (
+				61224F0B2A0AA5AA00956369 /* Packages */,
 				A7B49F80211B359B0081D199 /* Common.xcconfig */,
 				A7B49F7F211B359B0081D199 /* DebugConfig.xcconfig */,
 				A7B49F81211B359B0081D199 /* ReleaseConfig.xcconfig */,
@@ -1953,6 +1964,7 @@
 				B5BFE3D8222E96BB00B6CFAC /* autoCellFive.swift in Sources */,
 				A74003FB238EBD2400BAA62E /* HTTPRedirectResponse.m in Sources */,
 				B56FBC6C21E47E90003694E1 /* Swear.m in Sources */,
+				61224F0E2A0AA7B300956369 /* openCombineViewController.swift in Sources */,
 				B5BFE3DA222E96BB00B6CFAC /* autoLayoutVC.swift in Sources */,
 				A740041B238EBD7600BAA62E /* ContextFilterLogFormatter.m in Sources */,
 				B5670EF4215F11C90014807D /* SignalHandler.m in Sources */,
@@ -2198,7 +2210,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2241,7 +2253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

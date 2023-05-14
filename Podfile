@@ -1,5 +1,5 @@
 require "fileutils"
-platform :ios, '10.0'
+platform :ios, '14.0'
 # use_frameworks!
 inhibit_all_warnings!
 
@@ -31,6 +31,11 @@ target 'TT' do
    pod 'YYText'
    pod 'SVProgressHUD'
    pod 'BlocksKit'
+   
+#   pod 'OpenCombine', '~> 0.14.0'
+#   pod 'OpenCombineDispatch', '~> 0.14.0'
+#   pod 'OpenCombineFoundation', '~> 0.14.0'
+   
 #   pod 'CocoaLumberjack'
 #    post_install do |installer|
 #

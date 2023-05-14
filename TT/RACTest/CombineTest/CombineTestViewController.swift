@@ -8,8 +8,7 @@
 
 import UIKit
 import Combine
-
-
+//import OpenCombine
 
 //public class C1: NSObject {
 //    public func method() { print("C") }
@@ -334,23 +333,36 @@ class CombineTestViewController: UIViewController {
     
     
     func setupMyPubButton() {
-        let sstartButton = UIButton.init(frame: CGRect.init(x: 230, y: 210, width: 100, height: 100))
-        sstartButton.setTitle("myPub", for: .normal)
-//        sstartButton.addTarget(self, action: #selector(AnyTest), for: .touchUpInside)
-       let pub = sstartButton.publisher(for: .touchUpInside).flatMap { e in
-            return myPublisber.init()
-        }
+//        let sstartButton = UIButton.init(frame: CGRect.init(x: 230, y: 210, width: 100, height: 100))
+//        sstartButton.setTitle("myPub", for: .normal)
+////        sstartButton.addTarget(self, action: #selector(AnyTest), for: .touchUpInside)
+//       let pub = sstartButton.publisher(for: .touchUpInside).flatMap { e in
+//            return myPublisber.init()
+//        }
+//
+//        let mySubser = mySubscriber()
+//        pub.receive(subscriber: mySubser)
+//
+//        sstartButton.backgroundColor = .blue
+//        self.view.addSubview(sstartButton)
+//
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//            print("asyncAfter")
+//            self.timerCan?.cancel()
+//        }
         
-        let mySubser = mySubscriber()
-        pub.receive(subscriber: mySubser)
-        
-        sstartButton.backgroundColor = .blue
-        self.view.addSubview(sstartButton)
-        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            print("asyncAfter")
-            self.timerCan?.cancel()
+       
+        timerCan = Just(5)
+            .map({ v in
+                return v+1
+            })
+            .flatMap({ v in
+                return Just(v+2)
+            })
+            .upstream
+        .sink { v in
+            print(v)
         }
 }
     
@@ -365,20 +377,24 @@ class CombineTestViewController: UIViewController {
     @objc
     func AnyTest() {
         print("AnyTest")
-        timerCan = Always.init(5).sink { v in
+//        timerCan = Always.init(5).sink { v in
+//            print("v = \(v)")
+//        }
+//
+//
+//
+//        let publisher = [1,2,3,4,5].publisher
+//        let subscriber = Subscribers.Sink<Int, Never> { e in
+//            print("e = \(e)")
+//        } receiveValue: { v in
+//            print("v = \(v)")
+//        }
+//
+//        publisher.subscribe(subscriber)
+        
+        timerCan = Just("abc").sink { v in
             print("v = \(v)")
         }
-        
-        
-        
-        let publisher = [1,2,3,4,5].publisher
-        let subscriber = Subscribers.Sink<Int, Never> { e in
-            print("e = \(e)")
-        } receiveValue: { v in
-            print("v = \(v)")
-        }
-        
-        publisher.subscribe(subscriber)
         
     }
     
