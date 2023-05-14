@@ -78,7 +78,7 @@ struct Capitalized {
 
 
 
-
+//https://juejin.cn/post/7122667987902922789#heading-6
 
 protocol DecodableDefaultSource {
     associatedtype Value: Decodable
@@ -89,28 +89,21 @@ enum DecodableDefault {}
 
 extension DecodableDefault {
     @propertyWrapper
-    struct Wrapper<Source: DecodableDefaultSource> {
+    struct Wrapper<Source: DecodableDefaultSource> :Decodable {
         typealias Value = Source.Value
         var wrappedValue = Source.defaultValue
-        
         init(wrappedValue: Value = Source.defaultValue) {
             self.wrappedValue = wrappedValue
         }
     }
 }
 
-extension DecodableDefault.Wrapper: Decodable {
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        wrappedValue = try container.decode(Value.self)
-    }
-}
 
 extension KeyedDecodingContainer {
     func decode<T>(_ type: DecodableDefault.Wrapper<T>.Type, forKey key: Key)
     throws -> DecodableDefault.Wrapper<T> {
-//        try decodeIfPresent(type, forKey: key) ?? .init()
         try decodeIfPresent(type, forKey: key) ?? .init()
+//        try decodeIfPresent(type, forKey: key) ?? (type.getDefaultVaule1!()) as! DecodableDefault.Wrapper<T>
     }
 }
 
@@ -120,11 +113,11 @@ extension DecodableDefault {
     typealias Map = Decodable & ExpressibleByDictionaryLiteral
     
     enum Sources {
-        enum True: Source { static var defaultValue: Bool { true } }
-        enum False: Source { static var defaultValue: Bool { false } }
-        enum EmptyString: Source { static var defaultValue: String { "" } }
-        enum EmptyList<T: List>: Source { static var defaultValue: T { [] } }
-        enum EmptyMap<T: Map>: Source { static var defaultValue: T { [:] } }
+//        enum True: Source { static var defaultValue: Bool { true } }
+//        enum False: Source { static var defaultValue: Bool { false } }
+//        enum EmptyString: Source { static var defaultValue: String { "" } }
+//        enum EmptyList<T: List>: Source { static var defaultValue: T { [] } }
+//        enum EmptyMap<T: Map>: Source { static var defaultValue: T { [:] } }
         enum Zero: Source
         {
             static var defaultValue: Int { 0 }
@@ -133,9 +126,15 @@ extension DecodableDefault {
 }
 
 
+enum Zero1: DecodableDefaultSource
+{
+    typealias Value = Int
+    static var defaultValue: Int { 0 }
+}
 
-extension DecodableDefault.Wrapper: Equatable where Value: Equatable {}
-extension DecodableDefault.Wrapper: Hashable where Value: Hashable {}
+
+//extension DecodableDefault.Wrapper: Equatable where Value: Equatable {}
+//extension DecodableDefault.Wrapper: Hashable where Value: Hashable {}
 
 extension DecodableDefault.Wrapper: Encodable where Value: Encodable {
     func encode(to encoder: Encoder) throws {
@@ -156,14 +155,14 @@ extension DecodableDefault.Wrapper: Encodable where Value: Encodable {
 
 
 struct PropertyPerson: Codable {
-    @DecodableDefault.Wrapper<DecodableDefault.Sources.Zero> var money: Int
+    @DecodableDefault.Wrapper<Zero1> var money: Int
     init(money: Int) {
         self.money = money
     }
     
     func __TS() {
 //        let _TS =  DecodableDefault.Source { var defaultValue: Bool { true } }
-        print(_TS)
+//        print(_TS)
     }
 }
 
