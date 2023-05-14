@@ -107,9 +107,10 @@ extension DecodableDefault.Wrapper: Decodable {
 }
 
 extension KeyedDecodingContainer {
-    func decode<T>(_ type: DecodableDefault.Wrapper<T>.Type, forKey key: Key) throws -> DecodableDefault.Wrapper<T> {
+    func decode<T>(_ type: DecodableDefault.Wrapper<T>.Type, forKey key: Key)
+    throws -> DecodableDefault.Wrapper<T> {
 //        try decodeIfPresent(type, forKey: key) ?? .init()
-        try decodeIfPresent(type, forKey: key) ?? type.init()
+        try decodeIfPresent(type, forKey: key) ?? .init()
     }
 }
 
@@ -158,6 +159,11 @@ struct PropertyPerson: Codable {
     @DecodableDefault.Wrapper<DecodableDefault.Sources.Zero> var money: Int
     init(money: Int) {
         self.money = money
+    }
+    
+    func __TS() {
+//        let _TS =  DecodableDefault.Source { var defaultValue: Bool { true } }
+        print(_TS)
     }
 }
 
