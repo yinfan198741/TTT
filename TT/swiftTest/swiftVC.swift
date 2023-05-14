@@ -22,25 +22,46 @@ extension UIViewController {
     }
 }
 
-internal class swiftVC: UIViewController {
+internal class swiftVC: UITableViewController {
+    
+    var source:[[String]]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        let uiLable = UILabel.init()
-        uiLable.text = "uiLable"
-        uiLable.textColor = .red
-        uiLable.frame = CGRect(x: 10, y: 10, width: 100, height: 100)
-        self.view.addSubview(uiLable)
         
-        let bt = UIButton(type: .system)
-        bt.backgroundColor = .blue
-        bt.setTitle("观察者", for: .normal)
-        bt.setTitleColor(.red, for: .normal)
-        bt.addTarget(self, action: #selector(buttonAdavaceSwift), for: .touchUpInside)
-        bt.frame = CGRect(x: 10, y: 200, width: 100, height: 100)
-        self.view.addSubview(bt)
-        self.addTabDiss()
+        self.source = [
+            ["propertyWarper","propertyWarper"],
+            ["RACOBserver","RACOBserver"],
+            ["FPRDemo","FPRDemo"]
+        ];
+//        self.view.backgroundColor = UIColor.whiteColor;
+        self.tableView.dataSource =  self;
+        self.tableView.delegate = self;
+        
+//        _label = [[UILabel alloc] initWithFrame:CGRectMake(250,700, 200, 50)];
+//        _label.backgroundColor = UIColor.redColor;
+        
+//        [self.view addSubview:self.label];
+//        [self.tableView reloadData];
+        self.tableView.reloadData()
+        
+        
+        
+//        let uiLable = UILabel.init()
+//        uiLable.text = "uiLable"
+//        uiLable.textColor = .red
+//        uiLable.frame = CGRect(x: 10, y: 10, width: 100, height: 100)
+//        self.view.addSubview(uiLable)
+//
+//        let bt = UIButton(type: .system)
+//        bt.backgroundColor = .blue
+//        bt.setTitle("观察者", for: .normal)
+//        bt.setTitleColor(.red, for: .normal)
+//        bt.addTarget(self, action: #selector(buttonAdavaceSwift), for: .touchUpInside)
+//        bt.frame = CGRect(x: 10, y: 200, width: 100, height: 100)
+//        self.view.addSubview(bt)
+//        self.addTabDiss()
     }
     
     
@@ -49,6 +70,79 @@ internal class swiftVC: UIViewController {
         NSLog("%@", "buttonAdavaceSwift")
         let adavaceSwift = myAdavaceSwift()
         adavaceSwift.TestArray()
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.source?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell  = UITableViewCell.init()
+        cell.textLabel?.text = (self.source![indexPath.row]).first
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let method = (self.source![indexPath.row]).first
+//        self.perform(#selector(method))
+        self.perform(Selector.init(stringLiteral: method!))
+    }
+    
+//    @UserDefaultBack<String>(Key: "Name" , defaultVaule: "abc")
+//    @UserDefaultBack(defaultVaule: "abc", Key: "Name")
+    @UserDefaultBack(Key: "Name")
+    var name: String = "abc"
+
+    
+//    @UserDefaultBack(Key: "Name2")
+    @UserDefaultBack(wrappedValue: nil, Key: "Name2")
+    var name2: String?
+    
+    
+    @UserDefaultBack(Key: "Name2")
+    var name3: String?
+    
+//    @UserDefaultBack<Int>(Key: "Name" , defaultVaule: 123)
+//    var name2: Int?
+    
+    @Capitalized
+    var big: String?
+    
+    @objc
+    func propertyWarper() {
+        print("propertyWarper Test")
+        name = "abcd"
+        self.name3 = nil
+        print("self.name2 = \(self.name2)")
+        print("self.name3 = \(self.name3)")
+        
+        print("$self.name2 = \(self.$name2)")
+        
+        
+        print("big1 = \(big)")
+        big = "big"
+        print("big2 = \(big)")
+        
+        
+        @Capitalized var big3: String?
+        big3 = "abcd"
+        print("big3 = \(big3)")
+        
+        
+        do {
+            let personJson =
+            """
+                {"name":null,"money":null,"skills":null,"teachers":null}
+            """
+            let person = try JSONDecoder().decode(PropertyPerson.self, from: personJson.data(using: .utf8)!)
+            print(person)
+        } catch  {
+            print(error)
+        }
     }
     
     func buttonTap() {

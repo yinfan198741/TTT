@@ -18,6 +18,38 @@
             endingLineNumber = "125"
             landmarkName = "test()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E967F26-6FA3-44E5-92A3-71CEC5E80EF2 - b7ae5a01c444942a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.LoadTool.test() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/load/loadTool.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "560">
+               </Location>
+               <Location
+                  uuid = "9E967F26-6FA3-44E5-92A3-71CEC5E80EF2 - b7ae5a01c444942a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.LoadTool.test() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/load/loadTool.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "392">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -82,6 +114,38 @@
             endingLineNumber = "522"
             landmarkName = "loadS()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "81193D88-7D88-46FB-90AC-DF829D5DF135 - ea45060ef5f7114"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.CombineTestViewController.loadS() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "545"
+                  endingLineNumber = "545"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  uuid = "81193D88-7D88-46FB-90AC-DF829D5DF135 - ea45060ef5f7114"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.CombineTestViewController.loadS() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "545"
+                  endingLineNumber = "545"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -114,6 +178,38 @@
             endingLineNumber = "591"
             landmarkName = "loadS()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A464D3E2-4C46-4F26-9B87-881564B63FF6 - ea45060ef5f7ab7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.CombineTestViewController.loadS() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "612"
+                  endingLineNumber = "612"
+                  offsetFromSymbolStart = "524">
+               </Location>
+               <Location
+                  uuid = "A464D3E2-4C46-4F26-9B87-881564B63FF6 - ea45060ef5f7ab7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.CombineTestViewController.loadS() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "612"
+                  endingLineNumber = "612"
+                  offsetFromSymbolStart = "464">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -130,6 +226,38 @@
             endingLineNumber = "589"
             landmarkName = "loadS()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D348D834-4B64-4684-A9F8-E4CC9B83ECD2 - ea45060ef5f7ab7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.CombineTestViewController.loadS() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "612"
+                  endingLineNumber = "612"
+                  offsetFromSymbolStart = "464">
+               </Location>
+               <Location
+                  uuid = "D348D834-4B64-4684-A9F8-E4CC9B83ECD2 - ea45060ef5f7ab7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.CombineTestViewController.loadS() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "612"
+                  endingLineNumber = "612"
+                  offsetFromSymbolStart = "524">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -178,6 +306,38 @@
             endingLineNumber = "270"
             landmarkName = "request(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3FBBD225-1BC1-409A-BF9B-0EC550798306 - 9400b554f6c70eca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.mySubscription.request(Combine.Subscribers.Demand) -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "352">
+               </Location>
+               <Location
+                  uuid = "3FBBD225-1BC1-409A-BF9B-0EC550798306 - 9400b554f6c70eca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.mySubscription.request(Combine.Subscribers.Demand) -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "392">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -194,6 +354,38 @@
             endingLineNumber = "269"
             landmarkName = "request(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2FB6D947-C190-4F5E-B578-576D774C2C12 - 9400b554f6c70eeb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.mySubscription.request(Combine.Subscribers.Demand) -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "269"
+                  endingLineNumber = "269"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "2FB6D947-C190-4F5E-B578-576D774C2C12 - 9400b554f6c70eeb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.mySubscription.request(Combine.Subscribers.Demand) -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "269"
+                  endingLineNumber = "269"
+                  offsetFromSymbolStart = "228">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -225,6 +417,335 @@
             startingLineNumber = "343"
             endingLineNumber = "343"
             landmarkName = "setupMyPubButton()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FF6CC71B-CC07-44CE-ACF3-9EADC7B5F2E5 - b1f1e5ff8ed20df9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.CombineTestViewController.setupMyPubButton() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "356"
+                  endingLineNumber = "356"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "FF6CC71B-CC07-44CE-ACF3-9EADC7B5F2E5 - b1f1e5ff8ed20df9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.CombineTestViewController.setupMyPubButton() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/RACTest/CombineTest/CombineTestViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "356"
+                  endingLineNumber = "356"
+                  offsetFromSymbolStart = "296">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1D6D05F-2C20-411A-B357-0B0F3EA2F55A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/swiftTest/swiftVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "propertyWarper()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E1D6D05F-2C20-411A-B357-0B0F3EA2F55A - b710c3b4716ac887"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.swiftVC.propertyWarper() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/swiftVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "3716">
+               </Location>
+               <Location
+                  uuid = "E1D6D05F-2C20-411A-B357-0B0F3EA2F55A - b710c3b4716ac8e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.swiftVC.propertyWarper() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/swiftVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "3452">
+               </Location>
+               <Location
+                  uuid = "E1D6D05F-2C20-411A-B357-0B0F3EA2F55A - b710c3b4716ac8e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.swiftVC.propertyWarper() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/swiftVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "3388">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6A3FED7-D1DB-4961-9360-8B47C896C368"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/swiftTest/PropertyWarpTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "Wrapper"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "E6A3FED7-D1DB-4961-9360-8B47C896C368 - cdb88b955e9f7e46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.DecodableDefault.Wrapper.init() -&gt; TTS.DecodableDefault.Wrapper&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "E6A3FED7-D1DB-4961-9360-8B47C896C368 - c0deb0f76c558233"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.DecodableDefault.Wrapper.init(from: Swift.Decoder) throws -&gt; TTS.DecodableDefault.Wrapper&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  uuid = "E6A3FED7-D1DB-4961-9360-8B47C896C368 - 1c0274835a7161a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.DecodableDefault.Wrapper.init(wrappedValue: &#x3c4;_0_0.Value) -&gt; TTS.DecodableDefault.Wrapper&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6D53D1D-822F-4273-8314-6BED76B23D1F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/swiftTest/PropertyWarpTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "init(money:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/swiftTest/PropertyWarpTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "init(money:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - de213e55186a6617"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of TTS.PropertyPerson.money : Swift.Int"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - 4bab2ced7fe12cfd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.money.getter : Swift.Int"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - 73d6262e52a0c0c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.money.setter : Swift.Int"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - 22d22a016a1e731c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.money.modify : Swift.Int"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - c23fa21883dc65c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.money.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - ab746b796bc595ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.init(money: Swift.Int) -&gt; TTS.PropertyPerson"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - fcf6ccfafe190a15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.init(from: Swift.Decoder) throws -&gt; TTS.PropertyPerson"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "307A8FC2-FAD5-4A26-A17B-095F53AA4FA0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/swiftTest/PropertyWarpTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "decode(_:forKey:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B504BD7A-951A-4D54-B8E1-010A128F1706"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TT/swiftTest/PropertyWarpTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "init(wrappedValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
