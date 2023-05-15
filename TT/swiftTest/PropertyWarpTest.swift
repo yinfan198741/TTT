@@ -61,7 +61,7 @@ extension UserDefaultBack where T: ExpressibleByNilLiteral {
 
 
 @propertyWrapper
-struct Capitalized {
+struct Capitalized : Codable {
     var wrappedValue: String? {
 //        willSet {
 //            newValue = newValue.uppercased()
@@ -71,8 +71,15 @@ struct Capitalized {
         }
     }
     
+
+    
     init(wrappedValue: String?) {
         self.wrappedValue = wrappedValue?.uppercased()
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.wrappedValue = try container.decodeIfPresent(String.self, forKey: .wrappedValue)
     }
 }
 
@@ -103,8 +110,15 @@ extension KeyedDecodingContainer {
     func decode<T>(_ type: DecodableDefault.Wrapper<T>.Type, forKey key: Key)
     throws -> DecodableDefault.Wrapper<T> {
         try decodeIfPresent(type, forKey: key) ?? .init()
-//        try decodeIfPresent(type, forKey: key) ?? (type.getDefaultVaule1!()) as! DecodableDefault.Wrapper<T>
+        //        try decodeIfPresent(type, forKey: key) ?? (type.getDefaultVaule1!()) as! DecodableDefault.Wrapper<T>
     }
+    
+    
+//    func decode<Capitalized>(_ type: Capitalized.Type, forKey key: Key) throws -> Capitalized {
+////        .init(wrappedValue:"abc")
+////        type.init()
+//    }
+    
 }
 
 extension DecodableDefault {

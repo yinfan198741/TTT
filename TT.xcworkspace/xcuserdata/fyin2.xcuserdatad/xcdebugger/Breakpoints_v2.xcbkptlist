@@ -525,42 +525,10 @@
             filePath = "TT/swiftTest/PropertyWarpTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "init(money:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A6D53D1D-822F-4273-8314-6BED76B23D1F - fcf6ccfafe190bd3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.PropertyPerson.init(from: Swift.Decoder) throws -&gt; TTS.PropertyPerson"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "180">
-               </Location>
-               <Location
-                  uuid = "A6D53D1D-822F-4273-8314-6BED76B23D1F - ab746b796bc595af"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.PropertyPerson.init(money: Swift.Int) -&gt; TTS.PropertyPerson"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "160"
-                  endingLineNumber = "160"
-                  offsetFromSymbolStart = "116">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -573,132 +541,10 @@
             filePath = "TT/swiftTest/PropertyWarpTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "PropertyPerson"
             landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - fcf6ccfafe190bd3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.PropertyPerson.init(from: Swift.Decoder) throws -&gt; TTS.PropertyPerson"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "180">
-               </Location>
-               <Location
-                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - de213e55186a6617"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "property wrapper backing initializer of TTS.PropertyPerson.money : Swift.Int"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "158"
-                  endingLineNumber = "158"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - 4bab2ced7fe12cfd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.PropertyPerson.money.getter : Swift.Int"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "158"
-                  endingLineNumber = "158"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - 73d6262e52a0c0c9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.PropertyPerson.money.setter : Swift.Int"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "158"
-                  endingLineNumber = "158"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - 22d22a016a1e731c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.PropertyPerson.money.modify : Swift.Int"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - c23fa21883dc65c9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.PropertyPerson.money.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "158"
-                  endingLineNumber = "158"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - ab746b796bc595ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.PropertyPerson.init(money: Swift.Int) -&gt; TTS.PropertyPerson"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "158"
-                  endingLineNumber = "158"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - fcf6ccfafe190a15"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.PropertyPerson.init(from: Swift.Decoder) throws -&gt; TTS.PropertyPerson"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "158"
-                  endingLineNumber = "158"
-                  offsetFromSymbolStart = "180">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -711,8 +557,8 @@
             filePath = "TT/swiftTest/PropertyWarpTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "KeyedDecodingContainer"
             landmarkType = "21">
             <Locations>
@@ -759,8 +605,8 @@
             filePath = "TT/swiftTest/PropertyWarpTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "init(wrappedValue:)"
             landmarkType = "7">
             <Locations>
@@ -807,8 +653,8 @@
             filePath = "TT/swiftTest/PropertyWarpTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "init(wrappedValue:)"
             landmarkType = "7">
          </BreakpointContent>
