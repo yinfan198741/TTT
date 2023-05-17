@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Combine
 
 extension UIViewController {
     func addTabDiss()  {
@@ -32,7 +32,7 @@ internal class swiftVC: UITableViewController {
         
         self.source = [
             ["propertyWarper","propertyWarper"],
-            ["RACOBserver","RACOBserver"],
+            ["CombineRetry","CombineRetry"],
             ["FPRDemo","FPRDemo"]
         ];
 //        self.view.backgroundColor = UIColor.whiteColor;
@@ -145,7 +145,19 @@ internal class swiftVC: UITableViewController {
 //        }
         
         WarpTest()
-        
+    }
+    
+    var cancellables = Set<AnyCancellable>()
+    
+    @objc
+    func CombineRetry() {
+        print("CombineRetry")
+        combieRetry().sink { e in
+            print("e = \(e)")
+        } receiveValue: { value in
+            print("value = \(value)")
+        }.store(in: &cancellables)
+
     }
     
     func buttonTap() {

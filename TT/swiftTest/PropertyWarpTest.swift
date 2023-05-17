@@ -171,11 +171,9 @@ extension KeyedDecodingContainer {
     }
 }
 
-extension Int : myDefaultType {
-    static var getDefaultVar: Int {
-        return 123
-    }
-}
+extension Int : myDefaultType { static var getDefaultVar: Int { return 1000 } }
+extension String : myDefaultType { static var getDefaultVar: String { return "default String" } }
+
 
 
 struct Test123: Codable {
@@ -203,87 +201,99 @@ struct Test123: Codable {
 //    }
 //}
 
-func WarpTest() {
+func WarpTest1() {
     do {
+//        let defaultJson =
+//        """
+//            {"age123":null}
+//        """
+//            let myDefault = try JSONDecoder().decode(Test123.self, from: defaultJson.data(using: .utf8)!)
+        
+        
+//        let defaultJson =
+//        """
+//        { "age123": 36 }
+//        """
+        
         let defaultJson =
         """
-            {"age123":null}
+        {"age123":36}
         """
-            let myDefault = try JSONDecoder().decode(Test123.self, from: defaultJson.data(using: .utf8)!)
-            print(myDefault)
-    } catch  {
-        print(error)
+        
+        let myDefault = try JSONDecoder().decode(Test123.self, from: defaultJson.data(using: .utf8)!)
+        print(myDefault)
+    }  catch DecodingError.dataCorrupted(let context) {
+        print(context)
+    } catch DecodingError.keyNotFound(let key, let context) {
+        print("Key '\(key)' not found:", context.debugDescription)
+        print("codingPath:", context.codingPath)
+    } catch DecodingError.valueNotFound(let value, let context) {
+        print("Value '\(value)' not found:", context.debugDescription)
+        print("codingPath:", context.codingPath)
+    } catch DecodingError.typeMismatch(let type, let context) {
+        print("Type '\(type)' mismatch:", context.debugDescription)
+        print("codingPath:", context.codingPath)
+    } catch {
+        print("error: ", error)
     }
 }
  
 
 
-//protocol DefaultValue {
-//    associatedtype Value: Decodable
-//    static var defaultValue: Value { get }
-//}
-//
-//@propertyWrapper
-//struct Default<T: DefaultValue>: Decodable {
-//    var wrappedValue: T.Value
-//
-//    enum CodingKeys: CodingKey {
-//        case wrappedValue
-//    }
-//
-//
-//    init(wrappedValue: T.Value) {
-//        self.wrappedValue = wrappedValue
-//    }
-//
+protocol DefaultValue {
+    associatedtype Value: Decodable
+    static var defaultValue: Value { get }
+}
+
+@propertyWrapper
+struct Default<T: DefaultValue>: Decodable {
+    var wrappedValue: T.Value
+
+
 //    init(from decoder: Decoder) throws {
 //        let container: KeyedDecodingContainer<Default<T>.CodingKeys> = try decoder.container(keyedBy: Default<T>.CodingKeys.self)
 //        self.wrappedValue = try container.decode(T.Value.self, forKey: Default<T>.CodingKeys.wrappedValue)
 //    }
-//}
-//
-//
-//
-//extension KeyedDecodingContainer {
-//    func decode<T>(_ type: Default<T>.Type, forKey key: Key) throws -> Default<T> where T: DefaultValue {
-//        //判断 key 缺失的情况，提供默认值
+}
+
+
+
+extension KeyedDecodingContainer {
+    func decode<T>(_ type: Default<T>.Type, forKey key: Key) throws -> Default<T> where T: DefaultValue {
+        //判断 key 缺失的情况，提供默认值
 //        (try decodeIfPresent(type, forKey: key)) ?? Default(wrappedValue: T.defaultValue)
-//    }
-//}
-//
-//
-//extension Int: DefaultValue {
-//    static var defaultValue = -1
-//}
-//
-//extension String: DefaultValue {
-//    static var defaultValue = "unknown123"
-//}
-//
-//struct Person123: Decodable {
-//    @Default<String> var name: String
-////    @Default<Int> var age: Int
-//    enum CodingKeys: CodingKey {
-//        case name
-//    }
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        self._name = try container.decode(Default<String>.self, forKey: .name)
-//    }
-//}
-//
-//func WarpTest() {
-//    do {
-//        let data = #"{ "name": null, "age": null}"#
-//        let p = try JSONDecoder().decode(Person123.self, from: data.data(using: .utf8)!)
-//        print("Person = \(p) \n", "p.name = \(p.name)")
-//
-//    } catch {
-//        print("error = \(error)")
-//    }
-//
-//}
+        
+        print("key = \(key)")
+        let decoder = try superDecoder(forKey: key)
+        let container = try decoder.singleValueContainer()
+        return try container.decode(type) ?? Default(wrappedValue: T.defaultValue)
+    }
+}
+
+
+extension Int: DefaultValue {
+    static var defaultValue = -1
+}
+
+extension String: DefaultValue {
+    static var defaultValue = "unknown123"
+}
+
+struct Person123: Decodable {
+    @Default<String> var name: String
+}
+
+func WarpTest() {
+    do {
+        let data = #"{"name": "yinfan"}"#
+        let p = try JSONDecoder().decode(Person123.self, from: data.data(using: .utf8)!)
+        print("Person = \(p) \n")
+
+    } catch {
+        print("error = \(error)")
+    }
+
+}
 
 //Person(_name: Default<Swift.String>(wrappedValue: "unknown"), _age: Default<Swift.Int>(wrappedValue: -1))
 //unknown  -1

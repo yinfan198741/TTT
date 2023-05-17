@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		61224F0E2A0AA7B300956369 /* openCombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61224F0D2A0AA7B300956369 /* openCombineViewController.swift */; };
 		6139A6D22A108C3F00F01452 /* PropertyWarpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139A6D12A108C3F00F01452 /* PropertyWarpTest.swift */; };
+		6139A6D42A150DCE00F01452 /* CombineRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139A6D32A150DCD00F01452 /* CombineRetry.swift */; };
 		6166DE32275DBDBB00A77662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6166DE31275DBDBB00A77662 /* LaunchScreen.storyboard */; };
 		6166DE35275E0DE400A77662 /* CombineTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6166DE34275E0DE400A77662 /* CombineTestViewController.swift */; };
 		6166DE38275E198400A77662 /* loadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6166DE37275E198400A77662 /* loadTool.swift */; };
@@ -248,6 +249,7 @@
 		1104F4480C0F594D792FE746 /* Pods_TTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61224F0D2A0AA7B300956369 /* openCombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openCombineViewController.swift; sourceTree = "<group>"; };
 		6139A6D12A108C3F00F01452 /* PropertyWarpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWarpTest.swift; sourceTree = "<group>"; };
+		6139A6D32A150DCD00F01452 /* CombineRetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineRetry.swift; sourceTree = "<group>"; };
 		6166DE31275DBDBB00A77662 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6166DE34275E0DE400A77662 /* CombineTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTestViewController.swift; sourceTree = "<group>"; };
 		6166DE37275E198400A77662 /* loadTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadTool.swift; sourceTree = "<group>"; };
@@ -1406,6 +1408,7 @@
 				B5A9FBF7217758870083D5E0 /* SwiftInit.swift */,
 				B5BFE3C0222E59AC00B6CFAC /* Book.swift */,
 				6139A6D12A108C3F00F01452 /* PropertyWarpTest.swift */,
+				6139A6D32A150DCD00F01452 /* CombineRetry.swift */,
 			);
 			path = swiftTest;
 			sourceTree = "<group>";
@@ -1974,6 +1977,7 @@
 				B5C8D575214F5C54007BF736 /* SwiftMapFlatMap.swift in Sources */,
 				B5BFE3CA222E966400B6CFAC /* BinarySearch.swift in Sources */,
 				B5BFE3C5222E939900B6CFAC /* Moniter.m in Sources */,
+				6139A6D42A150DCE00F01452 /* CombineRetry.swift in Sources */,
 				B551283A22201EF400374029 /* ImageHeaderViewController.m in Sources */,
 				6166DE38275E198400A77662 /* loadTool.swift in Sources */,
 				A7400400238EBD2400BAA62E /* MultipartFormDataParser.m in Sources */,
