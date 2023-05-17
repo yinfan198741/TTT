@@ -133,16 +133,19 @@ internal class swiftVC: UITableViewController {
         print("big3 = \(big3)")
         
         
-        do {
-            let personJson =
-            """
-                {"name":null,"money":null,"skills":null,"teachers":null}
-            """
-            let person = try JSONDecoder().decode(PropertyPerson.self, from: personJson.data(using: .utf8)!)
-            print(person)
-        } catch  {
-            print(error)
-        }
+//        do {
+//            let personJson =
+//            """
+//                {"name":null,"money":null,"skills":null,"teachers":null}
+//            """
+//            let person = try JSONDecoder().decode(PropertyPerson.self, from: personJson.data(using: .utf8)!)
+//            print(person)
+//        } catch  {
+//            print(error)
+//        }
+        
+        WarpTest()
+        
     }
     
     func buttonTap() {
