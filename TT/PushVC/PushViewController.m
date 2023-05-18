@@ -7,6 +7,7 @@
 //
 
 #import "PushViewController.h"
+#import "SVProgressHUD.h"
 
 @interface PushViewController ()
 
@@ -40,6 +41,8 @@
   self.navigationController.navigationBar.translucent = YES;
 //  self.navigationController.navigationBar.
     // Do any additional setup after loading the view.
+    
+    [SVProgressHUD show];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

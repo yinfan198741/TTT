@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Combine
+//import SVProgressHUD
 
 extension UIViewController {
     func addTabDiss()  {
@@ -62,6 +63,7 @@ internal class swiftVC: UITableViewController {
 //        bt.frame = CGRect(x: 10, y: 200, width: 100, height: 100)
 //        self.view.addSubview(bt)
 //        self.addTabDiss()
+        
     }
     
     
@@ -155,10 +157,11 @@ internal class swiftVC: UITableViewController {
         combieRetryPublisher()
             .handleEvents(
                 receiveSubscription: { sub in
-                    print("sub = \(sub)")
+                    SVProgressHUD.show()
                 },
                 receiveCompletion: { com in
                     print("com = \(com)")
+                    SVProgressHUD.dismiss()
                 }
             )
         .sink { e in
