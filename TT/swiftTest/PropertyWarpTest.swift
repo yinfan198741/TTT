@@ -246,66 +246,96 @@ protocol DefaultValue {
 }
 
 @propertyWrapper
-struct Default<S: DefaultValue>: Decodable {
+struct Default<S: DefaultValue> {
     var wrappedValue: S.Value
-
-
+    
+    enum CodingKeys: CodingKey {
+        case wrappedValue
+    }
+    
+    init(wrappedValue: S.Value) {
+        self.wrappedValue = wrappedValue
+    }
+    
+//
+//    init(<#parameters#>) {
+//        <#statements#>
+//    }
+    
 //    init(from decoder: Decoder) throws {
-//        let container: KeyedDecodingContainer<Default<T>.CodingKeys> = try decoder.container(keyedBy: Default<T>.CodingKeys.self)
-//        self.wrappedValue = try container.decode(T.Value.self, forKey: Default<T>.CodingKeys.wrappedValue)
+//        print("init(from decoder: Decoder)")
+////        let container = try decoder.singleValueContainer()
+////        let v = (try? container.decode(S.Value.self)) ?? S.defaultValue
+////        self.wrappedValue = v
+//        do {
+//            let container: KeyedDecodingContainer<Default<S>.CodingKeys> = try decoder.container(keyedBy: Default<S>.CodingKeys.self)
+//            self.wrappedValue = try container.decode(S.Value.self, forKey: Default<S>.CodingKeys.wrappedValue)
+//
+//        } catch {
+//            print(error)
+//            throw error
+//        }
 //    }
 }
 
+extension Default : Decodable {
+    init(from decoder: Decoder) throws {
+        print("init(from decoder: Decoder)")
+        let container = try decoder.singleValueContainer()
+        let v = (try? container.decode(S.Value.self)) ?? S.defaultValue
+        self.wrappedValue = v
+    }
+}
 
 
 extension KeyedDecodingContainer {
     
-    func decode(_ type: Default<String>.Type, forKey key: Key) throws -> Default<String> {
-        //判断 key 缺失的情况，提供默认值
-//        (try decodeIfPresent(type, forKey: key)) ?? Default(wrappedValue: T.defaultValue)
-        
-//        decodeIfPresent(<#T##type: Bool.Type##Bool.Type#>, forKey: <#T##CodingKey#>)
-        
-////        print("key = \(key)")
-//        let decoder = try superDecoder(forKey: key)
-//        let container = try decoder.singleValueContainer()
-//        let v = container.decode(type)
-//        return try container.decode(type) ?? Default(wrappedValue: T.defaultValue)
-        
-
-        let v = try decodeIfPresent(AnyDecodable.self, forKey: key)?.value
-        print("v = \(v)")
-        if let vT = v as? String {
-            Default<String>(wrappedValue: vT)
-        }
-        
-        return  Default(wrappedValue: "123")
-//        if let value = try decodeIfPresent(type, forKey: key) {
-//            return value
-//        } else {
-//            return Default(wrappedValue: P.defaultValue)
+//    func decode(_ type: Default<String>.Type, forKey key: Key) throws -> Default<String> {
+//        //判断 key 缺失的情况，提供默认值
+////        (try decodeIfPresent(type, forKey: key)) ?? Default(wrappedValue: T.defaultValue)
+//
+////        decodeIfPresent(<#T##type: Bool.Type##Bool.Type#>, forKey: <#T##CodingKey#>)
+//
+//////        print("key = \(key)")
+////        let decoder = try superDecoder(forKey: key)
+////        let container = try decoder.singleValueContainer()
+////        let v = container.decode(type)
+////        return try container.decode(type) ?? Default(wrappedValue: T.defaultValue)
+//
+//
+//        let v = try decodeIfPresent(AnyDecodable.self, forKey: key)?.value
+//        print("v = \(v)")
+//        if let vT = v as? String {
+//            Default<String>(wrappedValue: vT)
 //        }
-        
-//            do {
-//                let value = try decode(Bool.self, forKey: key)
-//                return Default(wrappedValue: value)
-//            } catch let error {
-//                guard let decodingError = error as? DecodingError,
-//                    case .typeMismatch = decodingError else {
-//                        return Default(wrappedValue: T.defaultValue)
-//                }
-//                if let intValue = try? decodeIfPresent(Int.self, forKey: key),
-//                    let bool = Bool(exactly: NSNumber(value: intValue)) {
-//                    return Default(wrappedValue: bool)
-//                } else if let stringValue = try? decodeIfPresent(String.self, forKey: key),
-//                    let bool = Bool(stringValue) {
-//                    return Default(wrappedValue: bool)
-//                } else {
-//                    return Default(wrappedValue: T.defaultValue)
-//                }
-//            }
-        
-    }
+//
+//        return  Default(wrappedValue: "123")
+////        if let value = try decodeIfPresent(type, forKey: key) {
+////            return value
+////        } else {
+////            return Default(wrappedValue: P.defaultValue)
+////        }
+//
+////            do {
+////                let value = try decode(Bool.self, forKey: key)
+////                return Default(wrappedValue: value)
+////            } catch let error {
+////                guard let decodingError = error as? DecodingError,
+////                    case .typeMismatch = decodingError else {
+////                        return Default(wrappedValue: T.defaultValue)
+////                }
+////                if let intValue = try? decodeIfPresent(Int.self, forKey: key),
+////                    let bool = Bool(exactly: NSNumber(value: intValue)) {
+////                    return Default(wrappedValue: bool)
+////                } else if let stringValue = try? decodeIfPresent(String.self, forKey: key),
+////                    let bool = Bool(stringValue) {
+////                    return Default(wrappedValue: bool)
+////                } else {
+////                    return Default(wrappedValue: T.defaultValue)
+////                }
+////            }
+//
+//    }
     
     func decode<P>(_ type_: Default<P>.Type, forKey key: Key) throws -> Default<P> {
         //判断 key 缺失的情况，提供默认值
@@ -320,8 +350,8 @@ extension KeyedDecodingContainer {
 //        return try container.decode(type) ?? Default(wrappedValue: T.defaultValue)
         
         
-        let v = try decodeIfPresent(AnyDecodable.self, forKey: key)?.value
-        print("v = \(v)")
+//        let v = try decodeIfPresent(AnyDecodable.self, forKey: key)?.value
+//        print("v = \(v)")
         
         
         
@@ -368,19 +398,41 @@ extension String: DefaultValue {
 
 struct Person123: Decodable {
     @Default<String> var name: String
+    @Default<Int> var age: Int
+    @Default<String> var school: String
+    @Default<String> var street: String
+    @Default<Int> var postNumber: Int
+//    enum CodingKeys: CodingKey {
+//        case name
+//    }
+    
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        self._name = try container.decode(Default<String>.self, forKey: .name)
+//    }
+    
     enum CodingKeys: CodingKey {
         case name
+        case age
+        case school
+        case street
+        case postNumber
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self._name = try container.decode(Default<String>.self, forKey: .name)
+        self._age = try container.decode(Default<Int>.self, forKey: .age)
+        self._school = try container.decode(Default<String>.self, forKey: .school)
+        self._street = try container.decode(Default<String>.self, forKey: .street)
+        self._postNumber = try container.decode(Default<Int>.self, forKey: .postNumber)
     }
+    
 }
 
 func WarpTest() {
     do {
-        let jsonData = #"{"name":"QmV0dGVyQ29kYWJsZQ=="}"#.data(using: .utf8)!
+        let jsonData = #"{"name":"QmV0dGVyQ29kYWJsZQ==", "age":18, "school":"pixian middle school", "street": null}"#.data(using: .utf8)!
         let p = try JSONDecoder().decode(Person123.self, from: jsonData)
         print("Person = \(p) \n")
 
