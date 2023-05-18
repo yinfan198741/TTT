@@ -246,8 +246,8 @@ protocol DefaultValue {
 }
 
 @propertyWrapper
-struct Default<T: DefaultValue>: Decodable {
-    var wrappedValue: T.Value
+struct Default<S: DefaultValue>: Decodable {
+    var wrappedValue: S.Value
 
 
 //    init(from decoder: Decoder) throws {
@@ -259,14 +259,101 @@ struct Default<T: DefaultValue>: Decodable {
 
 
 extension KeyedDecodingContainer {
-    func decode<T>(_ type: Default<T>.Type, forKey key: Key) throws -> Default<T> where T: DefaultValue {
+    
+    func decode(_ type: Default<String>.Type, forKey key: Key) throws -> Default<String> {
         //判断 key 缺失的情况，提供默认值
 //        (try decodeIfPresent(type, forKey: key)) ?? Default(wrappedValue: T.defaultValue)
         
-        print("key = \(key)")
-        let decoder = try superDecoder(forKey: key)
-        let container = try decoder.singleValueContainer()
-        return try container.decode(type) ?? Default(wrappedValue: T.defaultValue)
+//        decodeIfPresent(<#T##type: Bool.Type##Bool.Type#>, forKey: <#T##CodingKey#>)
+        
+////        print("key = \(key)")
+//        let decoder = try superDecoder(forKey: key)
+//        let container = try decoder.singleValueContainer()
+//        let v = container.decode(type)
+//        return try container.decode(type) ?? Default(wrappedValue: T.defaultValue)
+        
+
+        let v = try decodeIfPresent(AnyDecodable.self, forKey: key)?.value
+        print("v = \(v)")
+        if let vT = v as? String {
+            Default<String>(wrappedValue: vT)
+        }
+        
+        return  Default(wrappedValue: "123")
+//        if let value = try decodeIfPresent(type, forKey: key) {
+//            return value
+//        } else {
+//            return Default(wrappedValue: P.defaultValue)
+//        }
+        
+//            do {
+//                let value = try decode(Bool.self, forKey: key)
+//                return Default(wrappedValue: value)
+//            } catch let error {
+//                guard let decodingError = error as? DecodingError,
+//                    case .typeMismatch = decodingError else {
+//                        return Default(wrappedValue: T.defaultValue)
+//                }
+//                if let intValue = try? decodeIfPresent(Int.self, forKey: key),
+//                    let bool = Bool(exactly: NSNumber(value: intValue)) {
+//                    return Default(wrappedValue: bool)
+//                } else if let stringValue = try? decodeIfPresent(String.self, forKey: key),
+//                    let bool = Bool(stringValue) {
+//                    return Default(wrappedValue: bool)
+//                } else {
+//                    return Default(wrappedValue: T.defaultValue)
+//                }
+//            }
+        
+    }
+    
+    func decode<P>(_ type_: Default<P>.Type, forKey key: Key) throws -> Default<P> {
+        //判断 key 缺失的情况，提供默认值
+//        (try decodeIfPresent(type, forKey: key)) ?? Default(wrappedValue: T.defaultValue)
+        
+//        decodeIfPresent(<#T##type: Bool.Type##Bool.Type#>, forKey: <#T##CodingKey#>)
+        
+////        print("key = \(key)")
+//        let decoder = try superDecoder(forKey: key)
+//        let container = try decoder.singleValueContainer()
+//        let v = container.decode(type)
+//        return try container.decode(type) ?? Default(wrappedValue: T.defaultValue)
+        
+        
+        let v = try decodeIfPresent(AnyDecodable.self, forKey: key)?.value
+        print("v = \(v)")
+        
+        
+        
+//        if let vT = v as? P , P.Value == type(of: vT){
+//            Default<P>(wrappedValue: vT)
+//        }
+        
+        if let value = try decodeIfPresent(type_, forKey: key) {
+            return value
+        } else {
+            return Default(wrappedValue: P.defaultValue)
+        }
+        
+//            do {
+//                let value = try decode(Bool.self, forKey: key)
+//                return Default(wrappedValue: value)
+//            } catch let error {
+//                guard let decodingError = error as? DecodingError,
+//                    case .typeMismatch = decodingError else {
+//                        return Default(wrappedValue: T.defaultValue)
+//                }
+//                if let intValue = try? decodeIfPresent(Int.self, forKey: key),
+//                    let bool = Bool(exactly: NSNumber(value: intValue)) {
+//                    return Default(wrappedValue: bool)
+//                } else if let stringValue = try? decodeIfPresent(String.self, forKey: key),
+//                    let bool = Bool(stringValue) {
+//                    return Default(wrappedValue: bool)
+//                } else {
+//                    return Default(wrappedValue: T.defaultValue)
+//                }
+//            }
+        
     }
 }
 
@@ -281,12 +368,20 @@ extension String: DefaultValue {
 
 struct Person123: Decodable {
     @Default<String> var name: String
+    enum CodingKeys: CodingKey {
+        case name
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self._name = try container.decode(Default<String>.self, forKey: .name)
+    }
 }
 
 func WarpTest() {
     do {
-        let data = #"{"name": "yinfan"}"#
-        let p = try JSONDecoder().decode(Person123.self, from: data.data(using: .utf8)!)
+        let jsonData = #"{"name":"QmV0dGVyQ29kYWJsZQ=="}"#.data(using: .utf8)!
+        let p = try JSONDecoder().decode(Person123.self, from: jsonData)
         print("Person = \(p) \n")
 
     } catch {
@@ -374,18 +469,18 @@ extension DecodableDefault {
 }
 
 
-extension KeyedDecodingContainer {
-    func decode<T>(_ type: DecodableDefault.Wrapper<T>.Type, forKey key: Key) throws -> DecodableDefault.Wrapper<T> {
-        try decodeIfPresent(type, forKey: key) ?? .init()
-        //        try decodeIfPresent(type, forKey: key) ?? (type.getDefaultVaule1!()) as! DecodableDefault.Wrapper<T>
-    }
-    
-    
-    func decode<T>(_ type: T.Type, forKey key: Key) throws -> Capitalized {
-        .init(wrappedValue: nil)
-    }
-    
-}
+//extension KeyedDecodingContainer {
+//    func decode<T>(_ type: DecodableDefault.Wrapper<T>.Type, forKey key: Key) throws -> DecodableDefault.Wrapper<T> {
+//        try decodeIfPresent(type, forKey: key) ?? .init()
+//        //        try decodeIfPresent(type, forKey: key) ?? (type.getDefaultVaule1!()) as! DecodableDefault.Wrapper<T>
+//    }
+//
+//
+//    func decode<T>(_ type: T.Type, forKey key: Key) throws -> Capitalized {
+//        .init(wrappedValue: nil)
+//    }
+//
+//}
 
 extension DecodableDefault {
     typealias Source = DecodableDefaultSource
@@ -450,4 +545,163 @@ struct PropertyPerson: Codable {
 //    @DecodableDefault.EmptyString var name: String
 //}
 
+
+
+
+
+struct AnyDecodable: Decodable {
+    public let value: Any
+
+    public init<T>(_ value: T?) {
+        self.value = value ?? ()
+    }
+}
+
+@usableFromInline
+protocol _AnyDecodable {
+    var value: Any { get }
+    init<T>(_ value: T?)
+}
+
+extension AnyDecodable: _AnyDecodable {}
+
+extension _AnyDecodable {
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+
+        if container.decodeNil() {
+            #if canImport(Foundation)
+                self.init(NSNull())
+            #else
+                self.init(Self?.none)
+            #endif
+        } else if let bool = try? container.decode(Bool.self) {
+            self.init(bool)
+        } else if let int = try? container.decode(Int.self) {
+            self.init(int)
+        } else if let uint = try? container.decode(UInt.self) {
+            self.init(uint)
+        } else if let double = try? container.decode(Double.self) {
+            self.init(double)
+        } else if let string = try? container.decode(String.self) {
+            self.init(string)
+        } else if let array = try? container.decode([AnyDecodable].self) {
+            self.init(array.map { $0.value })
+        } else if let dictionary = try? container.decode([String: AnyDecodable].self) {
+            self.init(dictionary.mapValues { $0.value })
+        } else {
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "AnyDecodable value cannot be decoded")
+        }
+    }
+}
+
+extension AnyDecodable: Equatable {
+    public static func == (lhs: AnyDecodable, rhs: AnyDecodable) -> Bool {
+        switch (lhs.value, rhs.value) {
+        #if canImport(Foundation)
+            case is (NSNull, NSNull), is (Void, Void):
+                return true
+        #endif
+        case let (lhs as Bool, rhs as Bool):
+            return lhs == rhs
+        case let (lhs as Int, rhs as Int):
+            return lhs == rhs
+        case let (lhs as Int8, rhs as Int8):
+            return lhs == rhs
+        case let (lhs as Int16, rhs as Int16):
+            return lhs == rhs
+        case let (lhs as Int32, rhs as Int32):
+            return lhs == rhs
+        case let (lhs as Int64, rhs as Int64):
+            return lhs == rhs
+        case let (lhs as UInt, rhs as UInt):
+            return lhs == rhs
+        case let (lhs as UInt8, rhs as UInt8):
+            return lhs == rhs
+        case let (lhs as UInt16, rhs as UInt16):
+            return lhs == rhs
+        case let (lhs as UInt32, rhs as UInt32):
+            return lhs == rhs
+        case let (lhs as UInt64, rhs as UInt64):
+            return lhs == rhs
+        case let (lhs as Float, rhs as Float):
+            return lhs == rhs
+        case let (lhs as Double, rhs as Double):
+            return lhs == rhs
+        case let (lhs as String, rhs as String):
+            return lhs == rhs
+        case let (lhs as [String: AnyDecodable], rhs as [String: AnyDecodable]):
+            return lhs == rhs
+        case let (lhs as [AnyDecodable], rhs as [AnyDecodable]):
+            return lhs == rhs
+        default:
+            return false
+        }
+    }
+}
+
+extension AnyDecodable: CustomStringConvertible {
+    public var description: String {
+        switch value {
+        case is Void:
+            return String(describing: nil as Any?)
+        case let value as CustomStringConvertible:
+            return value.description
+        default:
+            return String(describing: value)
+        }
+    }
+}
+
+extension AnyDecodable: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        switch value {
+        case let value as CustomDebugStringConvertible:
+            return "AnyDecodable(\(value.debugDescription))"
+        default:
+            return "AnyDecodable(\(description))"
+        }
+    }
+}
+
+extension AnyDecodable: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        switch value {
+        case let value as Bool:
+            hasher.combine(value)
+        case let value as Int:
+            hasher.combine(value)
+        case let value as Int8:
+            hasher.combine(value)
+        case let value as Int16:
+            hasher.combine(value)
+        case let value as Int32:
+            hasher.combine(value)
+        case let value as Int64:
+            hasher.combine(value)
+        case let value as UInt:
+            hasher.combine(value)
+        case let value as UInt8:
+            hasher.combine(value)
+        case let value as UInt16:
+            hasher.combine(value)
+        case let value as UInt32:
+            hasher.combine(value)
+        case let value as UInt64:
+            hasher.combine(value)
+        case let value as Float:
+            hasher.combine(value)
+        case let value as Double:
+            hasher.combine(value)
+        case let value as String:
+            hasher.combine(value)
+        case let value as [String: AnyDecodable]:
+            hasher.combine(value)
+        case let value as [AnyDecodable]:
+            hasher.combine(value)
+        default:
+            break
+        }
+    }
+}
 
