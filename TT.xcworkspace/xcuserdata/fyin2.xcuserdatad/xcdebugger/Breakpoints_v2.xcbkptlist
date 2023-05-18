@@ -462,10 +462,10 @@
             filePath = "TT/swiftTest/PropertyWarpTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "587"
-            endingLineNumber = "587"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "586"
+            endingLineNumber = "586"
+            landmarkName = "init(money:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -478,10 +478,117 @@
             filePath = "TT/swiftTest/PropertyWarpTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "585"
-            endingLineNumber = "585"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "584"
+            endingLineNumber = "584"
+            landmarkName = "PropertyPerson"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - de213e55186bb93d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of TTS.PropertyPerson.money : Swift.Int"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "584"
+                  endingLineNumber = "584"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - 4bab2ced7fe0f3d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.money.getter : Swift.Int"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "584"
+                  endingLineNumber = "584"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - 73d6262e52a11fe3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.money.setter : Swift.Int"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "584"
+                  endingLineNumber = "584"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - 22d22a016a1e731c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.money.modify : Swift.Int"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - c23fa21883ddbae3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.money.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "584"
+                  endingLineNumber = "584"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - ab746b796bc44ac7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.init(money: Swift.Int) -&gt; TTS.PropertyPerson"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "584"
+                  endingLineNumber = "584"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "FABDDB7D-4F78-4495-AC4F-6B8D5070E971 - fcf6ccfafe18d53f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.PropertyPerson.init(from: Swift.Decoder) throws -&gt; TTS.PropertyPerson"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "584"
+                  endingLineNumber = "584"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -526,10 +633,10 @@
             filePath = "TT/swiftTest/PropertyWarpTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "435"
+            endingLineNumber = "435"
+            landmarkName = "WarpTest()"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -551,22 +658,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6527C6A4-8E07-4852-A55F-7402BF4B6A07"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TT/swiftTest/PropertyWarpTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
-            landmarkName = "Default"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8FB8D551-B498-4619-AEA8-DC9F2EB8A121"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -574,71 +665,56 @@
             filePath = "TT/swiftTest/PropertyWarpTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "440"
-            endingLineNumber = "440"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "439"
+            endingLineNumber = "439"
+            landmarkName = "WarpTest()"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "771C1AF4-4FB3-4F69-86A8-E4E2A7286374"
+            uuid = "B7519016-59DB-49B6-B5A9-E057B00C4BBD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TT/swiftTest/PropertyWarpTest.swift"
+            filePath = "TT/swiftTest/CombineRetry.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
-            landmarkName = "decode(_:forKey:)"
-            landmarkType = "7">
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "combieRetryPublisher()"
+            landmarkType = "9">
             <Locations>
                <Location
-                  uuid = "771C1AF4-4FB3-4F69-86A8-E4E2A7286374 - bbac849e2e8b788a"
+                  uuid = "B7519016-59DB-49B6-B5A9-E057B00C4BBD - 5c0b4043f02890b7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Swift.KeyedDecodingContainer.decode&lt;&#x3c4;_0_0 where &#x3c4;_1_0: TTS.DefaultValue&gt;(_: TTS.Default&lt;&#x3c4;_1_0&gt;.Type, forKey: &#x3c4;_0_0) throws -&gt; TTS.Default&lt;&#x3c4;_1_0&gt;"
+                  symbolName = "closure #1 (()) -&gt; Combine.AnyPublisher&lt;Foundation.Data, TTS.myNetWorkError&gt; in closure #1 (TTS.myNetWorkError) throws -&gt; Combine.Publishers.FlatMap&lt;Combine.AnyPublisher&lt;Foundation.Data, TTS.myNetWorkError&gt;, Combine.Publishers.SetFailureType&lt;Combine.Publishers.Delay&lt;Combine.Just&lt;()&gt;, __C.OS_dispatch_queue&gt;, TTS.myNetWorkError&gt;&gt; in TTS.combieRetry() -&gt; Combine.AnyPublisher&lt;TTS.warpPerson, Swift.Error&gt;"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/CombineRetry.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "354"
-                  endingLineNumber = "354"
-                  offsetFromSymbolStart = "1000">
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
-                  uuid = "771C1AF4-4FB3-4F69-86A8-E4E2A7286374 - bbac849e2e8b78ad"
+                  uuid = "B7519016-59DB-49B6-B5A9-E057B00C4BBD - ed75ff7fe511c94"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Swift.KeyedDecodingContainer.decode&lt;&#x3c4;_0_0 where &#x3c4;_1_0: TTS.DefaultValue&gt;(_: TTS.Default&lt;&#x3c4;_1_0&gt;.Type, forKey: &#x3c4;_0_0) throws -&gt; TTS.Default&lt;&#x3c4;_1_0&gt;"
+                  symbolName = "closure #1 (()) -&gt; Combine.AnyPublisher&lt;Foundation.Data, TTS.myNetWorkError&gt; in closure #1 (TTS.myNetWorkError) throws -&gt; Combine.Publishers.FlatMap&lt;Combine.AnyPublisher&lt;Foundation.Data, TTS.myNetWorkError&gt;, Combine.Publishers.SetFailureType&lt;Combine.Publishers.Delay&lt;Combine.Just&lt;()&gt;, __C.OS_dispatch_queue&gt;, TTS.myNetWorkError&gt;&gt; in TTS.combieRetryPublisher() -&gt; Combine.AnyPublisher&lt;TTS.warpPerson, Swift.Error&gt;"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/CombineRetry.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "353"
-                  endingLineNumber = "353"
-                  offsetFromSymbolStart = "376">
-               </Location>
-               <Location
-                  uuid = "771C1AF4-4FB3-4F69-86A8-E4E2A7286374 - bbac849e2e8b78ad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Swift.KeyedDecodingContainer.decode&lt;&#x3c4;_0_0 where &#x3c4;_1_0: TTS.DefaultValue&gt;(_: TTS.Default&lt;&#x3c4;_1_0&gt;.Type, forKey: &#x3c4;_0_0) throws -&gt; TTS.Default&lt;&#x3c4;_1_0&gt;"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "353"
-                  endingLineNumber = "353"
-                  offsetFromSymbolStart = "472">
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -646,47 +722,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "24085CAC-FFC5-43CF-9449-DE19181C70A9"
+            uuid = "C6F9744A-0CA5-47FD-8F5C-34BD979D20EE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TT/swiftTest/PropertyWarpTest.swift"
+            filePath = "TT/swiftTest/CombineRetry.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
-            landmarkName = "decode(_:forKey:)"
-            landmarkType = "7">
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "mockURLBack()"
+            landmarkType = "9">
             <Locations>
                <Location
-                  uuid = "24085CAC-FFC5-43CF-9449-DE19181C70A9 - bbac849e2e8b6453"
+                  uuid = "C6F9744A-0CA5-47FD-8F5C-34BD979D20EE - 264b9ab4c9df69f0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Swift.KeyedDecodingContainer.decode&lt;&#x3c4;_0_0 where &#x3c4;_1_0: TTS.DefaultValue&gt;(_: TTS.Default&lt;&#x3c4;_1_0&gt;.Type, forKey: &#x3c4;_0_0) throws -&gt; TTS.Default&lt;&#x3c4;_1_0&gt;"
+                  symbolName = "closure #1 ((Swift.Result&lt;Foundation.Data, TTS.myNetWorkError&gt;) -&gt; ()) -&gt; () in TTS.mockURLBack() -&gt; Combine.AnyPublisher&lt;Foundation.Data, TTS.myNetWorkError&gt;"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/CombineRetry.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "379"
-                  endingLineNumber = "379"
-                  offsetFromSymbolStart = "1312">
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "156">
                </Location>
                <Location
-                  uuid = "24085CAC-FFC5-43CF-9449-DE19181C70A9 - bbac849e2e8b7b82"
+                  uuid = "C6F9744A-0CA5-47FD-8F5C-34BD979D20EE - 264b9ab4c9df69f0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Swift.KeyedDecodingContainer.decode&lt;&#x3c4;_0_0 where &#x3c4;_1_0: TTS.DefaultValue&gt;(_: TTS.Default&lt;&#x3c4;_1_0&gt;.Type, forKey: &#x3c4;_0_0) throws -&gt; TTS.Default&lt;&#x3c4;_1_0&gt;"
+                  symbolName = "closure #1 ((Swift.Result&lt;Foundation.Data, TTS.myNetWorkError&gt;) -&gt; ()) -&gt; () in TTS.mockURLBack() -&gt; Combine.AnyPublisher&lt;Foundation.Data, TTS.myNetWorkError&gt;"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/CombineRetry.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "362"
-                  endingLineNumber = "362"
-                  offsetFromSymbolStart = "1000">
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "244">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -694,47 +770,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E2765EA6-FD0D-42B6-AD27-60D30E6719DC"
+            uuid = "442A1F73-435F-417F-9FDD-3C99930489D8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TT/swiftTest/PropertyWarpTest.swift"
+            filePath = "TT/swiftTest/CombineRetry.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
-            landmarkName = "decode(_:forKey:)"
-            landmarkType = "7">
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "combieRetryPublisher()"
+            landmarkType = "9">
             <Locations>
                <Location
-                  uuid = "E2765EA6-FD0D-42B6-AD27-60D30E6719DC - bbac849e2e8b6453"
+                  uuid = "442A1F73-435F-417F-9FDD-3C99930489D8 - b3207f36c2c96ddb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Swift.KeyedDecodingContainer.decode&lt;&#x3c4;_0_0 where &#x3c4;_1_0: TTS.DefaultValue&gt;(_: TTS.Default&lt;&#x3c4;_1_0&gt;.Type, forKey: &#x3c4;_0_0) throws -&gt; TTS.Default&lt;&#x3c4;_1_0&gt;"
+                  symbolName = "closure #1 (TTS.myNetWorkError) throws -&gt; Combine.Publishers.FlatMap&lt;Combine.AnyPublisher&lt;Foundation.Data, TTS.myNetWorkError&gt;, Combine.Publishers.SetFailureType&lt;Combine.Publishers.Delay&lt;Combine.Just&lt;()&gt;, __C.OS_dispatch_queue&gt;, TTS.myNetWorkError&gt;&gt; in TTS.combieRetry() -&gt; Combine.AnyPublisher&lt;TTS.warpPerson, Swift.Error&gt;"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/CombineRetry.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "379"
-                  endingLineNumber = "379"
-                  offsetFromSymbolStart = "1312">
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "324">
                </Location>
                <Location
-                  uuid = "E2765EA6-FD0D-42B6-AD27-60D30E6719DC - bbac849e2e8b7a21"
+                  uuid = "442A1F73-435F-417F-9FDD-3C99930489D8 - f2e168cb781c6e2b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Swift.KeyedDecodingContainer.decode&lt;&#x3c4;_0_0 where &#x3c4;_1_0: TTS.DefaultValue&gt;(_: TTS.Default&lt;&#x3c4;_1_0&gt;.Type, forKey: &#x3c4;_0_0) throws -&gt; TTS.Default&lt;&#x3c4;_1_0&gt;"
+                  symbolName = "closure #1 (TTS.myNetWorkError) throws -&gt; Combine.Publishers.FlatMap&lt;Combine.AnyPublisher&lt;Foundation.Data, TTS.myNetWorkError&gt;, Combine.Publishers.SetFailureType&lt;Combine.Publishers.Delay&lt;Combine.Just&lt;()&gt;, __C.OS_dispatch_queue&gt;, TTS.myNetWorkError&gt;&gt; in TTS.combieRetryPublisher() -&gt; Combine.AnyPublisher&lt;TTS.warpPerson, Swift.Error&gt;"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/CombineRetry.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "365"
-                  endingLineNumber = "365"
-                  offsetFromSymbolStart = "1220">
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "324">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -742,47 +818,62 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "62A8F375-A506-44A3-8B1F-425CBBDFDA50"
+            uuid = "789D48BD-8A40-4B40-A9B4-C8A16C726C79"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TT/swiftTest/PropertyWarpTest.swift"
+            filePath = "TT/swiftTest/swiftVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "363"
-            endingLineNumber = "363"
-            landmarkName = "decode(_:forKey:)"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "CombineRetry()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "62A8F375-A506-44A3-8B1F-425CBBDFDA50 - bbac849e2e8b6453"
+                  uuid = "789D48BD-8A40-4B40-A9B4-C8A16C726C79 - d485b06ef59e7803"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Swift.KeyedDecodingContainer.decode&lt;&#x3c4;_0_0 where &#x3c4;_1_0: TTS.DefaultValue&gt;(_: TTS.Default&lt;&#x3c4;_1_0&gt;.Type, forKey: &#x3c4;_0_0) throws -&gt; TTS.Default&lt;&#x3c4;_1_0&gt;"
+                  symbolName = "TTS.swiftVC.CombineRetry() -&gt; ()"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/swiftVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "379"
-                  endingLineNumber = "379"
-                  offsetFromSymbolStart = "1312">
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
+                  offsetFromSymbolStart = "208">
                </Location>
                <Location
-                  uuid = "62A8F375-A506-44A3-8B1F-425CBBDFDA50 - bbac849e2e8b7a63"
+                  uuid = "789D48BD-8A40-4B40-A9B4-C8A16C726C79 - fa6249de8f9e710c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Swift.KeyedDecodingContainer.decode&lt;&#x3c4;_0_0 where &#x3c4;_1_0: TTS.DefaultValue&gt;(_: TTS.Default&lt;&#x3c4;_1_0&gt;.Type, forKey: &#x3c4;_0_0) throws -&gt; TTS.Default&lt;&#x3c4;_1_0&gt;"
+                  symbolName = "closure #1 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in TTS.swiftVC.CombineRetry() -&gt; ()"
                   moduleName = "TT"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/swiftVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "363"
-                  endingLineNumber = "363"
-                  offsetFromSymbolStart = "1148">
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "789D48BD-8A40-4B40-A9B4-C8A16C726C79 - d485b06ef59e7803"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.swiftVC.CombineRetry() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/swiftVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
+                  offsetFromSymbolStart = "268">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -790,80 +881,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D44794C5-E8EF-4D15-BEA2-57E328CD636C"
+            uuid = "C09A0E3C-F5D4-4E1E-AB72-66CDE09F05EE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TT/swiftTest/PropertyWarpTest.swift"
+            filePath = "TT/swiftTest/swiftVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
-            landmarkName = "init(from:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D44794C5-E8EF-4D15-BEA2-57E328CD636C - c59f41399ab45d22"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.Default.init(from: Swift.Decoder) throws -&gt; TTS.Default&lt;&#x3c4;_0_0&gt;"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "276"
-                  endingLineNumber = "276"
-                  offsetFromSymbolStart = "1228">
-               </Location>
-               <Location
-                  uuid = "D44794C5-E8EF-4D15-BEA2-57E328CD636C - c59f41399ab45d22"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TTS.Default.init(from: Swift.Decoder) throws -&gt; TTS.Default&lt;&#x3c4;_0_0&gt;"
-                  moduleName = "TT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/PropertyWarpTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "276"
-                  endingLineNumber = "276"
-                  offsetFromSymbolStart = "1252">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EDB89F9E-9CD9-4D11-95F8-3A47DC9D884B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TT/swiftTest/PropertyWarpTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "init(from:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9CA5FDFA-F57B-4B82-9269-93B60C2E95B7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TT/swiftTest/PropertyWarpTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
-            landmarkName = "init(from:)"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "CombineRetry()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

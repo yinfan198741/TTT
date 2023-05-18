@@ -152,7 +152,16 @@ internal class swiftVC: UITableViewController {
     @objc
     func CombineRetry() {
         print("CombineRetry")
-        combieRetry().sink { e in
+        combieRetryPublisher()
+            .handleEvents(
+                receiveSubscription: { sub in
+                    print("sub = \(sub)")
+                },
+                receiveCompletion: { com in
+                    print("com = \(com)")
+                }
+            )
+        .sink { e in
             print("e = \(e)")
         } receiveValue: { value in
             print("value = \(value)")

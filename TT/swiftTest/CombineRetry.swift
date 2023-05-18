@@ -9,37 +9,56 @@
 import Foundation
 import Combine
 
-func combieRetry() -> AnyPublisher<warpPerson, Error> {
-    
-    return mockURLBack().tryMap {  data in
-        do {
-            let warp_Person = try JSONDecoder().decode(warpPerson.self, from: data)
-            return warp_Person
-        } catch  {
-            throw error
-        }
-    }.eraseToAnyPublisher()
-    
-    
-    //    mockURLBack().map { data in
-    //        let warp_Person =  try JSONDecoder().decode(warpPerson.self, from: data)
-    //        return Result.success(warp_Person).publisher.setFailureType(to: Never.self).eraseToAnyPublisher()
-    
-        
-//    return mockURLBack()
-//        .decode(type: warpPerson.self, decoder: JSONDecoder())
-//        .eraseToAnyPublisher()
+enum myNetWorkError: Error {
+    case retryAble
+    case failed
 }
 
 
-func mockURLBack() -> AnyPublisher<Data, Error> {
-   let publish = Future<Data, Error>{ promise in
-        let info =
-        """
-        {"userName":"yinfan", "userAge": "36", "school": "pixian middel school" }
-        """
-       let data = info.data(using: String.Encoding.utf8)
-       promise(.success(data!))
+func combieRetryPublisher() -> AnyPublisher<warpPerson, Error> {
+    //    return mockURLBack().tryMap {  data in
+    //        do {
+    //            let warp_Person = try JSONDecoder().decode(warpPerson.self, from: data)
+    //            return warp_Person
+    //        } catch  {
+    //            throw error
+    //        }
+    //    }.eraseToAnyPublisher()
+    //
+    return
+    mockURLBack().tryCatch { error in
+        if error == .retryAble {
+            return Just(Void())
+                .delay(for: .seconds(10) , scheduler: DispatchQueue.main)
+                .flatMap { _ in
+                    return mockURLBack()
+                }
+        }
+        throw error
+    }
+    .decode(type: warpPerson.self, decoder: JSONDecoder())
+    .retry(3)
+    .eraseToAnyPublisher()
+}
+
+
+var index:Int = 0
+
+func mockURLBack() -> AnyPublisher<Data, myNetWorkError> {
+    index = index + 1
+    index = index % 3
+    let publish = Future<Data, myNetWorkError>{ promise in
+        
+        if index == 0 {
+            promise(.failure(.retryAble))
+        } else {
+            let info =
+            """
+            {"name":"yinfan", "age": 36, "school": "pixian middel school" }
+            """
+            let data = info.data(using: String.Encoding.utf8)
+            promise(.success(data!))
+        }
     }.eraseToAnyPublisher()
     return publish
 }
@@ -51,9 +70,11 @@ func mockURLBack() -> AnyPublisher<Data, Error> {
 //}
 
 
-struct warpPerson : Codable {
-//    @myDefault_d<String>  var userName: String
-//    @myDefault_d<String>  var school: String
 
-    @myDefault_d<Int>     var userAge: Int
+struct warpPerson: Decodable {
+    @Default<String> var name: String
+    @Default<Int> var age: Int
+    @Default<String> var school: String
+    @Default<String> var street: String
+    @Default<Int> var postNumber: Int
 }

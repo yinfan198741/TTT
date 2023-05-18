@@ -281,12 +281,11 @@ struct Default<S: DefaultValue> {
 extension Default : Decodable {
     init(from decoder: Decoder) throws {
         print("init(from decoder: Decoder)")
-        let container = try decoder.singleValueContainer()
+        let container: SingleValueDecodingContainer = try decoder.singleValueContainer()
         let v = (try? container.decode(S.Value.self)) ?? S.defaultValue
         self.wrappedValue = v
     }
 }
-
 
 extension KeyedDecodingContainer {
     
@@ -396,6 +395,7 @@ extension String: DefaultValue {
     static var defaultValue = "unknown123"
 }
 
+
 struct Person123: Decodable {
     @Default<String> var name: String
     @Default<Int> var age: Int
@@ -410,27 +410,26 @@ struct Person123: Decodable {
 //        let container = try decoder.container(keyedBy: CodingKeys.self)
 //        self._name = try container.decode(Default<String>.self, forKey: .name)
 //    }
-    
-    enum CodingKeys: CodingKey {
-        case name
-        case age
-        case school
-        case street
-        case postNumber
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self._name = try container.decode(Default<String>.self, forKey: .name)
-        self._age = try container.decode(Default<Int>.self, forKey: .age)
-        self._school = try container.decode(Default<String>.self, forKey: .school)
-        self._street = try container.decode(Default<String>.self, forKey: .street)
-        self._postNumber = try container.decode(Default<Int>.self, forKey: .postNumber)
-    }
-    
 }
 
 func WarpTest() {
+    
+//
+//    let json = """
+//    {
+//        "name": "John Smith",
+//        "age": 30,
+//        "email": "john.smith@example.com"
+//    }
+//    """.data(using: .utf8)!
+//
+//    let decoder = JSONDecoder()
+//    let container = try decoder.singleValueContainer()
+//    let name = try container.decode(String.self)
+//
+//    print(name)
+//
+    
     do {
         let jsonData = #"{"name":"QmV0dGVyQ29kYWJsZQ==", "age":18, "school":"pixian middle school", "street": null}"#.data(using: .utf8)!
         let p = try JSONDecoder().decode(Person123.self, from: jsonData)
