@@ -154,6 +154,8 @@ internal class swiftVC: UITableViewController {
     @objc
     func CombineRetry() {
         print("CombineRetry")
+        let comPub = combieRetryPublisher()
+        
         combieRetryPublisher()
             .handleEvents(
                 receiveSubscription: { sub in
