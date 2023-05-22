@@ -11,8 +11,9 @@ import Combine
 
 enum myNetWorkError: Error {
     case retryToken
-    case retryAble
+    case retryAbles
     case failed
+    case fatileError
 }
 
 
@@ -40,29 +41,43 @@ func combieRetryPublisher() -> AnyPublisher<warpPerson, Error> {
                         return Data()
                     }
                 }.tryCatch { error in
+                    
+                    if error == .fatileError {
+                        throw error
+                    }
                     return mockURLBack()
                 }
-                return pub.eraseToAnyPublisher()
+                let pube = pub.eraseToAnyPublisher()
+                return pube
             }
             throw error
         })
-//        .tryCatch({ er in
-//
-//             let _er = er as? .retryToken {
-//                throw er
+        .tryCatch({ error in
+
+            if let e = error as? myNetWorkError ,
+               e == .retryAbles {
+                throw e
+            }
+            
+//             if error == myNetWorkError.retryAbles {
+//                throw error
 //            }
-//
-//            let pub = Just(Void())
-//                .setFailureType(to: myNetWorkError.self)
-//                .delay(for: .seconds(5), scheduler: DispatchQueue.main)
-//                .flatMap { _ in
-//                return mockURLBack()
-//                }.retry(3)
-//                .eraseToAnyPublisher()
-//
-//            return pub
-//        })
-        .decode(type: warpPerson.self, decoder: JSONDecoder())
+
+            let pub = Just(Void())
+                .setFailureType(to: myNetWorkError.self)
+                .delay(for: .seconds(5), scheduler: DispatchQueue.main)
+                .flatMap { _ in
+                    return mockURLBack()
+                }.retry(3)
+                .eraseToAnyPublisher()
+
+            return pub
+        }).flatMap({ data -> AnyPublisher<warpPerson, Error> in
+            let warp_Person = try! JSONDecoder().decode(warpPerson.self, from: data)
+            return Just(warp_Person).setFailureType(to: Error.self).eraseToAnyPublisher()
+        })
+
+//        .decode(type: warpPerson.self, decoder: JSONDecoder())
         .eraseToAnyPublisher()
     return pub
     
@@ -129,7 +144,7 @@ func mockURLBack() -> AnyPublisher<Data, myNetWorkError> {
     let publish = Future<Data, myNetWorkError>{ promise in
         
         if index == 0 {
-            promise(.failure(.retryAble))
+            promise(.failure(.retryAbles))
         }
         else if index == 4 {
             promise(.failure(.retryToken))
@@ -152,7 +167,7 @@ func mockRefreshTokenURLBack() -> AnyPublisher<Bool, myNetWorkError> {
     indexRT = indexRT % 3
     let publish = Future<Bool, myNetWorkError>{ promise in
         if index == 0 {
-            promise(.failure(.retryAble))
+            promise(.failure(.retryAbles))
         } else {
             promise(.success(true))
         }
