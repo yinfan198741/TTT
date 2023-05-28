@@ -247,6 +247,7 @@
 /* Begin PBXFileReference section */
 		033B8B13AD73AEF8C329338F /* Pods-TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TT/Pods-TT.debug.xcconfig"; sourceTree = "<group>"; };
 		1104F4480C0F594D792FE746 /* Pods_TTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61028CD42A233B1F0031230A /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Alamofire; path = ../Alamofire; sourceTree = "<group>"; };
 		61224F0D2A0AA7B300956369 /* openCombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openCombineViewController.swift; sourceTree = "<group>"; };
 		6139A6D12A108C3F00F01452 /* PropertyWarpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWarpTest.swift; sourceTree = "<group>"; };
 		6139A6D32A150DCD00F01452 /* CombineRetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineRetry.swift; sourceTree = "<group>"; };
@@ -647,6 +648,7 @@
 		61224F0B2A0AA5AA00956369 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				61028CD42A233B1F0031230A /* Alamofire */,
 			);
 			name = Packages;
 			sourceTree = "<group>";

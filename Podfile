@@ -26,7 +26,7 @@ target 'TT' do
    pod 'FBSDKCoreKit'
    pod 'FBSDKLoginKit'
    pod 'FBSDKShareKit'
-   pod 'AFNetworking'
+   pod 'AFNetworking', '5.7.1'
    pod 'IQKeyboardManager'
    pod 'YYText'
    pod 'SVProgressHUD'
