@@ -764,6 +764,21 @@
                   endingLineNumber = "53"
                   offsetFromSymbolStart = "244">
                </Location>
+               <Location
+                  uuid = "C6F9744A-0CA5-47FD-8F5C-34BD979D20EE - 264b9ab4c9df7512"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((Swift.Result&lt;Foundation.Data, TTS.myNetWorkError&gt;) -&gt; ()) -&gt; () in TTS.mockURLBack() -&gt; Combine.AnyPublisher&lt;Foundation.Data, TTS.myNetWorkError&gt;"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/CombineRetry.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "296">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -825,8 +840,8 @@
             filePath = "TT/swiftTest/swiftVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "CombineRetry()"
             landmarkType = "7">
             <Locations>
@@ -875,6 +890,21 @@
                   endingLineNumber = "155"
                   offsetFromSymbolStart = "268">
                </Location>
+               <Location
+                  uuid = "789D48BD-8A40-4B40-A9B4-C8A16C726C79 - d485b06ef59e7b78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TTS.swiftVC.CombineRetry() -&gt; ()"
+                  moduleName = "TT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fyin2/Desktop/code/TTT/TT/swiftTest/swiftVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "308">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -888,8 +918,8 @@
             filePath = "TT/swiftTest/swiftVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "CombineRetry()"
             landmarkType = "7">
          </BreakpointContent>

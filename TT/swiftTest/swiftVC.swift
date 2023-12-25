@@ -34,7 +34,8 @@ internal class swiftVC: UITableViewController {
         self.source = [
             ["propertyWarper","propertyWarper"],
             ["CombineRetry","CombineRetry"],
-            ["FPRDemo","FPRDemo"]
+            ["FPRDemo","FPRDemo"],
+            ["MemoryDemo","MemoryDemo"]
         ];
 //        self.view.backgroundColor = UIColor.whiteColor;
         self.tableView.dataSource =  self;
@@ -248,5 +249,11 @@ internal class swiftVC: UITableViewController {
 //    }
 //    }
 //    }
+    @objc
+    func MemoryDemo() {
+        print("MemoryDemo")
+        let memory = MemoryDemoViewController.init()
+        self.showDetailViewController(memory, sender: nil)
+    }
     
 }

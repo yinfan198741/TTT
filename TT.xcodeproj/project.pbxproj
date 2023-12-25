@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		612204BA2A24F700002B25A9 /* MemoryDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612204B92A24F700002B25A9 /* MemoryDemoViewController.swift */; };
 		61224F0E2A0AA7B300956369 /* openCombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61224F0D2A0AA7B300956369 /* openCombineViewController.swift */; };
 		6139A6D22A108C3F00F01452 /* PropertyWarpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139A6D12A108C3F00F01452 /* PropertyWarpTest.swift */; };
 		6139A6D42A150DCE00F01452 /* CombineRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139A6D32A150DCD00F01452 /* CombineRetry.swift */; };
@@ -248,6 +249,7 @@
 		033B8B13AD73AEF8C329338F /* Pods-TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TT/Pods-TT.debug.xcconfig"; sourceTree = "<group>"; };
 		1104F4480C0F594D792FE746 /* Pods_TTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61028CD42A233B1F0031230A /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Alamofire; path = ../Alamofire; sourceTree = "<group>"; };
+		612204B92A24F700002B25A9 /* MemoryDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDemoViewController.swift; sourceTree = "<group>"; };
 		61224F0D2A0AA7B300956369 /* openCombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openCombineViewController.swift; sourceTree = "<group>"; };
 		6139A6D12A108C3F00F01452 /* PropertyWarpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWarpTest.swift; sourceTree = "<group>"; };
 		6139A6D32A150DCD00F01452 /* CombineRetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineRetry.swift; sourceTree = "<group>"; };
@@ -1411,6 +1413,7 @@
 				B5BFE3C0222E59AC00B6CFAC /* Book.swift */,
 				6139A6D12A108C3F00F01452 /* PropertyWarpTest.swift */,
 				6139A6D32A150DCD00F01452 /* CombineRetry.swift */,
+				612204B92A24F700002B25A9 /* MemoryDemoViewController.swift */,
 			);
 			path = swiftTest;
 			sourceTree = "<group>";
@@ -1938,6 +1941,7 @@
 				A7D8FA721E9B2BBA00ED8D03 /* AppDelegate.m in Sources */,
 				B5BFE3DD222E96BB00B6CFAC /* autoCellThree.swift in Sources */,
 				A740041E238EBD7600BAA62E /* DDLog.m in Sources */,
+				612204BA2A24F700002B25A9 /* MemoryDemoViewController.swift in Sources */,
 				B50EE5712237547E00DAA18A /* Example2ViewController.m in Sources */,
 				B58E8A3525AFE3FC0077B909 /* ll.cpp in Sources */,
 				B58E8A3825AFE79A0077B909 /* LLViewController.mm in Sources */,
