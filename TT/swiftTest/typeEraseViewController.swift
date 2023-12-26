@@ -38,9 +38,7 @@ class typeDog: animal {
 }
 
 class anyAnimal {
-    
     var warpEat : (Any)-> Any
-    
     init<T :animal>(ani: T) {
         self.warpEat = { item in
             guard let ff =  item as? T.food else{
@@ -49,11 +47,9 @@ class anyAnimal {
            return ani.eat(f: ff)
         }
     }
-    
     func anyEat(tt: Any)-> Any {
        return self.warpEat(tt)
     }
-    
 }
 
 
@@ -91,6 +87,23 @@ class typeEraseViewController: UIViewController {
         
         let anyAnimal_2 = anyAnimal(ani: dog)
         print(anyAnimal_2.anyEat(tt: dogRice()))
+        
+        
+        print("for in items =====")
+        let animals:[any animal] = [po,dog]
+        
+        for item in animals {
+            switch item {
+            case let item as typePerson:
+                print(item)
+                
+            case let item as typeDog:
+                print(item)
+            default:
+                print(item)
+            }
+        }
+        
         
     }
 
