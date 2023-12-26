@@ -53,8 +53,63 @@ class anyAnimal {
 }
 
 
+protocol Configurable {
+    associatedtype ViewModel
+    func configure(_ model: ViewModel)
+}
+
+
+struct CastsViewModel {}
+
+struct KeywordsViewModel {}
+
+class CastsView: UIView, Configurable {
+    typealias ViewModel = CastsViewModel
+    func configure(_ model: CastsViewModel) {
+        //         ...
+        print(" CastsView model = \(model)")
+    }
+}
+
+class KeywordsView: UIView, Configurable {
+    typealias ViewModel = KeywordsViewModel
+    func configure(_ model: KeywordsViewModel) {
+        // ...
+        print(" KeywordsView model = \(model)")
+    }
+}
+
+class AnyView {
+    
+    var anyViewConfigure: ((Any)->Void)?
+    
+    init<T: Configurable>(view : T){
+        self.anyViewConfigure = { model in
+            guard let _model = model as? T.ViewModel else {
+                fatalError()
+            }
+            view.configure(_model)
+        }
+    }
+    
+    func anyViewConfig(_ model: Any) {
+        self.anyViewConfigure?(model)
+    }
+}
+
 class typeEraseViewController: UIViewController {
 
+    
+    func TestTypeErase() {
+        let castsView = CastsView()
+        let keywordsView = KeywordsView()
+        let configurables: [AnyView] = [AnyView(view: castsView), AnyView(view: keywordsView)]
+//        print(configurables)
+        let models:[Any] = [CastsViewModel(),KeywordsViewModel()]
+
+        zip(configurables, models).forEach { $0.0.anyViewConfig($0.1) }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -105,6 +160,9 @@ class typeEraseViewController: UIViewController {
         }
         
         
+        
+        print("TestTypeErase =======")
+        TestTypeErase()
     }
 
     /*
@@ -118,3 +176,58 @@ class typeEraseViewController: UIViewController {
     */
 
 }
+
+
+
+protocol Printer {
+    associatedtype T
+    func print(val: T)
+}
+
+
+class _AnyPrinterBoxBase<E>: Printer {
+    typealias T = E
+
+    func print(val: E) {
+        fatalError()
+    }
+}
+
+
+class _PrinterBox<Base: Printer>: _AnyPrinterBoxBase<Base.T> {
+    var base: Base
+    
+    init(_ base: Base) {
+        self.base = base
+    }
+
+    override func print(val: Base.T) {
+        base.print(val: val)
+    }
+}
+
+struct AnyPrinter<T>: Printer {
+    var _box: _AnyPrinterBoxBase<T>
+
+    init<Base: Printer>(_ base: Base) where Base.T == T {
+        _box = _PrinterBox(base)
+    }
+
+    func print(val: T) {
+        _box.print(val: val)
+    }
+}
+
+//class _PrinterBox<Base>: Printer {
+//    typalias T = Base
+//    var base: Base
+//
+//    init<Base: Printer>(_ base: Base) where Base.T == T {
+//        self.base = base
+//        // Error: Cannot assign value of type 'Base' to type 'Base'
+//    }
+//
+//    func print(val: Base) {
+//
+//    }
+//}
