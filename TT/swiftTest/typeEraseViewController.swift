@@ -53,47 +53,103 @@ class anyAnimal {
 }
 
 
-protocol Configurable {
-    associatedtype ViewModel
-    func configure(_ model: ViewModel)
+//protocol Configurable {
+//    associatedtype ViewModel
+//    func configure(_ model: ViewModel)
+//}
+//
+//
+//struct CastsViewModel {}
+//
+//struct KeywordsViewModel {}
+//
+//class CastsView: UIView, Configurable {
+//    typealias ViewModel = CastsViewModel
+//    func configure(_ model: CastsViewModel) {
+//        //         ...
+//        print(" CastsView model = \(model)")
+//    }
+//}
+//
+//class KeywordsView: UIView, Configurable {
+//    typealias ViewModel = KeywordsViewModel
+//    func configure(_ model: KeywordsViewModel) {
+//        // ...
+//        print(" KeywordsView model = \(model)")
+//    }
+//}
+//
+//class AnyView {
+//    
+//    var anyViewConfigure: ((Any)->Void)?
+//    
+//    init<T: Configurable>(view : T){
+//        self.anyViewConfigure = { model in
+//            guard let _model = model as? T.ViewModel else {
+//                fatalError()
+//            }
+//            view.configure(_model)
+//        }
+//    }
+//    
+//    func anyViewConfig(_ model: Any) {
+//        self.anyViewConfigure?(model)
+//    }
+//}
+
+/// `shadow` protocol
+protocol TableRow {
+    /// - Recieves a parameter of Concrete Type `Any`
+    func configure(with model: Any)
 }
 
 
-struct CastsViewModel {}
-
-struct KeywordsViewModel {}
-
-class CastsView: UIView, Configurable {
-    typealias ViewModel = CastsViewModel
-    func configure(_ model: CastsViewModel) {
-        //         ...
-        print(" CastsView model = \(model)")
+/// Default `extension` to conform to `TableRow`
+extension TableRow {
+    /// TableRow - conformation
+    func configure(with model: Any) {
+        /// Just throw a fatalError
+        /// because we don't need it.
+        fatalError()
     }
 }
 
-class KeywordsView: UIView, Configurable {
-    typealias ViewModel = KeywordsViewModel
-    func configure(_ model: KeywordsViewModel) {
-        // ...
-        print(" KeywordsView model = \(model)")
+/// `Row` To be shadowed.
+protocol Row: TableRow {
+    associatedtype Model
+    /// - Recieves a parameter of Concrete Type `Model`
+    func configure(with model: Model)
+}
+
+/// Concrete Type `Product`
+struct Product { }
+/// Concrete Type `Item`
+struct IItem { }
+
+/// `ProductCell`
+class ProductCell: Row {
+    typealias Model = Product
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+    /// Conforming to `Row` protocol
+    func configure(with model: Model) {
+        print("PATs PlaceHolder is now `Product` Concrete Type)")
+        print("This will now be configured based on \(type(of: self))")
     }
 }
 
-class AnyView {
-    
-    var anyViewConfigure: ((Any)->Void)?
-    
-    init<T: Configurable>(view : T){
-        self.anyViewConfigure = { model in
-            guard let _model = model as? T.ViewModel else {
-                fatalError()
-            }
-            view.configure(_model)
-        }
+class ItemCell: Row {
+    typealias Model = IItem
+    let id: String
+    init(id: String) {
+        self.id = id
     }
-    
-    func anyViewConfig(_ model: Any) {
-        self.anyViewConfigure?(model)
+    /// Conforming to `Row` protocol
+    func configure(with model: Model) {
+        print("PATs PlaceHolder is now `Product` Concrete Type)")
+        print("This will now be configured based on \(type(of: self))")
     }
 }
 
@@ -101,13 +157,41 @@ class typeEraseViewController: UIViewController {
 
     
     func TestTypeErase() {
-        let castsView = CastsView()
-        let keywordsView = KeywordsView()
-        let configurables: [AnyView] = [AnyView(view: castsView), AnyView(view: keywordsView)]
-//        print(configurables)
-        let models:[Any] = [CastsViewModel(),KeywordsViewModel()]
 
-        zip(configurables, models).forEach { $0.0.anyViewConfig($0.1) }
+        
+        /// Usage of shadowed protocol styled type erasure
+        let rows: [TableRow] = [ProductCell(name: "Hello"), ItemCell(id: "123456")]
+
+        for row in rows {
+            if let cell = row as? ProductCell {
+                cell.configure(with: Product())
+            }
+
+            if let cell = row as? ItemCell {
+                cell.configure(with: IItem())
+            }
+        }
+        
+//        let castsView = CastsView()
+//        let keywordsView = KeywordsView()
+//        let configurables: [AnyView] = [AnyView(view: castsView), AnyView(view: keywordsView)]
+////        print(configurables)
+//        let models:[Any] = [CastsViewModel(),KeywordsViewModel()]
+//
+//        zip(configurables, models).forEach { $0.0.anyViewConfig($0.1) }
+
+//        let stackView = UIStackView()
+//        let configurables = stackView.arrangedSubviews
+//            .compactMap { $0 as?  ShadowConfigurable }
+//        zip(configurables, models).forEach { $0.0.configure($0.1) }
+        
+        
+        
+//        let tagsViews: [AnyConfigurable<TagsViewModel>] = ...
+//        let summaryViews: [AnyConfigurable<SummaryViewModel>] = ...
+//        let configurables: [ShadowConfigurable] = tagsViews + summaryViews
+//        zip(configurables, models).forEach { $0.0.configure($0.1) }
+        
     }
     
     override func viewDidLoad() {
